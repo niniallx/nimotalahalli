@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - niniallx</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #0d1117; --surface: #161b22; --border: #30363d; --accent: #58a6ff; --accent2: #3fb950; --text: #e6edf3; --muted: #8b949e; --radius: 12px; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(13,17,23,.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .logo { font-weight: 700; font-size: 1.1rem; color: var(--accent); }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+    #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 2rem 4rem; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(88,166,255,.15) 0%, transparent 70%); }
+    .hero-inner { max-width: 700px; }
+    .hero-badge { display: inline-block; background: rgba(88,166,255,.1); border: 1px solid rgba(88,166,255,.3); color: var(--accent); padding: .3rem .9rem; border-radius: 999px; font-size: .8rem; margin-bottom: 1.5rem; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; line-height: 1.15; margin-bottom: 1rem; }
+    h1 span { color: var(--accent); }
+    .hero-sub { font-size: 1.15rem; color: var(--muted); margin-bottom: 2rem; }
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: .65rem 1.6rem; border-radius: var(--radius); font-size: .95rem; font-weight: 600; text-decoration: none; transition: all .2s; }
+    .btn-primary { background: var(--accent); color: #0d1117; }
+    .btn-primary:hover { background: #79c0ff; }
+    .btn-ghost { border: 1px solid var(--border); color: var(--text); background: transparent; }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    section { padding: 6rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .section-title { font-size: 1.75rem; font-weight: 700; margin-bottom: .5rem; display: flex; align-items: center; gap: .6rem; }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .section-sub { color: var(--muted); margin-bottom: 2.5rem; font-size: .95rem; }
+    #about { background: var(--surface); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    @media(max-width:640px){ .about-grid { grid-template-columns: 1fr; } }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; }
+    .about-text p strong { color: var(--text); }
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+    .info-list li { color: var(--muted); font-size: .9rem; }
+    .info-list li span.label { color: var(--text); font-weight: 600; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+    .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem 1.5rem; transition: border-color .2s, transform .2s; }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .skill-card h4 { font-size: .95rem; margin-bottom: .8rem; color: var(--accent); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tag { background: rgba(88,166,255,.1); color: var(--accent); padding: .2rem .65rem; border-radius: 999px; font-size: .78rem; border: 1px solid rgba(88,166,255,.2); }
+    .tag.green { background: rgba(63,185,80,.1); color: var(--accent2); border-color: rgba(63,185,80,.2); }
+    #projects { background: var(--surface); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .project-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; gap: .8rem; transition: border-color .2s, transform .2s; }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .project-badge { background: rgba(88,166,255,.1); color: var(--accent); padding: .15rem .55rem; border-radius: 6px; font-size: .75rem; font-weight: 700; border: 1px solid rgba(88,166,255,.2); }
+    .project-links a { color: var(--muted); text-decoration: none; font-size: .8rem; padding: .2rem .6rem; border: 1px solid var(--border); border-radius: 6px; transition: all .2s; }
+    .project-links a:hover { color: var(--accent); border-color: var(--accent); }
+    .project-card h3 { font-size: 1rem; font-weight: 700; }
+    .project-card p { color: var(--muted); font-size: .88rem; flex: 1; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+    .timeline-item { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.3rem 1.5rem; }
+    .timeline-item .date { font-size: .8rem; color: var(--accent); font-weight: 600; margin-bottom: .3rem; }
+    .timeline-item h3 { font-size: 1rem; font-weight: 700; }
+    .timeline-item .school { color: var(--muted); font-size: .9rem; }
+    .timeline-item p { color: var(--muted); font-size: .88rem; margin-top: .5rem; }
+    #experience { background: var(--surface); }
+    .exp-item { background: var(--bg); border: 1px solid var(--border); border-left: 3px solid var(--accent2); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.3rem 1.5rem; margin-bottom: 1.2rem; }
+    .exp-item .date { font-size: .8rem; color: var(--accent2); font-weight: 600; margin-bottom: .3rem; }
+    .exp-item h3 { font-size: 1rem; font-weight: 700; }
+    .exp-item .company { color: var(--muted); font-size: .9rem; }
+    .exp-item ul { margin-top: .6rem; padding-left: 1.2rem; color: var(--muted); font-size: .88rem; }
+    .exp-item ul li { margin-bottom: .3rem; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; }
+    .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; text-decoration: none; color: var(--text); display: block; transition: border-color .2s, transform .2s; }
+    .contact-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .contact-icon { font-size: 1.4rem; font-weight: 700; color: var(--accent); margin-bottom: .6rem; }
+    .contact-card h4 { font-size: .9rem; font-weight: 700; }
+    .contact-card span { font-size: .8rem; color: var(--muted); display: block; margin-top: .3rem; }
+    footer { text-align: center; padding: 2rem; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border); }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="logo">&lt;niniallx /&gt;</div>
+  <ul class="nav-links">
+    <li><a href="#about">A propos</a></li>
+    <li><a href="#skills">Competences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#education">Formation</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Disponible - Ouvert aux opportunites</div>
+    <h1>Bonjour, je suis <span>niniallx</span></h1>
+    <p class="hero-sub">Etudiant en informatique &mdash; Developpeur full-stack &mdash; Passionne par les nouvelles technologies</p>
+    <div class="btn-group">
+      <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+      <a href="#contact" class="btn btn-ghost">Me contacter</a>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">A propos</h2>
+    <p class="section-sub">Qui suis-je ?</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Je suis <strong>etudiant en informatique</strong>, passionne par le developpement logiciel, le web et les systemes. Mon parcours m'a permis d'acquerir des bases solides en algorithmique, bases de donnees, developpement web et genie logiciel.</p>
+        <p>Je m'investis dans des projets varies, tant academiques que personnels, pour mettre en pratique mes apprentissages et explorer de nouvelles technologies.</p>
+      </div>
+      <ul class="info-list">
+        <li><span class="label">Localisation : </span>France</li>
+        <li><span class="label">Formation : </span>BUT Informatique</li>
+        <li><span class="label">Langues : </span>Francais &amp; Anglais</li>
+        <li><span class="label">Statut : </span>Etudiant &mdash; Recherche de stage/alternance</li>
+        <li><span class="label">GitHub : </span>github.com/niniallx</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Competences</h2>
+    <p class="section-sub">Technologies et outils maitrise</p>
+    <div class="skills-grid">
+      <div class="skill-card"><h4>Langages</h4><div class="tag-list"><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C/C++</span><span class="tag">SQL</span><span class="tag">PHP</span></div></div>
+      <div class="skill-card"><h4>Web &amp; Frameworks</h4><div class="tag-list"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Symfony</span><span class="tag">HTML/CSS</span><span class="tag">REST API</span></div></div>
+      <div class="skill-card"><h4>Bases de donnees</h4><div class="tag-list"><span class="tag green">MySQL</span><span class="tag green">PostgreSQL</span><span class="tag green">MongoDB</span><span class="tag green">SQLite</span></div></div>
+      <div class="skill-card"><h4>Outils &amp; DevOps</h4><div class="tag-list"><span class="tag green">Git</span><span class="tag green">GitHub</span><span class="tag green">Docker</span><span class="tag green">Linux</span><span class="tag green">VS Code</span></div></div>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projets</h2>
+    <p class="section-sub">Selection de projets academiques et personnels</p>
+    <div class="projects-grid">
+      <div class="project-card"><div class="project-header"><span class="project-badge">JS</span><div class="project-links"><a href="https://github.com/niniallx/search-films" target="_blank">GitHub</a></div></div><h3>Search Films</h3><p>Application de recherche de films via API externe. Interface moderne avec gestion des favoris.</p><div class="project-tags"><span class="tag">JavaScript</span><span class="tag">API REST</span><span class="tag">HTML/CSS</span></div></div>
+      <div class="project-card"><div class="project-header"><span class="project-badge">React</span><div class="project-links"><a href="https://github.com/niniallx/reminder-app" target="_blank">GitHub</a></div></div><h3>Reminder App</h3><p>Gestion de taches avec notifications, persistance locale et interface intuitive.</p><div class="project-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div></div>
+      <div class="project-card"><div class="project-header"><span class="project-badge">FS</span><div class="project-links"><a href="https://github.com/niniallx/noor-app" target="_blank">GitHub</a></div></div><h3>Noor App</h3><p>Application web complete avec back-end API et front-end React. Gestion utilisateurs, authentification JWT.</p><div class="project-tags"><span class="tag">React</span><span class="tag">Express</span><span class="tag">JWT</span></div></div>
+      <div class="project-card"><div class="project-header"><span class="project-badge">PHP</span><div class="project-links"><a href="https://github.com/niniallx/wr506d-symfony" target="_blank">GitHub</a></div></div><h3>Projet Symfony WR506D</h3><p>Projet universitaire full-stack avec Symfony et gestion de ressources RESTful via API Platform.</p><div class="project-tags"><span class="tag green">Symfony</span><span class="tag green">PHP</span><span class="tag green">API Platform</span></div></div>
+      <div class="project-card"><div class="project-header"><span class="project-badge">API</span><div class="project-links"><a href="https://github.com/niniallx/noor-back" target="_blank">GitHub</a></div></div><h3>Noor Back-end</h3><p>API REST robuste avec Node.js/Express, gestion des roles, middleware d'auth et base PostgreSQL.</p><div class="project-tags"><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">REST</span></div></div>
+      <div class="project-card"><div class="project-header"><span class="project-badge">Web</span><div class="project-links"><a href="https://github.com/niniallx/wr602d" target="_blank">GitHub</a></div></div><h3>Projet WR602D</h3><p>Developpement web avance : integration API, composants reutilisables et bonnes pratiques logicielles.</p><div class="project-tags"><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span></div></div>
+    </div>
+  </div>
+</section>
+<section id="education">
+  <div class="container">
+    <h2 class="section-title">Formation</h2>
+    <p class="section-sub">Parcours academique</p>
+    <div class="timeline">
+      <div class="timeline-item"><div class="date">En cours</div><h3>BUT Informatique</h3><div class="school">IUT / Universite</div><p>Developpement web, algorithmique, bases de donnees, reseaux, genie logiciel, projets en equipe.</p></div>
+      <div class="timeline-item"><div class="date">2022</div><h3>Baccalaureat</h3><div class="school">Lycee</div><p>Option Mathematiques et Numerique et Sciences Informatiques (NSI).</p></div>
+    </div>
+  </div>
+</section>
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Experiences</h2>
+    <p class="section-sub">Stages, projets professionnels et associatifs</p>
+    <div class="exp-item"><div class="date">Projets universitaires 2023 - 2025</div><h3>Developpeur Full-Stack</h3><div class="company">Projets academiques en equipe</div><ul><li>Developpement API REST avec Symfony et Node.js</li><li>Integration de front-ends React avec gestion d'etat</li><li>Utilisation de Git/GitHub pour le travail collaboratif</li><li>Documentation technique et tests unitaires</li></ul></div>
+    <div class="exp-item"><div class="date">Projets personnels &mdash; continu</div><h3>Developpeur et Createur</h3><div class="company">Open Source</div><ul><li>Conception et developpement d'applications web completes</li><li>Deploiement sur services cloud</li><li>Veille technologique active sur les tendances web</li></ul></div>
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">N'hesitez pas a me contacter pour toute opportunite ou collaboration</p>
+    <div class="contact-grid">
+      <a href="https://github.com/niniallx" target="_blank" class="contact-card"><div class="contact-icon">GH</div><h4>GitHub</h4><span>github.com/niniallx</span></a>
+      <a href="mailto:votre@email.com" class="contact-card"><div class="contact-icon">@</div><h4>Email</h4><span>votre@email.com</span></a>
+      <a href="https://linkedin.com/in/niniallx" target="_blank" class="contact-card"><div class="contact-icon">in</div><h4>LinkedIn</h4><span>linkedin.com/in/niniallx</span></a>
+    </div>
+  </div>
+</section>
+<footer><p>2026 niniallx &mdash; Fait avec passion &mdash; <a href="https://github.com/niniallx/niniallx.github.io">Code source</a></p></footer>
+</body>
+</html>
