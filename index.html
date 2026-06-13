@@ -3,132 +3,642 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio | Dev & UX-UI Designer</title>
+    <title>Nimotalah ALLI — Portfolio</title>
+    <!-- Tailwind CSS (v4) -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Fonts : Outfit (Titres ronds et forts) et Inter (Texte léger et moderne) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
         }
-        h1, h2, h3, .font-heading {
+        h1, h2, h3, h4, .font-heading {
             font-family: 'Outfit', sans-serif;
         }
-        /* Animation d'apparition douce */
+        
+        /* Transition fluide d'apparition au chargement */
         .fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Animation des arrière-plans floutés pour un rendu fluide et organique */
+        @keyframes drift {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -40px) scale(1.08); }
+            100% { transform: translate(-15px, 20px) scale(0.95); }
+        }
+        .animate-drift-slow {
+            animation: drift 20s ease-in-out infinite alternate;
+        }
+        .animate-drift-reverse {
+            animation: drift 24s ease-in-out infinite alternate-reverse;
+        }
+
+        /* Système de pages fluides sans rechargement */
+        .page {
+            display: none;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .page.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Curseur personnalisé ultra-minimaliste et intuitif */
+        #cursor {
+            transition: width .15s, height .15s, background-color .15s, transform .05s ease-out;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
-<body class="text-neutral-900 antialiased selection:bg-emerald-100">
+<body class="text-neutral-900 antialiased selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden">
 
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-tr from-emerald-200/30 to-yellow-200/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-1/2 right-10 w-[500px] h-[500px] bg-gradient-to-br from-pink-200/20 via-purple-100/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Curseur Personnalisé Simplifié (Masqué sur mobile) -->
+    <div id="cursor" class="fixed w-2.5 h-2.5 bg-emerald-500 rounded-full pointer-events-none z-50 hidden md:block"></div>
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-100 px-6 py-4 flex justify-between items-center">
-        <a href="#" class="font-heading text-xl font-extrabold tracking-tight hover:opacity-70 transition-opacity">DESIGN<span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-pink-500">.</span>DEV</a>
-        <div class="space-x-8 text-sm font-medium text-neutral-600">
-            <a href="#projets" class="hover:text-black transition-colors">Projets</a>
-            <a href="#a-propos" class="hover:text-black transition-colors">À Propos</a>
-            <a href="mailto:contact@example.com" class="px-4 py-2 rounded-full bg-neutral-950 text-white hover:bg-neutral-800 transition-all shadow-sm">Contact</a>
-        </div>
-    </nav>
+    <!-- DOUBLE GRADIENT SPOTTING (Subtile & élégant, issu de ton premier design) -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-emerald-200/30 to-yellow-200/20 rounded-full blur-3xl pointer-events-none animate-drift-slow z-0"></div>
+    <div class="absolute top-[120vh] right-10 w-[600px] h-[600px] bg-gradient-to-br from-pink-200/20 via-purple-100/15 to-transparent rounded-full blur-3xl pointer-events-none animate-drift-reverse z-0"></div>
 
-    <main class="max-w-6xl mx-auto px-6 pt-24 pb-16 min-h-[80vh] flex flex-col justify-center fade-in-up">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-neutral-50 text-xs font-medium text-neutral-600 w-fit mb-6">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Disponible pour de nouvelles opportunités
-        </div>
-        
-        <h1 class="text-5xl md:text-7xl font-black tracking-tight max-w-4xl leading-[1.1] mb-8">
-            Je crée des expériences numériques <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-yellow-400 to-pink-500">fluides</span> et techniquement robustes.
-        </h1>
-        
-        <p class="text-lg md:text-xl text-neutral-500 font-light max-w-2xl leading-relaxed mb-12">
-            Étudiant en fin de cycle, j'allie la rigueur du **Développement Front-End** à la sensibilité de l'**UX/UI Design** pour concevoir des produits complets, de la recherche utilisateur au déploiement.
-        </p>
-
-        <div class="flex gap-4">
-            <a href="#projets" class="group px-6 py-3 rounded-full bg-neutral-950 text-white font-medium hover:bg-neutral-900 transition-all flex items-center gap-2 shadow-lg shadow-neutral-950/10">
-                Voir mes projets 
-                <svg class="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white/70 backdrop-blur-md border-b border-neutral-100 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" onclick="showPage('home'); return false;" class="font-heading text-xl font-extrabold tracking-tight hover:opacity-75 transition-opacity lowercase">
+                nimotalah<span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-yellow-400 to-pink-500">.</span>
             </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-neutral-600">
+                <a href="#about" onclick="showPage('home'); setTimeout(()=>document.getElementById('about').scrollIntoView({behavior:'smooth'}), 100); return false;" class="hover:text-black transition-colors">À Propos</a>
+                <a href="#projets-pro" onclick="showPage('home'); setTimeout(()=>document.getElementById('projets-pro').scrollIntoView({behavior:'smooth'}), 100); return false;" class="hover:text-black transition-colors">Projets Pro</a>
+                <a href="#projets-uni" onclick="showPage('home'); setTimeout(()=>document.getElementById('projets-uni').scrollIntoView({behavior:'smooth'}), 100); return false;" class="hover:text-black transition-colors">Projets Universitaires</a>
+                <a href="mailto:nimotalahalli@gmail.com" class="px-4 py-2 rounded-full bg-neutral-950 text-white hover:bg-neutral-800 transition-all shadow-sm">Contact</a>
+            </nav>
+            <a href="mailto:nimotalahalli@gmail.com" class="md:hidden px-4 py-2 rounded-full bg-neutral-950 text-white text-xs font-semibold">Contact</a>
         </div>
-    </main>
+    </header>
 
-    <section id="projets" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
-        <div class="flex justify-between items-end mb-16">
-            <div>
-                <p class="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2">Sélection de travaux</p>
-                <h2 class="text-3xl md:text-5xl font-black tracking-tight">Projets Récents</h2>
+    <!-- ==================== PAGE : ACCUEIL ==================== -->
+    <div id="page-home" class="page active relative z-10">
+        
+        <!-- HERO SECTION -->
+        <main class="max-w-6xl mx-auto px-6 pt-24 pb-16 min-h-[85vh] flex flex-col justify-center fade-in-up">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-neutral-50/80 backdrop-blur-xs text-xs font-medium text-neutral-600 w-fit mb-6 shadow-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Disponible pour des opportunités
             </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12">
             
-            <div class="group cursor-pointer">
-                <div class="relative overflow-hidden rounded-3xl bg-neutral-100 border border-neutral-200 aspect-[4/3] mb-6 transition-all duration-500 group-hover:shadow-xl group-hover:shadow-emerald-500/5 group-hover:-translate-y-1">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="w-full h-full flex items-center justify-center text-neutral-400 font-light italic">
-                        [ Image du projet (Mockup UI ou Code) ]
-                    </div>
-                </div>
-                <div class="flex justify-between items-start px-2">
-                    <div>
-                        <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-emerald-600 transition-colors">Nom du Projet 1</h3>
-                        <p class="text-neutral-500 font-light text-sm max-w-sm mb-4">Refonte UX et développement d'une application SaaS de gestion éco-responsable.</p>
-                        <div class="flex gap-2">
-                            <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">UX Research</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">React</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Tailwind</span>
+            <h1 class="text-5xl md:text-8xl font-black tracking-tight max-w-5xl leading-[1.05] mb-8">
+                Je façonne des applications web <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-yellow-400 to-pink-500">robustes</span> et des expériences fluides.
+            </h1>
+            
+            <p class="text-lg md:text-xl text-neutral-500 font-light max-w-3xl leading-relaxed mb-12">
+                Étudiante en fin d'études de **BUT MMI (Parcours Développement Web et Dispositifs Interactifs)** à l'IUT de Troyes. J'allie l'ingénierie rigoureuse de l'architecture back-end à la finesse des détails front-end et de l'ergonomie.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#projets-pro" onclick="document.getElementById('projets-pro').scrollIntoView({behavior:'smooth'}); return false;" class="group px-6 py-3 rounded-full bg-neutral-950 text-white font-medium hover:bg-neutral-900 transition-all flex items-center justify-center gap-2 shadow-lg shadow-neutral-950/10">
+                    Découvrir mes projets
+                    <svg class="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </a>
+                <a href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); return false;" class="px-6 py-3 rounded-full border border-neutral-200 bg-white/80 text-neutral-800 hover:bg-neutral-50 transition-all flex items-center justify-center font-medium">
+                    Me contacter
+                </a>
+            </div>
+        </main>
+
+        <!-- SECTION À PROPOS -->
+        <section id="about" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
+            <div class="grid md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-5">
+                    <div class="bg-neutral-50 border border-neutral-100 p-8 rounded-3xl relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-100/40 rounded-full blur-2xl"></div>
+                        <div class="w-16 h-16 bg-neutral-950 rounded-2xl flex items-center justify-center font-heading text-xl font-bold text-white mb-6">
+                            NA
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1">Nimotalah ALLI</h3>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-6 leading-relaxed">
+                            Étudiante en BUT3 parcours développement web et dispositifs interactifs
+                        </p>
+                        
+                        <div class="space-y-3 text-sm text-neutral-600">
+                            <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-neutral-100 shadow-2xs">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> BUT3 DWD — IUT Troyes
+                            </div>
+                            <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-neutral-100 shadow-2xs">
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span> GitHub: @niniallx
+                            </div>
                         </div>
                     </div>
-                    <a href="projet-detail.html" class="p-3 rounded-full border border-neutral-200 text-neutral-400 group-hover:text-black group-hover:border-black transition-all">
-                        <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
+                </div>
+
+                <div class="md:col-span-7">
+                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">PROFIL TECHNIQUE</p>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6">L'ingénierie alliée à la sensibilité UX.</h2>
+                    <div class="space-y-6 text-neutral-500 font-light leading-relaxed text-base md:text-lg">
+                        <p>
+                            Actuellement en dernière année de **BUT Métiers du Multimédia et de l'Internet**, je me concentre sur la création d'architectures applicatives pérennes, de la conception à la mise en ligne.
+                        </p>
+                        <p>
+                            Ma double expertise me permet d'intervenir à la fois sur l'architecture de bases de données et la logique serveur (<strong class="text-neutral-950 font-medium">Symfony 7, Node.js, PostgreSQL</strong>) et sur le développement d'interfaces fluides et ergonomiques en s'appuyant sur des composants modernes (<strong class="text-neutral-950 font-medium">Vue.js 3, React, Tailwind CSS</strong>).
+                        </p>
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap gap-2">
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Symfony 7</span>
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Vue.js 3</span>
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Node.js</span>
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">React</span>
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">API REST & JWT</span>
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PROJETS PRO -->
+        <section id="projets-pro" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">RÉALISATIONS PROFESSIONNELLES</p>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight">Projets Pro</h2>
                 </div>
             </div>
 
-            <div class="group cursor-pointer">
-                <div class="relative overflow-hidden rounded-3xl bg-neutral-100 border border-neutral-200 aspect-[4/3] mb-6 transition-all duration-500 group-hover:shadow-xl group-hover:shadow-pink-500/5 group-hover:-translate-y-1">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="w-full h-full flex items-center justify-center text-neutral-400 font-light italic">
-                        [ Image du projet (Design System Figma) ]
-                    </div>
-                </div>
-                <div class="flex justify-between items-start px-2">
-                    <div>
-                        <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-pink-600 transition-colors">Nom du Projet 2</h3>
-                        <p class="text-neutral-500 font-light text-sm max-w-sm mb-4">Création d'un Design System complet et intégration d'une plateforme e-commerce.</p>
-                        <div class="flex gap-2">
-                            <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">UI Design</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Astro.js</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Figma</span>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- CARTE PROJET 1 : RJ10 (Terminé) -->
+                <div class="group cursor-pointer flex flex-col h-full" onclick="showProject('rj10')">
+                    <div class="relative overflow-hidden rounded-3xl bg-neutral-50 border border-neutral-100 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/5 group-hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="w-full h-full flex flex-col justify-between p-8">
+                            <div class="flex justify-between items-start">
+                                <span class="text-2xl">🔔</span>
+                                <a href="https://github.com/niniallx" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-900 hover:text-white transition-all shadow-2xs">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                                </a>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-[10px] font-bold tracking-widest uppercase bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full border border-emerald-200/40">Stage BUT3 · Terminé</span>
+                                <h4 class="text-xl font-bold text-neutral-950 mt-1">Plateforme de relance et suivi</h4>
+                            </div>
                         </div>
                     </div>
-                    <a href="projet-detail.html" class="p-3 rounded-full border border-neutral-200 text-neutral-400 group-hover:text-black group-hover:border-black transition-all">
-                        <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
+                    <div class="flex justify-between items-start px-2 mt-auto">
+                        <div>
+                            <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-emerald-600 transition-colors">RJ10 Rappel</h3>
+                            <p class="text-neutral-500 font-light text-sm max-w-sm mb-4">Application de rappel automatique pour le renouvellement des certifications professionnelles.</p>
+                            <div class="flex gap-2">
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Symfony 7</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Vue.js 3</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-full border border-neutral-200 text-neutral-400 group-hover:text-black group-hover:border-black transition-all">
+                            <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARTE PROJET 2 : NOOR APP (En cours) -->
+                <div class="group cursor-pointer flex flex-col h-full" onclick="showProject('noor')">
+                    <div class="relative overflow-hidden rounded-3xl bg-neutral-50 border border-neutral-100 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-pink-500/5 group-hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="w-full h-full flex flex-col justify-between p-8">
+                            <div class="flex justify-between items-start">
+                                <span class="text-2xl">🌙</span>
+                                <a href="https://github.com/niniallx" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-900 hover:text-white transition-all shadow-2xs">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                                </a>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-100 text-pink-800 px-2.5 py-1 rounded-full border border-pink-200/40">Full-stack · En cours</span>
+                                <h4 class="text-xl font-bold text-neutral-950 mt-1">Architecture client/serveur découplée</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start px-2 mt-auto">
+                        <div>
+                            <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-pink-600 transition-colors">Noor App</h3>
+                            <p class="text-neutral-500 font-light text-sm max-w-sm mb-4">Application full-stack découplée avec gestion de privilèges d'accès et API REST robuste.</p>
+                            <div class="flex gap-2">
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Node.js</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">React</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-full border border-neutral-200 text-neutral-400 group-hover:text-black group-hover:border-black transition-all">
+                            <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARTE PROJET 3 : EN COURS DE CONCEPTION (Nouveau) -->
+                <div class="group flex flex-col h-full opacity-80 hover:opacity-100 transition-opacity">
+                    <div class="relative overflow-hidden rounded-3xl bg-neutral-50/50 border border-dashed border-neutral-200 aspect-[16/10] mb-6 flex flex-col justify-between p-8">
+                        <span class="text-2xl">🛸</span>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-bold tracking-widest uppercase bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full border border-neutral-200/40">Création · Prochainement</span>
+                            <h4 class="text-xl font-bold text-neutral-400 mt-1">Nouveau projet pro</h4>
+                        </div>
+                    </div>
+                    <div class="px-2 mt-auto">
+                        <h3 class="text-2xl font-bold tracking-tight mb-2 text-neutral-400">Projet en réflexion</h3>
+                        <p class="text-neutral-400 font-light text-sm max-w-sm mb-4">Un nouveau défi technique et créatif mêlant architecture back-end robuste et interface dynamique.</p>
+                        <div class="flex gap-2 opacity-50">
+                            <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-400 font-medium">En cours...</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION PROJETS UNI -->
+        <section id="projets-uni" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
+            <div class="mb-16">
+                <p class="text-xs font-bold uppercase tracking-widest text-yellow-500 mb-2">CURRICULUM ACADÉMIQUE</p>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight">Projets Universitaires</h2>
+                <p class="text-neutral-500 font-light max-w-lg mt-2">Applications développées et soutenues pour la validation des différents semestres de mon BUT MMI.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- PROJET UNI 1 : Symfony -->
+                <div class="bg-neutral-50 border border-neutral-100 rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold px-3 py-1 bg-neutral-200 text-neutral-700 rounded-full">WR506D</span>
+                        <h3 class="text-2xl font-bold tracking-tight mt-4 mb-3">Symfony & Search Films</h3>
+                        <p class="text-neutral-500 font-light text-sm leading-relaxed mb-6">
+                            Un ensemble de deux projets complémentaires : une API robuste développée en PHP avec Symfony et API Platform en back-end, couplée à une interface interactive de recherche de films consommant des APIs tierces.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-neutral-200/40 flex flex-wrap justify-between items-center gap-4">
+                        <div class="flex gap-2">
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">Symfony</span>
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">API Platform</span>
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/niniallx" target="_blank" class="text-xs font-bold text-neutral-900 hover:opacity-70 flex items-center gap-1">
+                            GitHub <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJET UNI 2 : JS Avancé -->
+                <div class="bg-neutral-50 border border-neutral-100 rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold px-3 py-1 bg-neutral-200 text-neutral-700 rounded-full">WR602D</span>
+                        <h3 class="text-2xl font-bold tracking-tight mt-4 mb-3">Projet WR602D</h3>
+                        <p class="text-neutral-500 font-light text-sm leading-relaxed mb-6">
+                            Projet avancé de dernière année de BUT MMI, axé sur la programmation modulaire en JavaScript, la gestion dynamique de requêtes asynchrones et la mise en pratique de documentations techniques normées.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-neutral-200/40 flex flex-wrap justify-between items-center gap-4">
+                        <div class="flex gap-2">
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">JavaScript</span>
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">HTML/CSS</span>
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">REST API</span>
+                        </div>
+                        <a href="https://github.com/niniallx" target="_blank" class="text-xs font-bold text-neutral-900 hover:opacity-70 flex items-center gap-1">
+                            GitHub <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION PARCOURS / EXPÉRIENCES -->
+        <section id="experience" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-xs font-bold uppercase tracking-widest text-pink-500 mb-2">CURRICULUM VITAE</p>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight">Expériences</h2>
+            </div>
+            
+            <div class="max-w-xl mx-auto bg-neutral-50/50 border border-neutral-200/60 border-dashed rounded-3xl p-12 text-center">
+                <span class="text-3xl mb-4 block">✏️</span>
+                <p class="text-neutral-900 font-semibold mb-2">Cette section est en cours de rédaction.</p>
+                <p class="text-neutral-400 text-sm font-light">Je mets à jour mes derniers rôles académiques et associatifs pour valoriser ma fin d'études. Revenez vite !</p>
+            </div>
+        </section>
+
+        <!-- SECTION CONTACT -->
+        <section id="contact" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">RESTONS EN CONTACT</p>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight">Travaillons ensemble !</h2>
+                <p class="text-neutral-500 font-light mt-2 max-w-md mx-auto">Une offre d'emploi, un projet freelance, ou tout simplement envie de faire connaissance ? Écrivez-moi !</p>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="https://github.com/niniallx" target="_blank" class="group bg-neutral-50 p-8 rounded-2xl border border-neutral-100 shadow-3xs flex flex-col items-center hover:border-black transition-colors">
+                    <span class="w-12 h-12 bg-white rounded-xl flex items-center justify-center font-bold text-neutral-900 shadow-2xs group-hover:bg-emerald-500 group-hover:text-white transition-all mb-4">
+                        GH
+                    </span>
+                    <span class="font-heading text-base font-bold text-neutral-950 mb-1">GitHub</span>
+                    <span class="text-xs text-neutral-400">@niniallx</span>
+                </a>
+
+                <a href="mailto:nimotalahalli@gmail.com" class="group bg-neutral-50 p-8 rounded-2xl border border-neutral-100 shadow-3xs flex flex-col items-center hover:border-black transition-colors">
+                    <span class="w-12 h-12 bg-white rounded-xl flex items-center justify-center font-bold text-neutral-900 shadow-2xs group-hover:bg-yellow-400 group-hover:text-neutral-950 transition-all mb-4">
+                        @
+                    </span>
+                    <span class="font-heading text-base font-bold text-neutral-950 mb-1">Email</span>
+                    <span class="text-xs text-neutral-400">nimotalahalli@gmail.com</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/nimotalah-alli-/" target="_blank" class="group bg-neutral-50 p-8 rounded-2xl border border-neutral-100 shadow-3xs flex flex-col items-center hover:border-black transition-colors">
+                    <span class="w-12 h-12 bg-white rounded-xl flex items-center justify-center font-bold text-neutral-900 shadow-2xs group-hover:bg-pink-500 group-hover:text-white transition-all mb-4">
+                        in
+                    </span>
+                    <span class="font-heading text-base font-bold text-neutral-950 mb-1">LinkedIn</span>
+                    <span class="text-xs text-neutral-400">Nimotalah ALLI</span>
+                </a>
+            </div>
+        </section>
+
+    </div><!-- END PAGE : ACCUEIL -->
+
+
+    <!-- ==================== CASE STUDY : RJ10 RAPPEL ==================== -->
+    <div id="page-rj10" class="page relative z-10">
+        <div class="max-w-4xl mx-auto px-6 py-12">
+            <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 mb-12 cursor-pointer">
+                <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                Retour à l'accueil
+            </button>
+
+            <!-- Cas Header -->
+            <div class="bg-neutral-50 rounded-3xl border border-neutral-100 p-8 md:p-12 shadow-sm relative overflow-hidden mb-8">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-200/20 rounded-full blur-2xl"></div>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200 mb-6 inline-block">Stage BUT3 · Terminé</span>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4">RJ10 Rappel</h1>
+                <p class="text-neutral-500 font-light text-base md:text-lg leading-relaxed mb-6">
+                    Application web de relance automatisée pour le renouvellement des certifications professionnelles — réalisée en autonomie lors de mon stage de fin d'études chez RJ10 Formation.
+                </p>
+
+                <div class="flex flex-wrap gap-2 pt-6 border-t border-neutral-200/60">
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Symfony 7</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Vue.js 3</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">JWT Auth</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Symfony Mailer</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Asynchrone Messenger</span>
                 </div>
             </div>
 
+            <!-- Cas Body Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="md:col-span-2 space-y-8">
+                    <!-- Section 1 : Contexte -->
+                    <div class="bg-white rounded-2xl border border-neutral-100 p-8 shadow-3xs">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-semibold">01</span>
+                            Contexte & Problématique
+                        </h4>
+                        <p class="text-neutral-500 text-sm font-light leading-relaxed">
+                            RJ10 Formation est un organisme spécialisé en sécurité professionnelle basé à Troyes. La gestion manuelle du renouvellement périodique des habilitations (SST, habilitation électrique, etc.) pour des milliers d'employés s'avérait chronophage et propice aux oublis critiques. Mon rôle a été de concevoir de A à Z une application moderne capable d'assurer ce suivi de façon entièrement automatisée.
+                        </p>
+                    </div>
+
+                    <!-- CSS Simulation : Elegant Interactive Mockup -->
+                    <div class="border border-neutral-100 rounded-2xl bg-neutral-50 p-6 shadow-3xs">
+                        <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest block mb-4">Aperçu Conceptuel · Dashboard</span>
+                        <div class="bg-white rounded-xl border border-neutral-200/60 p-4 shadow-2xs space-y-3">
+                            <div class="flex justify-between items-center pb-2 border-b border-neutral-100">
+                                <span class="text-xs font-bold text-neutral-900">Certifications en cours de validité</span>
+                                <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">98.2% Conformes</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs text-neutral-500">
+                                    <span>Habilitation Électrique (B2V) · Entreprise AXA</span>
+                                    <span class="text-amber-500 font-semibold bg-amber-50 px-1.5 py-0.5 rounded-md text-[10px]">J-14 avant relance</span>
+                                </div>
+                                <div class="w-full bg-neutral-100 rounded-full h-1.5">
+                                    <div class="bg-amber-400 h-1.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2 : Fonctionnalités -->
+                    <div class="bg-white rounded-2xl border border-neutral-100 p-8 shadow-3xs">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-semibold">02</span>
+                            Fonctionnalités intégrées
+                        </h4>
+                        <ul class="space-y-3.5 text-sm font-light text-neutral-500">
+                            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✦</span> Analyse automatique quotidienne des échéances et envoi d'emails responsives.</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✦</span> Espace d'administration complet (CRUD) pour les clients, formateurs et types de certificats.</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✦</span> File d'attente d'envoi gérée par bus asynchrone (Symfony Messenger) pour fiabiliser les emails.</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold">✦</span> Module d'invitation utilisateur sécurisé par jetons d'authentification uniques.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cas Sidebar Info -->
+                <div class="space-y-6">
+                    <div class="bg-neutral-50 border border-neutral-100 rounded-2xl p-6">
+                        <h4 class="font-heading text-xs font-bold text-neutral-400 uppercase tracking-wider mb-4">Données Métiers</h4>
+                        <ul class="space-y-3 text-xs font-bold text-neutral-600">
+                            <li class="flex items-center justify-between"><span>Langage API :</span> <span class="text-neutral-900 font-bold">PHP 8.2 / Symfony 7</span></li>
+                            <li class="flex items-center justify-between"><span>Client lourd :</span> <span class="text-neutral-900 font-bold">Vue.js 3</span></li>
+                            <li class="flex items-center justify-between"><span>Base de données :</span> <span class="text-neutral-900 font-bold">MySQL</span></li>
+                            <li class="flex items-center justify-between"><span>Authentification :</span> <span class="text-neutral-900 font-bold">Stateless (JWT)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white border border-neutral-200/60 rounded-2xl p-6 shadow-2xs">
+                        <h4 class="font-heading text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">Choix d'architecture</h4>
+                        <p class="text-xs font-light text-neutral-500 leading-relaxed">
+                            Afin d'obtenir une réactivité maximale sur le web, l'application est pensée comme une API RESTful stricte. Le front-end en Vue.js consomme les données asynchrones de manière transparente.
+                        </p>
+                    </div>
+
+                    <a href="https://github.com/niniallx" target="_blank" class="w-full py-3.5 rounded-xl bg-neutral-950 text-white font-semibold text-xs text-center flex items-center justify-center gap-2 shadow-sm hover:bg-neutral-800 transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        Accéder au code source (GitHub)
+                    </a>
+                </div>
+
+            </div>
         </div>
-    </section>
+    </div>
 
-    <footer class="border-t border-neutral-100 py-12 max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-400">
-        <p>© 2026 - Conçu & Intégré avec soin.</p>
-        <div class="flex gap-6 mt-4 md:mt-0">
-            <a href="#" class="hover:text-black transition-colors">LinkedIn</a>
-            <a href="#" class="hover:text-black transition-colors">GitHub</a>
-            <a href="#" class="hover:text-black transition-colors">Figma</a>
+
+    <!-- ==================== CASE STUDY : NOOR APP ==================== -->
+    <div id="page-noor" class="page relative z-10">
+        <div class="max-w-4xl mx-auto px-6 py-12">
+            <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 mb-12 cursor-pointer">
+                <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                Retour à l'accueil
+            </button>
+
+            <!-- Cas Header -->
+            <div class="bg-neutral-50 rounded-3xl border border-neutral-100 p-8 md:p-12 shadow-sm relative overflow-hidden mb-8">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-200/20 rounded-full blur-2xl"></div>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-100 text-pink-800 px-3 py-1 rounded-full border border-pink-200 mb-6 inline-block">Full-Stack · En cours</span>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4">Noor App</h1>
+                <p class="text-neutral-500 font-light text-base md:text-lg leading-relaxed mb-6">
+                    Application modulaire complète organisée en double-dépôts — intégrant une API REST en Node.js (Express) et une application cliente responsive en React.
+                </p>
+
+                <div class="flex flex-wrap gap-2 pt-6 border-t border-neutral-200/60">
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Node.js (Express)</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">React (Hooks & Context)</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">PostgreSQL</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">JWT Auth</span>
+                </div>
+            </div>
+
+            <!-- Cas Body Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="md:col-span-2 space-y-8">
+                    <!-- Section 1 : Contexte -->
+                    <div class="bg-white rounded-2xl border border-neutral-100 p-8 shadow-3xs">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-pink-50 text-pink-600 flex items-center justify-center text-xs font-semibold">01</span>
+                            Analyse & Choix Techniques
+                        </h4>
+                        <p class="text-neutral-500 text-sm font-light leading-relaxed">
+                            Noor App a été développée avec une philosophie claire : séparer le serveur applicatif de la couche présentation. L'interface React gère la navigation de manière dynamique et sans rechargement, tandis que l'API construite sous Express assure la validation des données d'entrée, les authentifications cryptées par jetons d'accès et la persistance des relations dans PostgreSQL.
+                        </p>
+                    </div>
+
+                    <!-- Section 2 : Details Back & Front -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="bg-neutral-50 p-6 rounded-2xl border border-neutral-100 shadow-3xs">
+                            <h5 class="font-heading text-sm font-bold text-neutral-900 mb-3 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Back-end (noor-back)
+                            </h5>
+                            <ul class="space-y-2.5 text-xs font-light text-neutral-500">
+                                <li>✓ Routage modulaire et validation des payloads.</li>
+                                <li>✓ Système de chiffrement asymétrique et JWT.</li>
+                                <li>✓ Base relationnelle performante PostgreSQL.</li>
+                                <li>✓ Gestion rigoureuse des erreurs.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-neutral-50 p-6 rounded-2xl border border-neutral-100 shadow-3xs">
+                            <h5 class="font-heading text-sm font-bold text-neutral-900 mb-3 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span> Front-end (noor-app)
+                            </h5>
+                            <ul class="space-y-2.5 text-xs font-light text-neutral-500">
+                                <li>✓ Interface utilisateur hautement responsive.</li>
+                                <li>✓ Gestion globale de l'état utilisateur via Context.</li>
+                                <li>✓ Routage client protégé basé sur les rôles.</li>
+                                <li>✓ Intégration soignée (Tailwind CSS).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cas Sidebar Info -->
+                <div class="space-y-6">
+                    <div class="bg-neutral-50 border border-neutral-100 rounded-2xl p-6">
+                        <h4 class="font-heading text-xs font-bold text-neutral-400 uppercase tracking-wider mb-4">Fiche d'ingénierie</h4>
+                        <ul class="space-y-3 text-xs font-bold text-neutral-600">
+                            <li class="flex items-center justify-between"><span>Serveur :</span> <span class="text-neutral-900 font-bold">Node.js / Express</span></li>
+                            <li class="flex items-center justify-between"><span>Client :</span> <span class="text-neutral-900 font-bold">React (Axios)</span></li>
+                            <li class="flex items-center justify-between"><span>Base :</span> <span class="text-neutral-900 font-bold">PostgreSQL</span></li>
+                            <li class="flex items-center justify-between"><span>Sécurisation :</span> <span class="text-neutral-900 font-bold">JWT Token</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white border border-neutral-200/60 rounded-2xl p-6 shadow-2xs">
+                        <h4 class="font-heading text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">Contrôle d'accès</h4>
+                        <p class="text-xs font-light text-neutral-500 leading-relaxed">
+                            L'application implémente des middlewares spécifiques à chaque route de l'API. Les privilèges de rôles permettent une séparation étanche entre comptes administrateurs et comptes clients simples.
+                        </p>
+                    </div>
+
+                    <a href="https://github.com/niniallx" target="_blank" class="w-full py-3.5 rounded-xl bg-neutral-950 text-white font-semibold text-xs text-center flex items-center justify-center gap-2 shadow-sm hover:bg-neutral-800 transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        Consulter mes codes sources (GitHub)
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-neutral-100 py-16 mt-24">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-400 gap-6">
+            <div class="text-center md:text-left">
+                <p class="font-heading font-extrabold text-neutral-950 text-base mb-1">Nimotalah ALLI</p>
+                <p class="text-xs text-neutral-400">Étudiante en BUT3 parcours développement web et dispositifs interactifs — IUT de Troyes</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="https://www.linkedin.com/in/nimotalah-alli-/" target="_blank" class="hover:text-black transition-colors">LinkedIn</a>
+                <a href="https://github.com/niniallx" target="_blank" class="hover:text-black transition-colors">GitHub</a>
+                <a href="mailto:nimotalahalli@gmail.com" class="hover:text-black transition-colors">Email</a>
+            </div>
+            <p class="text-xs">© 2026 — Tous droits réservés.</p>
         </div>
     </footer>
 
+
+    <!-- JAVASCRIPT SYSTEM & ROUTING -->
+    <script>
+        // Curseur dynamique interactif ultra-simplifié (Point unique réactif et sans latence)
+        const cursor = document.getElementById('cursor');
+
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Hover expansions pour les liens et boutons (Simple & intuitif)
+        document.querySelectorAll('a, button, [onclick], .group').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+                cursor.style.backgroundColor = '#10b981'; // Emerald 500
+                cursor.style.opacity = '0.6';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.backgroundColor = '#10b981';
+                cursor.style.opacity = '1';
+            });
+        });
+
+        // SYSTEM DE ROUTAGE DE PAGES FLUIDE
+        function showPage(pageId) {
+            const activePage = document.querySelector('.page.active');
+            const targetPage = document.getElementById('page-' + pageId);
+            
+            if (activePage) {
+                activePage.classList.remove('active');
+                setTimeout(() => {
+                    activePage.style.display = 'none';
+                }, 100);
+            }
+            
+            if (targetPage) {
+                setTimeout(() => {
+                    targetPage.style.display = 'block';
+                    // Force un léger reflow pour relancer l'opacité CSS
+                    targetPage.offsetHeight;
+                    targetPage.classList.add('active');
+                }, 150);
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showProject(projectId) {
+            showPage(projectId);
+        }
+    </script>
 </body>
 </html>
