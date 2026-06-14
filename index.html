@@ -526,7 +526,7 @@
                                 🔍 Agrandir l'image (Dashboard)
                             </div>
                             <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-4xl mb-2">📊</span>
+                                <span class="text-4xl mb-2"><img src='assets/rj10-dashboard.png' class='w-16 h-16 object-cover rounded-lg mx-auto mb-2' /></span>
                                 <p class="text-xs text-neutral-400 font-light">[ Trace 01 : Capture du Dashboard Vue.js 3 ]</p>
                                 <p class="text-[10px] text-emerald-600 mt-1 font-semibold uppercase">Interface d'administration</p>
                             </div>
@@ -1117,7 +1117,7 @@
         <!-- Image container -->
         <div class="max-w-4xl max-h-[80vh] flex flex-col items-center">
             <div id="lightbox-media-container" class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col items-center justify-center text-white aspect-[16/10] w-[90vw] md:w-[70vw] max-w-3xl">
-                <span id="lightbox-emoji" class="text-6xl mb-4">🖼️</span>
+                <img id="lightbox-img" src="" alt="" class="w-full max-h-[55vh] object-contain rounded-xl mb-4" style="display:none" /><span id="lightbox-emoji" class="text-6xl mb-4">🖼️</span>
                 <p id="lightbox-title" class="text-lg font-bold mb-2">Aperçu du livrable</p>
                 <p id="lightbox-desc" class="text-xs text-neutral-400 font-light text-center px-6">Aucun visuel associé</p>
             </div>
@@ -1208,8 +1208,8 @@
         // BASE DE DONNÉES LIGHTBOX POUR CHAQUE PROJET
         const lightboxData = {
             'rj10': [
-                { emoji: '📊', title: 'Trace 01 : Capture du Dashboard Vue.js 3', desc: "Dashboard d'administration en temps réel modélisé pour l'organisme de formation RJ10." },
-                { emoji: '⚙️', title: 'Trace 02 : Modélisation MySQL / Doctrine Entity', desc: "Schéma conceptuel représentant la structure relationnelle entre les stagiaires et leurs échéances." }
+                { emoji: '📊', title: 'Trace 01 : Capture du Dashboard Vue.js 3', desc: "Dashboard d'administration en temps réel modélisé pour l'organisme de formation RJ10.", src: 'assets/rj10-dashboard.png' },
+                { emoji: '⚙️', title: 'Trace 02 : Modélisation MySQL / Doctrine Entity', desc: "Schéma conceptuel représentant la structure relationnelle entre les stagiaires et leurs échéances.", src: 'assets/rj10-arborescence.png' }
             ],
             'noor': [
                 { emoji: '🔗', title: "Trace 01 : Schéma d'Architecture API REST", desc: "Flux de données asynchrones sécurisés par jetons cryptographiques JWT entre le client React et l'API." },
@@ -1272,7 +1272,7 @@
         // Fermer la Lightbox avec le clavier (Échappe)
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft' && !document.getElementById('lightbox').classList.contains('hidden')) prevLightboxImage();
+            if (e.key === 'ArrowLeft' && !document.getElementhById('lightbox').classList.contains('hidden')) prevLightboxImage();
             if (e.key === 'ArrowRight' && !document.getElementById('lightbox').classList.contains('hidden')) nextLightboxImage();
         });
     </script>
