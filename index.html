@@ -32,6 +32,12 @@
             font-family: 'Outfit', sans-serif;
         }
         
+        /* UNIFORMISATION : Force la taille de texte à 16px pour tous les paragraphes de projets */
+        .page p, .page li, .project-description {
+            font-size: 1rem !important; /* 16px */
+            line-height: 1.6;
+        }
+        
         /* Transition fluide d'apparition au chargement */
         .fade-in-up {
             animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -199,7 +205,6 @@
             <div class="grid md:grid-cols-2 gap-8" id="projects-grid">
                 
                 <!-- CARTE 1 : RJ10 RAPPEL (Stage BUT3 - Terminé) -->
-                <!-- Compétences liées : Développer, Concevoir, Entreprendre, Comprendre -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,design,entreprendre,comprendre" onclick="showProject('rj10')">
                     <div class="relative overflow-hidden rounded-3xl bg-emerald-50/90 border-2 border-emerald-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -238,7 +243,6 @@
                 </div>
 
                 <!-- CARTE 2 : NOOR APP (Projet Personnel Inédit - En cours) -->
-                <!-- Compétences liées : Développer, Concevoir, Entreprendre, Comprendre -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,design,entreprendre,comprendre" onclick="showProject('noor')">
                     <div class="relative overflow-hidden rounded-3xl bg-pink-50/90 border-2 border-pink-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-pink-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -277,7 +281,6 @@
                 </div>
 
                 <!-- CARTE 3 : PLAN POITRINES — MAQUETTE (Stage BUT2 - Terminé) -->
-                <!-- Compétences liées : Comprendre, Entreprendre, Concevoir, Exprimer -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="comprendre,entreprendre,design,express" onclick="showProject('planpoitrines-maquette')">
                     <div class="relative overflow-hidden rounded-3xl bg-purple-50/90 border-2 border-purple-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -316,7 +319,6 @@
                 </div>
 
                 <!-- CARTE 4 : PLAN POITRINES — SITE VITRINE (Stage BUT2 - Terminé) -->
-                <!-- Compétences liées : Développer, Entreprendre, Comprendre, Exprimer -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,entreprendre,comprendre,express" onclick="showProject('planpoitrines-vitrine')">
                     <div class="relative overflow-hidden rounded-3xl bg-purple-50/90 border-2 border-purple-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -495,12 +497,12 @@
                 </div>
             </div>
 
-            <!-- Cas Body Layout (Arguments fond foncé/coloré pour plus de contraste) -->
+            <!-- Cas Body Layout -->
             <div class="space-y-8">
                 
                 <!-- Contexte & Mission côte à côte -->
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">01</span>
                             Introduction et contexte
@@ -510,7 +512,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">02</span>
                             La mission
@@ -518,7 +520,7 @@
                         <p class="text-neutral-600 text-sm font-light leading-relaxed">
                             Mon superviseur, José Pereira, m'a fait part d'un besoin précis dès le début du stage. Le centre utilisait déjà Digiforma, un logiciel professionnel complet qui permet aux organismes de formation de gérer leurs documents administratifs, leur relation client, leurs sessions de formation et leur suivi qualité. Malgré sa richesse, cet outil présentait un angle mort : il ne permettait pas de relancer automatiquement les anciens stagiaires lorsque leur titre professionnel approchait de sa date d'expiration.
                             <br><br>
-                            C'est ce manque précis qui est à l'origine du projet. Concrètement, lorsqu'un stagiaire obtient son titre professionnel, celui-ci a une durée de validité limitée : cinq ans pour une carte professionnelle APS, trois ans pour un SSIAP, deux ans pour un SST. Sans système de suivi, le centre perdait le contact avec ses anciens stagiaires qui, faute de rappel, oubliaient de renouveler leur titre ou allaient se former ailleurs.
+                            C'est ce manque précis qui est à l'origine du projet. Concrètement, lorsqu'un stagiaire obtient son titre professionnel, celui-ci a une durée de validité limitée : <span class="font-bold text-neutral-950">cinq ans</span> pour une carte professionnelle APS, <span class="font-bold text-neutral-950">trois ans</span> pour un SSIAP, <span class="font-bold text-neutral-950">deux ans</span> pour un SST. Sans système de suivi, le centre perdait le contact avec ses anciens stagiaires qui, faute de rappel, oubliaient de renouveler leur titre ou allaient se former ailleurs.
                             <br><br>
                             Motivée par l'envie de répondre concrètement à ce besoin, j'ai analysé les limites de l'outil existant et proposé une solution complémentaire adaptée : une application web de gestion de rappels automatiques, pensée spécifiquement pour ce centre. Ma mission était donc de concevoir et développer cet outil de A à Z, permettant de gérer les stagiaires, de suivre leurs formations et d'envoyer automatiquement des emails de rappel avant l'expiration de leur titre. L'objectif était simple : fidéliser les anciens stagiaires et les inciter à renouveler leur certification au sein du même centre plutôt qu'ailleurs.
                         </p>
@@ -532,64 +534,43 @@
                         <!-- Trace 1 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">📊</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 01 : Dashboard / Maquette Vue.js 3 ]</p>
-                            </div>
+                            <img src="assets/rj10-dashboard.png" class="w-full h-full object-cover" alt="Dashboard / Maquette Vue.js 3" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-dashboard.png';">
                         </div>
                         <!-- Trace 2 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">⚙️</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 02 : Structure relationnelle MySQL / Doctrine ]</p>
-                            </div>
+                            <img src="assets/rj10-db.png" class="w-full h-full object-cover" alt="Structure relationnelle MySQL / Doctrine" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-db.png';">
                         </div>
                         <!-- Trace 3 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">👥</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 03 : Interface Stagiaires ]</p>
-                            </div>
+                            <img src="assets/rj10-stagiaires.png" class="w-full h-full object-cover" alt="Interface Stagiaires" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-stagiaires.png';">
                         </div>
                         <!-- Trace 4 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 3)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">📚</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 04 : Catalogue des Formations ]</p>
-                            </div>
+                            <img src="assets/rj10-formations.png" class="w-full h-full object-cover" alt="Catalogue des Formations" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-formations.png';">
                         </div>
                         <!-- Trace 5 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 4)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">✉️</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 05 : Template d'Email personnalisé ]</p>
-                            </div>
+                            <img src="assets/rj10-template-email.png" class="w-full h-full object-cover" alt="Template d'Email personnalisé" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-template-email.png';">
                         </div>
                         <!-- Trace 6 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 5)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">⏰</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 06 : Page Rappel d'échéances ]</p>
-                            </div>
+                            <img src="assets/rj10-rappel.png" class="w-full h-full object-cover" alt="Page Rappel d'échéances" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-rappel.png';">
                         </div>
                         <!-- Trace 7 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" style="grid-column: span 1;" onclick="openLightbox('rj10', 6)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">📑</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 07 : Contenu du rappel envoyé ]</p>
-                            </div>
+                            <img src="assets/rj10-rappel-contenu.png" class="w-full h-full object-cover" alt="Contenu du rappel envoyé" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-rappel-contenu.png';">
                         </div>
                     </div>
                 </div>
 
-                <!-- Les étapes du processus côte à côte dans une grille (Pour combler le vide) -->
-                <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                <!-- Les étapes du processus côte à côte dans une grille -->
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">03</span>
                         Étapes du processus de création
@@ -631,37 +612,37 @@
 
                 <!-- Difficultés & Bilan Personnel côte à côte -->
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">04</span>
                             Difficultés rencontrées
                         </h4>
                         <p class="text-neutral-600 text-sm font-light leading-relaxed">
-                            La principale dfficulté a été de travailler seule sans interlocuteur technique. Lorsque je bloquais sur un problème de logique ou de fonctionnement, je ne pouvais compter que sur mes propres recherches et ma capacité à analyser la situation par moi-même. J'ai également eu du mal à clarifier certaines règles métier au départ, notamment la distinction entre la période pendant laquelle un stagiaire suit sa formation et la durée de validité du titre qu'il obtient à l'issue de celle-ci. Ces deux notions, que j'avais d'abord confondues, m'ont obligée à revoir une partie de mon travail en cours de route.
+                            La principale difficulté a été de travailler seule sans interlocuteur technique. Lorsque je bloquais sur un problème de logique ou de fonctionnement, je ne pouvais compter que sur mes propres recherches et ma capacité à analyser la situation par moi-même. J'ai également eu du mal à clarifier certaines règles métier au départ, notamment la distinction entre la période pendant laquelle un stagiaire suit sa formation et la durée de validité du titre qu'il obtient à l'issue de celle-ci. Ces deux notions, que j'avais d'abord confondues, m'ont obligée à revoir une partie de mon travail en cours de route.
                         </p>
                     </div>
 
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-6">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">05</span>
                             Bilan personnel
                         </h4>
                         
-                        <div class="space-y-4 text-xs text-neutral-600">
+                        <div class="space-y-4 text-neutral-600">
                             <div>
-                                <h5 class="font-heading text-xs font-bold text-neutral-900 mb-1">1. Ce que ce projet m'a apporté</h5>
+                                <h5 class="font-heading text-sm font-bold text-neutral-900 mb-1">1. Ce que ce projet m'a apporté</h5>
                                 <p class="font-light leading-relaxed text-neutral-500">
-                                    Ce stage m'a appris que construire une application ne se résume pas à des compétences techniques. Comprendre le métier du client, bien réfléchir à l'organisation des données avant de commencer et anticiper les situations particulières sont des étapes tout aussi importantes que le développement lui-même. C'est cette vision globale du projet que je retiens avant tout.
+                                    Ce stage m'a appris que construire une application ne se résume pas à des compétences techniques. Comprendre le métier du client, bien réfléchir à l'organisation des données avant de commencer et anticiper les situations particulières sont des étapes tout aussi importantes que le développement s'il-même. C'est cette vision globale du projet que je retiens avant tout.
                                 </p>
                             </div>
                             <div>
-                                <h5 class="font-heading text-xs font-bold text-neutral-900 mb-1">2. Les compétences développées</h5>
+                                <h5 class="font-heading text-sm font-bold text-neutral-950 mb-1">2. Les compétences développées</h5>
                                 <p class="font-light leading-relaxed text-neutral-500">
-                                    Ce projet m'a confrontée à une dimension que je n'avais pas encore vraiment expérimentée : gérer un projet numérique de A à Z en totale autonomie, dans un contexte professionnel réel. J'ai dû comprendre un besoin métier, analyser les limites d'un outil existant, proposer une solution adaptée, prendre toutes les décisions techniques seule et m'organiser sur neuf semaines sans encadrement. Cette expérience m'a donné une vision concrète et réaliste de ce que signifie mener un projet numérique en situation professionnelle.
+                                    Ce projet m'a confrontée à une dimension que je n'avais pas encore vraiment expérimentée : gérer un projet numérique de A à Z en totale autonomie, dans un contexte professionnel réel. J'ai dût comprendre un besoin métier, analyser les limites d'un outil existant, proposer une solution adaptée, prendre toutes les décisions techniques seule et m'organiser sur neuf semaines sans encadrement. Cette expérience m'a donné une vision concrète et réaliste de ce que signifie mener un projet numérique en situation professionnelle.
                                 </p>
                             </div>
                             <div>
-                                <h5 class="font-heading text-xs font-bold text-neutral-900 mb-1">3. Ce que je ferais différemment</h5>
+                                <h5 class="font-heading text-sm font-bold text-neutral-950 mb-1">3. Ce que je ferais différemment</h5>
                                 <p class="font-light leading-relaxed text-neutral-500">
                                     Si je devais recommencer, j'accorderais encore plus de temps à la phase d'analyse au départ, en posant toutes les questions nécessaires sur le fonctionnement du métier avant d'écrire la moindre ligne de code. Cela m'aurait évité plusieurs allers-retours en cours de développement et m'aurait permis d'avancer de façon plus linéaire et plus sereine.
                                 </p>
@@ -674,7 +655,7 @@
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 mb-6">Tags de compétences BUT MMI (RJ10)</h4>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse text-xs">
+                        <table class="w-full text-left border-collapse">
                             <thead>
                                 <tr class="border-b border-neutral-300">
                                     <th class="py-3 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Tag</th>
@@ -745,7 +726,7 @@
                 
                 <!-- Contexte & Mission côte à côte -->
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">01</span>
                             Introduction et contexte
@@ -757,7 +738,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">02</span>
                             La problématique
@@ -769,12 +750,12 @@
                 </div>
 
                 <!-- Noor : Comment ça fonctionne -->
-                <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm">
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">03</span>
                         Comment fonctionne Noor
                     </h4>
-                    <p class="text-neutral-600 text-sm font-light leading-relaxed mb-6">
+                    <p class="text-neutral-600 text-sm font-light leading-relaxed">
                         Noor est construite en deux parties distinctes qui communiquent entre elles.
                         <br><br>
                         La première partie est le serveur (la partie invisible de l'application) : il gère toutes les données des utilisatrices, vérifie leur identité à la connexion grâce à un système de jetons numériques sécurisés, et contient toute la logique de l'application. Par exemple, il calcule automatiquement la phase du cycle de chaque utilisatrice et détermine si ses pratiques spirituelles doivent être adaptées selon sa situation du jour.
@@ -794,56 +775,38 @@
                         <!-- Trace 1 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">🔑</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 01 : Écran de Connexion (Login) ]</p>
-                            </div>
+                            <img src="assets/noor-login.png" class="w-full h-full object-cover" alt="Écran de Connexion (Login)" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-login.png';">
                         </div>
                         <!-- Trace 2 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">📊</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 02 : Tableau de Bord (Dashboard) ]</p>
-                            </div>
+                            <img src="assets/noor-dashboard.png" class="w-full h-full object-cover" alt="Tableau de Bord (Dashboard)" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-dashboard.png';">
                         </div>
                         <!-- Trace 3 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">📅</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 03 : Suivi du Cycle ]</p>
-                            </div>
+                            <img src="assets/noor-cycle.png" class="w-full h-full object-cover" alt="Suivi du Cycle" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-cycle.png';">
                         </div>
                         <!-- Trace 4 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 3)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">🕌</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 04 : Pratique Spirituelle ]</p>
-                            </div>
+                            <img src="assets/noor-spiritualite.png" class="w-full h-full object-cover" alt="Pratique Spirituelle" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-spiritualite.png';">
                         </div>
                         <!-- Trace 5 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 4)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">📱</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 05 : Version Mobile - Page d'accueil ]</p>
-                            </div>
+                            <img src="assets/noor-mobile-home.png" class="w-full h-full object-cover" alt="Version Mobile - Page d'accueil" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-mobile-home.png';">
                         </div>
                         <!-- Trace 6 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 5)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">📲</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 06 : Version Mobile - Menu ]</p>
-                            </div>
+                            <img src="assets/noor-mobile-menu.png" class="w-full h-full object-cover" alt="Version Mobile - Menu" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-mobile-menu.png';">
                         </div>
                     </div>
                 </div>
 
-                <!-- Les étapes du processus côte à côte dans une grille (Pour combler le vide) -->
-                <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                <!-- Les étapes du processus côte à côte dans une grille -->
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">04</span>
                         Étapes de conception & réalisation
@@ -853,7 +816,7 @@
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="font-heading text-sm font-bold text-neutral-950 mb-2">1. Recherche et analyse des besoins</h5>
                             <p class="text-neutral-500 text-xs font-light leading-relaxed">
-                                Avant d'écrire la moindre ligne de code, j'ai analysé les applications existantes : Flo et Clue pour le suivi du cycle menstruel, Taahirah pour l'accompagnement spirituel féminin. J'ai identifié ce qui manquait dans chacune et défini les fonctionnalités qui rendraient Noor réellement utile. Ce projet est borné d'un besoin réel que j'ai observé au sein de ma communauté : les femmes manquent souvent d'informations claires et accessibles sur la façon dont leur cycle menstruel interagit avec leurs pratiques spirituelles et culturelles. Ces sujets sont rarement abordés ouvertement, ce qui crée un vide que le numérique peut contribuer à combler de manière bienveillante et discrète.
+                                Avant d'écrire la moindre ligne de code, j'ai analysé les applications existantes : Flo et Clue pour le suivi du cycle menstruel, Taahirah pour l'accompagnement spirituel féminin. J'ai identifié ce qui manquait dans chacune et défini les fonctionnalités qui rendraient Noor réellement utile. Ce projet est né d'un besoin réel que j'ai observé au sein de ma communauté : les femmes manquent souvent d'informations claires et accessibles sur la façon dont leur cycle menstruel interagit avec leurs pratiques spirituelles et culturelles. Ces sujets sont rarement abordés ouvertement, ce qui crée un vide que le numérique peut contribuer à combler de manière bienveillante et discrète.
                             </p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
@@ -877,7 +840,7 @@
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="font-heading text-sm font-bold text-neutral-950 mb-2">5. Intégrations de services externes</h5>
                             <p class="text-neutral-500 text-xs font-light leading-relaxed">
-                                J'ai connecté deux services externes gratuites à Noor. Le premier calcule les horaires de prières selon la ville et le pays de l'utilisatrice — ces horaires s'affichent automatiquement sans aucune saisie manuelle. Le second fournit des versets inspirants en arabe avec leur traduction française, renouvelés dynamiquement. La gestion du texte arabe, qui s'écrit de droite à gauche contrairement au français, a nécessité des adaptations techniques spécifiques pour que les deux sens de lecture coexistent harmonieusement dans la même interface.
+                                J'ai connecté deux services externes gratuits à Noor. Le premier calcule les horaires de prières selon la ville et le pays de l'utilisatrice — ces horaires s'affichent automatiquement sans aucune saisie manuelle. Le second fournit des versets inspirants en arabe avec leur traduction française, renouvelés dynamiquement. La gestion du texte arabe, qui s'écrit de droite à gauche contrairement au français, a nécessité des adaptations techniques spécifiques pour que les deux sens de lecture coexistent harmonieusement dans la même interface.
                             </p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
@@ -891,7 +854,7 @@
 
                 <!-- Difficultés & Bilan Personnel côte à côte -->
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">05</span>
                             Difficultés rencontrées
@@ -905,27 +868,27 @@
                         </p>
                     </div>
 
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-6">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">06</span>
                             Bilan personnel
                         </h4>
                         
-                        <div class="space-y-4 text-xs text-neutral-600">
+                        <div class="space-y-4 text-neutral-600">
                             <div>
-                                <h5 class="font-heading text-xs font-bold text-neutral-900 mb-1">1. Quels bénéfices pour la suite ?</h5>
+                                <h5 class="font-heading text-xs font-bold text-neutral-950 mb-1">1. Quels bénéfices pour la suite ?</h5>
                                 <p class="font-light leading-relaxed text-neutral-500">
                                     Noor est le projet qui m'a le plus appris sur ma capacité à concevoir et mener un projet complet de manière autonome. Partir d'un besoin réel identifié dans ma propre expérience et au sein de ma communauté, le transformer en fonctionnalités concrètes, développer les deux parties de l'application, connecter des services externes, soigner l'interface et mettre en ligne une application accessible à toutes : chaque étape a mobilisé des compétences différentes et complémentaires. Ce projet démontre directement ma capacité à être autonome sur un poste de développeur web junior dès la sortie du BUT.
                                 </p>
                             </div>
                             <div>
-                                <h5 class="font-heading text-xs font-bold text-neutral-900 mb-1">2. Valorisation des compétences</h5>
+                                <h5 class="font-heading text-xs font-bold text-neutral-950 mb-1">2. Valorisation des compétences</h5>
                                 <p class="font-light leading-relaxed text-neutral-500">
                                     Les compétences démontrées dans Noor correspondent exactement aux attentes des entreprises : développement web complet côté serveur et côté interface, sécurisation des accès utilisateurs, environnement de développement reproductible, intégration de services externes, conception d'interface soignée et mise en production d'une application accessible au public. Ces compétences apparaissent dans la quasi-totalité des offres d'emploi junior que j'ai consultées lors de ma recherche d'emploi.
                                 </p>
                             </div>
                             <div>
-                                <h5 class="font-heading text-xs font-bold text-neutral-900 mb-1">3. Prise de recul et amélioration</h5>
+                                <h5 class="font-heading text-xs font-bold text-neutral-950 mb-1">3. Prise de recul et amélioration</h5>
                                 <p class="font-light leading-relaxed text-neutral-500">
                                     Si je devais recommencer, j'aurais défini un périmètre plus restreint dès le départ pour éviter de disperser mon énergie sur trop de fonctionnalités simultanément. J'aurais également anticipé les contraintes de mise en ligne dès la phase de conception, car plusieurs problèmes rencontrés lors du déploiement auraient pu être évités avec une meilleure organisation initiale. Enfin, j'aurais intégré des vérifications automatiques du code dès le début du développement plutôt qu'en fin de projet.
                                 </p>
@@ -938,7 +901,7 @@
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 mb-6">Compétences BUT MMI (Noor)</h4>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse text-xs">
+                        <table class="w-full text-left border-collapse">
                             <thead>
                                 <tr class="border-b border-neutral-300">
                                     <th class="py-3 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Compétence</th>
@@ -1036,29 +999,20 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">🌳</span>
-                                <p class="text-[10px] text-neutral-400 font-light">[ Trace 01 : Arborescence de navigation ]</p>
-                            </div>
+                            <img src="assets/planpoitrines-arborescence.png" class="w-full h-full object-cover" alt="Arborescence de navigation" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-arborescence.png';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">✏️</span>
-                                <p class="text-[10px] text-neutral-400 font-light">[ Trace 02 : Wireframe basse-fidélité ]</p>
-                            </div>
+                            <img src="assets/planpoitrines-wireframe.png" class="w-full h-full object-cover" alt="Wireframe basse-fidélité" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-wireframe.png';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">🎨</span>
-                                <p class="text-[10px] text-neutral-400 font-light">[ Trace 03 : Maquette Figma ]</p>
-                            </div>
+                            <img src="assets/planpoitrines-maquette.png" class="w-full h-full object-cover" alt="Maquette Figma" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-maquette.png';">
                         </div>
                     </div>
                 </div>
 
-                <!-- Les étapes du processus côte à côte dans une grille (Pour combler le vide) -->
+                <!-- Les étapes du processus côte à côte dans une grille -->
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
@@ -1105,7 +1059,7 @@
                             Bilan Personnel (Analyse BUT)
                         </h4>
                         
-                        <div class="space-y-4 text-xs text-neutral-600">
+                        <div class="space-y-4 text-neutral-600">
                             <div>
                                 <h5 class="font-heading text-xs font-bold text-neutral-900 mb-1">1. Bénéfices & Apprentissages</h5>
                                 <p class="font-light leading-relaxed text-neutral-500">
@@ -1208,22 +1162,16 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">💻</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 01 : Capture du site responsive sur mobile ]</p>
-                            </div>
+                            <img src="assets/planpoitrines-vitrine-mobile.png" class="w-full h-full object-cover" alt="Capture du site responsive sur mobile" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-mobile.png';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center">
-                                <span class="text-3xl mb-2">🌐</span>
-                                <p class="text-xs text-neutral-400 font-light">[ Trace 02 : Capture de la console FTP de mise en ligne ]</p>
-                            </div>
+                            <img src="assets/planpoitrines-vitrine-ftp.png" class="w-full h-full object-cover" alt="Console FTP de mise en ligne" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-ftp.png';">
                         </div>
                     </div>
                 </div>
 
-                <!-- Les étapes du processus côte à côte dans une grille (Pour combler le vide) -->
+                <!-- Les étapes du processus côte à côte dans une grille -->
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
@@ -1260,7 +1208,7 @@
 
                 <!-- Difficultés & Bilan Personnel côte à côte -->
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">04</span>
                             Difficultés rencontrées
@@ -1270,13 +1218,13 @@
                         </p>
                     </div>
 
-                    <div class="bg-neutral-100 rounded-2xl border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-6">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">05</span>
                             Bilan Personnel (Analyse BUT)
                         </h4>
                         
-                        <div class="space-y-4 text-xs text-neutral-600">
+                        <div class="space-y-4 text-neutral-600">
                             <div>
                                 <h5 class="font-heading text-xs font-bold text-neutral-900 mb-1">1. Quels bénéfices pour la suite ?</h5>
                                 <p class="font-light leading-relaxed text-neutral-500">
@@ -1314,29 +1262,22 @@
         </div>
     </div>
 
-    <!-- ==================== SYSTEM INTERACTIF LIGHTBOX ==================== -->
-    <div id="lightbox" class="fixed inset-0 bg-neutral-950/95 z-50 hidden justify-center items-center p-4">
+    <!-- ==================== SYSTEM INTERACTIF LIGHTBOX (Version Image Native) ==================== -->
+    <div id="lightbox" class="fixed inset-0 bg-neutral-950/95 z-50 hidden flex-col justify-center items-center p-4">
         <!-- Close button -->
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-neutral-300 transition-colors p-3 cursor-pointer">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-neutral-300 transition-colors p-3 cursor-pointer text-4xl z-50">✕</button>
         <!-- Nav left -->
-        <button onclick="prevLightboxImage()" class="absolute left-4 text-white hover:text-neutral-300 transition-colors p-4 cursor-pointer">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
-        </button>
+        <button onclick="prevLightboxImage()" class="absolute left-4 text-white hover:text-neutral-300 transition-colors p-4 cursor-pointer text-5xl z-50">‹</button>
+        
         <!-- Image container -->
-        <div class="max-w-4xl max-h-[80vh] flex flex-col items-center">
-            <div id="lightbox-media-container" class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col items-center justify-center text-white aspect-[16/10] w-[90vw] md:w-[70vw] max-w-3xl">
-                <span id="lightbox-emoji" class="text-6xl mb-4">🖼️</span>
-                <p id="lightbox-title" class="text-lg font-bold mb-2">Aperçu du livrable</p>
-                <p id="lightbox-desc" class="text-xs text-neutral-400 font-light text-center px-6">Aucun visuel associé</p>
-            </div>
-            <p id="lightbox-indicator" class="text-white/60 text-xs mt-4 tracking-wider uppercase font-bold">Trace 1 sur 2</p>
+        <div class="max-w-5xl max-h-[80vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" class="max-h-[70vh] object-contain rounded-lg shadow-2xl mb-4" alt="Trace agrandie">
+            <p id="lightbox-title" class="text-white text-lg font-bold"></p>
+            <p id="lightbox-indicator" class="text-white/60 text-xs tracking-wider uppercase mt-2 font-bold"></p>
         </div>
+        
         <!-- Nav right -->
-        <button onclick="nextLightboxImage()" class="absolute right-4 text-white hover:text-neutral-300 transition-colors p-4 cursor-pointer">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
-        </button>
+        <button onclick="nextLightboxImage()" class="absolute right-4 text-white hover:text-neutral-300 transition-colors p-4 cursor-pointer text-5xl z-50">›</button>
     </div>
 
     <!-- JAVASCRIPT SYSTEM & ROUTING -->
@@ -1420,33 +1361,33 @@
             showPage(projectId);
         }
 
-        // BASE DE DONNÉES LIGHTBOX POUR CHAQUE PROJET
+        // BASE DE DONNÉES LIGHTBOX POUR CHAQUE PROJET (Mise à jour avec liens images réels)
         const lightboxData = {
             'rj10': [
-                { emoji: '📊', title: 'Trace 01 : Dashboard / Maquette Vue.js 3', desc: "Dashboard d'administration interactif conçu pour RJ10 Formation." },
-                { emoji: '⚙️', title: 'Trace 02 : Structure relationnelle MySQL / Doctrine', desc: "Modélisation des tables et relations Doctrine gérant l'intégrité des stagiaires et certificats." },
-                { emoji: '👥', title: 'Trace 03 : Interface Stagiaires', desc: "Vue globale et gestion du cycle de vie des profils stagiaires." },
-                { emoji: '📚', title: 'Trace 04 : Catalogue des Formations', desc: "Visualisation des formations éligibles aux rappels automatiques." },
-                { emoji: '✉️', title: "Trace 05 : Template d'Email personnalisé", desc: "Configuration de la mise en page responsive des emails envoyés." },
-                { emoji: '⏰', title: 'Trace 06 : Page Rappel d\'échéances', desc: "Planification et historique d'alertes programmées par cron." },
-                { emoji: '📑', title: 'Trace 07 : Contenu du rappel envoyé', desc: "Visualisation de l'email effectif réceptionné par le stagiaire." }
+                { url: 'assets/rj10-dashboard.png', title: 'Trace 01 : Dashboard / Maquette Vue.js 3' },
+                { url: 'assets/rj10-db.png', title: 'Trace 02 : Structure relationnelle MySQL / Doctrine' },
+                { url: 'assets/rj10-stagiaires.png', title: 'Trace 03 : Interface Stagiaires' },
+                { url: 'assets/rj10-formations.png', title: 'Trace 04 : Catalogue des Formations' },
+                { url: 'assets/rj10-template-email.png', title: "Trace 05 : Template d'Email personnalisé" },
+                { url: 'assets/rj10-rappel.png', title: 'Trace 06 : Page Rappel d\'échéances' },
+                { url: 'assets/rj10-rappel-contenu.png', title: 'Trace 07 : Contenu du rappel envoyé' }
             ],
             'noor': [
-                { emoji: '🔑', title: 'Trace 01 : Écran de Connexion (Login)', desc: "Sécurisation cryptographique par token JWT asynchrone." },
-                { emoji: '📊', title: 'Trace 02 : Tableau de Bord (Dashboard)', desc: "Dashboard central regroupant cycle, spiritualité et versets du jour." },
-                { emoji: '📅', title: 'Trace 03 : Suivi du Cycle', desc: "Modélisation de la temporalité biologique de l'utilisatrice." },
-                { emoji: '🕌', title: 'Trace 04 : Pratique Spirituelle', desc: "Intégration d'APIs externes pour la synchronisation locale des prières." },
-                { emoji: '📱', title: 'Trace 05 : Version Mobile - Page d\'accueil', desc: "Interface responsive optimisée PWA sur écran d'accueil." },
-                { emoji: '📲', title: 'Trace 06 : Version Mobile - Menu', desc: "Navigation tactile optimisée pour utilisation à une main." }
+                { url: 'assets/noor-login.png', title: 'Trace 01 : Écran de Connexion (Login)' },
+                { url: 'assets/noor-dashboard.png', title: 'Trace 02 : Tableau de Bord (Dashboard)' },
+                { url: 'assets/noor-cycle.png', title: 'Trace 03 : Suivi du Cycle' },
+                { url: 'assets/noor-spiritualite.png', title: 'Trace 04 : Pratique Spirituelle' },
+                { url: 'assets/noor-mobile-home.png', title: 'Trace 05 : Version Mobile - Page d\'accueil' },
+                { url: 'assets/noor-mobile-menu.png', title: 'Trace 06 : Version Mobile - Menu' }
             ],
             'planpoitrines-maquette': [
-                { emoji: '🌳', title: "Trace 01 : Arborescence de navigation", desc: "Plan UX stratégique de structuration de l'information pour le collectif féministe Plan Poitrines." },
-                { emoji: '✏️', title: 'Trace 02 : Wireframe basse-fidélité', desc: "Prototypage fonctionnel papier/numérique validant la lisibilité de la page d'accueil." },
-                { emoji: '🎨', title: 'Trace 03 : Maquette Figma', desc: "Conception graphique complète avec palette de couleurs contrastée et affirmée sur Figma." }
+                { url: 'assets/planpoitrines-arborescence.png', title: "Trace 01 : Arborescence de navigation" },
+                { url: 'assets/planpoitrines-wireframe.png', title: 'Trace 02 : Wireframe basse-fidélité' },
+                { url: 'assets/planpoitrines-maquette.png', title: 'Trace 03 : Maquette Figma' }
             ],
             'planpoitrines-vitrine': [
-                { emoji: '💻', title: 'Trace 01 : Capture du site responsive sur mobile', desc: "Intégration HTML5/CSS3 fluide garantissant une accessibilité maximale sur tous types d'écrans." },
-                { emoji: '🌐', title: 'Trace 02 : Console FTP de mise en ligne', desc: "Déploiement final du site sur serveur web Apache et configuration du nom de domaine." }
+                { url: 'assets/planpoitrines-vitrine-mobile.png', title: 'Trace 01 : Capture du site responsive sur mobile' },
+                { url: 'assets/planpoitrines-vitrine-ftp.png', title: 'Trace 02 : Console FTP de mise en ligne' }
             ]
         };
 
@@ -1471,9 +1412,8 @@
             if (!projectImages) return;
 
             const currentData = projectImages[currentLightboxIndex];
-            document.getElementById('lightbox-emoji').innerText = currentData.emoji;
+            document.getElementById('lightbox-img').src = currentData.url;
             document.getElementById('lightbox-title').innerText = currentData.title;
-            document.getElementById('lightbox-desc').innerText = currentData.desc;
             document.getElementById('lightbox-indicator').innerText = `Trace ${currentLightboxIndex + 1} sur ${projectImages.length}`;
         }
 
@@ -1502,3 +1442,5 @@
     </script>
 </body>
 </html>
+```
+eof
