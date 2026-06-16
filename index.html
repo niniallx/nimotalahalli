@@ -503,11 +503,15 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-xs">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
-                        <p class="project-body-text">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de neuf semaines, du 23 mars au 22 mai 2026, au sein de RJ10 Formation, un centre de formation aux métiers de la sécurité situé à La Chapelle-Saint-Luc, dans l'Aube. J'ai travaillé en totale autonomie sur ce projet, ce qui m'a demandé une organisation rigoureuse et une grande capacité à prendre des décisions seule.</p>
+                        <p class="project-body-text">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de neuf semaines, du 23 mars au 22 mai 2026, au sein de RJ10 Formation, un centre de formation aux métiers de la sécurité situé à La Chapelle-Saint-Luc, dans l'Aube. Ce centre propose des formations professionnelles telles que l'APS (Agent de Prévention et Sécurité), le SSIAP (Sécurité Incendie) et le SST (Sauveteur Secouriste du Travail). J'ai travaillé en totale autonomie sur ce projet, sans équipe technique autour de moi, ce qui m'a demandé une organisation rigoureuse et une grande capacité à prendre des décisions seule.</p>
                     </div>
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-xs">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
-                        <p class="project-body-text">Mon superviseur m'a fait part d'un besoin précis. Le centre utilisait déjà Digiforma pour gérer leurs documents administratifs. Malgré sa richesse, cet outil ne permettait pas de relancer automatiquement les anciens stagiaires lorsque leur titre professionnel approchait de sa date d'expiration. Sans système de suivi, le centre perdait le contact avec ses anciens stagiaires. Ma mission était de concevoir et développer cet outil de A à Z avec un système d'envoi automatique d'emails avant l'expiration.</p>
+                        <p class="project-body-text">Mon superviseur, José Pereira, m'a fait part d'un besoin précis dès le début du stage. Le centre utilisait déjà Digiforma, un logiciel professionnel complet qui permet aux organismes de formation de gérer leurs documents administratifs, leur relation client, leurs sessions de formation et leur suivi qualité. Malgré sa richesse, cet outil présentait un angle mort : il ne permettait pas de relancer automatiquement les anciens stagiaires lorsque leur titre professionnel approchait de sa date d'expiration.
+                        <br><br>
+                        C'est ce manque précis qui est à l'origine du projet. Concrètement, lorsqu'un stagiaire obtient son titre professionnel, celui-ci a une durée de validité limitée : cinq ans pour une carte professionnelle APS, trois ans pour un SSIAP, deux ans pour un SST. Sans système de suivi, le centre perdait le contact avec ses anciens stagiaires qui, faute de rappel, oubliaient de renouveler leur titre ou allaient se former ailleurs.
+                        <br><br>
+                        Motivée par l'envie de répondre concrètement à ce besoin, j'ai analysé les limites de l'outil existant et proposé une solution complémentaire adaptée : une application web de gestion de rappels automatiques, pensée spécifiquement pour ce centre. Ma mission était donc de concevoir et développer cet outil de A à Z, permettant de gérer les stagiaires, de suivre leurs formations et d'envoyer automatiquement des emails de rappel avant l'expiration de leur titre. L'objectif était simple : fidéliser les anciens stagiaires et les inciter à renouveler leur certification au sein du même centre plutôt qu'ailleurs.</p>
                     </div>
                 </div>
 
@@ -562,34 +566,97 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">1. Analyse des besoins et compréhension du métier</h5>
-                            <p class="text-neutral-900">Avant de commencer à construire quoi que ce soit, j'ai pris le temps de comprendre le fonctionnement réel du centre et de ses formations. Comprendre ces règles métier avant de concevoir l'outil était indispensable.</p>
+                            <p class="text-neutral-900">Avant de commencer à construire quoi que ce soit, j'ai pris le temps de comprendre le fonctionnement réel du centre et de ses formations. J'ai découvert que chaque type de formation obéit à des règles très différentes. Par exemple, seul l'APS nécessite une autorisation préalable délivrée par le CNAPS, l'organisme national qui régule les métiers de la sécurité privée. Le SSIAP délivre une simple attestation et non une carte professionnelle. Et certaines formations, comme le SST, sont obligatoires pour pouvoir s'inscrire à d'autres formations comme l'APS ou le SSIAP. Comprendre ces règles métier avant de concevoir l'outil était indispensable pour ne pas construire quelque chose qui ne correspondait pas à la réalité du terrain.</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">2. Organisation et architecture de l'application</h5>
-                            <p class="text-neutral-900">J'ai défini que l'accès se ferait via une page de connexion sécurisée, puis un tableau de bord central relié à 5 espaces distincts. Cette organisation simple a été pensée pour un usage fluide au quotidien.</p>
+                            <p class="text-neutral-900">Avant de commencer à construire l'application, j'ai réfléchi à son organisation générale, un peu comme on dessine le plan d'une maison avant de la construire. J'ai défini que l'accès se ferait via une page de connexion sécurisée, puis que l'administrateur arriverait sur un tableau de bord central depuis lequel il pourrait accéder à cinq espaces distincts : la gestion des stagiaires et de leur parcours, le catalogue des formations proposées par le centre, les inscriptions aux formations avec suivi des examens et des titres obtenus, l'historique des rappels envoyés automatiquement, et les paramètres permettant de personnaliser le contenu des emails. Cette organisation simple a été pensée pour qu'un administrateur sans compétences techniques puisse utiliser l'outil facilement au quotidien.</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
-                            <h5 class="step-title font-heading">3. Construction de la partie back-end</h5>
-                            <p class="text-neutral-900">J'ai utilisé Symfony 7 pour mettre en place la connexion, la base de données sécurisée, et le script automatique (Cron) qui détecte les échéances de diplômes à relancer.</p>
+                            <h5 class="step-title font-heading">3. Construction de la partie invisible de l'application</h5>
+                            <p class="text-neutral-900">J'ai ensuite construit la partie de l'application que l'utilisateur ne voit pas mais qui fait tout fonctionner en arrière-plan : la gestion des données, les calculs automatiques et l'envoi des emails. Pour cela j'ai utilisé Symfony 7, un outil professionnel reconnu dans le milieu du développement web. Concrètement, j'ai mis en place un systeme de connexion sécurise, une base de données pour stocker toutes les informations des stagiaires et de leurs formations, ainsi qu'un programme automatique qui se déclenche régulièrement pour détecter les titres approchant de leur date d'expiration et envoyer les emails de rappel au bon moment.</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">4. Construction de l'interface visuelle</h5>
-                            <p class="text-neutral-900">J'ai utilisé Vue.js 3 pour créer des interfaces dynamiques : tableau de bord, fiches stagiaires, historiques de rappel et configurations de templates.</p>
+                            <p class="text-neutral-900">J'ai ensuite créé la partie visible de l'application, celle que l'administrateur utilise au quotidien pour consulter et gérer les informations. J'ai utilisé Vue.js 3, un outil qui permet de créer des pages web réactives et agréables à utiliser. L'interface comprend un tableau de bord donnant une vue d'ensemble de l'activité du centre, un espace de gestion des stagiaires avec l'historique complet de leurs formations, un espace de gestion des inscriptions avec le suivi des examens et des titres obtenus, ainsi qu'un historique des rappels envoyés. L'administrateur peut également renvoyer manuellement un email de rappel en un clic, et noter si un stagiaire a pris contact suite à un rappel automatique.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs md:col-span-2">
+                            <h5 class="step-title font-heading">5. Gestion des situations complexes</h5>
+                            <p class="text-neutral-900">Au fil du développement, j'ai rencontré des situations que je n'avais pas anticipées au départ. Par exemple, un même stagiaire peut avoir suivi plusieurs formations différentes à des périodes différentes, chacune avec son propre titre et sa propre date d'expiration. J'ai également dû intégrer la notion de prérequis entre formations : un stagiaire ne peut pas s'inscrire en SSIAP sans avoir un SST en cours de validité. Ces découvertes m'ont obligée à revoir plusieurs fois l'organisation de mes données pour que tout reste cohérent et simple à utiliser.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
-                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés rencontrées</h4>
-                        <p class="text-neutral-900">La principale difficulté a été de travailler seule sans interlocuteur technique en m'appuyant sur mes propres recherches et l'IA. J'ai également dû retravailler la structure de données à cause de la distinction complexe entre dates de session et dates de validité.</p>
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">04</span>
+                            Difficultés rencontrées — Formation Alerte (RJ10)
+                        </h4>
+                        <p class="text-neutral-900">
+                            La principale difficulté a été de travailler seule sans interlocuteur technique. Lorsque je bloquais sur un problème de logique ou de fonctionnement, je m'appuyais sur deux ressources principales : mes propres recherches et l'intelligence artificielle comme assistant de travail. Concrètement, quand je n'arrivais pas à identifier la source d'un problème, je formulais ma question précisément à l'IA pour explorer des pistes de solution, que j'analysais et adaptais ensuite par moi-même avant de les appliquer. Cette façon de travailler m'a appris à poser des questions techniques claires et structurées, une compétence essentielle dans le monde du développement.
+                            <br><br>
+                            J'ai également eu du mal à clarifier certaines règles métier au départ, notamment la distinction entre la période pendant laquelle un stagiaire suit sa formation et la durée de validité du titre qu'il obtient à l'issue de celle-ci. Ces deux notions, que j'avais d'abord confondues, m'ont obligée à revoir une partie de mon travail en cours de route. C'est en échangeant à la fois avec mon superviseur pour comprendre le métier, et avec l'IA pour clarifier la logique technique, que j'ai pu trouver la bonne organisation.
+                        </p>
                     </div>
 
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
-                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
-                        <p class="text-neutral-900">Ce projet m'a prouvé que concevoir nécessite de comprendre profondément les besoins métiers avant d'écrire du code. Cela m'a permis de développer une forte autonomie professionnelle sur 9 semaines de stage.</p>
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            Bilan personnel
+                        </h4>
+                        
+                        <div class="space-y-4 text-neutral-900">
+                            <div>
+                                <h5 class="bilan-title font-heading">1. Ce que ce projet m'a apporté</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Ce stage m'a appris que construire une application ne se résume pas à des compétences techniques. Comprendre le métier du client, bien réfléchir à l'organisation des données avant de commencer et anticiper les situations particulières sont des étapes tout aussi importantes que le développement lui-même. C'est cette vision globale du projet que je retiens avant tout.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-heading">2. Les compétences développées</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Ce projet m'a confrontée à une dimension que je n'avais pas encore vraiment expérimentée : gérer un projet numérique de A à Z en totale autonomie, dans un contexte professionnel réel. J'ai dû comprendre un besoin métier, analyser les limites d'un outil existant, proposer une solution adaptée, prendre toutes les décisions techniques seule et m'organiser sur neuf semaines sans encadrement. Cette expérience m'a donné une vision concrète et réaliste de ce que signifie mener un projet numérique en situation professionnelle.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-heading">3. Ce que je ferais différemment</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Si je devais recommencer, j'accorderais encore plus de temps à la phase d'analyse au départ, en posant toutes les questions nécessaires sur le fonctionnement du métier avant d'écrire la moindre ligne de code. Cela m'aurait évité plusieurs allers-retours en cours de développement et m'aurait permis d'avancer de façon plus linéaire et plus sereine.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="bg-emerald-50 border border-emerald-200/60 rounded-2xl p-5 shadow-xs">
+                    <h4 class="font-heading text-sm font-bold text-neutral-900 mb-3">Validation des Compétences (RJ10)</h4>
+                    <div class="overflow-x-auto text-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-emerald-200">
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Compétence</th>
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider">Justification compacte</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-emerald-100 text-neutral-800">
+                                <tr>
+                                    <td class="py-2 font-bold text-emerald-800">Développer</td>
+                                    <td class="py-2">Symfony 7 + Vue.js 3, programmation de scripts d'emails automatisés.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-emerald-800">Concevoir</td>
+                                    <td class="py-2">Modélisation relationnelle de la base de données, UX orientée back-office.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-emerald-800">Entreprendre</td>
+                                    <td class="py-2">Gestion de A à Z en totale autonomie pendant 9 semaines en entreprise.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -613,10 +680,20 @@
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-200/50 text-pink-800 px-3 py-1 rounded-full border border-pink-300 mb-6 inline-block">Projet Personnel Inédit · En ligne</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-pink-950">Noor — Suivi de santé féminine et spirituel</h1>
-                <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">Noor — Application web de suivi de santé féminine avec accompagnement spirituel et culturel personnalisé.</p>
+                <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">
+                    Noor — Application web de suivi de santé féminine avec accompagnement spirituel et culturel personnalisé. Accessible en ligne.
+                </p>
+
+                <div class="flex flex-wrap gap-2 pt-6 border-t border-pink-200/40">
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Symfony 7</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Vue.js 3 + TypeScript</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Docker</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Pinia & PWA</span>
+                </div>
             </div>
 
             <div class="space-y-8">
+                
                 <div class="bg-pink-50 border border-pink-200/60 p-5 rounded-2xl">
                     <h4 class="font-heading text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">Compétences BUT MMI associées :</h4>
                     <div class="flex flex-wrap gap-2">
@@ -630,13 +707,44 @@
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
-                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
-                        <p class="text-neutral-900 text-base font-light">Développé en autonomie pour le module PTUT de BUT3, Noor répond à un besoin communautaire : lier le suivi du cycle biologique de la femme avec ses adaptations rituelles et spirituelles.</p>
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">01</span>
+                            Introduction et contexte
+                        </h4>
+                        <p class="text-neutral-900 text-base font-light leading-relaxed">
+                            Dans le cadre du module PTUT de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai conçu et développé en totale autonomie un projet personnel inédit appelé Noor, mot arabe signifiant « lumière ». Ce projet répond à une obligation académique : réaliser une application complète et complexe démontrant ma capacité à entreprendre et mener un projet de bout en bout, sans encadrement pédagogique direct.
+                            <br><br>
+                            Noor est une application web destinée aux femmes souhaitant concilier suivi de leur santé féminine et pratique spirituelle et culturelle au quotidien. L'idée est née d'un constat personnel : les applications existantes de suivi du cycle menstruel ignorent totalement la dimension culturelle et spirituelle, tandis que les applications de pratique religieuse ne tiennent aucun compte de la réalité physiologique féminine. En tant que femme concernée par ce besoin, j'ai choisi de concevoir moi-même l'outil qui manquait.
+                        </p>
                     </div>
+
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
-                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La problématique</h4>
-                        <p class="text-neutral-900 text-base font-light">Comment concevoir une interface inclusive combinant physiologie et spiritualité tout en automatisant des calculs d'états complexes et des notifications dynamiques ?</p>
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">02</span>
+                            La problématique
+                        </h4>
+                        <p class="text-neutral-900 text-base font-light leading-relaxed">
+                            Comment concevoir une application de santé féminine qui prend en compte non seulement les données physiologiques, mais aussi les pratiques culturelles et spirituelles des utilisatrices, en proposant un accompagnement personnalisé et automatiquement adapté selon leur situation du moment ?
+                        </p>
                     </div>
+                </div>
+
+                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 shadow-sm">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">03</span>
+                        Comment fonctionne Noor
+                    </h4>
+                    <p class="text-neutral-900 text-base font-light leading-relaxed mb-6">
+                        Noor est construite en deux parties distinctes qui communiquent entre elles.
+                        <br><br>
+                        La première partie est le serveur (la partie invisible de l'application) : il gère toutes les données des utilisatrices, vérifie leur identité à la connexion grâce à un système de jetons numériques sécurisés, et contient toute la logique de l'application. Par exemple, il calcule automatiquement la phase du cycle de chaque utilisatrice et détermine si ses pratiques spirituelles doivent être adaptées selon sa situation du jour.
+                        <br><br>
+                        La deuxième partie est l'interface visuelle (ce que voit l'utilisatrice) : elle affiche les informations de manière claire et personnalisée, et se met à jour en temps réel sans avoir besoin de recharger la page. Par exemple, cocher une prière dans la page Spiritualité met instantanément à jour le compteur affiché dans la barre de navigation.
+                        <br><br>
+                        Noor récupère également des informations depuis deux services externes gratuits : les horaires de prières sont calculés automatiquement selon la ville de l'utilisatrice, et des versets inspirants en arabe avec leur traduction française sont affichés et renouvelés dynamiquement.
+                        <br><br>
+                        Noor est entièrement déployée et accessible en ligne à l'adresse <strong class="text-pink-600">noor-app-ruddy.vercel.app</strong>. Elle est également adaptée pour une utilisation sur mobile : en scannant le QR code, n'importe quelle utilisatrice peut accéder à Noor depuis son téléphone et l'installer sur son écran d'accueil comme une application native, sans passer par un store d'applications.
+                    </p>
                 </div>
 
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 shadow-sm space-y-4">
@@ -672,7 +780,7 @@
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 7)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <img src="assets/noor-mobile-home.png" class="w-full h-full object-cover" alt="Version Mobile" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-mobile-home.png';">
+                            <img src="assets/noor-mobile-home.png" class="w-full h-full object-cover" alt="Version Mobile - Écran Accueil" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-mobile-home.png';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 8)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
@@ -680,6 +788,124 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">04</span>
+                        Étapes du processus de création
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">1. Recherche et analyse des besoins</h5>
+                            <p class="text-neutral-900">Avant d'écrire la moindre ligne de code, j'ai analysé les applications existantes : Flo et Clue pour le suivi du cycle menstruel, Taahirah pour l'accompagnement spirituel féminin. J'ai identifié ce qui manquait dans chacune et défini les fonctionnalités qui rendraient Noor réellement utile. Ce projet est borné d'un besoin réel que j'ai observé au sein de ma communauté : les femmes manquent souvent d'informations claires et accessibles sur la façon dont leur cycle menstruel interagit avec leurs pratiques spirituelles et culturelles. Ces sujets sont rarement abordés ouvertement, ce qui crée un vide que le numérique peut contribuer à combler de manière bienveillante et discrète.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">2. Conception de la structure de données</h5>
+                            <p class="text-neutral-900">Avant de développer, j'ai modélisé comment les informations allaient être organisées et stockées. Noor gère six types de données interconnectées : les utilisatrices, leurs entrées de cycle menstruel, leurs symptômes quotidiens, leurs prières, leurs entrées de jeûne et leur compteur de jours à rattraper. La relation la plus complexe est celle entre le cycle et le jeûne : lorsqu'une utilisatrice renseigne des jours de menstruations pendant une période de jeûne, l'application recalcule automatiquement le nombre de jours à rattraper sans aucune intervention manuelle.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">3. Développement de la partie serveur</h5>
+                            <p class="text-neutral-900">J'ai développé la partie invisible de l'application avec Symfony 7, un outil professionnel largement utilisé en entreprise pour créer des applications web fiables et sécurisées. J'ai créé trois modules logiques principaux : le premier calcule automatiquement la phase du cycle de l'utilisatrice (règles, post-règles, ovulation, pré-règles) selon ses données ; le deuxième détermine en temps réel si les pratiques spirituelles doivent être affichées comme actives ou adaptées ; le troisième synchronise automatiquement le compteur de jours à rattraper à chaque modification des données de cycle.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">4. Développement de l'interface visuelle</h5>
+                            <p class="text-neutral-900">J'ai développé l'interface avec Vue.js 3, un outil qui permet de créer des pages web interactives et fluides. J'ai défini une charte graphique complète : palette de couleurs douces (rose poudré, lavande, crème), typographies élégantes (Playfair Display pour les titres, DM Sans pour le corps de texte), composants visuels réutilisables. L'application s'adapte automatiquement à la langue choisie par l'utilisatrice (français ou anglais), avec sauvegarde de la préférence dans son profil.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs md:col-span-2">
+                            <h5 class="step-title font-heading">5. Intégrations de services externes & 6. Mise en ligne</h5>
+                            <p class="text-neutral-900">J'ai connecté deux services externes gratuits à Noor. Le premier calcule les horaires de prières selon la ville et le pays de l'utilisatrice — ces horaires s'affichent automatiquement sans aucune saisie manuelle. Le second fournit des versets inspirants en arabe avec leur traduction française, renouvelés dynamiquement. Noor est entièrement déployée et accessible en ligne. La mise en production m'a confrontée à des défis supplémentaires : configuration des accès sécurisés, gestion CORS et résolutions d'erreurs en ligne.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            Difficultés rencontrées — Noor
+                        </h4>
+                        <div class="space-y-6 text-neutral-900">
+                            <div>
+                                <h5 class="bilan-title font-bold">La synchronisation entre les différents modules</h5>
+                                <p class="project-body-text">La principale difficulté a été de faire communiquer les différentes parties de l'application entre elles de manière fluide. Concrètement, une modification du cycle menstruel doit immédiatement se répercuter sur l'affichage des pratiques spirituelles, le calcul des jours de jeûne à rattraper et les messages personnalisés du tableau de bord. Pour résoudre ce problème, j'ai centralisé toutes les données dans un espace de gestion partagé, accessible simultanément par toutes les pages de l'application, un peu comme un tableau d'affichage central que toutes les pièces d'une maison peuvent consulter en temps réel.</p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-bold">Le calcul du cycle et du rattrapage de jeûne</h5>
+                                <p class="project-body-text">La logique de calcul du cycle et des jours de jeûne à rattraper a été la partie la plus complexe du projet. Ces calculs impliquent des règles précises qui varient selon chaque utilisatrice. J'ai eu recours à l'intelligence artificielle pour m'aider à structurer cette logique mathématique, tester différents cas de figure et m'assurer que les résultats restaient cohérents dans toutes les situations. L'IA m'a permis d'explorer rapidement plusieurs approches avant de choisir celle qui correspondait le mieux aux besoins réels des utilisatrices.</p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-bold">L'installation sur l'écran d'accueil du téléphone</h5>
+                                <p class="project-body-text">J'ai souhaité que Noor puisse s'installer directement sur l'écran d'accueil d'un téléphone, comme une vraie application, sans passer par l'App Store ou le Google Play Store. Cette technologie, appelée PWA (application web progressive), permet à un site web de se comporter comme une application mobile native. Sa mise en place a nécessité une configuration technique spécifique que je ne maîtrisais pas au départ. J'ai utilisé l'IA pour comprendre les étapes à suivre et identifier les fichiers de configuration nécessaires, avant de les adapter au contexte de mon projet.</p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-bold">La gestion du texte arabe</h5>
+                                <p class="project-body-text">L'arabe s'écrit de droite à gauche, ce qui est à l'opposé du français et de l'anglais. Intégrer cette langue dans l'application sans que la mise en page se retrouve désorganisée a demandé des ajustements spécifiques sur certaines parties de l'interface. J'ai dû apprendre à gérer cette particularité technique pour que les deux sens de lecture coexistent harmonieusement dans la même application.</p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-bold">La mise en ligne de l'application</h5>
+                                <p class="project-body-text">Mettre l'application en ligne a représenté un apprentissage important. Le serveur qui gère les données et l'interface visuelle que l'utilisatrice voit sur son écran étaient hébergés sur deux plateformes différentes. Les faire communiquer de façon sécurisée a nécessité une configuration que je ne connaissais pas encore, et que j'ai apprise en combinant mes recherches personnelles et l'aide de l'IA pour comprendre les paramètres techniques à mettre en place.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-800 flex items-center justify-center text-xs font-semibold">06</span>
+                            Bilan personnel
+                        </h4>
+                        
+                        <div class="space-y-4 text-neutral-900">
+                            <div>
+                                <h5 class="bilan-title font-heading">1. Quels bénéfices pour la suite ?</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Noor est le projet qui m'a le plus appris sur ma capacité à concevoir et mener un projet complet de manière autonome. Partir d'un besoin réel identifié dans ma propre expérience et au sein de ma communauté, le transformer en fonctionnalités concrètes, développer les deux parties de l'application, connecter des services externes, soigner l'interface et mettre en ligne une application accessible à toutes : chaque étape a mobilisé des compétences différentes et complémentaires. Ce projet démontre directement ma capacité à être autonome sur un poste de développeur web junior dès la sortie du BUT.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-heading">2. Valorisation des compétences</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Les compétences démontrées dans Noor correspondent exactement aux attentes des entreprises : développement web complet côté serveur et côté interface, sécurisation des accès utilisateurs, environnement de développement reproductible, intégration de services externes, conception d'interface soignée et mise en production d'une application accessible au public. Ces compétences apparaissent dans la quasi-totalité des offres d'emploi junior que j'ai consultées lors de ma recherche d'emploi.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-heading">3. Prise de recul et amélioration</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Si je devais recommencer, j'aurais défini un périmètre plus restreint dès le départ pour éviter de disperser mon énergie sur trop de fonctionnalités simultanément. J'aurais également anticipé les contraintes de mise en ligne dès la phase de conception, car plusieurs problèmes rencontrés lors du déploiement auraient pu être évités avec une meilleure organisation initiale. Enfin, j'aurais intégré des vérifications automatiques du code dès le début du développement plutôt qu'en fin de projet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-pink-50 border border-pink-200/60 rounded-2xl p-5 shadow-xs">
+                    <h4 class="font-heading text-sm font-bold text-neutral-900 mb-3">Validation des Compétences (Noor)</h4>
+                    <div class="overflow-x-auto text-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-pink-200">
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Compétence</th>
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider">Ce que Noor démontre</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-pink-100 text-neutral-800">
+                                <tr>
+                                    <td class="py-2 font-bold text-pink-800">Développer</td>
+                                    <td class="py-2">API Symfony 7 + Front-end Vue.js 3, JWT, Docker, intégration API Aladhan.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-pink-800">Concevoir</td>
+                                    <td class="py-2">Modélisation relationnelle de six entités, charte UX multilingue et maquette.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-pink-800">Entreprendre</td>
+                                    <td class="py-2">Gestion autonome, de la conception au déploiement en ligne Vercel.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -689,7 +915,7 @@
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
                     Retour à l'accueil
                 </button>
 
@@ -707,6 +933,27 @@
             </div>
 
             <div class="space-y-8">
+                <div class="bg-purple-50 border border-purple-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-purple-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Comprendre</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Entreprendre</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Concevoir</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Exprimer</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Avant de me lancer dans le développement du site vitrine de Plan Poitrines, j'ai consacré une phase entière à la conception. Cette étape, souvent invisible dans le résultat final, est pourtant celle qui conditionne la qualité de tout ce qui suit. Dans un contexte associatif où l'identité visuelle était encore en construction et où les décisions se prenaient collectivement entre les deux co-présidentes et moi, il était d'autant plus important de poser des bases claires et validées avant d'écrire la moindre ligne de code.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">Ma mission était de concevoir l'organisation et le design du site vitrine avant son développement, en passant par trois étapes successives : l'arborescence, le wireframe, puis la maquette. Chacune de ces étapes avait un objectif précis : structurer le contenu, anticiper le parcours de l'utilisateur, et permettre à l'équipe de visualiser le futur site avant sa réalisation technique.</p>
+                    </div>
+                </div>
+
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du processus de maquettage (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -716,16 +963,48 @@
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <img src="assets/planpoitrines-wireframe1.png" class="w-full h-full object-cover" alt="Wireframe 1" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-wireframe1.png';">
+                            <img src="assets/planpoitrines-wireframe1.png" class="w-full h-full object-cover" alt="Wireframe Partie 1" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-wireframe1.png';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <img src="assets/planpoitrines-wireframe2.png" class="w-full h-full object-cover" alt="Wireframe 2" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-wireframe2.png';">
+                            <img src="assets/planpoitrines-wireframe2.png" class="w-full h-full object-cover" alt="Wireframe Partie 2" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-wireframe2.png';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 3)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <img src="assets/planpoitrines-maquette.png" class="w-full h-full object-cover" alt="Maquette" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-maquette.png';">
+                            <img src="assets/planpoitrines-maquette.png" class="w-full h-full object-cover" alt="Maquette Figma" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-maquette.png';">
                         </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Étapes de conception & réalisation
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">1. L'arborescence : organiser les pages</h5>
+                            <p class="text-neutral-900">J'ai construit l'arborescence en définissant quatre pages principales (Accueil, Productions, Contact et Adhésion). Cela m'a obligée à me mettre à la place de différents types d'utilisateurs (membres, partenaires et nouveaux visiteurs).</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">2. Le wireframe : dessiner la structure</h5>
+                            <p class="text-neutral-900">Réalisation de maquettes simplifiées en noir et blanc pour réfléchir à la hiérarchie de l'information et à l'accessibilité. Cela m'a permis d'anticiper des problèmes de lisibilité.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">3. La maquette : donner vie sur Figma</h5>
+                            <p class="text-neutral-900">J'ai décliné l'univers coloré (violet, rose, orange, jaune) sur Figma. Figma a permis d'optimiser les retours à distance avec les co-présidentes grâce aux commentaires directs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés</h4>
+                        <p class="project-body-text">Travailler avec une identité visuelle encore instable m'a demandé de l'adaptabilité pour pouvoir figer certains aspects et modifier d'autres plus tard sans tout casser. Les retours à distance ont aussi parfois manqué de réactivité.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <p class="project-body-text"><strong>Bénéfice :</strong> Prise de recul sur l'intérêt d'une phase UX complète avant le code.<br><strong>Ressources :</strong> Utilisation de Figma en mode collaboratif en situation de télétravail.<br><strong>Amélioration :</strong> Figer un planning de validation rigoureux avec l'équipe dès le départ.</p>
                     </div>
                 </div>
             </div>
@@ -737,7 +1016,7 @@
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
                     Retour à l'accueil
                 </button>
 
@@ -751,24 +1030,76 @@
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-purple-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-200/50 text-purple-800 px-3 py-1 rounded-full border border-purple-300 mb-6 inline-block">Intégration Web · Stage BUT2</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-purple-950">Création du site vitrine — Plan Poitrines</h1>
+                <p class="text-neutral-600 font-light text-base md:text-lg leading-relaxed mb-6 max-w-4xl project-description">
+                    Développement web natif sans CMS d'un site vitrine léger, fluide et documenté.
+                </p>
             </div>
 
             <div class="space-y-8">
+                <div class="bg-purple-50 border border-purple-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-purple-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Développer</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Entreprendre</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Comprendre</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Exprimer</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Dans le cadre de ma deuxième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de huit semaines, du 1er avril au 1er juin 2025, au sein de l'association Plan Poitrines, anciennement Black Sheep. Ce collectif soutient de jeunes cinéastes, majoritairement des femmes, en promouvant des valeurs féministes, queer et inclusives à travers des projets audiovisuels. Mon stage s'est déroulé à un moment charnière pour l'association : elle traversait un changement de nom et une refonte complète de son identité visuelle. C'est dans ce contexte de transition que les deux co-présidentes m'ont confié, parmi d'autres missions, la conception et le développement d'un site vitrine. Je travaillais principalement en télétravail trois jours par semaine, ce qui m'a imposé d'emblée une forte autonomie et une communication régulière avec l'équipe à distance.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">L'objectif était de créer un site vitrine fonctionnel pour améliorer la visibilité de l'association et structurer sa communication en ligne. Le site devait refléter la nouvelle identité de Plan Poitrines — engagée, créative et inclusive — tout en étant accessible et lisible pour des publics variés : membres, partenaires, et personnes découvrant l'association. Les co-présidentes souhaitaient un outil simple à prendre en main par l'équipe après mon départ, sans dépendance à des technologies complexes.</p>
+                    </div>
+                </div>
+
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Aperçus du site (Screenshots & Vidéo)</span>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <img src="assets/planpoitrines-vitrine-screen1.png" class="w-full h-full object-cover" alt="Capture 1" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-screen1.png';">
+                            <img src="assets/planpoitrines-vitrine-screen1.png" class="w-full h-full object-cover" alt="Capture d'écran 1" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-screen1.png';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <img src="assets/planpoitrines-vitrine-screen2.png" class="w-full h-full object-cover" alt="Capture 2" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-screen2.png';">
+                            <img src="assets/planpoitrines-vitrine-screen2.png" class="w-full h-full object-cover" alt="Capture d'écran 2" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-screen2.png';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir la vidéo</div>
-                            <img src="assets/planpoitrines-vitrine-video-preview.png" class="w-full h-full object-cover" alt="Vidéo" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-video-preview.png';">
+                            <img src="assets/planpoitrines-vitrine-video-preview.png" class="w-full h-full object-cover" alt="Vidéo démonstration" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-video-preview.png';">
                         </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Processus de création
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">Développement & Technologie</h5>
+                            <p class="text-neutral-900">J'ai fait le choix de travailler avec les langages de base du web — HTML pour la structure des pages et CSS pour leur mise en forme visuelle — sans recourir à un CMS complexe. Ce choix répondait au manque de profil technique de l'équipe et me permettait de livrer un code structuré, responsive et facile à maintenir.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">Mise en ligne provisoire</h5>
+                            <p class="text-neutral-900">Pour permettre à l'équipe de visualiser le site dans des conditions réelles et recueillir des retours, j'ai déployé le site sur un serveur web personnel. J'en ai profité pour sensibiliser les co-présidentes aux enjeux de l'hébergement web.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés</h4>
+                        <p class="project-body-text">Le manque de retours réguliers à distance a ralenti la finalisation de la page d'adhésion interactive. De plus, l'identité visuelle de l'association évoluait encore pendant mon stage, m'obligeant à composer avec des maquettes provisoires.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <p class="project-body-text"><strong>Synthèse :</strong> Cette mission m'a appris que le développement ne se limite pas à la technique. Le cadrage initial et la communication proactive en télétravail sont fondamentaux pour éviter les blocages de validation.</p>
                     </div>
                 </div>
             </div>
@@ -780,9 +1111,10 @@
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
                     Retour à l'accueil
                 </button>
+
                 <button onclick="showProject('wr506d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
                     Projet suivant
                     <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -793,9 +1125,34 @@
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-blue-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-200/50 text-blue-800 px-3 py-1 rounded-full border border-blue-300 mb-6 inline-block">Projet Pro · Solidarité</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-blue-950">Association ACM (Ike Oluwa)</h1>
+                <p class="text-neutral-600 font-light text-base md:text-lg leading-relaxed mb-6 max-w-4xl project-description">
+                    Refonte globale de la plateforme d'action sociale interculturelle de l'association ACM (Ike Oluwa).
+                </p>
             </div>
 
             <div class="space-y-8">
+                <div class="bg-blue-50 border border-blue-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-blue-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Développer</span>
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Concevoir</span>
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Entreprendre</span>
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Comprendre</span>
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Exprimer</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Dans le cadre de mon parcours de BUT MMI, j'ai collaboré avec l'association ACM (Ike Oluwa), qui œuvre pour la solidarité interculturelle et l'accompagnement social au niveau local. L'association avait besoin d'un outil moderne pour structurer ses activités de présentation, récolter des dons de manière sécurisée et centraliser les demandes d'adhésion.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">La mission consistait à concevoir et développer une plateforme d'action solidaire complète : présentation dynamique des pôles d'activités, module de dons sécurisé, et espace d'administration épuré pour les bénévoles.</p>
+                    </div>
+                </div>
+
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet ACM (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -817,6 +1174,34 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Processus de création
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">Conception Centrée Utilisateur</h5>
+                            <p class="text-neutral-900">Analyse du parcours des bénévoles et donateurs, prototypage basse-fidélité pour valider les interactions avant d'entamer l'intégration.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">Développement & Sécurité</h5>
+                            <p class="text-neutral-900">Développement de l'interface en responsive design, mise en place d'un modèle de base de données relationnelle SQL robuste, et liaison avec un système de dons sécurisé.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés</h4>
+                        <p class="project-body-text">La complexité résidait dans l'accessibilité de l'interface pour un public de bénévoles d'horizons variés, résolue en simplifiant le parcours utilisateur et en menant des tests de lisibilité poussés.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <p class="project-body-text">Un projet solidaire porteur de sens qui m'a sensibilisée aux besoins spécifiques du secteur tiers et a consolidé ma polyvalence en ingénierie et intégration UX/UI.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -826,9 +1211,10 @@
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
                     Retour à l'accueil
                 </button>
+
                 <button onclick="showProject('wr602d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
                     Projet suivant
                     <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -839,9 +1225,33 @@
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-yellow-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full border border-yellow-200 mb-6 inline-block">Projet Universitaire · S5</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-yellow-950">WR506D — API REST & GraphQL — Gestion de films</h1>
+                <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">
+                    Architecture back-end complète et interface de recherche développées en totale autonomie dans le cadre du semestre 5 du BUT MMI.
+                </p>
             </div>
 
             <div class="space-y-8">
+                <div class="bg-yellow-50 border border-yellow-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-yellow-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Développer</span>
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Concevoir</span>
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Comprendre</span>
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Exprimer</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet à l'IUT de Troyes, j'ai réalisé en totale autonomie un projet back-end avancé portant sur la gestion d'un catalogue de films. L'objectif académique était de concevoir et développer une API professionnelle complète, sécurisée et documentée, puis de la connecter à une interface front-end développée dans un dépôt séparé. Ce projet couvre l'ensemble du cycle de développement d'une application web : de la modélisation des données jusqu'à la mise en place d'une chaîne d'intégration continue.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">L'exercice consistait à construire une API robuste — c'est-à-dire un service qui stocke, organise et expose des données structurées — permettant de gérer un catalogue de films, d'acteurs, de réalisateurs et de catégories. Cette API devait ensuite être consommée par une interface front-end développée en parallèle dans un dépôt distinct, les deux projets communiquant entre eux. L'enjeu principal était de produire un code de qualité professionnelle : sécurisé, bien organisé, testé et conforme aux standards du secteur.</p>
+                    </div>
+                </div>
+
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet WR506D (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -859,6 +1269,81 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Étapes du processus de création
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">1. Conception de la base de données</h5>
+                            <p class="text-neutral-900">Avant d'écrire la moindre ligne de code, j'ai modélisé l'ensemble des données à gérer : films, acteurs, réalisateurs, catégories, utilisateurs, et les relations entre eux. Par exemple, un film peut avoir plusieurs acteurs, et un acteur peut avoir joué dans plusieurs films. Bien définir ces liens en amont était indispensable pour que l'application reste cohérente et évolutive.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">2. Construction de l'API</h5>
+                            <p class="text-neutral-900">J'ai développé l'API avec Symfony 7 et API Platform, deux outils professionnels largement utilisés en entreprise. J'ai mis en place deux façons d'interroger les données : une architecture REST classique, et GraphQL, une approche plus flexible qui permet à l'interface de demander exactement les informations dont elle a besoin, sans surplus. J'ai également intégré un système de pagination, des filtres de recherche par nom, date ou disponibilité en ligne, et des règles de validation pour garantir la cohérence des données saisies.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">3. Sécurisation des accès</h5>
+                            <p class="text-neutral-900">L'API est sécurisée par authentification JWT — un système de jetons numériques qui vérifie l'identité de l'utilisateur à chaque requête. J'ai mis en place deux niveaux d'accès distincts : un rôle utilisateur standard et un rôle administrateur avec des droits étendus. J'ai également implémenté une double authentification (2FA) via Google Authenticator : après la connexion classique, l'utilisateur doit saisir un code temporaire généré par son téléphone. C'était ma première implémentation de ce mécanisme, et cela m'a permis de comprendre concrètement comment fonctionne la sécurité à deux facteurs dans une application web professionnelle. J'ai par ailleurs intégré la gestion des photos de films et d'acteurs via upload de fichiers.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">4. Alimentation et test de l'API & 5. Connexion front-end</h5>
+                            <p class="text-neutral-900">Pour disposer d'un volume de données réaliste dès le départ, j'ai généré automatiquement 150 films et 190 acteurs via un système de fixtures. J'ai ensuite documenté et testé l'ensemble des routes avec Postman, en utilisant des variables d'environnement pour rendre la collection réutilisable facilement. L'interface utilisateur a été développée dans un dépôt séparé, puis connectée à l'API. Gérer la communication entre deux dépôts distincts m'a appris à penser l'architecture en termes de contrat d'interface : l'API expose des données dans un format défini, le front les consomme, et les deux projets doivent s'accorder sur ce format pour fonctionner ensemble.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs md:col-span-2">
+                            <h5 class="step-title font-heading">6. Qualité du code et automatisation</h5>
+                            <p class="text-neutral-900">Les commits Git suivent la convention Conventional Commits — une règle de nommage standardisée qui rend l'historique du projet lisible par n'importe quel développeur. J'ai également intégré des outils d'analyse automatique : PHPStan pour détecter les erreurs de logique, PHP_CodeSniffer pour vérifier la conformité au standard PSR-2, et PHPMD pour identifier les parties de code trop complexes. L'ensemble est automatisé via GitHub Actions : à chaque modification du code, ces vérifications se déclenchent automatiquement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés rencontrées</h4>
+                        <p class="project-body-text">La principale difficulté a été de faire coexister REST et GraphQL sur la même base de code sans créer de conflits de configuration. L'implémentation de la 2FA a également représenté un vrai défi technique : comprendre le fonctionnement des codes TOTP, les intégrer dans le flux d'authentification existant et gérer les cas particuliers demandait une compréhension fine du mécanisme. Enfin, connecter deux dépôts indépendants m'a obligée à figer le format de contrat d'interface pour le format d'échange entre le back et le front.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl space-y-4">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <div>
+                            <h5 class="bilan-title">Ce que ce projet m'a apporté</h5>
+                            <p class="project-body-text">Ce projet m'a donné une vision claire de ce que signifie construire une API de niveau professionnel. Au-delà des fonctionnalités, j'ai compris que la qualité du code — lisible, versionné proprement, testé et documenté — est aussi importante que le fait qu'il fonctionne. C'est cette rigueur que je retiens avant tout.</p>
+                        </div>
+                        <div>
+                            <h5 class="bilan-title">Les compétences développées</h5>
+                            <p class="project-body-text">J'ai consolidé ma maîtrise de Symfony et découvert API Platform dans toute sa richesse. J'ai pris en main des outils directement issus du monde professionnel : JWT et 2FA pour la sécurité, GitHub Actions pour l'automatisation, Postman pour la documentation et les tests, et les conventions Git pour un historique propre et exploitable.</p>
+                        </div>
+                        <div>
+                            <h5 class="bilan-title">Ce que je ferais différemment</h5>
+                            <p class="project-body-text">Si je devais recommencer, j'écrirais les tests unitaires en parallèle du développement plutôt qu'en fin de projet. Développer et tester simultanément aurait rendu chaque étape plus solide et m'aurait évité de revenir en arrière pour corriger des erreurs détectées tardivement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200/60 rounded-2xl p-5 shadow-xs">
+                    <h4 class="font-heading text-sm font-bold text-neutral-900 mb-3">Validation des Compétences (WR506D)</h4>
+                    <div class="overflow-x-auto text-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-yellow-200">
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Compétence</th>
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider">Ce que WR506D démontre</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-yellow-100 text-neutral-800">
+                                <tr>
+                                    <td class="py-2 font-bold text-yellow-800">Développer</td>
+                                    <td class="py-2">API REST + GraphQL Symfony 7, JWT, 2FA Google Authenticator, Docker, fixtures, upload de fichiers, pagination, filtres, GitHub Actions, connexion multi-dépôts.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-yellow-800">Entreprendre</td>
+                                    <td class="py-2">Gestion autonome du projet de A à Z, organisation en deux dépôts distincts connectés, choix techniques assumés seule, respect des conventions et standards professionnels imposés par le sujet.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -868,9 +1353,10 @@
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
                     Retour à l'accueil
                 </button>
+
                 <button onclick="showProject('rj10')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
                     Retour premier projet
                     <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -881,9 +1367,31 @@
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-yellow-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full border border-yellow-200 mb-6 inline-block">Projet Universitaire · S6</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-yellow-950">WR602D — Micro-service de génération de PDF & abonnements</h1>
+                <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">
+                    Développement et déploiement d'un micro-service PDF Gotenberg intégré à une application de gestion d'abonnements Stripe.
+                </p>
             </div>
 
             <div class="space-y-8">
+                <div class="bg-yellow-50 border border-yellow-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-yellow-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Développer</span>
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Entreprendre</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet à l'IUT de Troyes, j'ai réalisé en totale autonomie un projet de semestre 6 portant sur l'architecture en micro-services. L'objectif était de comprendre et d'appliquer un concept clé du développement professionnel moderne : découper une application en services indépendants qui communiquent entre eux, plutôt que de tout regrouper dans un seul et même projet.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">Le projet se décomposait en deux parties distinctes. D'un côté, un micro-service dédié uniquement à la génération de fichiers PDF, appelable depuis n'importe quelle application. De l'autre, une application Symfony principale dotée d'une interface utilisateur en Twig, qui consomme ce micro-service et propose un système de comptes avec différents niveaux d'abonnement. Selon son abonnement, l'utilisateur a accès à plus ou moins de fonctionnalités — par exemple, un quota limité de PDFs par jour pour un abonnement de base, ou un accès illimité pour un abonnement supérieur.</p>
+                    </div>
+                </div>
+
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet WR602D (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -901,19 +1409,80 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Étapes du processus de création
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">1. Compréhension de l'architecture micro-services</h5>
+                            <p class="text-neutral-900">Avant de développer quoi que ce soit, j'ai pris le temps de comprendre ce que signifie concevoir en micro-services : chaque service a une responsabilité unique, fonctionne de façon autonome, et communique avec les autres via des requêtes HTTP. Cette logique est très différente d'une application classique où tout est centralisé, et elle m'a demandé de repenser ma façon d'organiser un projet.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">2. Développement du micro-service PDF</h5>
+                            <p class="text-neutral-900">J'ai développé le micro-service de génération de PDF en m'appuyant sur Gotenberg, un outil open source qui convertit des contenus web en fichiers PDF. Le micro-service reçoit une requête, génère le PDF correspondant et le retourne. Il est entièrement indépendant de l'application principale et peut être appelé via Symfony HttpClient.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">3. Développement de l'application principale</h5>
+                            <p class="text-neutral-900">J'ai ensuite développé l'application Symfony qui consomme ce micro-service. L'interface utilisateur est codée en Twig, le moteur de templates natif de Symfony. Elle permet la création de compte, la connexion sécurisée, et la gestion du profil utilisateur.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">4. Système d'abonnements avec Stripe & 5. Déploiement</h5>
+                            <p class="text-neutral-900">J'ai intégré Stripe — la référence du paiement en ligne — pour gérer les niveaux d'abonnement. Les paiements sont simulés en environnement de test, sans argent réel. Selon l'abonnement souscrit, l'application adapte automatiquement les fonctionnalités accessibles à l'utilisateur : quota de PDFs journalier pour le niveau de base, accès illimité pour les niveaux supérieurs. J'ai aussi mis en place un déploiement automatique via GitHub Actions, couvrant à la fois Gotenberg et l'application Symfony.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés rencontrées</h4>
+                        <p class="project-body-text">La principale difficulty a été de faire communiquer deux projets distincts de façon fiable. Configurer Symfony HttpClient pour qu'il appelle correctement le micro-service, gérer les erreurs de communication entre les deux, et s'assurer que tout fonctionne aussi bien en local qu'en déploiement a demandé beaucoup de rigueur. L'intégration de Stripe a également représenté un apprentissage important : comprendre le fonctionnement des webhooks, des événements de paiement et de la gestion des états d'abonnement côté serveur était une première pour moi.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl space-y-4">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <div>
+                            <h5 class="bilan-title">Ce que ce projet m'a apporté</h5>
+                            <p class="project-body-text">Ce projet m'a ouvert à une façon de penser l'architecture logicielle que je n'avais pas encore expérimentée. Découper une application en services indépendants, c'est accepter une complexité de coordination en échange d'une meilleure maintenabilité et évolutivité. C'est une logique que je retrouve directement dans les projets professionnels et qui donne du sens à beaucoup de choix techniques que je rencontre en entreprise.</p>
+                        </div>
+                        <div>
+                            <h5 class="bilan-title">Les compétences développées</h5>
+                            <p class="project-body-text">J'ai découvert Gotenberg, approfondi mon usage de Symfony HttpClient, et pris en main Stripe pour la première fois. J'ai également consolidé ma compréhension du déploiement automatisé avec GitHub Actions dans un contexte multi-services, ce qui est plus complexe que sur un projet monolithique.</p>
+                        </div>
+                        <div>
+                            <h5 class="bilan-title">Ce que je ferais différemment</h5>
+                            <p class="project-body-text">Si je devais recommencer, je définirais plus tôt le contrat d'interface entre le micro-service et l'application principale — c'est-à-dire le format exact des requêtes et des réponses échangées. Clarifier ce point dès le départ aurait évité plusieurs ajustements en cours de route.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200/60 rounded-2xl p-5 shadow-xs">
+                    <h4 class="font-heading text-sm font-bold text-neutral-900 mb-3">Validation des Compétences (WR602D)</h4>
+                    <div class="overflow-x-auto text-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-yellow-200">
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Compétence</th>
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider">Ce que WR602D démontre</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-yellow-100 text-neutral-800">
+                                <tr>
+                                    <td class="py-2 font-bold text-yellow-800">Développer</td>
+                                    <td class="py-2">Micro-service Gotenberg, intégration Symfony HttpClient, interface Twig, système d'abonnements Stripe, déploiement automatisé GitHub Actions, architecture multi-services Docker.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-yellow-800">Entreprendre</td>
+                                    <td class="py-2">Gestion autonome d'un projet à deux composants distincts, choix d'architecture micro-services, intégration d'un outil de paiement professionnel en totale autonomie.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <footer class="border-t border-neutral-100 py-16 mt-24">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-400 gap-6">
-            <div>
-                <p class="font-heading font-extrabold text-neutral-950 text-base mb-1 lowercase">nimotalah<span class="text-emerald-500">.</span></p>
-                <p class="text-xs">Étudiante en BUT3 parcours développement web et dispositifs interactifs</p>
-            </div>
-            <p class="text-xs">© 2026 — Tous droits réservés.</p>
-        </div>
-    </footer>
 
     <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-xs select-none">
         <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl opacity-70 hover:opacity-100 transition-opacity cursor-pointer p-2">
