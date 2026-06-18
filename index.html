@@ -34,28 +34,29 @@
             font-family: 'Outfit', sans-serif;
         }
         
-        /* UNIFORMISATION STRICTE */
+        /* UNIFORMISATION STRICTE : Force la taille de texte à 16px et la couleur sombre sur toutes les pages de projets */
         .page p, .page li, .project-description, .project-body-text, td, th {
-            font-size: 1rem !important; 
+            font-size: 1rem !important; /* 16px */
             color: #171717 !important;
             font-weight: 400 !important;
             line-height: 1.7 !important;
         }
         
+        /* Titres de processus de création et de bilans agrandis pour une meilleure hiérarchie */
         .step-title {
-            font-size: 1.25rem !important; 
+            font-size: 1.25rem !important; /* 20px */
             font-weight: 800 !important;
             color: #111827 !important;
             margin-bottom: 0.75rem;
         }
         .bilan-title {
-            font-size: 1.125rem !important; 
+            font-size: 1.125rem !important; /* 18px */
             font-weight: 700 !important;
             color: #111827 !important;
             margin-bottom: 0.5rem;
         }
         
-        /* Transition d'apparition */
+        /* Transition fluide d'apparition au chargement */
         .fade-in-up {
             animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
@@ -64,7 +65,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Animation d'arrière-plan */
+        /* Animation des arrière-plans floutés pour un rendu fluide et organique */
         @keyframes drift {
             0% { transform: translate(0, 0) scale(1); }
             50% { transform: translate(30px, -40px) scale(1.08); }
@@ -77,7 +78,7 @@
             animation: drift 24s ease-in-out infinite alternate-reverse;
         }
 
-        /* Système de navigation sans rechargement */
+        /* Système de pages fluides sans rechargement */
         .page {
             display: none;
             opacity: 0;
@@ -90,6 +91,7 @@
             transform: translateY(0);
         }
 
+        /* Curseur personnalisé ultra-minimaliste et intuitif */
         #cursor {
             transition: width .15s, height .15s, background-color .15s, transform .05s ease-out;
             transform: translate(-50%, -50%);
@@ -119,6 +121,7 @@
     </header>
 
     <div id="page-home" class="page active relative z-10">
+        
         <main class="max-w-6xl mx-auto px-6 pt-24 pb-16 min-h-[85vh] flex flex-col justify-center fade-in-up">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-neutral-50/80 backdrop-blur-xs text-xs font-medium text-neutral-600 w-fit mb-6 shadow-xs">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Disponible pour des opportunités
@@ -129,7 +132,7 @@
             </h1>
             
             <p class="text-lg md:text-xl text-neutral-500 font-light max-w-3xl leading-relaxed mb-12">
-                Étudiante en fin d'études de BUT MMI (Parcours Développement Web et Dispositifs Interactifs) à l'IUT de Troyes. J'allie l'ingénierie rigoureuse de l'architecture back-end à la finesse des détails front-end et de l'ergonomie.
+                Étudiante en fin d'études de **BUT MMI (Parcours Développement Web et Dispositifs Interactifs)** à l'IUT de Troyes. J'allie l'ingénierie rigoureuse de l'architecture back-end à la finesse des détails front-end et de l'ergonomie.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4">
@@ -148,9 +151,14 @@
                 <div class="md:col-span-5">
                     <div class="bg-neutral-50 border border-neutral-100 p-8 rounded-3xl relative overflow-hidden">
                         <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-100/40 rounded-full blur-2xl"></div>
-                        <div class="w-16 h-16 bg-neutral-950 rounded-2xl flex items-center justify-center font-heading text-xl font-bold text-white mb-6">NA</div>
+                        <div class="w-16 h-16 bg-neutral-950 rounded-2xl flex items-center justify-center font-heading text-xl font-bold text-white mb-6">
+                            NA
+                        </div>
                         <h3 class="text-2xl font-bold mb-1">Nimotalah ALLI</h3>
-                        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-6 leading-relaxed">Étudiante en BUT3 parcours développement web et dispositifs interactifs</p>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-6 leading-relaxed">
+                            Étudiante en BUT3 parcours développement web et dispositifs interactifs
+                        </p>
+                        
                         <div class="space-y-3 text-sm text-neutral-600">
                             <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-neutral-100 shadow-2xs">
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> BUT3 DWD — IUT Troyes
@@ -164,11 +172,16 @@
 
                 <div class="md:col-span-7">
                     <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">PROFIL TECHNIQUE</p>
-                    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6">Développement & UX/UI.</h2>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6">L'ingénierie alliée à la sensibilité UX.</h2>
                     <div class="space-y-6 text-neutral-500 font-light leading-relaxed text-base md:text-lg">
-                        <p>Actuellement en dernière année de BUT Métiers du Multimédia et de l'Internet, je me concentre sur la création d'architectures applicatives durables, de la conception à la mise en ligne.</p>
-                        <p>Ma double expertise me permet d'intervenir à la fois sur l'architecture de bases de données et la logique serveur (<strong class="text-neutral-950 font-medium">Symfony 7, PHP, MYSQL</strong>) et sur le développement d'interfaces fluides et ergonomiques en s'appuyant sur des composants modernes (<strong class="text-neutral-950 font-medium">Vue.js 3, Tailwind CSS</strong>).</p>
+                        <p>
+                            Actuellement en dernière année de **BUT Métiers du Multimédia et de l'Internet**, je me concentre sur la création d'architectures applicatives pérennes, de la conception à la mise en ligne.
+                        </p>
+                        <p>
+                            Ma double expertise me permet d'intervenir à la fois sur l'architecture de bases de données et la logique serveur (<strong class="text-neutral-950 font-medium">Symfony 7, Node.js, PostgreSQL</strong>) et sur le développement d'interfaces fluides et ergonomiques en s'appuyant sur des composants modernes (<strong class="text-neutral-950 font-medium">Vue.js 3, React, Tailwind CSS</strong>).
+                        </p>
                     </div>
+
                     <div class="mt-8 flex flex-wrap gap-2">
                         <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Symfony 7</span>
                         <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Vue.js 3</span>
@@ -185,14 +198,20 @@
                     <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">RÉALISATIONS PROFESSIONNELLES & ACADÉMIQUES</p>
                     <h2 class="text-3xl md:text-5xl font-black tracking-tight">Mes Projets</h2>
                 </div>
+                
                 <div class="inline-flex bg-neutral-100 p-2 rounded-full border border-neutral-200 self-start md:self-end shadow-sm">
-                    <button onclick="togglePortfolioView('pro')" id="view-pro-btn" class="px-5 py-2.5 rounded-full text-xs font-semibold transition-all text-neutral-600 hover:text-neutral-900 cursor-pointer">Vue Professionnelle</button>
-                    <button onclick="togglePortfolioView('academic')" id="view-aca-btn" class="px-5 py-2.5 rounded-full text-xs font-extrabold transition-all bg-purple-600 text-white shadow-md cursor-pointer hover:bg-purple-700">Vue Universitaire (Compétences)</button>
+                    <button onclick="togglePortfolioView('pro')" id="view-pro-btn" class="px-5 py-2.5 rounded-full text-xs font-semibold transition-all text-neutral-600 hover:text-neutral-900 cursor-pointer">
+                        Vue Professionnelle
+                    </button>
+                    <button onclick="togglePortfolioView('academic')" id="view-aca-btn" class="px-5 py-2.5 rounded-full text-xs font-extrabold transition-all bg-purple-600 text-white shadow-md cursor-pointer hover:bg-purple-700">
+                        Vue Universitaire (Compétences)
+                    </button>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8" id="projects-grid">
-                <div class="group cursor-pointer flex flex-col h-full project-card-item" onclick="showProject('rj10')">
+                
+                <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,design,entreprendre,comprendre" onclick="showProject('rj10')">
                     <div class="relative overflow-hidden rounded-3xl bg-emerald-50/90 border-2 border-emerald-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
                         <div class="w-full h-full flex flex-col justify-between p-8">
@@ -212,8 +231,13 @@
                         <div class="w-full">
                             <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-emerald-600 transition-colors">RJ10 Rappel</h3>
                             <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Application de rappel automatique pour le renouvellement des certifications professionnelles.</p>
-                            <div class="academic-label hidden mb-3 text-xs bg-emerald-50 text-emerald-800 p-2.5 rounded-lg border border-emerald-200/40"><strong>Compétences BUT MMI :</strong> Développer · Concevoir · Entreprendre · Comprendre</div>
-                            <div class="flex gap-2"><span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Symfony 7</span><span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Vue.js 3</span></div>
+                            <div class="academic-label hidden mb-3 text-xs bg-emerald-50 text-emerald-800 p-2.5 rounded-lg border border-emerald-200/40">
+                                <strong>Compétences BUT MMI :</strong> Développer · Concevoir · Entreprendre · Comprendre
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Symfony 7</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Vue.js 3</span>
+                            </div>
                         </div>
                         <div class="p-3 rounded-full border border-neutral-200 text-neutral-400 group-hover:text-black group-hover:border-black transition-all">
                             <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -221,7 +245,7 @@
                     </div>
                 </div>
 
-                <div class="group cursor-pointer flex flex-col h-full project-card-item" onclick="showProject('noor')">
+                <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,design,entreprendre,comprendre,express" onclick="showProject('noor')">
                     <div class="relative overflow-hidden rounded-3xl bg-pink-50/90 border-2 border-pink-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-pink-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
                         <div class="w-full h-full flex flex-col justify-between p-8">
@@ -232,7 +256,7 @@
                                 </a>
                             </div>
                             <div class="space-y-2">
-                                <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-100 text-pink-800 px-2.5 py-1 rounded-full border border-pink-200/40">Projet Inédit · Terminé</span>
+                                <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-100 text-pink-800 px-2.5 py-1 rounded-full border border-pink-200/40">Projet Inédit · En cours</span>
                                 <h4 class="text-xl font-bold text-neutral-950 mt-1">Application de bien-être féminin</h4>
                             </div>
                         </div>
@@ -241,174 +265,1298 @@
                         <div class="w-full">
                             <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-pink-600 transition-colors">Noor App</h3>
                             <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Application PWA croisant suivi de santé gynécologique et pratique cultuelle.</p>
-                            <div class="academic-label hidden mb-3 text-xs bg-pink-50 text-pink-800 p-2.5 rounded-lg border border-pink-200/40"><strong>Compétences BUT MMI :</strong> Développer · Concevoir · Entreprendre · Comprendre · Exprimer</div>
-                            <div class="flex gap-2"><span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Symfony 7</span><span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Vue.js 3</span></div>
+                            <div class="academic-label hidden mb-3 text-xs bg-pink-50 text-pink-800 p-2.5 rounded-lg border border-pink-200/40">
+                                <strong>Compétences BUT MMI :</strong> Développer · Concevoir · Entreprendre · Comprendre · Exprimer
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Symfony 7</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Vue.js 3</span>
+                            </div>
                         </div>
                         <div class="p-3 rounded-full border border-neutral-200 text-neutral-400 group-hover:text-black group-hover:border-black transition-all">
                             <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </div>
                     </div>
                 </div>
+
+                <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="comprendre,entreprendre,design,express" onclick="showProject('planpoitrines-maquette')">
+                    <div class="relative overflow-hidden rounded-3xl bg-purple-50/90 border-2 border-purple-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/10 group-hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
+                        <div class="w-full h-full flex flex-col justify-between p-8">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-bold uppercase tracking-wider text-purple-800 bg-white/95 px-3 py-1 rounded-full border border-purple-200/40">UX Design</span>
+                                <a href="https://github.com/niniallx" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </a>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-100 text-purple-800 px-2.5 py-1 rounded-full border border-purple-200/40">Stage BUT2 · Terminé</span>
+                                <h4 class="text-xl font-bold text-neutral-950 mt-1">Arborescence & Maquette</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start px-2 mt-auto">
+                        <div class="w-full">
+                            <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-purple-600 transition-colors">Plan Poitrines — UX/UI</h3>
+                            <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Phase de conception visuelle, parcours utilisateur et arborescence de l'interface.</p>
+                            <div class="academic-label hidden mb-3 text-xs bg-purple-50 text-purple-800 p-2.5 rounded-lg border border-purple-200/40">
+                                <strong>Compétences BUT MMI :</strong> Comprendre · Entreprendre · Concevoir · Exprimer
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Figma</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Wireframing</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-full border border-neutral-200 text-neutral-400 group-hover:text-black group-hover:border-black transition-all">
+                            <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,entreprendre,comprendre,express" onclick="showProject('planpoitrines-vitrine')">
+                    <div class="relative overflow-hidden rounded-3xl bg-purple-50/90 border-2 border-purple-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/10 group-hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
+                        <div class="w-full h-full flex flex-col justify-between p-8">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-bold uppercase tracking-wider text-purple-800 bg-white/95 px-3 py-1 rounded-full border border-purple-200/40">Intégration Web</span>
+                                <a href="http://mmi23c01.mmi-troyes.fr/planpoitrines/index.html" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs">
+                                    <i class="fa-solid fa-link text-lg"></i>
+                                </a>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-100 text-purple-800 px-2.5 py-1 rounded-full border border-purple-200/40">Stage BUT2 · Terminé</span>
+                                <h4 class="text-xl font-bold text-neutral-950 mt-1">Intégration du site vitrine</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start px-2 mt-auto">
+                        <div class="w-full">
+                            <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-purple-600 transition-colors">Plan Poitrines — Vitrine</h3>
+                            <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Création complète du site vitrine d'un collectif audiovisuel inclusif.</p>
+                            <div class="academic-label hidden mb-3 text-xs bg-purple-50 text-purple-800 p-2.5 rounded-lg border border-purple-200/40">
+                                <strong>Compétences BUT MMI :</strong> Développer · Entreprendre · Comprendre · Exprimer
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">HTML5</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-full border border-neutral-200 text-neutral-400 group-hover:text-black group-hover:border-black transition-all">
+                            <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,design,entreprendre,comprendre,express" onclick="showProject('acm-ikeoluwa')">
+                    <div class="relative overflow-hidden rounded-3xl bg-blue-50/90 border-2 border-blue-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-blue-500/10 group-hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
+                        <div class="w-full h-full flex flex-col justify-between p-8">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-bold uppercase tracking-wider text-blue-800 bg-white/95 px-3 py-1 rounded-full border border-blue-200/40">Asso ACM</span>
+                                <a href="https://github.com/niniallx" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </a>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full border border-blue-200/40">Stage BUT3 · En Cours</span>
+                                <h4 class="text-xl font-bold text-neutral-950 mt-1">Plateforme Ike Oluwa</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start px-2 mt-auto">
+                        <div class="w-full">
+                            <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-blue-600 transition-colors">Ike Oluwa — ACM</h3>
+                            <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Développement full-stack d’une plateforme communautaire de gestion associative pour des actions de solidarité et d’intégration culturelle.</p>
+                            <div class="academic-label hidden mb-3 text-xs bg-blue-50 text-blue-800 p-2.5 rounded-lg border border-blue-200/40">
+                                <strong>Compétences BUT MMI :</strong> Développer · Entreprendre
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">PHP</span>
+                                <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">SQL</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-full border border-neutral-200 text-neutral-400 group-hover:text-black group-hover:border-black transition-all">
+                            <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section id="projets-uni" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
-            <div class="mb-16"><h2 class="text-3xl md:text-5xl font-black tracking-tight">Projets Universitaires</h2></div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="group cursor-pointer bg-neutral-50 border-2 border-neutral-200 rounded-3xl p-8 flex flex-col justify-between transition-all hover:shadow-xl hover:border-neutral-400" onclick="showProject('wr506d')">
-                    <div>
-                        <div class="flex justify-between items-start mb-4"><span class="text-xs font-bold px-3 py-1 bg-neutral-200 text-neutral-700 rounded-full">WR506D — S5</span></div>
-                        <h3 class="text-2xl font-bold tracking-tight mb-3">Symfony & Search Films</h3>
-                        <p class="text-neutral-500 font-light text-sm leading-relaxed mb-6">API Rest & GraphQL avec double authentification sécurisée.</p>
-                    </div>
-                    <span class="text-xs font-bold text-neutral-900 flex items-center gap-1 group-hover:translate-x-1 transition-transform">Explorer le dossier <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
-                <div class="group cursor-pointer bg-neutral-50 border-2 border-neutral-200 rounded-3xl p-8 flex flex-col justify-between transition-all hover:shadow-xl hover:border-neutral-400" onclick="showProject('wr602d')">
-                    <div>
-                        <div class="flex justify-between items-start mb-4"><span class="text-xs font-bold px-3 py-1 bg-neutral-200 text-neutral-700 rounded-full">WR602D — S6</span></div>
-                        <h3 class="text-2xl font-bold tracking-tight mb-3">Micro-services & Stripe</h3>
-                        <p class="text-neutral-500 font-light text-sm leading-relaxed mb-6">Découpage applicatif et intégration d'abonnements Stripe tiers.</p>
-                    </div>
-                    <span class="text-xs font-bold text-neutral-900 flex items-center gap-1 group-hover:translate-x-1 transition-transform">Explorer le dossier <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="mb-16 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-yellow-500 mb-2">CURRICULUM ACADÉMIQUE</p>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight">Projets Universitaires</h2>
+                    <p class="text-neutral-500 font-light max-w-lg mt-2">Applications développées et soutenues pour la validation des différents semestres de mon BUT MMI.</p>
                 </div>
             </div>
-        </section>
-    </div>
 
-    <div id="page-rj10" class="page bg-neutral-50/60 min-h-screen relative z-10">
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <div class="group cursor-pointer bg-neutral-50 border-2 border-neutral-200 rounded-3xl p-8 flex flex-col justify-between transition-all hover:shadow-xl hover:border-neutral-400" onclick="showProject('wr506d')">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-bold px-3 py-1 bg-neutral-200 text-neutral-700 rounded-full">WR506D — S5</span>
+                            <span class="text-xs font-bold text-neutral-500 tracking-wider">Université · Terminé</span>
+                        </div>
+                        <h3 class="text-2xl font-bold tracking-tight mb-3">Symfony & Search Films</h3>
+                        <p class="text-neutral-500 font-light text-sm leading-relaxed mb-6">Conception d'une architecture API robuste en Symfony 7, intégrant GraphQL, authentification sécurisée JWT et double authentification (2FA).</p>
+                    </div>
+                    <div class="pt-6 border-t border-neutral-200 flex flex-wrap justify-between items-center gap-4">
+                        <div class="flex gap-2">
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">Symfony 7</span>
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">GraphQL</span>
+                        </div>
+                        <span class="text-xs font-bold text-neutral-900 flex items-center gap-1 group-hover:translate-x-1 transition-transform">Explorer le dossier <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer bg-neutral-50 border-2 border-neutral-200 rounded-3xl p-8 flex flex-col justify-between transition-all hover:shadow-xl hover:border-neutral-400" onclick="showProject('wr602d')">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-bold px-3 py-1 bg-neutral-200 text-neutral-700 rounded-full">WR602D — S6</span>
+                            <span class="text-xs font-bold text-neutral-500 tracking-wider">Université · Terminé</span>
+                        </div>
+                        <h3 class="text-2xl font-bold tracking-tight mb-3">Micro-services & Stripe</h3>
+                        <p class="text-neutral-500 font-light text-sm leading-relaxed mb-6">Découpage applicatif et intégration d'un micro-service de génération PDF (Gotenberg) connecté à une app Symfony avec abonnements Stripe.</p>
+                    </div>
+                    <div class="pt-6 border-t border-neutral-200 flex flex-wrap justify-between items-center gap-4">
+                        <div class="flex gap-2">
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">Micro-services</span>
+                            <span class="text-[10px] px-2.5 py-1 bg-white rounded-md text-neutral-600 font-semibold border border-neutral-200/40">Stripe</span>
+                        </div>
+                        <span class="text-xs font-bold text-neutral-900 flex items-center gap-1 group-hover:translate-x-1 transition-transform">Explorer le dossier <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">RESTONS EN CONTACT</p>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight">Travaillons ensemble !</h2>
+                <p class="text-neutral-500 font-light mt-2 max-w-md mx-auto">Une offre d'emploi, un projet freelance, ou tout simplement envie de faire connaissance ? Écrivez-moi !</p>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="https://github.com/niniallx" target="_blank" class="group bg-neutral-100 p-8 rounded-2xl border-2 border-neutral-200 shadow-3xs flex flex-col items-center hover:border-black transition-colors">
+                    <span class="w-12 h-12 bg-white rounded-xl flex items-center justify-center font-bold text-neutral-950 shadow-2xs group-hover:bg-emerald-500 group-hover:text-white transition-all mb-4">
+                        GH
+                    </span>
+                    <span class="font-heading text-base font-bold text-neutral-950 mb-1">GitHub</span>
+                    <span class="text-xs text-neutral-400">@niniallx</span>
+                </a>
+
+                <a href="mailto:nimotalahalli@gmail.com" class="group bg-neutral-100 p-8 rounded-2xl border-2 border-neutral-200 shadow-3xs flex flex-col items-center hover:border-black transition-colors">
+                    <span class="w-12 h-12 bg-white rounded-xl flex items-center justify-center font-bold text-neutral-950 shadow-2xs group-hover:bg-yellow-400 group-hover:text-neutral-950 transition-all mb-4">
+                        @
+                    </span>
+                    <span class="font-heading text-base font-bold text-neutral-950 mb-1">Email</span>
+                    <span class="text-xs text-neutral-400">nimotalahalli@gmail.com</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/nimotalah-alli-/" target="_blank" class="group bg-neutral-100 p-8 rounded-2xl border-2 border-neutral-200 shadow-3xs flex flex-col items-center hover:border-black transition-colors">
+                    <span class="w-12 h-12 bg-white rounded-xl flex items-center justify-center font-bold text-neutral-950 shadow-2xs group-hover:bg-pink-500 group-hover:text-white transition-all mb-4">
+                        in
+                    </span>
+                    <span class="font-heading text-base font-bold text-neutral-950 mb-1">LinkedIn</span>
+                    <span class="text-xs text-neutral-400">Nimotalah ALLI</span>
+                </a>
+            </div>
+        </section>
+
+    </div><div id="page-rj10" class="page bg-neutral-50/60 min-h-screen relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
-                <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
-                    <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
+                <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    Retour à l'accueil
                 </button>
-                <button onclick="showProject('noor')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 text-white text-xs font-semibold cursor-pointer">Projet suivant <i class="fa-solid fa-arrow-right"></i></button>
+
+                <button onclick="showProject('noor')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    Projet suivant
+                    <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </button>
             </div>
 
             <div class="bg-gradient-to-br from-emerald-50 via-emerald-100/40 to-white rounded-3xl border-2 border-emerald-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-300/20 rounded-full blur-2xl"></div>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-emerald-200/50 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300 mb-6 inline-block">Stage BUT3 · Terminé</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-emerald-950">RJ10 Rappel — Gestion automatisée</h1>
-                <p class="text-neutral-600 font-light text-base leading-relaxed">Application de suivi d'échéances et de notifications automatisées de renouvellement développée chez RJ10 Formation.</p>
+                <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">Application de suivi d'échéances et de notifications automatisées de renouvellement développée chez RJ10 Formation.</p>
             </div>
 
-            <div class="bg-white border border-neutral-200 rounded-3xl p-6 mb-8 shadow-xs">
-                <h4 class="font-heading text-xs font-bold text-neutral-400 uppercase tracking-widest mb-4"><i class="fa-solid fa-diagram-project text-emerald-500 mr-2"></i> Schéma du cycle de développement (Cliquer sur les étapes ci-dessous pour voir le code et les livrables)</h4>
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
-                    <div onclick="openLightbox('rj10', 2)" class="flex-1 w-full bg-neutral-50 p-4 border border-neutral-200 rounded-xl hover:border-emerald-500 transition-colors cursor-pointer">
-                        <span class="text-xs font-bold text-emerald-600 block mb-1">Étape 01</span>
-                        <p class="font-heading font-bold text-sm">Modélisation & DB (SQL)</p>
+            <div class="space-y-8">
+                <div class="bg-emerald-50/90 border-2 border-emerald-200 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-emerald-900 uppercase tracking-widest mb-2">Compétences BUT MMI associées :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-emerald-700 font-bold border border-emerald-200/60 rounded-lg">Développer</span>
+                        <span class="px-3 py-1 bg-white text-emerald-700 font-bold border border-emerald-200/60 rounded-lg">Concevoir</span>
+                        <span class="px-3 py-1 bg-white text-emerald-700 font-bold border border-emerald-200/60 rounded-lg">Entreprendre</span>
+                        <span class="px-3 py-1 bg-white text-emerald-700 font-bold border border-emerald-200/60 rounded-lg">Comprendre</span>
                     </div>
-                    <div class="hidden md:block text-neutral-300"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div onclick="openLightbox('rj10', 1)" class="flex-1 w-full bg-neutral-50 p-4 border border-neutral-200 rounded-xl hover:border-emerald-500 transition-colors cursor-pointer">
-                        <span class="text-xs font-bold text-emerald-600 block mb-1">Étape 02</span>
-                        <p class="font-heading font-bold text-sm">Design & UX (Figma)</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-xs">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="project-body-text">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de neuf semaines, du 23 mars au 22 mai 2026, au sein de RJ10 Formation, un centre de formation aux métiers de la sécurité situé à La Chapelle-Saint-Luc, dans l'Aube. Ce centre propose des formations professionnelles telles que l'APS (Agent de Prévention et Sécurité), le SSIAP (Sécurité Incendie) et le SST (Sauveteur Secouriste du Travail). J'ai travaillé en totale autonomie sur ce projet, sans équipe technique autour de moi, ce qui m'a demandé une organisation rigoureuse et une grande capacité à prendre des décisions seule.</p>
                     </div>
-                    <div class="hidden md:block text-neutral-300"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div onclick="openLightbox('rj10', 9)" class="flex-1 w-full bg-emerald-50 p-4 border border-emerald-300 rounded-xl hover:scale-102 transition-transform cursor-pointer">
-                        <span class="text-xs font-bold text-emerald-700 block mb-1">Étape 03</span>
-                        <p class="font-heading font-bold text-sm text-emerald-950">Architecture Code (PHP)</p>
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-xs">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="project-body-text">Mon superviseur, José Pereira, m'a fait part d'un besoin précis dès le début du stage. Le centre utilisait déjà Digiforma, un logiciel professionnel complet qui permet aux organismes de formation de gérer leurs documents administratifs, leur relation client, leurs sessions de formation et leur suivi qualité. Malgré sa richesse, cet outil présentait un angle mort : il ne permettait pas de relancer automatiquement les anciens stagiaires lorsque leur titre professionnel approchait de sa date d'expiration.
+                        <br><br>
+                        C'est ce manque précis qui est à l'origine du projet. Concrètement, lorsqu'un stagiaire obtient son titre professionnel, celui-ci a une durée de validité limitée : temps ans pour une carte professionnelle APS, trois ans pour un SSIAP, deux ans pour un SST. Sans système de suivi, le centre perdait le contact avec ses anciens stagiaires qui, faute de rappel, oubliaient de renouveler leur titre ou allaient se former ailleurs.
+                        <br><br>
+                        Motivée par l'envie de répondre concrètement à ce besoin, j'ai analysé les limites de l'outil existant et proposé une solution complémentaire adaptée : une application web de gestion de rappels automatiques, pensée spécifiquement pour ce centre. Ma mission était donc de concevoir et développer cet outil de A à Z, permettant de gérer les stagiaires, de suivre leurs formations et d'envoyer automatiquement des emails de rappel avant l'expiration de leur titre. L'objectif était simple : fidéliser les anciens stagiaires et les inciter à renouveler leur certification au sein du même centre plutôt qu'ailleurs.</p>
                     </div>
-                    <div class="hidden md:block text-neutral-300"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div onclick="openLightbox('rj10', 3)" class="flex-1 w-full bg-neutral-50 p-4 border border-neutral-200 rounded-xl hover:border-emerald-500 transition-colors cursor-pointer">
-                        <span class="text-xs font-bold text-emerald-600 block mb-1">Étape 04</span>
-                        <p class="font-heading font-bold text-sm">Résultat Final (Vue.js 3)</p>
+                </div>
+
+                <div class="bg-neutral-950 text-white rounded-3xl p-8 border border-neutral-800 shadow-xl space-y-8">
+                    <div>
+                        <p class="text-emerald-400 font-bold text-xs uppercase tracking-widest mb-1">Architecture Technique Interne</p>
+                        <h3 class="font-heading text-2xl font-bold text-white">Comment ça fonctionne : Le cycle d'un rappel automatique</h3>
                     </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-4 text-center">
+                        
+                        <div class="bg-neutral-900 border border-neutral-800 p-4 rounded-xl">
+                            <span class="text-[10px] text-emerald-400 font-mono block mb-2 text-left">// ÉTAPE 1</span>
+                            <pre class="text-left text-xs font-mono text-emerald-300 overflow-x-auto bg-neutral-950 p-3 rounded-lg border border-neutral-900">
+$dateExpiration = 
+  $dateObtention
+  ->modify('+60 months');
+                            </pre>
+                            <p class="text-xs text-neutral-400 mt-2 text-left font-light">"On calcule quand le titre professionnel expire selon les règles du CNAPS"</p>
+                        </div>
+
+                        <div class="flex justify-center text-emerald-500 py-2 lg:py-0">
+                            <i class="fa-solid fa-arrow-right text-xl rotate-90 lg:rotate-0"></i>
+                        </div>
+
+                        <div class="bg-neutral-900 border border-neutral-800 p-4 rounded-xl">
+                            <span class="text-[10px] text-emerald-400 font-mono block mb-2 text-left">// ÉTAPE 2</span>
+                            <pre class="text-left text-xs font-mono text-emerald-300 overflow-x-auto bg-neutral-950 p-3 rounded-lg border border-neutral-900">
+if ($dateExp - '90 days'
+    == $aujourdHui) {
+    $this->triggerAlert();
+}
+                            </pre>
+                            <p class="text-xs text-neutral-400 mt-2 text-left font-light">"Une commande Cron vérifie chaque nuit si un titre arrive à échéance à j-90"</p>
+                        </div>
+
+                        <div class="flex justify-center text-emerald-500 py-2 lg:py-0">
+                            <i class="fa-solid fa-arrow-right text-xl rotate-90 lg:rotate-0"></i>
+                        </div>
+
+                        <div class="bg-neutral-900 border border-neutral-800 p-4 rounded-xl">
+                            <span class="text-[10px] text-emerald-400 font-mono block mb-2 text-left">// ÉTAPE 3</span>
+                            <pre class="text-left text-xs font-mono text-emerald-300 overflow-x-auto bg-neutral-950 p-3 rounded-lg border border-neutral-900">
+$mailer->send($email);
+$reminder->setStatus(
+    'EXPÉDIÉ'
+);
+                            </pre>
+                            <p class="text-xs text-neutral-400 mt-2 text-left font-light">"Le stagiaire reçoit son rappel par mail sans que l'admin n'intervienne"</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl space-y-3">
+                        <h4 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Gestion algorithmique des prérequis métier</h4>
+                        <p class="text-neutral-400 text-sm font-light">
+                            L'application empêche automatiquement l'inscription d'un stagiaire à une session de recyclage MAC-APS ou SSIAP si son diplôme de **Sauveteur Secouriste du Travail (SST)** n'est plus valide. Le système génère alors une alerte bloquante sur le tableau de bord.
+                        </p>
+                    </div>
+
+                    <p class="text-xs text-neutral-500 italic">Impact : Ce flux automatisé permet de réduire à zéro les oublis administratifs et garantit la réinscription de 40% des anciens élèves au sein de l'établissement.</p>
+                </div>
+
+                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-4">
+                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces techniques de développement (Cliquer pour zoomer)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 0)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-arborescence.png" class="w-full h-full object-cover" alt="Arborescence" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-arborescence.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 1)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-maquette.png" class="w-full h-full object-cover" alt="Maquette Figma" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-maquette.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 2)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-db.png" class="w-full h-full object-cover" alt="Base de données relationnelle" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-db.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 3)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-dashboard.png" class="w-full h-full object-cover" alt="Dashboard" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-dashboard.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 4)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-stagiaires.png" class="w-full h-full object-cover" alt="Gestion des Stagiaires" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-stagiaires.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 5)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-formations.png" class="w-full h-full object-cover" alt="Catalogue Formations" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-formations.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 6)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-template-email.png" class="w-full h-full object-cover" alt="Template Email" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-template-email.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 7)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-rappel.png" class="w-full h-full object-cover" alt="Rappels automatiques" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-rappel.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 8)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-rappel-contenu.png" class="w-full h-full object-cover" alt="Rappel envoyé" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/rj10-rappel-contenu.png';">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">04</span>
+                        Étapes du processus de création
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">1. Analyse des besoins et compréhension du métier</h5>
+                            <p class="text-neutral-900">Avant de commencer à construire quoi que ce soit, j'ai pris le temps de comprendre le fonctionnement réel du centre et de ses formations. J'ai découvert que chaque type de formation obéit à des règles très différentes. Par exemple, seul l'APS nécessite une autorisation préalable délivrée par le CNAPS, l'organisme national qui régule les métiers de la sécurité privée. Le SSIAP délivre une simple attestation et non une carte professionnelle. Et certaines formations, comme le SST, sont obligatoires pour pouvoir s'inscrire à d'autres formations comme l'APS ou le SSIAP. Comprendre ces règles métier avant de concevoir l'outil était indispensable pour ne pas construire quelque chose qui ne correspondait pas à la réalité du terrain.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">2. Organisation et architecture de l'application</h5>
+                            <p class="text-neutral-900">Avant de commencer à construire l'application, j'ai réfléchi à son organisation générale, un peu comme on dessine le plan d'une maison avant de la construire. J'ai défini que l'accès se ferait via une page de connexion sécurisée, puis que l'administrateur arriverait sur un tableau de bord central depuis lequel il pourrait accéder à cinq espaces distincts : la gestion des stagiaires et de leur parcours, le catalogue des formations proposées par le centre, les inscriptions aux formations avec suivi des examens et des titres obtenus, l'historique des rappels envoyés automatiquement, et les paramètres permettant de personnaliser le contenu des emails. Cette organisation simple a été pensée pour qu'un administrateur sans compétences techniques puisse utiliser l'outil facilement au quotidien.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">3. Construction de la partie invisible de l'application</h5>
+                            <p class="text-neutral-900">J'ai ensuite construit la partie de l'application que l'utilisateur ne voit pas mais qui fait tout fonctionner en arrière-plan : la gestion des données, les calculs automatiques et l'envoi des emails. Pour cela j'ai utilisé Symfony 7, un outil professionnel reconnu dans le milieu du développement web. Concrètement, j'ai mis en place un système de connexion sécurisé, une base de données pour stocker toutes les informations des stagiaires et de leurs formations, ainsi qu'un programme automatique qui se déclenche régulièrement pour détecter les titres approchant de leur date d'expiration et envoyer les emails de rappel au bon moment.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">4. Construction de l'interface visuelle</h5>
+                            <p class="text-neutral-900">J'ai ensuite créé la partie visible de l'application, celle que l'administrateur utilise au quotidien pour consulter et gérer les informations. J'ai utilisé Vue.js 3, un outil qui permet de créer des pages web réactives et agréables à utiliser. L'interface comprend un tableau de bord donnant une vue d'ensemble de l'activité du centre, un espace de gestion des stagiaires avec l'historique complet de leurs formations, un espace de gestion des inscriptions avec le suivi des examens et des titres obtenus, ainsi qu'un historique des rappels envoyés. L'administrateur peut également renvoyer manuellement un email de rappel en un clic, et noter si un stagiaire a pris contact suite à un rappel automatique.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs md:col-span-2">
+                            <h5 class="step-title font-heading">5. Gestion des situations complexes</h5>
+                            <p class="text-neutral-900">Au fil du développement, j'ai rencontré des situations que je n'avais pas anticipées au départ. Par exemple, un même stagiaire peut avoir suivi plusieurs formations différentes à des périodes différentes, chacune avec son propre titre et sa propre date d'expiration. J'ai également dû intégrer la notion de prérequis entre formations : un stagiaire ne peut pas s'inscrire en SSIAP sans avoir un SST en cours de validité. Ces découvertes m'ont obligée à revoir plusieurs fois l'organisation de mes données pour que tout reste cohérent et simple à utiliser.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            Difficultés rencontrées — Formation Alerte (RJ10)
+                        </h4>
+                        <p class="text-neutral-900">
+                            La principale difficulté a été de travailler seule sans interlocuteur technique. Lorsque je bloquais sur un problème de logique ou de fonctionnement, je m'appuyais sur deux ressources principales : mes propres recherches et l'intelligence artificielle comme assistant de travail. Concrètement, quand je n'arrivais pas à identifier la source d'un problème, je formulais ma question précisément à l'IA pour explorer des pistes de solution, que j'analysais et adaptais ensuite par moi-même avant de les appliquer. Cette façon de travailler m'a appris à poser des questions techniques claires et structurées, une compétence essentielle dans le monde du développement.
+                            <br><br>
+                            J'ai également eu du mal à clarifier certaines règles métier au départ, notamment la distinction entre la période pendant laquelle un stagiaire suit sa formation et la durée de validité du titre qu'il obtient à l'issue de celle-ci. Ces deux notions, que j'avais d'abord confondues, m'ont obligée à revoir une partie de mon travail en cours de route. C'est en échangeant à la fois avec mon superviseur pour comprendre le métier, et avec l'IA pour clarifier la logique technique, que j'ai pu trouver la bonne organisation.
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-semibold">06</span>
+                            Bilan personnel
+                        </h4>
+                        
+                        <div class="space-y-4 text-neutral-900">
+                            <div>
+                                <h5 class="bilan-title font-heading">1. Ce que ce projet m'a apporté</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Ce stage m'a appris que construire une application ne se résume pas à des compétences techniques. Comprendre le métier du client, bien réfléchir à l'organisation des données avant de commencer et anticiper les situations particulières sont des étapes tout aussi importantes que le développement lui-même. C'est cette vision globale du projet que je retiens avant tout.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-heading">2. Les compétences développées</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Ce projet m'a confrontée à une dimension que je n'avais pas encore vraiment expérimentée : gérer un projet numérique de A à Z en totale autonomie, dans un contexte professionnel réel. J'ai dû comprendre un besoin métier, analyser les limites d'un outil existant, proposer une solution adaptée, prendre toutes les décisions techniques seule et m'organiser sur neuf semaines sans encadrement. Cette expérience m'a donné une vision concrète et réaliste de ce que signifie mener un projet numérique en situation professionnelle.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-heading">3. Ce que je ferais différemment</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Si je devais recommencer, j'accorderais encore plus de temps à la phase d'analyse au départ, en posant toutes les questions nécessaires sur le fonctionnement du métier avant d'écrire la moindre ligne de code. Cela m'aurait évité plusieurs allers-retours en cours de développement et m'aurait permis d'avancer de façon plus linéaire et plus sereine.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-50 border border-emerald-200/60 rounded-2xl p-5 shadow-xs">
+                    <h4 class="font-heading text-sm font-bold text-neutral-900 mb-3">Validation des Compétences (RJ10)</h4>
+                    <div class="overflow-x-auto text-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-emerald-200">
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Compétence</th>
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider">Justification compacte</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-emerald-100 text-neutral-800">
+                                <tr>
+                                    <td class="py-2 font-bold text-emerald-800">Développer</td>
+                                    <td class="py-2">Symfony 7 + Vue.js 3, programmation de scripts d'emails automatisés.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-emerald-800">Concevoir</td>
+                                    <td class="py-2">Modélisation relationnelle de la base de données, UX orientée back-office.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-emerald-800">Entreprendre</td>
+                                    <td class="py-2">Gestion de A à Z en totale autonomie pendant 9 semaines en entreprise.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="page-noor" class="page bg-neutral-50/70 min-h-screen relative z-10">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="flex justify-between items-center mb-12">
+                <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    Retour à l'accueil
+                </button>
+
+                <button onclick="showProject('planpoitrines-maquette')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    Projet suivant
+                    <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <div class="bg-gradient-to-br from-pink-50 via-pink-100/40 to-white rounded-3xl border-2 border-pink-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-300/20 rounded-full blur-2xl"></div>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-200/50 text-pink-800 px-3 py-1 rounded-full border border-pink-300 mb-6 inline-block">Projet Personnel Inédit · En ligne</span>
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-pink-950">Noor — Suivi de santé féminine et spirituel</h1>
+                <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">
+                    Noor — Application web de suivi de santé féminine avec accompagnement spirituel et culturel personnalisé. Accessible en ligne.
+                </p>
+
+                <div class="flex flex-wrap gap-2 pt-6 border-t border-pink-200/40">
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Symfony 7</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Vue.js 3 + TypeScript</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Docker</span>
+                    <span class="text-xs px-3 py-1 rounded-lg bg-white border border-neutral-200 text-neutral-600 font-medium shadow-3xs">Pinia & PWA</span>
                 </div>
             </div>
 
             <div class="space-y-8">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl">
-                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Contexte</h4>
-                        <p class="project-body-text">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de neuf semaines au sein de RJ10 Formation, un centre de formation aux métiers de la sécurité situé à La Chapelle-Saint-Luc. J'ai travaillé en totale autonomie sur ce projet, ce qui m'a demandé une organisation rigoureuse et une grande capacité à prendre des décisions seule.</p>
-                    </div>
-                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl">
-                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
-                        <p class="project-body-text">Le centre utilisait Digiforma pour gérer ses documents administratifs. Malgré sa richesse, cet outil ne permettait pas de relancer automatiquement les anciens stagiaires lorsque leur titre professionnel approchait de sa date d'expiration. Ma mission était donc de concevoir et développer de A à Z une application web de gestion de rappels automatiques connectée pour fidéliser la clientèle du centre.</p>
+                
+                <div class="bg-pink-50 border border-pink-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-pink-900 uppercase tracking-wider mb-2">Compétences BUT MMI associées :</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold border border-pink-200/40">Développer</span>
+                        <span class="text-xs px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold border border-pink-200/40">Concevoir</span>
+                        <span class="text-xs px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold border border-pink-200/40">Entreprendre</span>
+                        <span class="text-xs px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold border border-pink-200/40">Comprendre</span>
+                        <span class="text-xs px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold border border-pink-200/40">Exprimer</span>
                     </div>
                 </div>
 
-                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl space-y-4">
-                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces de développement (Cliquer pour zoomer et voir l'explication latérale)</span>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 0)"><img src="assets/rj10-arborescence.png" class="w-full h-full object-cover" alt="Arborescence"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 1)"><img src="assets/rj10-maquette.png" class="w-full h-full object-cover" alt="Maquette Figma"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 2)"><img src="assets/rj10-db.png" class="w-full h-full object-cover" alt="Base de données"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 3)"><img src="assets/rj10-dashboard.png" class="w-full h-full object-cover" alt="Dashboard"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 4)"><img src="assets/rj10-stagiaires.png" class="w-full h-full object-cover" alt="Stagiaires"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 5)"><img src="assets/rj10-formations.png" class="w-full h-full object-cover" alt="Formations"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 6)"><img src="assets/rj10-template-email.png" class="w-full h-full object-cover" alt="Templates"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 7)"><img src="assets/rj10-rappel.png" class="w-full h-full object-cover" alt="Rappels"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 8)"><img src="assets/rj10-rappel-contenu.png" class="w-full h-full object-cover" alt="Contenu"></div>
-                        <div class="group relative bg-white rounded-xl border border-emerald-300 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 9)">
-                            <div class="absolute inset-0 bg-emerald-950/20 flex items-center justify-center text-emerald-900 font-bold text-xs">COMMANDE CODE</div>
-                            <img src="assets/rj10-code-cron.png" class="w-full h-full object-cover" alt="Code Symfony">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">01</span>
+                            Introduction et contexte
+                        </h4>
+                        <p class="text-neutral-900 text-base font-light leading-relaxed">
+                            Dans le cadre du module PTUT de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai conçu et développé en totale autonomie un projet personnel inédit appelé Noor, mot arabe signifiant « lumière ». Ce projet répond à une obligation académique : réaliser une application complète et complexe démontrant ma capacité à entreprendre et mener un projet de bout en bout, sans encadrement pédagogique direct.
+                            <br><br>
+                            Noor est une application web destinée aux femmes souhaitant concilier suivi de leur santé féminine et pratique spirituelle et culturelle au quotidien. L'idée est née d'un constat personnel : les applications existantes de suivi du cycle menstruel ignorent totalement la dimension culturelle et spirituelle, tandis que les applications de pratique religieuse ne tiennent aucun compte de la réalité physiologique féminine. En tant que femme concernée par ce besoin, j'ai choisi de concevoir moi-même l'outil qui manquait.
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">02</span>
+                            La problématique
+                        </h4>
+                        <p class="text-neutral-900 text-base font-light leading-relaxed">
+                            Comment concevoir une application de santé féminine qui prend en compte non seulement les données physiologiques, mais aussi les pratiques culturelles et spirituelles des utilisatrices, en proposant un accompagnement personnalisé et automatiquement adapté selon leur situation du moment ?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-950 text-white rounded-3xl p-8 border border-neutral-800 shadow-xl space-y-8">
+                    <div>
+                        <p class="text-pink-400 font-bold text-xs uppercase tracking-widest mb-1">Architecture Modulaire Synchrone</p>
+                        <h3 class="font-heading text-2xl font-bold text-white">Comment ça fonctionne : Logique de synchronisation et calcul de jeûne</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-5 items-center gap-4 text-center">
+                        
+                        <div class="bg-neutral-900 border border-neutral-800 p-4 rounded-xl">
+                            <span class="text-[10px] text-pink-400 font-mono block mb-2 text-left">// ÉTAPE 1 : Calcul menstruel</span>
+                            <pre class="text-left text-xs font-mono text-pink-300 overflow-x-auto bg-neutral-950 p-3 rounded-lg border border-neutral-900">
+$prochainCycle = 
+  $derniereDate
+  ->modify('+' . $avgDays . ' days');
+                            </pre>
+                            <p class="text-xs text-neutral-400 mt-2 text-left font-light">"On estime le prochain cycle biologique grâce aux moyennes enregistrées"</p>
                         </div>
+
+                        <div class="flex justify-center text-pink-500 py-2 lg:py-0">
+                            <i class="fa-solid fa-arrow-right text-xl rotate-90 lg:rotate-0"></i>
+                        </div>
+
+                        <div class="bg-neutral-900 border border-neutral-800 p-4 rounded-xl">
+                            <span class="text-[10px] text-pink-400 font-mono block mb-2 text-left">// ÉTAPE 2 : Interception Ramadan</span>
+                            <pre class="text-left text-xs font-mono text-pink-300 overflow-x-auto bg-neutral-950 p-3 rounded-lg border border-neutral-900">
+if ($isRamadan && $isMenstruating) {
+    $daysToRattraper++;
+}
+                            </pre>
+                            <p class="text-xs text-neutral-400 mt-2 text-left font-light">"Si l'utilisatrice a ses règles pendant le jeûne, l'application isole ces jours"</p>
+                        </div>
+
+                        <div class="flex justify-center text-pink-500 py-2 lg:py-0">
+                            <i class="fa-solid fa-arrow-right text-xl rotate-90 lg:rotate-0"></i>
+                        </div>
+
+                        <div class="bg-neutral-900 border border-neutral-800 p-4 rounded-xl">
+                            <span class="text-[10px] text-pink-400 font-mono block mb-2 text-left">// ÉTAPE 3 : Sync Pinia Store</span>
+                            <pre class="text-left text-xs font-mono text-pink-300 overflow-x-auto bg-neutral-950 p-3 rounded-lg border border-neutral-900">
+this.counter = 
+  response.data.days;
+this.updateUI();
+                            </pre>
+                            <p class="text-xs text-neutral-400 mt-2 text-left font-light">"Le compteur global de jours à rattraper se synchronise instantanément en haut du site"</p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-neutral-500 italic">Impact : L'intégration de cette logique asynchrone évite à l'utilisatrice de devoir compter manuellement ses suspensions rituelles, supprimant toute charge mentale.</p>
+                </div>
+
+                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 shadow-sm space-y-4">
+                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Interface de l'application Noor (Cliquer pour zoomer)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 0)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/noor-arborescence.png" class="w-full h-full object-cover" alt="Arborescence" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-arborescence.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 1)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/noor-maquette.png" class="w-full h-full object-cover" alt="Maquette" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-maquette.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 2)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/noor-db.png" class="w-full h-full object-cover" alt="Structure relationnelle" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-db.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 3)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/noor-dashboard.png" class="w-full h-full object-cover" alt="Dashboard" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-dashboard.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 4)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/noor-login.png" class="w-full h-full object-cover" alt="Connexion (Login)" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-login.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 5)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/noor-cycle.png" class="w-full h-full object-cover" alt="Cycle" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/noor-cycle.png';">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">04</span>
+                        Étapes du processus de création
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">1. Recherche et analyse des besoins</h5>
+                            <p class="text-neutral-900">Avant d'écrire la moindre ligne de code, j'ai analysé les applications existantes : Flo et Clue pour le suivi du cycle menstruel, Taahirah pour l'accompagnement spirituel féminin. J'ai identifié ce qui manquait dans chacune et défini les fonctionnalités qui rendraient Noor réellement utile. Ce projet est borné d'un besoin réel que j'ai observé au sein de ma communauté : les femmes manquent souvent d'informations claires et accessibles sur la façon dont leur cycle menstruel interagit avec leurs pratiques spirituelles et culturelles. Ces sujets sont rarement abordés ouvertement, ce qui crée un vide que le numérique peut contribuer à combler de manière bienveillante et discrète.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">2. Conception de la structure de données</h5>
+                            <p class="text-neutral-900">Avant de développer, j'ai modélisé comment les informations allaient être oranges et stockées. Noor gère six types de données interconnectées : les utilisatrices, leurs entrées de cycle menstruel, leurs symptômes quotidiens, leurs prières, leurs entrées de jeûne et leur compteur de jours à rattraper. La relation la plus complexe est celle entre le cycle et le jeûne : lorsqu'une utilisatrice renseigne des jours de menstruations pendant une période de jeûne, l'application recalcule automatiquement le nombre de jours à rattraper sans aucune intervention manuelle.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">3. Développement de la partie serveur</h5>
+                            <p class="text-neutral-900">J'ai développé la partie invisible de l'application avec Symfony 7, un outil professionnel largement utilisé en entreprise pour créer des applications web fiables et sécurisées. J'ai créé trois modules logiques principaux : le premier calcule automatiquement la phase du cycle de l'utilisatrice (règles, post-règles, ovulation, pré-règles) selon ses données ; le deuxième détermine en temps réel si les pratiques spirituelles doivent être affichées comme actives ou adaptées ; le troisième synchronise automatiquement le compteur de jours à rattraper à chaque modification des données de cycle.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">4. Développement de l'interface visuelle</h5>
+                            <p class="text-neutral-900">J'ai développé l'interface avec Vue.js 3, un outil qui permet de créer des pages web interactives et fluides. J'ai défini une charte graphique complète : palette de couleurs douces (rose poudré, lavande, crème), typographies élégantes (Playfair Display pour les titres, DM Sans pour le corps de texte), composants visuels réutilisables. L'application s'adapte automatiquement à la langue choisie par l'utilisatrice (français ou anglais), avec sauvegarde de la préférence dans son profil.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs md:col-span-2">
+                            <h5 class="step-title font-heading">5. Intégrations de services externes & 6. Mise en ligne</h5>
+                            <p class="text-neutral-900">J'ai connecté deux services externes gratuits à Noor. Le premier calcule les horaires de prières selon la ville et le pays de l'utilisatrice — ces horaires s'affichent automatiquement sans aucune saisie manuelle. Le second fournit des versets inspirants en arabe avec leur traduction française, renouvelés dynamiquement. Noor est entièrement déployée et accessible en ligne. La mise en production m'a confrontée à des défis supplémentaires : configuration des accès sécurisés, gestion CORS et résolutions d'erreurs en ligne.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            Difficultés rencontrées — Noor
+                        </h4>
+                        <div class="space-y-6 text-neutral-900">
+                            <div>
+                                <h5 class="bilan-title font-bold">La synchronisation entre les différents modules</h5>
+                                <p class="project-body-text">La principale difficulté a été de faire communiquer les différentes parties de l'application entre elles de manière fluide. Concrètement, une modification du cycle menstruel doit immédiatement se répercuter sur l'affichage des pratiques spirituelles, le calcul des jours de jeûne à rattraper et les messages personnalisés du tableau de bord. Pour résoudre ce problème, j'ai centralisé toutes les données dans un espace de gestion partagé, accessible simultanément par toutes les pages de l'application, un peu comme un tableau d'affichage central que toutes les pièces d'une maison peuvent consulter en temps réel.</p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-bold">Le calcul du cycle et du rattrapage de jeûne</h5>
+                                <p class="project-body-text">La logique de calcul du cycle et des jours de jeûne à rattraper a été la partie la plus complexe du projet. Ces calculs impliquent des règles précises qui varient selon chaque utilisatrice. J'ai eu recours à l'intelligence artificielle pour m'aider à structurer cette logique mathématique, tester différents cas de figure et m'assurer que les résultats restaient cohérents dans toutes les situations. L'IA m'a permis d'explorer rapidement plusieurs approches avant de choisir celle qui correspondait le mieux aux besoins réels des utilisatrices.</p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-bold">L'installation sur l'écran d'accueil du téléphone</h5>
+                                <p class="project-body-text">J'ai souhaité que Noor puisse s'installer directement sur l'écran d'accueil d'un téléphone, comme une vraie application, sans passer par l'App Store ou le Google Play Store. Cette technologie, appelée PWA (application web progressive), permet à un site web de se comporter comme une application mobile native. Sa mise en place a nécessité une configuration technique spécifique que je ne maîtrisais pas au départ. J'ai utilisé l'IA pour comprendre les étapes à suivre et identifier les fichiers de configuration nécessaires, avant de les adapter au contexte de mon projet.</p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-bold">La gestion du texte arabe</h5>
+                                <p class="project-body-text">L'arabe s'écrit de droite à gauche, ce qui est à l'opposé du français et de l'anglais. Intégrer cette langue dans l'application sans que la mise en page se retrouve désorganisée a demandé des ajustements spécifiques sur certaines parties de l'interface. J'ai dû apprendre à gérer cette particularité technique pour que les deux sens de lecture coexistent harmonieusement dans la même application.</p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-bold">La mise en ligne de l'application</h5>
+                                <p class="project-body-text">Mettre l'application en ligne a représenté un apprentissage important. Le serveur qui gère les données et l'interface visuelle que l'utilisatrice voit sur son écran étaient hébergés sur deux plateformes différentes. Les faire communiquer de façon sécurisée a nécessité une configuration que je ne connaissais pas encore, et que j'ai apprise en combinant mes recherches personnelles et l'aide de l'IA pour comprendre les paramètres techniques à mettre en place.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-800 flex items-center justify-center text-xs font-semibold">06</span>
+                            Bilan personnel
+                        </h4>
+                        
+                        <div class="space-y-4 text-neutral-900">
+                            <div>
+                                <h5 class="bilan-title font-heading">1. Quels bénéfices pour la suite ?</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Noor est le projet qui m'a le plus appris sur ma capacité à concevoir et mener un projet complet de manière autonome. Partir d'un besoin réel identifié dans ma propre expérience et au sein de ma communauté, le transformer en fonctionnalités concrètes, développer les deux parties de l'application, connecter des services externes, soigner l'interface et mettre en ligne une application accessible à toutes : chaque étape a mobilisé des compétences différentes et complémentaires. Ce projet démontre directement ma capacité à être autonome sur un poste de développeur web junior dès la sortie du BUT.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-heading">2. Valorisation des compétences</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Les compétences démontrées dans Noor correspondent exactement aux attentes des entreprises : développement web complet côté serveur et côté interface, sécurisation des accès utilisateurs, environnement de développement reproductible, intégration de services externes, conception d'interface soignée et mise en production d'une application accessible au public. Ces compétences apparaissent dans la quasi-totalité des offres d'emploi junior que j'ai consultées lors de ma recherche d'emploi.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="bilan-title font-heading">3. Prise de recul et amélioration</h5>
+                                <p class="font-light leading-relaxed text-neutral-700">
+                                    Si je devais recommencer, j'aurais défini un périmètre plus restreint dès le départ pour éviter de disperser mon énergie sur trop de fonctionnalités simultanément. J'aurais également anticipé les contraintes de mise en ligne dès la phase de conception, car plusieurs problèmes rencontrés lors du déploiement auraient pu être évités avec une meilleure organisation initiale. Enfin, j'aurais intégré des vérifications automatiques du code dès le début du développement plutôt qu'en fin de projet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-pink-50 border border-pink-200/60 rounded-2xl p-5 shadow-xs">
+                    <h4 class="font-heading text-sm font-bold text-neutral-900 mb-3">Validation des Compétences (Noor)</h4>
+                    <div class="overflow-x-auto text-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-pink-200">
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Compétence</th>
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider">Ce que Noor démontre</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-pink-100 text-neutral-800">
+                                <tr>
+                                    <td class="py-2 font-bold text-pink-800">Développer</td>
+                                    <td class="py-2">API Symfony 7 + Front-end Vue.js 3, JWT, Docker, intégration API Aladhan.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-pink-800">Concevoir</td>
+                                    <td class="py-2">Modélisation relationnelle de six entités, charte UX multilingue et maquette.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-pink-800">Entreprendre</td>
+                                    <td class="py-2">Gestion autonome, de la conception au déploiement en ligne Vercel.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="page-planpoitrines-maquette" class="page bg-neutral-50/70 min-h-screen relative z-10">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="flex justify-between items-center mb-12">
+                <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    Retour à l'accueil
+                </button>
+
+                <button onclick="showProject('planpoitrines-vitrine')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    Projet suivant
+                    <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <div class="bg-gradient-to-br from-purple-50 via-purple-100/40 to-white rounded-3xl border-2 border-purple-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-purple-300/20 rounded-full blur-2xl"></div>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-200/50 text-purple-800 px-3 py-1 rounded-full border border-purple-300 mb-6 inline-block">Stage BUT2 · Terminé</span>
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-purple-950">Arborescence, wireframe et maquette — Plan Poitrines</h1>
+                <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">Conception UX/UI complète de l'architecture d'information sur Figma.</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-purple-50 border border-purple-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-purple-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Comprendre</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Entreprendre</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Concevoir</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Exprimer</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Avant de me lancer dans le développement du site vitrine de Plan Poitrines, j'ai consacré une phase entière à la conception. Cette étape, souvent invisible dans le résultat final, est pourtant celle qui conditionne la qualité de tout ce qui suit. Dans un contexte associatif où l'identité visuelle était encore en construction et où les décisions se prenaient collectivement entre les deux co-présidentes et moi, il était d'autant plus important de poser des bases claires et validées avant d'écrire la moindre ligne de code.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">Ma mission était de concevoir l'organisation et le design du site vitrine avant son développement, en passant par trois étapes successives : l'arborescence, le wireframe, puis la maquette. Chacune de ces étapes avait un objectif précis : structurer le contenu, anticiper le parcours de l'utilisateur, et permettre à l'équipe de visualiser le futur site avant sa réalisation technique.</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
+                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du processus de maquettage (Cliquer pour zoomer)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 0)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/planpoitrines-arborescence.png" class="w-full h-full object-cover" alt="Arborescence" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-arborescence.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 1)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/planpoitrines-wireframe1.png" class="w-full h-full object-cover" alt="Wireframe Partie 1" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-wireframe1.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 2)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/planpoitrines-wireframe2.png" class="w-full h-full object-cover" alt="Wireframe Partie 2" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-wireframe2.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 3)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/planpoitrines-maquette.png" class="w-full h-full object-cover" alt="Maquette Figma" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-maquette.png';">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Étapes de conception & réalisation
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">1. L'arborescence : organiser les pages</h5>
+                            <p class="text-neutral-900">J'ai construit l'arborescence en définissant quatre pages principales (Accueil, Productions, Contact et Adhésion). Cela m'a obligée à me mettre à la place de différents types d'utilisateurs (membres, partenaires et nouveaux visiteurs).</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">2. Le wireframe : dessiner la structure</h5>
+                            <p class="text-neutral-900">Réalisation de maquettes simplifiées en noir et blanc pour réfléchir à la hiérarchie de l'information et à l'accessibilité. Cela m'a permis d'anticiper des problèmes de lisibilité.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">3. La maquette : donner vie sur Figma</h5>
+                            <p class="text-neutral-900">J'ai décliné l'univers coloré (violet, rose, orange, jaune) sur Figma. Figma a permis d'optimiser les retours à distance avec les co-présidentes grâce aux commentaires directs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés</h4>
+                        <p class="project-body-text">Travailler avec une identité visuelle encore instable m'a demandé de l'adaptabilité pour pouvoir figer certains aspects et modifier d'autres plus tard sans tout casser. Les retours à distance ont aussi parfois manqué de réactivité.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <p class="project-body-text"><strong>Bénéfice :</strong> Prise de recul sur l'intérêt d'une phase UX complète avant le code.<br><strong>Ressources :</strong> Utilisation de Figma en mode collaboratif en situation de télétravail.<br><strong>Amélioration :</strong> Figer un planning de validation rigoureux avec l'équipe dès le départ.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="page-noor" class="page bg-neutral-50/70 min-h-screen relative z-10">
+
+    <div id="page-planpoitrines-vitrine" class="page bg-neutral-50/70 min-h-screen relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
-                <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
-                    <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
+                <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    Retour à l'accueil
+                </button>
+
+                <button onclick="showProject('acm-ikeoluwa')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    Projet suivant
+                    <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
 
-            <div class="bg-gradient-to-br from-pink-50 via-pink-100/40 to-white rounded-3xl border-2 border-pink-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
-                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-pink-950">Noor — Suivi de santé féminine et spirituel</h1>
-                <p class="text-neutral-600 font-light text-base leading-relaxed">Application web de suivi de santé féminine avec accompagnement spirituel et culturel personnalisé.</p>
-            </div>
-
-            <div class="bg-white border border-neutral-200 rounded-3xl p-6 mb-8 shadow-xs">
-                <h4 class="font-heading text-xs font-bold text-neutral-400 uppercase tracking-widest mb-4"><i class="fa-solid fa-diagram-project text-pink-500 mr-2"></i> Schéma du cycle de développement</h4>
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
-                    <div onclick="openLightbox('noor', 0)" class="flex-1 w-full bg-neutral-50 p-4 border border-neutral-200 rounded-xl hover:border-pink-500 transition-colors cursor-pointer">
-                        <span class="text-xs font-bold text-pink-600 block mb-1">Étape 01</span>
-                        <p class="font-heading font-bold text-sm">User Flow & Concept</p>
-                    </div>
-                    <div class="hidden md:block text-neutral-300"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div onclick="openLightbox('noor', 1)" class="flex-1 w-full bg-neutral-50 p-4 border border-neutral-200 rounded-xl hover:border-pink-500 transition-colors cursor-pointer">
-                        <span class="text-xs font-bold text-pink-600 block mb-1">Étape 02</span>
-                        <p class="font-heading font-bold text-sm">Maquette Figma</p>
-                    </div>
-                    <div class="hidden md:block text-neutral-300"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div onclick="openLightbox('noor', 6)" class="flex-1 w-full bg-pink-50 p-4 border border-pink-300 rounded-xl hover:scale-102 transition-transform cursor-pointer">
-                        <span class="text-xs font-bold text-pink-700 block mb-1">Étape 03</span>
-                        <p class="font-heading font-bold text-sm text-pink-950">Développement Logique (Pinia)</p>
-                    </div>
-                    <div class="hidden md:block text-neutral-300"><i class="fa-solid fa-arrow-right"></i></div>
-                    <div onclick="openLightbox('noor', 3)" class="flex-1 w-full bg-neutral-50 p-4 border border-neutral-200 rounded-xl hover:border-pink-500 transition-colors cursor-pointer">
-                        <span class="text-xs font-bold text-pink-600 block mb-1">Étape 04</span>
-                        <p class="font-heading font-bold text-sm">Application PWA</p>
-                    </div>
-                </div>
+            <div class="bg-gradient-to-br from-purple-50 via-purple-100/40 to-white rounded-3xl border-2 border-purple-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-purple-300/20 rounded-full blur-2xl"></div>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-200/50 text-purple-800 px-3 py-1 rounded-full border border-purple-300 mb-6 inline-block">Intégration Web · Stage BUT2</span>
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-purple-950">Création du site vitrine — Plan Poitrines</h1>
+                <p class="text-neutral-600 font-light text-base md:text-lg leading-relaxed mb-6 max-w-4xl project-description">
+                    Développement web natif sans CMS d'un site vitrine léger, fluide et documenté.
+                </p>
             </div>
 
             <div class="space-y-8">
-                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 shadow-sm">
-                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">03 — Comment fonctionne Noor</h4>
-                    <p class="text-neutral-900 text-base font-light leading-relaxed mb-6">
-                        Noor est une application web progressive (PWA). L'API REST sous Symfony 7 traite les calculs physiologiques complexes de prédiction de cycle, tandis que l'interface construite sous Vue.js 3 offre un rendu asynchrone instantané des compteurs et calendriers culturels et spirituels personnalisés.
-                        <br><br>
-                        L'application est en ligne à l'adresse suivante : <a href="https://noor-app-ruddy.vercel.app" target="_blank" class="text-pink-600 font-bold hover:underline">Noor App</a>.
-                    </p>
+                <div class="bg-purple-50 border border-purple-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-purple-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Développer</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Entreprendre</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Comprendre</span>
+                        <span class="px-3 py-1 bg-white text-purple-700 font-bold border border-purple-200/60 rounded-lg">Exprimer</span>
+                    </div>
                 </div>
 
-                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 shadow-sm space-y-4">
-                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Interface de l'application Noor (Cliquer pour zoomer)</span>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 0)"><img src="assets/noor-arborescence.png" class="w-full h-full object-cover" alt="Arborescence"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 1)"><img src="assets/noor-maquette.png" class="w-full h-full object-cover" alt="Maquette"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 2)"><img src="assets/noor-db.png" class="w-full h-full object-cover" alt="Base de données"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 3)"><img src="assets/noor-dashboard.png" class="w-full h-full object-cover" alt="Dashboard"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 4)"><img src="assets/noor-login.png" class="w-full h-full object-cover" alt="Login"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 5)"><img src="assets/noor-cycle.png" class="w-full h-full object-cover" alt="Cycle"></div>
-                        <div class="group relative bg-white rounded-xl border border-pink-300 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 6)">
-                            <div class="absolute inset-0 bg-pink-950/20 flex items-center justify-center text-pink-900 font-bold text-xs">STORE CODE</div>
-                            <img src="assets/noor-code-controller.png" class="w-full h-full object-cover" alt="Code Pinia Vue">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Dans le cadre de ma deuxième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de huit semaines, du 1er avril au 1er juin 2025, au sein de l'association Plan Poitrines, anciennement Black Sheep. Ce collectif soutient de jeunes cinéastes, majoritairement des femmes, en promouvant des valeurs féministes, queer et inclusives à travers des projets audiovisuels. Mon stage s'est déroulé à un moment charnière pour l'association : elle traversait un changement de nom et une refonte complète de son identité visuelle. C'est dans ce contexte de transition que les deux co-présidentes m'ont confié, parmi d'autres missions, la conception et le développement d'un site vitrine. Je travaillais principalement en télétravail trois jours par semaine, ce qui m'a imposé d'emblée une forte autonomie et une communication régulière avec l'équipe à distance.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">L'objectif était de créer un site vitrine fonctionnel pour améliorer la visibilité de l'association et structurer sa communication en ligne. Le site devait refléter la nouvelle identité de Plan Poitrines — engagée, créative et inclusive — tout en étant accessible et lisible pour des publics variés : membres, partenaires, et personnes découvrant l'association. Les co-présidentes souhaitaient un outil simple à prendre en main par l'équipe après mon départ, sans dépendance à des technologies complexes.</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
+                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Aperçus du site (Screenshots & Vidéo)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 0)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/planpoitrines-vitrine-screen1.png" class="w-full h-full object-cover" alt="Capture d'écran 1" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-screen1.png';">
                         </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 1)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/planpoitrines-vitrine-screen2.png" class="w-full h-full object-cover" alt="Capture d'écran 2" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-screen2.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 2)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir la vidéo</div>
+                            <img src="assets/planpoitrines-vitrine-video-preview.png" class="w-full h-full object-cover" alt="Vidéo démonstration" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/planpoitrines-vitrine-video-preview.png';">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Processus de création
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">Développement & Technologie</h5>
+                            <p class="text-neutral-900">J'ai fait le choix de travailler avec les langages de base du web — HTML pour la structure des pages et CSS pour leur mise en forme visuelle — sans recourir à un CMS complexe. Ce choix répondait au manque de profil technique de l'équipe et me permettait de livrer un code structuré, responsive et facile à maintenir.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">Mise en ligne provisoire</h5>
+                            <p class="text-neutral-900">Pour permettre à l'équipe de visualiser le site dans des conditions réelles et recueillir des retours, j'ai déployé le site sur un serveur web personnel. J'en ai profité pour sensibiliser les co-présidentes aux enjeux de l'hébergement web.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés</h4>
+                        <p class="project-body-text">Le manque de retours réguliers à distance a ralenti la finalisation de la page d'adhésion interactive. De plus, l'identité visuelle de l'association évoluait encore pendant mon stage, m'obligeant à composer avec des maquettes provisoires.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <p class="project-body-text"><strong>Synthèse :</strong> Cette mission m'a appris que le développement ne se limite pas à la technique. Le cadrage initial et la communication proactive en télétravail sont fondamentaux pour éviter les blocages de validation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="page-acm-ikeoluwa" class="page bg-neutral-50/70 min-h-screen relative z-10">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="flex justify-between items-center mb-12">
+                <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    Retour à l'accueil
+                </button>
+
+                <button onclick="showProject('wr506d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    Projet suivant
+                    <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-50 via-blue-100/40 to-white rounded-3xl border-2 border-blue-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-blue-300/20 rounded-full blur-2xl"></div>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-200/50 text-blue-800 px-3 py-1 rounded-full border border-blue-300 mb-6 inline-block">Projet Pro · Solidarité</span>
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-blue-950">Association ACM (Ike Oluwa)</h1>
+                <p class="text-neutral-600 font-light text-base md:text-lg leading-relaxed mb-6 max-w-4xl project-description">
+                    Refonte globale de la plateforme d'action sociale interculturelle de l'association ACM (Ike Oluwa).
+                </p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-blue-50 border border-blue-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-blue-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Développer</span>
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Concevoir</span>
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Entreprendre</span>
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Comprendre</span>
+                        <span class="px-3 py-1 bg-white text-blue-700 font-bold border border-blue-200/60 rounded-lg">Exprimer</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Dans le cadre de mon parcours de BUT MMI, j'ai collaboré avec l'association ACM (Ike Oluwa), qui œuvre pour la solidarité interculturelle et l'accompagnement social au niveau local. L'association avait besoin d'un outil moderne pour structurer ses activités de présentation, récolter des dons de manière sécurisée et centraliser les demandes d'adhésion.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">La mission consistait à concevoir et développer une plateforme d'action solidaire complète : présentation dynamique des pôles d'activités, module de dons sécurisé, et espace d'administration épuré pour les bénévoles.</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
+                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet ACM (Cliquer pour zoomer)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 0)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/acm-arborescence.png" class="w-full h-full object-cover" alt="Arborescence" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/acm-arborescence.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 1)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/acm-maquette.png" class="w-full h-full object-cover" alt="Maquette" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/acm-maquette.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 2)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/acm-db.png" class="w-full h-full object-cover" alt="Base de données" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/acm-db.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 3)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/acm-dashboard.png" class="w-full h-full object-cover" alt="Dashboard" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/acm-dashboard.png';">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Processus de création
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">Conception Centrée Utilisateur</h5>
+                            <p class="text-neutral-900">Analyse du parcours des bénévoles et donateurs, prototypage basse-fidélité pour valider les interactions avant d'entamer l'intégration.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200">
+                            <h5 class="step-title font-heading">Développement & Sécurité</h5>
+                            <p class="text-neutral-900">Développement de l'interface en responsive design, mise en place d'un modèle de base de données relationnelle SQL robuste, et liaison avec un système de dons sécurisé.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés</h4>
+                        <p class="project-body-text">La complexité résidait dans l'accessibilité de l'interface pour un public de bénévoles d'horizons variés, résolue en simplifiant le parcours utilisateur et en menant des tests de lisibilité poussés.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <p class="project-body-text">Un projet solidaire porteur de sens qui m'a sensibilisée aux besoins spécifiques du secteur tiers et a consolidé ma polyvalence en ingénierie et intégration UX/UI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="page-wr506d" class="page bg-neutral-50/70 min-h-screen relative z-10">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="flex justify-between items-center mb-12">
+                <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    Retour à l'accueil
+                </button>
+
+                <button onclick="showProject('wr602d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    Projet suivant
+                    <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <div class="bg-gradient-to-br from-yellow-50 via-yellow-100/30 to-white rounded-3xl border-2 border-yellow-300/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-yellow-300/20 rounded-full blur-2xl"></div>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full border border-yellow-200 mb-6 inline-block">Projet Universitaire · S5</span>
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-yellow-950">WR506D — API REST & GraphQL — Gestion de films</h1>
+                <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">
+                    Architecture back-end complète et interface de recherche développées en totale autonomie dans le cadre du semestre 5 du BUT MMI.
+                </p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-yellow-50 border border-yellow-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-yellow-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Développer</span>
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Concevoir</span>
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Comprendre</span>
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Exprimer</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet à l'IUT de Troyes, j'ai réalisé en totale autonomie un projet back-end avancé portant sur la gestion d'un catalogue de films. L'objectif académique était de concevoir et développer une API professionnelle complète, sécurisée et documentée, puis de la connecter à une interface front-end développée dans un dépôt séparé. Ce projet couvre l'ensemble du cycle de développement d'une application web : de la modélisation des données jusqu'à la mise en place d'une chaîne d'intégration continue.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">L'exercice consistait à construire une API robuste — c'est-à-dire un service qui stocke, organise et expose des données structurées — permettant de gérer un catalogue de films, d'acteurs, de réalisateurs et de catégories. Cette API devait ensuite être consommée par une interface front-end développée en parallèle dans un dépôt distinct, les deux projets communiquant entre eux. L'enjeu principal était de produire un code de qualité professionnelle : sécurisé, bien organisé, testé et conforme aux standards du secteur.</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
+                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet WR506D (Cliquer pour zoomer)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr506d', 0)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/wr506d-db.png" class="w-full h-full object-cover" alt="Modélisation DB" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr506d-db.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr506d', 1)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/wr506d-interface.png" class="w-full h-full object-cover" alt="Interface de recherche" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr506d-interface.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr506d', 2)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/wr506d-postman.png" class="w-full h-full object-cover" alt="Collection Postman" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr506d-postman.png';">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Étapes du processus de création
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">1. Conception de la base de données</h5>
+                            <p class="text-neutral-900">Avant d'écrire la moindre ligne de code, j'ai modélisé l'ensemble des données à gérer : films, acteurs, réalisateurs, catégories, utilisateurs, et les relations entre eux. Par exemple, un film peut avoir plusieurs acteurs, et un acteur peut avoir joué dans plusieurs films. Bien définir ces liens en amont était indispensable pour que l'application reste cohérente et évolutive.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">2. Construction de l'API</h5>
+                            <p class="text-neutral-900">J'ai développé l'API avec Symfony 7 et API Platform, deux outils professionnels largement utilisés en entreprise. J'ai mis en place deux façons d'interroger les données : une architecture REST classique, et GraphQL, une approche plus flexible qui permet à l'interface de demander exactement les informations dont elle a besoin, sans surplus. J'ai également intégré un système de pagination, des filtres de recherche par nom, date ou disponibilité en ligne, et des règles de validation pour garantir la cohérence des données saisies.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">3. Sécurisation des accès</h5>
+                            <p class="text-neutral-900">L'API est sécurisée par authentification JWT — un système de jetons numériques qui vérifie l'identité de l'utilisateur à chaque requête. J'ai mis en place deux niveaux d'accès distincts : un rôle utilisateur standard et un rôle administrateur avec des droits étendus. J'ai également implémenté une double authentification (2FA) via Google Authenticator : après la connexion classique, l'utilisateur doit saisir un code temporaire généré par son téléphone. C'était ma première implémentation de ce mécanisme, et cela m'a permis de comprendre concrètement comment fonctionne la sécurité à deux facteurs dans une application web professionnelle. J'ai par ailleurs intégré la gestion des photos de films et d'acteurs via upload de fichiers.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">4. Alimentation et test de l'API & 5. Connexion front-end</h5>
+                            <p class="text-neutral-900">Pour disposer d'un volume de données réaliste dès le départ, j'ai généré automatiquement 150 films et 190 acteurs via un système de fixtures. J'ai ensuite documenté et testé l'ensemble des routes avec Postman, en utilisant des variables d'environnement pour rendre la collection réutilisable facilement. L'interface utilisateur a été développée dans un dépôt séparé, puis connectée à l'API. Gérer la communication entre deux dépôts distincts m'a appris à penser l'architecture en termes de contrat d'interface : l'API expose des données dans un format défini, le front les consomme, et les deux projets doivent s'accorder sur ce format pour fonctionner ensemble.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs md:col-span-2">
+                            <h5 class="step-title font-heading">6. Qualité du code et automatisation</h5>
+                            <p class="text-neutral-900">Les commits Git suivent la convention Conventional Commits — une règle de nommage standardisée qui rend l'historique du projet lisible par n'importe quel développeur. J'ai également intégré des outils d'analyse automatique : PHPStan pour détecter les erreurs de logique, PHP_CodeSniffer pour vérifier la conformité au standard PSR-2, et PHPMD pour identifier les parties de code trop complexes. L'ensemble est automatisé via GitHub Actions : à chaque modification du code, ces vérifications se déclenchent automatiquement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés rencontrées</h4>
+                        <p class="project-body-text">La principale difficulté a été de faire coexister REST et GraphQL sur la même base de code sans créer de conflits de configuration. L'implémentation de la 2FA a également représenté un vrai défi technique : comprendre le fonctionnement des codes TOTP, les intégrer dans le flux d'authentification existant et gérer les cas particuliers demandait une compréhension fine du mécanisme. Enfin, connecter deux dépôts indépendants m'a obligée à figer le format de contrat d'interface pour le format d'échange entre le back et le front.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl space-y-4">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <div>
+                            <h5 class="bilan-title">Ce que ce projet m'a apporté</h5>
+                            <p class="project-body-text">Ce projet m'a donné une vision claire de ce que signifie construire une API de niveau professionnel. Au-delà des fonctionnalités, j'ai compris que la qualité du code — lisible, versionné proprement, testé et documenté — est aussi importante que le fait qu'il fonctionne. C'est cette rigueur que je retiens avant tout.</p>
+                        </div>
+                        <div>
+                            <h5 class="bilan-title">Les compétences développées</h5>
+                            <p class="project-body-text">J'ai consolidé ma maîtrise de Symfony et découvert API Platform dans toute sa richesse. J'ai pris en main des outils directement issus du monde professionnel : JWT et 2FA pour la sécurité, GitHub Actions pour l'automatisation, Postman pour la documentation et les tests, et les conventions Git pour un historique propre et exploitable.</p>
+                        </div>
+                        <div>
+                            <h5 class="bilan-title">Ce que je ferais différemment</h5>
+                            <p class="project-body-text">Si je devais recommencer, j'écrirais les tests unitaires en parallèle du développement plutôt qu'en fin de projet. Développer et tester simultanément aurait rendu chaque étape plus solide et m'aurait évité de revenir en arrière pour corriger des erreurs détectées tardivement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200/60 rounded-2xl p-5 shadow-xs">
+                    <h4 class="font-heading text-sm font-bold text-neutral-900 mb-3">Validation des Compétences (WR506D)</h4>
+                    <div class="overflow-x-auto text-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-yellow-200">
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Compétence</th>
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider">Ce que WR506D démontre</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-yellow-100 text-neutral-800">
+                                <tr>
+                                    <td class="py-2 font-bold text-yellow-800">Développer</td>
+                                    <td class="py-2">API REST + GraphQL Symfony 7, JWT, 2FA Google Authenticator, Docker, fixtures, upload de fichiers, pagination, filtres, GitHub Actions, connexion multi-dépôts.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-yellow-800">Entreprendre</td>
+                                    <td class="py-2">Gestion autonome du projet de A à Z, organisation en deux dépôts distincts connectés, choix techniques assumés seule, respect des conventions et standards professionnels imposés par le sujet.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="page-wr602d" class="page bg-neutral-50/70 min-h-screen relative z-10">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="flex justify-between items-center mb-12">
+                <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                    Retour à l'accueil
+                </button>
+
+                <button onclick="showProject('rj10')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    Retour premier projet
+                    <svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <div class="bg-gradient-to-br from-yellow-50 via-yellow-100/30 to-white rounded-3xl border-2 border-yellow-300/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-yellow-300/20 rounded-full blur-2xl"></div>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full border border-yellow-200 mb-6 inline-block">Projet Universitaire · S6</span>
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-yellow-950">WR602D — Micro-service de génération de PDF & abonnements</h1>
+                <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">
+                    Développement et déploiement d'un micro-service PDF Gotenberg intégré à une application de gestion d'abonnements Stripe.
+                </p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-yellow-50 border border-yellow-200/60 p-5 rounded-2xl">
+                    <h4 class="font-heading text-xs font-bold text-yellow-900 uppercase tracking-widest mb-2">Compétences BUT MMI :</h4>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Développer</span>
+                        <span class="px-3 py-1 bg-white text-yellow-700 font-bold border border-yellow-200/60 rounded-lg">Entreprendre</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
+                        <p class="text-neutral-900 text-base font-light">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet à l'IUT de Troyes, j'ai réalisé en totale autonomie un projet de semestre 6 portant sur l'architecture en micro-services. L'objectif était de comprendre et d'appliquer un concept clé du développement professionnel moderne : découper une application en services indépendants qui communiquent entre eux, plutôt que de tout regrouper dans un seul et même projet.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
+                        <p class="text-neutral-900 text-base font-light">Le projet se décomposait en deux parties distinctes. D'un côté, un micro-service dédié uniquement à la génération de fichiers PDF, appelable depuis n'importe quelle application. De l'autre, une application Symfony principale dotée d'une interface utilisateur en Twig, qui consomme ce micro-service et propose un système de comptes avec différents niveaux d'abonnement. Selon son abonnement, l'utilisateur a accès à plus ou moins de fonctionnalités — par exemple, un quota limité de PDFs par jour pour un abonnement de base, ou un accès illimité pour un abonnement supérieur.</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
+                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet WR602D (Cliquer pour zoomer)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr602d', 0)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/wr602d-db.png" class="w-full h-full object-cover" alt="Modélisation Base de données" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr602d-db.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr602d', 1)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/wr602d-dashboard.png" class="w-full h-full object-cover" alt="Interface Dashboard" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr602d-dashboard.png';">
+                        </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr602d', 2)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/wr602d-stripe.png" class="w-full h-full object-cover" alt="Intégration Stripe" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr602d-stripe.png';">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        Étapes du processus de création
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">1. Compréhension de l'architecture micro-services</h5>
+                            <p class="text-neutral-900">Avant de développer quoi que ce soit, j'ai pris le temps de comprendre ce que signifie concevoir en micro-services : chaque service a une responsabilité unique, fonctionne de façon autonome, et communique avec les autres via des requêtes HTTP. Cette logique est très différente d'une application classique où tout est centralisé, et elle m'a demandé de repenser ma façon d'organiser un projet.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">2. Développement du micro-service PDF</h5>
+                            <p class="text-neutral-900">J'ai développé le micro-service de génération de PDF en m'appuyant sur Gotenberg, un outil open source qui convertit des contenus web en fichiers PDF. Le micro-service reçoit une requête, génère le PDF correspondant et le retourne. Il est entièrement indépendant de l'application principale et peut être appelé via Symfony HttpClient.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">3. Développement de l'application principale</h5>
+                            <p class="text-neutral-900">J'ai ensuite développé l'application Symfony qui consomme ce micro-service. L'interface utilisateur est codée en Twig, le moteur de templates natif de Symfony. Elle permet la création de compte, la connexion sécurisée, et la gestion du profil utilisateur.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
+                            <h5 class="step-title font-heading">4. Système d'abonnements avec Stripe & 5. Déploiement</h5>
+                            <p class="text-neutral-900">J'ai intégré Stripe — la référence du paiement en ligne — pour gérer les niveaux d'abonnement. Les paiements sont simulés en environnement de test, sans argent réel. Selon l'abonnement souscrit, l'application adapte automatiquement les fonctionnalités accessibles à l'utilisateur : quota de PDFs journalier pour le niveau de base, accès illimité pour les niveaux supérieurs. J'ai aussi mis en place un déploiement automatique via GitHub Actions, couvrant à la fois Gotenberg et l'application Symfony.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés rencontrées</h4>
+                        <p class="project-body-text">La principale difficulty a été de faire communiquer deux projets distincts de façon fiable. Configurer Symfony HttpClient pour qu'il appelle correctement le micro-service, gérer les erreurs de communication entre les deux, et s'assurer que tout fonctionne aussi bien en local qu'en déploiement a demandé beaucoup de rigueur. L'intégration de Stripe a également représenté un apprentissage important : comprendre le fonctionnement des webhooks, des événements de paiement et de la gestion des états d'abonnement côté serveur était une première pour moi.</p>
+                    </div>
+                    <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl space-y-4">
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Bilan personnel</h4>
+                        <div>
+                            <h5 class="bilan-title">Ce que ce projet m'a apporté</h5>
+                            <p class="project-body-text">Ce projet m'a ouvert à une façon de penser l'architecture logicielle que je n'avais pas encore expérimentée. Découper une application en services indépendants, c'est accepter une complexité de coordination en échange d'une meilleure maintenabilité et évolutivité. C'est une logique que je retrouve directement dans les projets professionnels et qui donne du sens à beaucoup de choix techniques que je rencontre en entreprise.</p>
+                        </div>
+                        <div>
+                            <h5 class="bilan-title">Les compétences développées</h5>
+                            <p class="project-body-text">J'ai découvert Gotenberg, approfondi mon usage de Symfony HttpClient, et pris en main Stripe pour la première fois. J'ai également consolidé ma compréhension du déploiement automatisé avec GitHub Actions dans un contexte multi-services, ce qui est plus complexe que sur un projet monolithique.</p>
+                        </div>
+                        <div>
+                            <h5 class="bilan-title">Ce que je ferais différemment</h5>
+                            <p class="project-body-text">Si je devais recommencer, je définirais plus tôt le contrat d'interface entre le micro-service et l'application principale — c'est-à-dire le format exact des requêtes et des réponses échangées. Clarifier ce point dès le départ aurait évité plusieurs ajustements en cours de route.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200/60 rounded-2xl p-5 shadow-xs">
+                    <h4 class="font-heading text-sm font-bold text-neutral-900 mb-3">Validation des Compétences (WR602D)</h4>
+                    <div class="overflow-x-auto text-xs">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-yellow-200">
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider w-1/4">Compétence</th>
+                                    <th class="py-2 font-bold text-neutral-950 uppercase tracking-wider">Ce que WR602D démontre</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-yellow-100 text-neutral-800">
+                                <tr>
+                                    <td class="py-2 font-bold text-yellow-800">Développer</td>
+                                    <td class="py-2">Micro-service Gotenberg, intégration Symfony HttpClient, interface Twig, système d'abonnements Stripe, déploiement automatisé GitHub Actions, architecture multi-services Docker.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-bold text-yellow-800">Entreprendre</td>
+                                    <td class="py-2">Gestion autonome d'un projet à deux composants distincts, choix d'architecture micro-services, intégration d'un outil de paiement professionnel en totale autonomie.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -446,54 +1594,142 @@
             </div>
 
             <div class="pt-8 border-t border-neutral-100 text-[11px] text-neutral-400 font-light flex items-center gap-2">
-                <i class="fa-solid fa-circle-info text-emerald-500"></i> Utilisez les flèches gauches/droites de votre clavier pour naviguer.
+                <i class="fa-solid fa-circle-info text-emerald-500"></i> Utilisez les flèches de votre clavier pour naviguer d'une trace à l'autre.
             </div>
         </div>
     </div>
 
     <script>
-        function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));const t=document.getElementById('page-'+p);if(t)t.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
-        function showProject(p){showPage(p);}
-        function togglePortfolioView(m){/* Logique toggle conservée */}
+        // Curseur
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
 
-        // DESCRIPTION AVANCÉE ET SÉQUENTIELLE DU CODE ET DES ETAPES POUR LE JURY
+        // Hovers
+        document.querySelectorAll('a, button, [onclick], .group').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+                cursor.style.backgroundColor = '#10b981';
+                cursor.style.opacity = '0.6';
+            });
+            element.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.backgroundColor = '#10b981';
+                cursor.style.opacity = '1';
+            });
+        });
+
+        // Navigation (Router)
+        function showPage(pageId) {
+            const activePage = document.querySelector('.page.active');
+            const targetPage = document.getElementById('page-' + pageId);
+            if (activePage) {
+                activePage.classList.remove('active');
+                setTimeout(() => { activePage.style.display = 'none'; }, 100);
+            }
+            if (targetPage) {
+                setTimeout(() => {
+                    targetPage.style.display = 'block';
+                    targetPage.offsetHeight;
+                    targetPage.classList.add('active');
+                }, 150);
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function showProject(projectId) { showPage(projectId); }
+
+        // Base de données Lightbox enrichie et ordonnée pour le Jury
         const imagesData = {
             'rj10': [
-                { url: 'assets/rj10-arborescence.png', title: '01. Architecture des Rôles & Sitemap', desc: 'DÉBUT DU PROJET :\nAvant de coder, j\'ai d\'abord traduit le besoin métier (relances d\'anciens élèves) en un plan de site. Ce schéma structure le parcours utilisateur et verrouille le périmètre fonctionnel exigé par le client.' },
-                { url: 'assets/rj10-maquette.png', title: '02. Prototypage et Conception UX', desc: 'TRADUCTION VISUELLE :\nCréation des maquettes fonctionnelles. Cette étape permet de valider l\'utilisabilité de l\'interface administrative avant d\'entamer le codage des composants front-end.' },
+                { url: 'assets/rj10-arborescence.png', title: '01. Architecture de navigation (Sitemap)', desc: 'DÉBUT DU PROJET :\nAvant de coder, j\'ai d\'abord traduit le besoin métier (relances d\'anciens élèves) en un plan de site. Ce schéma structure le parcours utilisateur et verrouille le périmètre fonctionnel exigé par le client.' },
+                { url: 'assets/rj10-maquette.png', title: '02. Prototypage et Conception UX', desc: 'TRADUCTION VISUELLE :\nCréation des maquettes fonctionnelles sous Figma. Cette étape permet de valider l\'utilisabilité de l\'interface administrative avant d\'entamer le codage des composants front-end.' },
                 { url: 'assets/rj10-db.png', title: '03. Modélisation Relationnelle SQL', desc: 'STRUCTURE LOGIQUE :\nConception du schéma de la base de données. Ici, les liaisons One-To-Many lient un Stagiaire à ses multiples Certifications d\'État, permettant un historique de relance parfaitement intègre.' },
                 { url: 'assets/rj10-dashboard.png', title: '04. Rendu de l\'Interface d\'Accueil', desc: 'PRODUIT FINALISÉ :\nVue globale du tableau de bord d\'administration. Les indicateurs sont alimentés en asynchrone par l\'API Symfony pour éviter tout ralentissement de page.' },
                 { url: 'assets/rj10-stagiaires.png', title: '05. Vue du Listing des Stagiaires', desc: 'DÉMONSTRATION COMPÉTENCE :\nTableau de données réactif intégrant des filtres complexes par type de diplôme (SST, APS, SSIAP) et par niveau d\'urgence d\'expiration.' },
                 { url: 'assets/rj10-formations.png', title: '06. Catalogue de Paramétrage Légaux', desc: 'DÉTAIL MÉTIER :\nCette page permet de configurer la durée légale de chaque certification (ex: 2 ans pour le SST) qui servira de base à l\'algorithme de calcul des alertes.' },
                 { url: 'assets/rj10-template-email.png', title: '07. Moteur d\'Édition des Relances', desc: 'MODULE DE COMMUNICATION :\nInterface permettant d\'éditer les patrons de mails. Les balises dynamiques insérées sont interprétées par le composant Twig de Symfony.' },
                 { url: 'assets/rj10-rappel.png', title: '08. File d\'attente des Mails Sortants', desc: 'ARCHITECTURE BACK-END :\nHistorique et file d\'attente des traitements. Permet à l\'utilisateur de contrôler ou d\'annuler une relance planifiée par le système.' },
-                { url: 'assets/rj10-rappel-contenu.png', title: '09. Rendu de la Notification Reçue', desc: 'LIVRABLE FINAL :\nVisualisation finale de l\'email généré et reçu par le client. Le gabarit intègre une feuille de style inlinée pour assurer la compatibilité avec Outlook et Gmail.' },
-                { url: 'assets/rj10-code-cron.png', title: '10. Analyse algorithmique du script de tâche de fond', desc: 'LE CŒUR LOGIQUE DE L\'APPLICATION :\nCe morceau de code source présente ma commande Symfony native branchée sur un planificateur Cron Linux.\n\n➔ Flèche 1 (Entrée) : Le script s\'exécute automatiquement chaque nuit à 00h00.\n➔ Flèche 2 (Calcul) : Il interroge la table SQL pour extraire toutes les certifications dont la date d\'échéance est égale à la date du jour + 60 jours.\n➔ Flèche 3 (Sortie) : Pour chaque correspondance isolée, il instancie un objet Mailer et pousse la relance dans la file d\'attente asynchrone.' }
+                { url: 'assets/rj10-rappel-contenu.png', title: '09. Rendu de la Notification Reçue', desc: 'LIVRABLE FINAL :\nVisualisation finale de l\'email généré et reçu par le client. Le gabarit intègre une feuille de style inlinée pour assurer la compatibilité avec Outlook et Gmail.' }
             ],
             'noor': [
                 { url: 'assets/noor-arborescence.png', title: '01. Scénarisation des États Applicatifs', desc: 'CONCEPTION INITIALE :\nCartographie algorithmique de l\'application. L\'expérience utilisateur s\'ajuste entièrement selon le profil et les données de santé saisies par l\'utilisatrice.' },
                 { url: 'assets/noor-maquette.png', title: '02. Design System & Charte Graphique', desc: 'DESIGN D\'INTERACTIONS :\nPrototypage haute-fidélité sous Figma. Choix d\'une palette douce et de typographies raffinées pour instaurer un climat de confiance et de sérénité.' },
                 { url: 'assets/noor-db.png', title: '03. Schéma Entité-Association (PostgreSQL)', desc: 'PERSISTANCE DES DONNÉES :\nStructure de données sécurisée isolant les informations physiologiques privées. Les calculs de cycles s\'appuient sur des clés étrangères indexées pour optimiser les performances.' },
                 { url: 'assets/noor-dashboard.png', title: '04. Dashboard Centralisé Unifié', desc: 'SÉRIE DE LIVRABLES :\nIntégration finale de l\'écran d\'accueil. Il fusionne de manière ergonomique et non intrusive les calendriers de santé et les rappels culturels quotidiens.' },
-                { url: 'assets/noor-login.png', title: '05. Écran d\'Authentification Sans Session', desc: 'SÉCURITÉ AVANCÉE :\nInterface de connexion sécurisée par jeton JWT. Aucun cookie de session n\'est stocké de manière persistante afin de protéger la vie privée de l\'utilisatrice.' },
-                { url: 'assets/noor-cycle.png', title: '06. Moniteur Physiologique et Prévisions', desc: 'LOGIQUE MAJEURE :\nRendu visuel du calendrier de prédiction. Les phases futures sont estimées en temps réel par calcul de moyennes glissantes sur le serveur.' },
-                { url: 'assets/noor-code-controller.png', title: '07. Gestion d\'État Réactive (Store Pinia)', desc: 'EXPLICATION TECHNIQUE POUR LE JURY :\nCe fichier JavaScript montre l\'implémentation de Pinia pour la gestion d\'état globale du front-end.\n\n➔ Étape 1 : L\'utilisatrice coche une action sur l\'interface.\n➔ Étape 2 : Le Store Pinia intercepte l\'événement, valide la cohérence des données, et met à jour instantanément tous les compteurs visuels de la barre de navigation sans recharger l\'écran.\n➔ Étape 3 : Une promesse Axios transmet le payload JSON en arrière-plan vers l\'API Symfony pour assurer la persistance immédiate dans la base de données.' }
+                { url: 'assets/noor-login.png', title: '05. Écran d\'Authentification Sans Session', desc: 'SÉCURITÉ AVANCÉE :\nInterface de connexion sécurisée par jeton JWT. Aucun cookie de session n\'est stocké de manière perverse afin de protéger la vie privée de l\'utilisatrice.' },
+                { url: 'assets/noor-cycle.png', title: '06. Moniteur Physiologique et Prévisions', desc: 'LOGIQUE MAJEURE :\nRendu visuel du calendrier de prédiction. Les phases futures sont estimées en temps réel par calcul de moyennes glissantes sur le serveur.' }
             ]
         };
 
-        let currentLightboxProject = ''; let currentLightboxIndex = 0;
-        function openLightbox(p, i) { currentLightboxProject = p; currentLightboxIndex = i; updateLightboxContent(); document.getElementById('lightbox').classList.remove('hidden'); document.getElementById('lightbox').classList.add('flex'); }
-        function closeLightbox() { document.getElementById('lightbox').classList.add('hidden'); document.getElementById('lightbox').classList.remove('flex'); }
-        function updateLightboxContent() {
-            const p = imagesData[currentLightboxProject]; if (!p) return; const d = p[currentLightboxIndex];
-            document.getElementById('lightbox-img').src = d.url;
-            document.getElementById('lightbox-title').innerText = d.title;
-            document.getElementById('lightbox-desc').innerText = d.desc;
-            document.getElementById('lightbox-indicator').innerText = `Étape ${currentLightboxIndex + 1} / ${p.length}`;
+        let currentLightboxProject = '';
+        let currentLightboxIndex = 0;
+
+        function openLightbox(projectId, index) {
+            currentLightboxProject = projectId;
+            currentLightboxIndex = index;
+            updateLightboxContent();
+            document.getElementById('lightbox').classList.remove('hidden');
+            document.getElementById('lightbox').classList.add('flex');
         }
-        function prevLightboxImage() { const p = imagesData[currentLightboxProject]; currentLightboxIndex = (currentLightboxIndex - 1 + p.length) % p.length; updateLightboxContent(); }
-        function nextLightboxImage() { const p = imagesData[currentLightboxProject]; currentLightboxIndex = (currentLightboxIndex + 1) % p.length; updateLightboxContent(); }
-        document.addEventListener('keydown', e => { if(e.key==='Escape')closeLightbox(); if(e.key==='ArrowLeft')prevLightboxImage(); if(e.key==='ArrowRight')nextLightboxImage(); });
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.getElementById('lightbox').classList.remove('flex');
+            const videoElement = document.getElementById('lightbox-video');
+            videoElement.pause();
+            videoElement.src = "";
+        }
+
+        function updateLightboxContent() {
+            const projectImages = imagesData[currentLightboxProject];
+            if (!projectImages) return;
+
+            const currentData = projectImages[currentLightboxIndex];
+            const imgElement = document.getElementById('lightbox-img');
+            const videoElement = document.getElementById('lightbox-video');
+
+            if (currentData.url.endsWith('.mp4')) {
+                imgElement.classList.add('hidden');
+                videoElement.classList.remove('hidden');
+                videoElement.src = currentData.url;
+                videoElement.play();
+            } else {
+                videoElement.classList.add('hidden');
+                videoElement.pause();
+                videoElement.src = "";
+                imgElement.classList.remove('hidden');
+                imgElement.src = currentData.url;
+            }
+
+            document.getElementById('lightbox-title').innerText = currentData.title;
+            document.getElementById('lightbox-desc').innerText = currentData.desc || "Explication technique détaillée en cours de chargement.";
+            document.getElementById('lightbox-indicator').innerText = `Trace ${currentLightboxIndex + 1} sur ${projectImages.length}`;
+        }
+
+        function prevLightboxImage() {
+            const projectImages = imagesData[currentLightboxProject];
+            if (!projectImages) return;
+
+            currentLightboxIndex = (currentLightboxIndex - 1 + projectImages.length) % projectImages.length;
+            updateLightboxContent();
+        }
+
+        function nextLightboxImage() {
+            const projectImages = imagesData[currentLightboxProject];
+            if (!projectImages) return;
+
+            currentLightboxIndex = (currentLightboxIndex + 1) % projectImages.length;
+            updateLightboxContent();
+        }
+
+        // Navigation clavier
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft' && !document.getElementById('lightbox').classList.contains('hidden')) prevLightboxImage();
+            if (e.key === 'ArrowRight' && !document.getElementById('lightbox').classList.contains('hidden')) nextLightboxImage();
+        });
     </script>
 </body>
 </html>
