@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- Tailwind CSS (v4) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,11 +20,9 @@
             }
         }
     </script>
-    <!-- Fonts : Outfit et Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -117,7 +114,6 @@
         </div>
     </header>
 
-    <!-- ==================== PAGE : ACCUEIL ==================== -->
     <div id="page-home" class="page active relative z-10">
         <main class="max-w-6xl mx-auto px-6 pt-24 pb-16 min-h-[85vh] flex flex-col justify-center fade-in-up">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-neutral-50/80 backdrop-blur-xs text-xs font-medium text-neutral-600 w-fit mb-6 shadow-xs">
@@ -173,7 +169,6 @@
             </div>
         </section>
 
-        <!-- SECTION PORTFOLIO GRID -->
         <section id="projets-pro" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
             <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
                 <div>
@@ -187,7 +182,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8" id="projects-grid">
-                <!-- CARTE 1 -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" onclick="showProject('rj10')">
                     <div class="relative overflow-hidden rounded-3xl bg-emerald-50/90 border-2 border-emerald-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
@@ -214,7 +208,6 @@
                     </div>
                 </div>
 
-                <!-- CARTE 2 -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" onclick="showProject('noor')">
                     <div class="relative overflow-hidden rounded-3xl bg-pink-50/90 border-2 border-pink-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-pink-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
@@ -241,7 +234,6 @@
                     </div>
                 </div>
 
-                <!-- CARTE 3 -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" onclick="showProject('planpoitrines-maquette')">
                     <div class="relative overflow-hidden rounded-3xl bg-purple-50/90 border-2 border-purple-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
@@ -265,7 +257,6 @@
                     </div>
                 </div>
 
-                <!-- CARTE 4 -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" onclick="showProject('planpoitrines-vitrine')">
                     <div class="relative overflow-hidden rounded-3xl bg-purple-50/90 border-2 border-purple-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
@@ -289,7 +280,6 @@
                     </div>
                 </div>
 
-                <!-- CARTE 5 -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" onclick="showProject('acm-ikeoluwa')">
                     <div class="relative overflow-hidden rounded-3xl bg-blue-50/90 border-2 border-blue-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-blue-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
@@ -314,7 +304,6 @@
             </div>
         </section>
 
-        <!-- SECTION PROJETS UNI -->
         <section id="projets-uni" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
             <div class="mb-16">
                 <h2 class="text-3xl md:text-5xl font-black tracking-tight">Projets Universitaires</h2>
@@ -340,7 +329,6 @@
         </section>
     </div>
 
-    <!-- ==================== CASE STUDY : RJ10 RAPPEL ==================== -->
     <div id="page-rj10" class="page bg-neutral-50/60 min-h-screen relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -354,7 +342,6 @@
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-emerald-200/50 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300 mb-4 inline-block">Stage BUT3 · Terminé</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-emerald-950">RJ10 Rappel — Gestion automatisée</h1>
                 
-                <!-- BADGES REMIS ICI SOUHAITÉS -->
                 <div class="flex flex-wrap gap-2 text-xs mt-2">
                     <span class="px-3 py-1 bg-white text-emerald-700 font-bold border border-emerald-200/60 rounded-lg">Développer</span>
                     <span class="px-3 py-1 bg-white text-emerald-700 font-bold border border-emerald-200/60 rounded-lg">Concevoir</span>
@@ -363,37 +350,33 @@
                 </div>
             </div>
 
-            <!-- STRUCTURE DE CODE REMISE PROPREMENT EN LIGHT ET FR -->
             <div class="bg-neutral-900 border border-neutral-800 rounded-3xl p-8 my-8 text-slate-100 space-y-8 shadow-xl">
                 <div class="flex items-center gap-2 text-emerald-400 font-heading font-bold text-sm uppercase tracking-wider">
                     <i class="fa-solid fa-gears"></i> Section : Comment ça fonctionne ?
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
-                    <!-- ÉTAPE 1 -->
                     <div class="space-y-3">
                         <div class="text-xs font-bold uppercase text-emerald-400">1. Calcul de la date d'expiration</div>
-                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Durée de validité de 5 ans</span>
+                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Validité de 5 ans</span>
 $dateExpiration = $dateObtention
     ->modify('+60 months');</pre>
-                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">On calcule automatiquement le moment exact où le titre professionnel de l'élève va expirer.</p>
+                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">Le backend calcule automatiquement le moment précis d'expiration réglementaire du titre.</p>
                     </div>
 
-                    <!-- ÉTAPE 2 -->
                     <div class="space-y-3">
-                        <div class="text-xs font-bold uppercase text-emerald-400">2. Vérification automatisée nocturne</div>
-                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Vérification journalière</span>
+                        <div class="text-xs font-bold uppercase text-emerald-400">2. Détection nocturne automatisée</div>
+                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Tâche Cron journalière</span>
 if ($dateExpiration->modify('-90 days') 
     == $aujourdHui) {</pre>
-                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">Chaque nuit, un script automatisé (tâche Cron) scanne la base de données pour isoler les profils arrivant à échéance.</p>
+                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">Chaque nuit, un script système scanne les tables SQL pour isoler les profils arrivant à l'échéance critique des j-90.</p>
                     </div>
 
-                    <!-- ÉTAPE 3 -->
                     <div class="space-y-3">
-                        <div class="text-xs font-bold uppercase text-emerald-400">3. Envoi automatique de la relance</div>
-                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Expédition finale</span>
+                        <div class="text-xs font-bold uppercase text-emerald-400">3. Expédition asynchrone</div>
+                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Envoi via Mailer</span>
 $mailer->send($reminderEmail);</pre>
-                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">Le système distribue l'email sans intervention humaine afin de maximiser les taux de réinscription.</p>
+                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">L'email personnalisé est distribué de manière transparente afin d'augmenter les taux de réinscription.</p>
                     </div>
                 </div>
             </div>
@@ -402,7 +385,7 @@ $mailer->send($reminderEmail);</pre>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et contexte</h4>
-                        <p class="project-body-text">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de neuf semaines, du 23 mars au 22 mai 2026, au sein de RJ10 Formation, un centre de formation aux métiers de la sécurité situé à La Chapelle-Saint-Luc, dans l'Aube. Ce centre propose des formations professionnelles telles que l'APS (Agent de Prévention et Sécurité), le SSIAP (Sécurité Incendie) et le SST (Sauveteur Secouriste du Travail). J'ai travaillé en totale autonomie sur ce projet, sans équipe technique autour de moi, ce qui m'a demandé une organisation rigoureuse et une grande capacité à prendre des dcision seule.</p>
+                        <p class="project-body-text">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de neuf semaines, du 23 mars au 22 mai 2026, au sein de RJ10 Formation, un centre de formation aux métiers de la sécurité situé à La Chapelle-Saint-Luc, dans l'Aube. Ce centre propose des formations professionnelles telles que l'APS (Agent de Prévention et Sécurité), le SSIAP (Sécurité Incendie) et le SST (Sauveteur Secouriste du Travail). J'ai travaillé en totale autonomie sur ce projet, sans équipe technique autour de moi, ce qui m'a demandé une organisation rigoureuse et une grande capacité à prendre des décisions seule.</p>
                     </div>
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">02 — La mission</h4>
@@ -410,48 +393,43 @@ $mailer->send($reminderEmail);</pre>
                     </div>
                 </div>
 
-                <!-- GALERIE DES TRACES RJ10 -->
-                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl space-y-4">
+                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-4">
+                    <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces de développement (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 0)"><img src="assets/rj10-arborescence.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 1)"><img src="assets/rj10-maquette.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 2)"><img src="assets/rj10-db.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 3)"><img src="assets/rj10-dashboard.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 4)"><img src="assets/rj10-stagiaires.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 5)"><img src="assets/rj10-formations.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 6)"><img src="assets/rj10-template-email.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 7)"><img src="assets/rj10-rappel.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 8)"><img src="assets/rj10-rappel-contenu.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 0)"><img src="assets/rj10-arborescence.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 1)"><img src="assets/rj10-maquette.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 2)"><img src="assets/rj10-db.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 3)"><img src="assets/rj10-dashboard.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 4)"><img src="assets/rj10-stagiaires.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 5)"><img src="assets/rj10-formations.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 6)"><img src="assets/rj10-template-email.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 7)"><img src="assets/rj10-rappel.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 8)"><img src="assets/rj10-rappel-contenu.png" class="w-full h-full object-cover"></div>
                     </div>
                 </div>
 
-                <!-- ETAPES DE CREATION -->
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900">Étapes du processus de création</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5 class="step-title font-heading">1. Analyse des besoins</h5><p>J'ai découvert que chaque type de formation obéit à des règles très différentes (APS, SSIAP, SST). Comprendre ces règles métier avant de concevoir l'outil était indispensable.</p></div>
-                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5 class="step-title font-heading">2. Architecture</h5><p>J'ai défini que l'accès se ferait via une page de connexion sécurisée reliée à 5 espaces back-office distincts pour l'administration.</p></div>
-                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5 class="step-title font-heading">3. Logique Back-end</h5><p>J'ai implémenté l'architecture avec Symfony 7 pour gérer les calculs automatiques des dates et orchestrer la persistance SQL.</p></div>
-                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5 class="step-title font-heading">4. Interface Utilisateur</h5><p>Développement sous Vue.js 3 d'un dashboard réactif permettant de suivre l'état complet des relances expédiées.</p></div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5>1. Analyse</h5><p>J'ai découvert que chaque formation obéit à des règles différentes (SST, SSIAP, APS). L'analyse de terrain fut essentielle.</p></div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5>2. Structuration</h5><p>Planification globale d'un écosystème back-office cloisonné par rôles d'utilisateurs sécurisés.</p></div>
                     </div>
                 </div>
 
-                <!-- DIFFICULTÉS & BILANS INTEGRAL REPOUSSE -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Difficultés rencontrées</h4>
-                        <p>La principale difficulté a été de travailler seule sans interlocuteur technique. Lorsque je bloquais sur un problème de logique ou de fonctionnement, je m'appuyais sur mes propres recherches et l'intelligence artificielle comme assistant de travail. J'ai également eu du mal à clarifier certaines règles métier au départ, notamment la distinction entre la période pendant laquelle un stagiaire suit sa formation et la durée de validité du titre qu'il obtient à l'issue de celle-ci.</p>
+                        <p>La principale difficulté a été de travailler seule sans interlocuteur technique. Lorsque je bloquais sur un problème de logique ou de fonctionnement, je m'appuyais sur mes recherches et l'intelligence artificielle comme assistant de travail.</p>
                     </div>
-                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl space-y-4">
+                    <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">06 — Bilan personnel</h4>
-                        <p>Ce stage m'a appris que construire une application ne se résume pas à des compétences techniques. Comprendre le métier du client, bien réfléchir à l'organisation des données avant de commencer et anticiper les situations particulières sont des étapes tout aussi importantes que le développement lui-même. Ce projet m'a confrontée à une dimension que je n'avais pas encore vraiment expérimentée : gérer un projet numérique de A à Z en totale autonomie, dans un contexte professionnel réel.</p>
+                        <p>Ce stage m'a appris que construire une application ne se résume pas à des compétences techniques. Comprendre le métier du client, bien réfléchir à l'organisation des données avant de commencer sont fondamentaux.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== CASE STUDY : NOOR APP ==================== -->
     <div id="page-noor" class="page bg-neutral-50/70 min-h-screen relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -462,10 +440,9 @@ $mailer->send($reminderEmail);</pre>
             </div>
 
             <div class="bg-gradient-to-br from-pink-50 via-pink-100/40 to-white rounded-3xl border-2 border-pink-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
-                <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-200/50 text-pink-800 px-3 py-1 rounded-full border border-pink-300 mb-4 inline-block">Projet Personnel Inédit · En ligne</span>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-200/50 text-pink-800 px-3 py-1 rounded-full border border-pink-300 mb-4 inline-block">Projet Inédit · En ligne</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-pink-950">Noor — Suivi de santé féminine et spirituel</h1>
                 
-                <!-- BADGES REMIS ICI SOUHAITÉS -->
                 <div class="flex flex-wrap gap-2 text-xs mt-2">
                     <span class="text-xs px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold border border-pink-200/40">Développer</span>
                     <span class="text-xs px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold border border-pink-200/40">Concevoir</span>
@@ -475,48 +452,44 @@ $mailer->send($reminderEmail);</pre>
                 </div>
             </div>
 
-            <!-- STRUCTURE TECHNIQUE DE NOOR EN VALEUR SOUHAITÉE -->
             <div class="bg-neutral-900 border border-neutral-800 rounded-3xl p-8 my-8 text-slate-100 space-y-8 shadow-xl">
                 <div class="flex items-center gap-2 text-pink-400 font-heading font-bold text-sm uppercase tracking-wider">
                     <i class="fa-solid fa-gears"></i> Section : Comment ça fonctionne ?
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
-                    <!-- ÉTAPE 1 -->
                     <div class="space-y-3">
-                        <div class="text-xs font-bold uppercase text-pink-400">1. Algorithme de prévision du cycle</div>
-                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Moyennes mobiles</span>
+                        <div class="text-xs font-bold uppercase text-pink-400">1. Algorithme prévisionnel de cycle</div>
+                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Estimation théorique</span>
 $prochainCycle = $derniereDate
     ->modify('+' . $avgDays . ' days');</pre>
-                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">L'application estime et anticipe de manière automatisée les prochaines phases physiologiques rattachées au compte de l'utilisatrice.</p>
+                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">L'algorithme estime les futures phases physiologiques d'après les moyennes glissantes historiques.</p>
                     </div>
 
-                    <!-- ÉTAPE 2 -->
                     <div class="space-y-3">
-                        <div class="text-xs font-bold uppercase text-pink-400">2. Détection du rattrapage de jeûne</div>
-                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Intersection rituelle</span>
+                        <div class="text-xs font-bold uppercase text-pink-400">2. Intersection et jeûne</div>
+                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Interception des dates</span>
 if ($isRamadan && $isMenstruating) {
     $daysToRattraper++;
 }</pre>
-                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">Le système calcule à la volée le cumul des jours suspendus durant le mois rituel sans aucune intervention manuelle.</p>
+                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">Le moteur de calcul isole de façon automatique les suspensions rituelles survenues durant le jeûne.</p>
                     </div>
 
-                    <!-- ÉTAPE 3 -->
                     <div class="space-y-3">
-                        <div class="text-xs font-bold uppercase text-pink-400">3. Synchronisation Pinia Store</div>
-                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// State Management Front-end</span>
+                        <div class="text-xs font-bold uppercase text-pink-400">3. Synchronisation réactive</div>
+                        <pre class="bg-neutral-950 p-4 rounded-xl font-mono text-xs text-slate-100 border border-neutral-800"><span class="text-neutral-500">// Store Pinia asynchrone</span>
 this.counter = response.data.days;
 this.updateUI();</pre>
-                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">L'état global de l'interface graphique rafraîchit instantanément les compteurs de la barre de navigation sans recharger l'écran.</p>
+                        <p class="text-neutral-400 text-xs font-light font-sans bg-neutral-900/50 p-3 rounded-lg border border-neutral-800">Les briques de l'interface et de la barre de navigation se mettent à jour à la volée sans rechargement.</p>
                     </div>
                 </div>
             </div>
 
             <div class="space-y-8">
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 shadow-sm">
-                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">03 — Déploiement</h4>
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">03 — Déploiement Production</h4>
                     <p class="text-neutral-900 text-base font-light">
-                        Noor est entièrement déployée et accessible en ligne : <a href="https://noor-app-ruddy.vercel.app" target="_blank" class="text-pink-600 font-bold hover:underline">Noor App</a>. Elle est également adaptée pour une utilisation sur mobile.
+                        Noor est entièrement déployée et accessible en ligne : <a href="https://noor-app-ruddy.vercel.app" target="_blank" class="text-pink-600 font-bold hover:underline">Noor App</a>.
                     </p>
                 </div>
 
@@ -531,15 +504,14 @@ this.updateUI();</pre>
                     </div>
                 </div>
 
-                <!-- GALERIE COMPLETE NOOR APP (TOUTES LES IMAGES RESTAURÉES) -->
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Interface de l'application Noor (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 0)"><img src="assets/noor-arborescence.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 1)"><img src="assets/noor-maquette.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 2)"><img src="assets/noor-db.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 3)"><img src="assets/noor-dashboard.png" class="w-full h-full object-cover"></div>
-                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 4)"><img src="assets/noor-login.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 0)"><img src="assets/noor-arborescence.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 1)"><img src="assets/noor-maquette.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 2)"><img src="assets/noor-db.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 3)"><img src="assets/noor-dashboard.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border border-neutral-200 rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 4)"><img src="assets/noor-login.png" class="w-full h-full object-cover"></div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 5)"><img src="assets/noor-cycle.png" class="w-full h-full object-cover"></div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 6)"><img src="assets/noor-spiritualite.png" class="w-full h-full object-cover"></div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 7)"><img src="assets/noor-mobile-home.png" class="w-full h-full object-cover"></div>
@@ -547,33 +519,20 @@ this.updateUI();</pre>
                     </div>
                 </div>
 
-                <!-- ETAPES NOOR -->
-                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl space-y-6">
-                    <h4 class="font-heading text-lg font-bold text-neutral-900">Étapes de création</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5>1. Analyse</h5><p>Analyse de la concurrence (Flo, Clue) pour isoler les manques rituels.</p></div>
-                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5>2. Base de données</h5><p>Modélisation PostgreSQL de six entités corrélant physiologie et dates spirituelles.</p></div>
-                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5>3. Logique Back</h5><p>Développement en Symfony 7 de l'API Rest et de l'intercepteur de chevauchement de dates.</p></div>
-                        <div class="bg-white p-6 rounded-xl border border-neutral-200"><h5>4. Front Réactif</h5><p>Développement visuel avec Vue.js 3 et intégration de services tiers multilingues.</p></div>
-                    </div>
-                </div>
-
-                <!-- DIFFICULTÉS & BILANS -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Difficultés rencontrées</h4>
-                        <p class="project-body-text">La synchronisation entre les modules via Pinia a été ardue pour éviter tout rechargement forcé de la PWA. De plus, la gestion dynamique de l'affichage de l'arabe (écriture RTL) a requis des adaptations structurelles de CSS Grid complises.</p>
+                        <p class="project-body-text">La principale difficulté a été de faire communiquer les différentes parties de l'application de manière asynchrone sans rechargement complexe. L'arabe s'écrivant également de droite à gauche, la mise en page a demandé l'usage de variables CSS Grid adaptatives complexes.</p>
                     </div>
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">06 — Bilan personnel</h4>
-                        <p class="project-body-text">Noor valide mes compétences full-stack de bout en bout. Répondre à une problématique sociétale réelle m'a permis d'appréhender le déploiement d'une PWA en production Vercel/Docker avec la rigueur attendue en agence.</p>
+                        <p class="project-body-text">Ce projet autonome de fin d'études m'a permis d'appréhender concrètement l'ensemble du cycle DevOps : de la conception théorique au déploiement fonctionnel sécurisé en ligne.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== CASE STUDY : PLAN POITRINES — MAQUETTE ==================== -->
     <div id="page-planpoitrines-maquette" class="page bg-neutral-50/70 min-h-screen relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -582,22 +541,30 @@ this.updateUI();</pre>
                 </button>
                 <button onclick="showProject('planpoitrines-vitrine')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 text-white text-xs font-semibold cursor-pointer">Projet suivant <i class="fa-solid fa-arrow-right"></i></button>
             </div>
+
             <div class="bg-gradient-to-br from-purple-50 via-purple-100/40 to-white rounded-3xl border-2 border-purple-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-purple-950">Arborescence, wireframe et maquette — Plan Poitrines</h1>
                 <p class="text-neutral-600 font-light text-base leading-relaxed">Conception complète de l'identité UX/UI sous Figma de l'association audiovisuelle féministe.</p>
             </div>
-            <div class="bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm space-y-4">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 0)"><img src="assets/planpoitrines-arborescence.png" class="w-full h-full object-cover"></div>
-                    <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 1)"><img src="assets/planpoitrines-wireframe1.png" class="w-full h-full object-cover"></div>
-                    <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 2)"><img src="assets/planpoitrines-wireframe2.png" class="w-full h-full object-cover"></div>
-                    <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 3)"><img src="assets/planpoitrines-maquette.png" class="w-full h-full object-cover"></div>
+
+            <div class="space-y-8">
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">01 — Introduction et arborescence</h4>
+                    <p>Avant de me lancer dans le développement du site vitrine, la phase de prototypage collaboratif sur Figma a été un vecteur essentiel pour aligner la direction artistique avec les co-présidentes du collectif cinématographique.</p>
+                </div>
+
+                <div class="bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm space-y-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 0)"><img src="assets/planpoitrines-arborescence.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 1)"><img src="assets/planpoitrines-wireframe1.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 2)"><img src="assets/planpoitrines-wireframe2.png" class="w-full h-full object-cover"></div>
+                        <div class="group relative bg-white border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 3)"><img src="assets/planpoitrines-maquette.png" class="w-full h-full object-cover"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== CASE STUDY : PLAN POITRINES — SITE VITRINE ==================== -->
     <div id="page-planpoitrines-vitrine" class="page bg-neutral-50/70 min-h-screen relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -606,8 +573,10 @@ this.updateUI();</pre>
                 </button>
                 <button onclick="showProject('acm-ikeoluwa')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 text-white text-xs font-semibold cursor-pointer">Projet suivant <i class="fa-solid fa-arrow-right"></i></button>
             </div>
-            <div class="bg-white rounded-3xl border border-neutral-200 p-8 shadow-md">
-                <h2 class="text-3xl font-bold mb-4">Plan Poitrines — Intégration Native</h2>
+
+            <div class="bg-white rounded-3xl border border-neutral-200 p-8 shadow-md space-y-6">
+                <h2 class="text-3xl font-bold">Plan Poitrines — Intégration Native Sémantique</h2>
+                <p class="text-neutral-500">Développement brut sans CMS externe d'une interface responsive légère, documentée et accessible pour les différents terminaux.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="group relative border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 0)"><img src="assets/planpoitrines-vitrine-screen1.png" class="w-full h-full object-cover"></div>
                     <div class="group relative border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 1)"><img src="assets/planpoitrines-vitrine-screen2.png" class="w-full h-full object-cover"></div>
@@ -616,7 +585,6 @@ this.updateUI();</pre>
         </div>
     </div>
 
-    <!-- ==================== CASE STUDY : ASSOCIATION ACM ==================== -->
     <div id="page-acm-ikeoluwa" class="page bg-neutral-50/70 min-h-screen relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -625,8 +593,9 @@ this.updateUI();</pre>
                 </button>
                 <button onclick="showProject('wr506d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 text-white text-xs font-semibold cursor-pointer">Projet suivant <i class="fa-solid fa-arrow-right"></i></button>
             </div>
-            <div class="bg-white border rounded-3xl p-8 shadow-sm">
-                <h2 class="text-3xl font-heading font-black mb-4">Ike Oluwa — Association ACM</h2>
+            <div class="bg-white border rounded-3xl p-8 shadow-sm space-y-6">
+                <h2 class="text-3xl font-heading font-black">Ike Oluwa — Association ACM</h2>
+                <p class="text-neutral-500">Développement applicatif d'un espace communautaire centralisé pour la collecte de dons sécurisée en environnement tiers.</p>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 0)"><img src="assets/acm-arborescence.png" class="w-full h-full object-cover"></div>
                     <div class="border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 1)"><img src="assets/acm-maquette.png" class="w-full h-full object-cover"></div>
@@ -637,7 +606,6 @@ this.updateUI();</pre>
         </div>
     </div>
 
-    <!-- ==================== CASE STUDY : WR506D ==================== -->
     <div id="page-wr506d" class="page bg-neutral-50/70 min-h-screen relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -646,8 +614,9 @@ this.updateUI();</pre>
                 </button>
                 <button onclick="showProject('wr602d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 text-white text-xs font-semibold cursor-pointer">Projet suivant <i class="fa-solid fa-arrow-right"></i></button>
             </div>
-            <div class="bg-white border rounded-3xl p-8 shadow-sm">
-                <h2 class="text-3xl font-heading font-black mb-4">WR506D — API REST & GraphQL</h2>
+            <div class="bg-white border rounded-3xl p-8 shadow-sm space-y-6">
+                <h2 class="text-3xl font-heading font-black">WR506D — API REST & GraphQL</h2>
+                <p class="text-neutral-500">Mise en place d'une architecture découplée sécurisée par token asymétrique et monitoring de routes.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr506d', 0)"><img src="assets/wr506d-db.png" class="w-full h-full object-cover"></div>
                     <div class="border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr506d', 1)"><img src="assets/wr506d-interface.png" class="w-full h-full object-cover"></div>
@@ -657,7 +626,6 @@ this.updateUI();</pre>
         </div>
     </div>
 
-    <!-- ==================== CASE STUDY : WR602D ==================== -->
     <div id="page-wr602d" class="page bg-neutral-50/70 min-h-screen relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -665,8 +633,9 @@ this.updateUI();</pre>
                     <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
                 </button>
             </div>
-            <div class="bg-white border rounded-3xl p-8 shadow-sm">
-                <h2 class="text-3xl font-heading font-black mb-4">WR602D — Micro-services & Stripe</h2>
+            <div class="bg-white border rounded-3xl p-8 shadow-sm space-y-6">
+                <h2 class="text-3xl font-heading font-black">WR602D — Micro-services & Stripe</h2>
+                <p class="text-neutral-500">Découpage fonctionnel et intégration d'un service isolé Gotenberg pour l'impression automatisée des documents clients.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr602d', 0)"><img src="assets/wr602d-db.png" class="w-full h-full object-cover"></div>
                     <div class="border rounded-xl overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr602d', 1)"><img src="assets/wr602d-dashboard.png" class="w-full h-full object-cover"></div>
@@ -676,24 +645,11 @@ this.updateUI();</pre>
         </div>
     </div>
 
-    <footer class="border-t border-neutral-100 py-16 mt-24">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-400 gap-6">
-            <div>
-                <p class="font-heading font-extrabold text-neutral-950 text-base mb-1 lowercase">nimotalah<span class="text-emerald-500">.</span></p>
-                <p class="text-xs">Étudiante en BUT3 parcours développement web et dispositifs interactifs</p>
-            </div>
-            <p class="text-xs">© 2026 — Tous droits réservés.</p>
-        </div>
-    </footer>
-
-    <!-- ==================== CORRECTION LIGHTBOX : BOUTONS VISIBLES ET DESIGN CORRIGÉ ==================== -->
     <div id="lightbox" class="fixed inset-0 z-50 bg-neutral-950/98 hidden backdrop-blur-md select-none transition-all duration-300">
-        <!-- Zone Média GAUCHE -->
         <div class="flex-1 h-full flex flex-col items-center justify-center relative p-4 md:p-12 border-r border-neutral-800/40">
             <button onclick="closeLightbox()" class="md:hidden absolute top-4 right-4 text-white text-2xl p-2 z-50 bg-neutral-900/60 rounded-full w-10 h-10 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
             
-            <!-- FLÈCHE GAUCHE EMERAUDE VISIBLE -->
-            <button onclick="prevLightboxImage()" class="absolute left-4 text-emerald-400 bg-neutral-900/80 hover:bg-emerald-500 hover:text-white text-2xl p-4 w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer z-20">
+            <button onclick="prevLightboxImage()" class="absolute left-4 text-pink-400 bg-neutral-900/95 hover:bg-pink-500 hover:text-white text-2xl p-4 w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer z-20 border border-pink-500/20">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
@@ -702,13 +658,11 @@ this.updateUI();</pre>
                 <video id="lightbox-video" controls class="max-w-full max-h-full rounded-xl shadow-2xl hidden"></video>
             </div>
 
-            <!-- FLÈCHE DROITE EMERAUDE VISIBLE -->
-            <button onclick="nextLightboxImage()" class="absolute right-4 text-emerald-400 bg-neutral-900/80 hover:bg-emerald-500 hover:text-white text-2xl p-4 w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer z-20">
+            <button onclick="nextLightboxImage()" class="absolute right-4 text-emerald-400 bg-neutral-900/95 hover:bg-emerald-500 hover:text-white text-2xl p-4 w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 cursor-pointer z-20 border border-emerald-500/20">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
         </div>
 
-        <!-- Zone Explications DROITE (Texte parfaitement distinct) -->
         <div class="w-full md:w-[450px] bg-white h-full flex flex-col justify-between p-8 relative shadow-2xl overflow-y-auto">
             <button onclick="closeLightbox()" class="hidden md:flex absolute top-6 right-6 text-neutral-400 hover:text-neutral-950 text-xl cursor-pointer p-2 rounded-full hover:bg-neutral-100"><i class="fa-solid fa-xmark"></i></button>
 
@@ -733,9 +687,15 @@ this.updateUI();</pre>
     </div>
 
     <script>
-        function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));const t=document.getElementById('page-'+p);if(t)t.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
-        function showProject(p){showPage(p);}
-        function togglePortfolioView(m){
+        function showPage(p) {
+            document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+            const t = document.getElementById('page-' + p);
+            if (t) t.classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        function showProject(p) { showPage(p); }
+        
+        function togglePortfolioView(m) {
             const btnPro = document.getElementById('view-pro-btn');
             const btnAca = document.getElementById('view-aca-btn');
             const academicLabels = document.querySelectorAll('.academic-label');
@@ -750,23 +710,22 @@ this.updateUI();</pre>
             }
         }
 
-        // BASE DE DONNÉES INTEGRALE ET RESTAURÉE
         const imagesData = {
             'rj10': [
-                { url: 'assets/rj10-arborescence.png', title: '01. Architecture de navigation (Sitemap)', desc: 'Planification sémantique de l\'arborescence métier de l\'application de relance.' },
-                { url: 'assets/rj10-maquette.png', title: '02. Prototypage et Conception UX', desc: 'Wireframe fonctionnel validant l\'utilisabilité des fiches avant intégration.' },
-                { url: 'assets/rj10-db.png', title: '03. Modélisation Relationnelle SQL', desc: 'Schéma SQL Doctrine définissant la persistance unifiée des profils élèves.' },
-                { url: 'assets/rj10-dashboard.png', title: '04. Interface Finale : Dashboard réactif', desc: 'Rendu du tableau de bord complet asynchrone développé sous Vue.js 3.' },
-                { url: 'assets/rj10-stagiaires.png', title: '05. Module de Gestion Stagiaires', desc: 'Listing réactif intégrant des filtres complexes par type de diplômes.' },
-                { url: 'assets/rj10-formations.png', title: '06. Catalogue de Paramétrage', desc: 'Configuration de la durée légale de validité des certifications.' },
-                { url: 'assets/rj10-template-email.png', title: '07. Moteur d\'Édition des Relances', desc: 'Interface permettant d\'éditer les patrons de mails dynamiques Twig.' },
-                { url: 'assets/rj10-rappel.png', title: '08. File d\'attente des Traitements', desc: 'Suivi de contrôle et file d\'attente des scripts asynchrones Messenger.' },
-                { url: 'assets/rj10-rappel-contenu.png', title: '09. Rendu de la Notification Reçue', desc: 'Visualisation de l\'email final reçu par l\'utilisateur sur son client de messagerie.' }
+                { url: 'assets/rj10-arborescence.png', title: '01. Architecture de navigation (Sitemap)', desc: 'Planification de l\'arborescence métier globale de l\'application d\'alerte.' },
+                { url: 'assets/rj10-maquette.png', title: '02. Prototypage et Conception UX', desc: 'Wireframe fonctionnel validant l\'ergonomie des listings administratifs sous Figma.' },
+                { url: 'assets/rj10-db.png', title: '03. Modélisation Relationnelle SQL', desc: 'Schéma relationnel Doctrine orchestrant l\'intégrité des dossiers stagiaires.' },
+                { url: 'assets/rj10-dashboard.png', title: '04. Interface Finale : Dashboard réactif', desc: 'Rendu du panneau de contrôle asynchrone développé sous Vue.js 3.' },
+                { url: 'assets/rj10-stagiaires.png', title: '05. Module de Gestion Stagiaires', desc: 'Listing réactif filtrable par types de diplômes et urgences.' },
+                { url: 'assets/rj10-formations.png', title: '06. Catalogue de Paramétrage', desc: 'Configuration de la durée de validité réglementaire des titres.' },
+                { url: 'assets/rj10-template-email.png', title: '07. Moteur d\'Édition des Relances', desc: 'Interface permettant d\'éditer les patrons de mails dynamiques.' },
+                { url: 'assets/rj10-rappel.png', title: '08. File d\'attente des Traitements', desc: 'Suivi de contrôle et file d\'attente des scripts asynchrones.' },
+                { url: 'assets/rj10-rappel-contenu.png', title: '09. Rendu de la Notification Reçue', desc: 'Visualisation de l\'email final reçu par l\'utilisateur sur son terminal.' }
             ],
             'noor': [
                 { url: 'assets/noor-arborescence.png', title: '01. Flux Applicatif Global', desc: 'Parcours utilisateur adaptatif croisant physiologie et calendrier rituel.' },
                 { url: 'assets/noor-maquette.png', title: '02. Design System Figma', desc: 'Charte graphique douce et épurée optimisée pour le bien-être.' },
-                { url: 'assets/noor-db.png', title: '03. Schéma PostgreSQL', desc: 'Persistance sécurisée isolant les informations gynécologiques de l\'utilisatrice.' },
+                { url: 'assets/noor-db.png', title: '03. Schéma PostgreSQL', desc: 'Persistance sécurisée isolant les informations gynécologiques.' },
                 { url: 'assets/noor-dashboard.png', title: '04. Tableau de Bord Holistique', desc: 'Vue centrale unifiée fusionnant les différents modules asynchrones.' },
                 { url: 'assets/noor-login.png', title: '05. Portail de Connexion Sécurisé JWT', desc: 'Formulaire d\'authentification par jeton chiffré protégeant la vie privée.' },
                 { url: 'assets/noor-cycle.png', title: '06. Moniteur Physiologique et Calendrier', desc: 'Prédictions algorithmiques basées sur le calcul de moyennes glissantes.' },
