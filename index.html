@@ -755,7 +755,7 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <img src="assets/noor-maquette.png" class="w-full h-full object-cover" alt="Maquette" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Maquette';">
+                            <img src="assets/noor-wireframe.png" class="w-full h-full object-cover" alt="Maquette" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Maquette';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
@@ -1556,7 +1556,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
         const lightboxData = {
             'rj10': [
                 { url: 'assets/rj10-arborescence.png', title: 'Trace 01 : Arborescence de navigation', desc: 'Arborescence des pages et parcours utilisateur planifiés pour RJ10 Formation.' },
-                { url: 'assets/rj10-maquette.png', title: 'Trace 02 : Esquisse Maquette', desc: 'Esquisse réalisés à la main pour explorer l’organisation des pages du projet.' },
+                { url: 'assets/rj10-maquette.png', title: 'Trace 02 : Esquisse Wireframe', desc: 'Esquisse réalisés à la main pour explorer l’organisation des pages du projet.' },
                 { url: 'assets/rj10-db.png', title: 'Trace 03 : Structure relationnelle MySQL / Doctrine', desc: 'Modélisation relationnelle de la base de données pour la gestion intègre des expirations.' },
                 { url: 'assets/rj10-dashboard.png', title: 'Trace 04 : Dashboard / Maquette Vue.js 3', desc: 'Tableau de bord administrateur avec synthèses visuelles de l’application.' },
                 { url: 'assets/rj10-stagiaires.png', title: 'Trace 05 : Interface Stagiaires', desc: 'Vue de table réactive développée en Vue.js 3.' },
@@ -1566,25 +1566,25 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
             ],
             'noor': [
                 { url: 'assets/noor-arborescence.png', title: 'Trace 01 : Arborescence de l’application', desc: 'Organisation logique de l’expérience multimodale de Noor.' },
-                { url: 'assets/noor-maquette.png', title: 'Trace 02 : Maquette Figma de l’application', desc: 'Charte graphique douce déclinée sur onze écrans interactifs Figma.' },
+                { url: 'assets/noor-wireframe.png', title: 'Trace 02 : Esquisse Wireframe de l’application', desc: 'Exploration sous forme de wireframes de plusieurs pages de l’application, comprenant 4 écrans et une version mobile.' },
                 { url: 'assets/noor-db.png', title: 'Trace 03 : Structure de données relationnelle', desc: 'Schéma relationnel connectant l’utilisatrice aux modules biologiques et spirituels.' },
-                { url: 'assets/noor-dashboard.png', title: 'Trace 04 : Tableau de Bord (Dashboard)', desc: 'Interface centralisée avec synthèses réactives et timers synchronisés.' },
+                { url: 'assets/noor-dashboard.png', title: 'Trace 04 : Tableau de Bord (Dashboard)', desc: 'Interface centrale regroupant des informations dynamiques et des minuteurs synchronisés.' },
                 { url: 'assets/noor-login.png', title: 'Trace 05 : Écran de Connexion (Login)', desc: 'Vérification et sécurité cryptographique par certificat JWT.' },
                 { url: 'assets/noor-cycle.png', title: 'Trace 06 : Suivi du Cycle biologique', desc: 'Calendrier et saisie des phases menstruelles et des symptômes.' },
-                { url: 'assets/noor-spiritualite.png', title: 'Trace 07 : Suivi Pratique Spirituelle', desc: 'Module de spiritualité avec synchronisation des horaires de prière réels.' },
+                { url: 'assets/noor-spiritualite.png', title: 'Trace 07 : Suivi Pratique Spirituelle', desc: 'Module de spiritualité avec synchronisation des horaires de prière réels et du cycle menstruel.' },
                 { url: 'assets/noor-mobile-home.png', title: 'Trace 08 : Version Mobile (Screen Réel) — Dashboard', desc: 'Screen d’accueil de la PWA installé en natif sur l’écran du téléphone.' },
                 { url: 'assets/noor-mobile-menu.png', title: 'Trace 09 : Version Mobile (Screen Réel) — Menu', desc: 'Tiroir tactile optimisé pour la navigation mobile.' }
             ],
             'planpoitrines-maquette': [
-                { url: 'assets/planpoitrines-arborescence.png', title: "Trace 01 : Arborescence de navigation", desc: 'Plan UX structurel du site vitrine.' },
+                { url: 'assets/planpoitrines-arborescence.png', title: "Trace 01 : Arborescence de navigation", desc: 'Sitemap du site vitrine.' },
                 { url: 'assets/planpoitrines-wireframe1.png', title: 'Trace 02 : Wireframe basse-fidélité (Partie 1)', desc: 'Première esquisse d’arborescence et hiérarchie de l’information.' },
-                { url: 'assets/planpoitrines-wireframe2.png', title: 'Trace 03 : Wireframe basse-fidélité (Partie 2)', desc: 'Maquettage fil de fer noir et blanc d’un second écran.' },
+                { url: 'assets/planpoitrines-wireframe2.png', title: 'Trace 03 : Wireframe basse-fidélité (Partie 2)', desc: 'Esquisses du second écran.' },
                 { url: 'assets/planpoitrines-maquette.png', title: 'Trace 04 : Maquette Figma finale', desc: 'Design finalisé avec la charte graphique de transition de l’association.' }
             ],
             'planpoitrines-vitrine': [
-                { url: 'assets/planpoitrines-vitrine-screen1.png', title: 'Trace 01 : Capture d\'écran du site vitrine', desc: 'Page d\'accueil responsive codée de manière fluide.' },
-                { url: 'assets/planpoitrines-vitrine-screen2.png', title: 'Trace 02 : Capture d\'écran - Catalogue productions', desc: 'Page de mise en valeur des films documentaires du collectif.' },
-                { url: 'assets/planpoitrines-vitrine-video.mp4', title: 'Trace 03 : Vidéo de démonstration responsive', desc: 'Capture vidéo de l’intégration sur différents terminaux.' }
+                { url: 'assets/planpoitrines-vitrine-screen1.png', title: 'Trace 01 : Capture d\'écran - Catalogue productions', desc: 'Page de mise en valeur des films documentaires du collectif.' },
+                { url: 'assets/planpoitrines-vitrine-screen2.png', title: 'Trace 02 : Capture d\'écran - Page de contact', desc: 'Intégration d\un formulaire de contact.' },
+                { url: 'assets/planpoitrines-vitrine-video.mp4', title: 'Trace 03 : Vidéo de démonstration', desc: 'Capture vidéo de l’intégration du site vitrine.' }
             ],
             'acm-ikeoluwa': [
                 { url: 'assets/acm-arborescence.png', title: 'Trace 01 : Arborescence stratégique', desc: 'Plan structurel de l’outil de gestion communautaire.' },
