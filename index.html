@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nimotalah ALLI </title>
-    <!-- Tailwind CSS (v4) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,11 +20,9 @@
             }
         }
     </script>
-    <!-- Fonts : Outfit (Titres ronds et forts) et Inter (Texte léger et moderne) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome pour les icônes professionnelles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -103,14 +100,11 @@
 </head>
 <body class="text-neutral-900 antialiased selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden">
 
-    <!-- Curseur Personnalisé Simplifié (Masqué sur mobile) -->
     <div id="cursor" class="fixed w-2.5 h-2.5 bg-emerald-500 rounded-full pointer-events-none z-50 hidden md:block"></div>
 
-    <!-- DOUBLE GRADIENT SPOTTING (Subtile & élégant) -->
     <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-emerald-200/35 to-yellow-200/25 rounded-full blur-3xl pointer-events-none animate-drift-slow z-0"></div>
     <div class="absolute top-[120vh] right-10 w-[600px] h-[600px] bg-gradient-to-br from-pink-200/25 via-purple-100/20 to-transparent rounded-full blur-3xl pointer-events-none animate-drift-reverse z-0"></div>
 
-    <!-- HEADER / NAVBAR -->
     <header class="sticky top-0 z-40 bg-white/70 backdrop-blur-md border-b border-neutral-100 px-6 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="#" onclick="showPage('home'); return false;" class="font-heading text-xl font-extrabold tracking-tight hover:opacity-75 transition-opacity lowercase">
@@ -126,10 +120,8 @@
         </div>
     </header>
 
-    <!-- ==================== PAGE : ACCUEIL ==================== -->
     <div id="page-home" class="page active relative z-10">
         
-        <!-- HERO SECTION -->
         <main class="max-w-6xl mx-auto px-6 pt-24 pb-16 min-h-[85vh] flex flex-col justify-center fade-in-up">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-neutral-50/80 backdrop-blur-xs text-xs font-medium text-neutral-600 w-fit mb-6 shadow-xs">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Disponible pour des opportunités
@@ -154,7 +146,6 @@
             </div>
         </main>
 
-        <!-- SECTION À PROPOS -->
         <section id="about" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
             <div class="grid md:grid-cols-12 gap-12 items-start">
                 <div class="md:col-span-5">
@@ -185,6 +176,7 @@
                     <div class="space-y-6 text-neutral-500 font-light leading-relaxed text-base md:text-lg">
                         <p>
                             Actuellement en dernière année de UT Métiers du Multimédia et de l'Internet, Je conçois et développe des applications web durables, en prenant en charge chaque étape du projet.
+                        </p>
                         <p>
                             Ma formation me permet d'aborder aussi bien les bases de données que le développement back-end. (<strong class="text-neutral-950 font-medium">Symfony 7, PHP, MYSQL</strong>) et sur le développement d'interfaces fluides et ergonomiques en s'appuyant sur des composants modernes (<strong class="text-neutral-950 font-medium">Vue.js 3, Tailwind CSS</strong>).
                         </p>
@@ -202,7 +194,6 @@
             </div>
         </section>
 
-        <!-- SECTION PROJETS PRO (HYBRIDE) -->
         <section id="projets-pro" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
             <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
                 <div>
@@ -210,7 +201,6 @@
                     <h2 class="text-3xl md:text-5xl font-black tracking-tight">Mes Projets</h2>
                 </div>
                 
-                <!-- TOGGLE DE NAVIGATION HYBRIDE ULTRA-VISUEL -->
                 <div class="inline-flex bg-neutral-100 p-2 rounded-full border border-neutral-200 self-start md:self-end shadow-sm">
                     <button onclick="togglePortfolioView('pro')" id="view-pro-btn" class="px-5 py-2.5 rounded-full text-xs font-semibold transition-all text-neutral-600 hover:text-neutral-900 cursor-pointer">
                         Vue Professionnelle
@@ -221,15 +211,13 @@
                 </div>
             </div>
 
-            <!-- GRID DES PROJETS -->
             <div class="grid md:grid-cols-2 gap-8" id="projects-grid">
                 
-                <!-- CARTE 1 : RJ10 RAPPEL (Stage BUT3 - Terminé) -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,design,entreprendre,comprendre" onclick="showProject('rj10')">
                     <div class="relative overflow-hidden rounded-3xl bg-emerald-50/90 border-2 border-emerald-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-gray-900 flex items-center justify-center font-bold">
-    Consulter l'étude de cas
-</div>
+                            Consulter l'étude de cas
+                        </div>
                         <div class="w-full h-full flex flex-col justify-between p-8">
                             <div class="flex justify-between items-start">
                                 <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-white/95 px-3 py-1 rounded-full border border-emerald-200/40">SYS. Rappel</span>
@@ -261,11 +249,11 @@
                     </div>
                 </div>
 
-                <!-- CARTE 2 : NOOR APP (Projet Personnel Inédit - En cours) -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,design,entreprendre,comprendre,express" onclick="showProject('noor')">
                     <div class="relative overflow-hidden rounded-3xl bg-pink-50/90 border-2 border-pink-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-pink-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-gray-900 flex items-center justify-center font-bold">
-    Consulter l'étude de cas
+                            Consulter l'étude de cas
+                        </div>
                         <div class="w-full h-full flex flex-col justify-between p-8">
                             <div class="flex justify-between items-start">
                                 <span class="text-xs font-bold uppercase tracking-wider text-pink-800 bg-white/95 px-3 py-1 rounded-full border border-pink-200/40">Spiritualité & Santé</span>
@@ -297,11 +285,11 @@
                     </div>
                 </div>
 
-                <!-- CARTE 3 : PLAN POITRINES — MAQUETTE (Stage BUT2 - Terminé) -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="comprendre,entreprendre,design,express" onclick="showProject('planpoitrines-maquette')">
                     <div class="relative overflow-hidden rounded-3xl bg-purple-50/90 border-2 border-purple-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-gray-900 flex items-center justify-center font-bold">
-    Consulter l'étude de cas>
+                            Consulter l'étude de cas
+                        </div>
                         <div class="w-full h-full flex flex-col justify-between p-8">
                             <div class="flex justify-between items-start">
                                 <span class="text-xs font-bold uppercase tracking-wider text-purple-800 bg-white/95 px-3 py-1 rounded-full border border-purple-200/40">UX Design</span>
@@ -333,11 +321,11 @@
                     </div>
                 </div>
 
-                <!-- CARTE 4 : PLAN POITRINES — SITE VITRINE (Stage BUT2 - Terminé) -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,entreprendre,comprendre,express" onclick="showProject('planpoitrines-vitrine')">
                     <div class="relative overflow-hidden rounded-3xl bg-purple-50/90 border-2 border-purple-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-gray-900 flex items-center justify-center font-bold">
-    Consulter l'étude de cas
+                            Consulter l'étude de cas
+                        </div>
                         <div class="w-full h-full flex flex-col justify-between p-8">
                             <div class="flex justify-between items-start">
                                 <span class="text-xs font-bold uppercase tracking-wider text-purple-800 bg-white/95 px-3 py-1 rounded-full border border-purple-200/40">Intégration Web</span>
@@ -369,11 +357,11 @@
                     </div>
                 </div>
 
-                <!-- CARTE 5 : ASSOCIATION ACM - IKE OLUWA (Nouveau projet) -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,design,entreprendre,comprendre,express" onclick="showProject('acm-ikeoluwa')">
                     <div class="relative overflow-hidden rounded-3xl bg-blue-50/90 border-2 border-blue-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-blue-500/10 group-hover:-translate-y-1">
                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-gray-900 flex items-center justify-center font-bold">
-    Consulter l'étude de cas
+                            Consulter l'étude de cas
+                        </div>
                         <div class="w-full h-full flex flex-col justify-between p-8">
                             <div class="flex justify-between items-start">
                                 <span class="text-xs font-bold uppercase tracking-wider text-blue-800 bg-white/95 px-3 py-1 rounded-full border border-blue-200/40">Asso ACM</span>
@@ -408,7 +396,6 @@
             </div>
         </section>
 
-        <!-- SECTION PROJETS UNI -->
         <section id="projets-uni" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
             <div class="mb-16 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
                 <div>
@@ -420,7 +407,6 @@
 
             <div class="grid md:grid-cols-2 gap-12">
                 
-                <!-- PROJET UNI 1 : WR506D -->
                 <div class="group cursor-pointer bg-neutral-50 border-2 border-neutral-200 rounded-3xl p-8 flex flex-col justify-between transition-all hover:shadow-xl hover:border-neutral-400" onclick="showProject('wr506d')">
                     <div>
                         <div class="flex justify-between items-start mb-4">
@@ -439,7 +425,6 @@
                     </div>
                 </div>
 
-                <!-- PROJET UNI 2 : WR602D -->
                 <div class="group cursor-pointer bg-neutral-50 border-2 border-neutral-200 rounded-3xl p-8 flex flex-col justify-between transition-all hover:shadow-xl hover:border-neutral-400" onclick="showProject('wr602d')">
                     <div>
                         <div class="flex justify-between items-start mb-4">
@@ -461,7 +446,6 @@
             </div>
         </section>
 
-        <!-- SECTION CONTACT -->
         <section id="contact" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
             <div class="max-w-3xl mx-auto text-center mb-16">
                 <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">RESTONS EN CONTACT</p>
@@ -496,11 +480,7 @@
             </div>
         </section>
 
-    </div><!-- END PAGE : ACCUEIL -->
-
-
-    <!-- ==================== CASE STUDY : RJ10 RAPPEL (Stage BUT3 - Terminé) ==================== -->
-    <div id="page-rj10" class="page bg-neutral-50/60 min-h-screen relative z-10 animate-fade-in">
+    </div><div id="page-rj10" class="page bg-neutral-50/60 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
@@ -512,14 +492,12 @@
                 </button>
             </div>
 
-            <!-- Header Projet -->
             <div class="bg-gradient-to-br from-emerald-50 via-emerald-100/40 to-white rounded-3xl border-2 border-emerald-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-emerald-200/50 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300 mb-6 inline-block">Stage BUT3 · Terminé</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-emerald-950 leading-tight">RJ10 Rappel — Système de relance automatisée</h1>
                 <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">Application de suivi d'échéances et de notifications automatisées de renouvellement développée chez RJ10 Formation.</p>
                 
-                <!-- COMPÉTENCES COMPACTES ET COLORÉES -->
                 <div class="flex flex-wrap gap-2 text-xs pt-4 border-t border-emerald-200/40">
                     <span class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold rounded-lg border border-emerald-200">Développer</span>
                     <span class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold rounded-lg border border-emerald-200">Concevoir</span>
@@ -529,7 +507,6 @@
             </div>
 
             <div class="space-y-8">
-                <!-- Contexte & Mission -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-xs">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
@@ -551,46 +528,37 @@
                     </div>
                 </div>
 
-                <!-- GALERIE D'IMAGES ORDONNÉES -->
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces de développement (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- 1. Arborescence -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/rj10-arborescence.png" class="w-full h-full object-cover" alt="Arborescence" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Arborescence';">
                         </div>
-                        <!-- 2. Maquette -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/rj10-maquette.png" class="w-full h-full object-cover" alt="Maquette Figma" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Maquette';">
                         </div>
-                        <!-- 3. DB -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/rj10-db.png" class="w-full h-full object-cover" alt="Base de données" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Base+de+données';">
                         </div>
-                        <!-- 4. Dashboard -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 3)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/rj10-dashboard.png" class="w-full h-full object-cover" alt="Dashboard" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Dashboard';">
                         </div>
-                        <!-- 5. Stagiaires -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 4)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/rj10-stagiaires.png" class="w-full h-full object-cover" alt="Gestion des stagiaires" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Stagiaires';">
                         </div>
-                        <!-- 6. Formations -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 5)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/rj10-formations.png" class="w-full h-full object-cover" alt="Catalogue Formations" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Formations';">
                         </div>
-                        <!-- 7. Template Email -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 6)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/rj10-template-email.png" class="w-full h-full object-cover" alt="Gabarit d'email" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Gabarit+Email';">
                         </div>
-                        <!-- 8. Rappels -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 7)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/rj10-rappel.png" class="w-full h-full object-cover" alt="Suivi des rappels" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Rappels';">
@@ -598,7 +566,6 @@
                     </div>
                 </div>
 
-                <!-- Processus de création (Grille côte à côte) -->
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">03</span>
@@ -608,7 +575,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">1. Analyse des besoins et compréhension du métier</h5>
-                            <p class="text-neutral-900">Avant de commencer à construire quoi que ce soit, j'ai pris le temps de comprendre le fonctionnement réel du centre et de ses formations. J'ai découvert que chaque type de formation obéit à des règles très différentes. Par exemple, seul l'APS nécessite une autorisation préalable délivrée par le CNAPS, l'organisme national qui régule les métiers de la sécurité privée. Le SSIAP délivre une simple attestation et non une carte professionnelle. Et certaines formations, comme le SST, sont obligatoires pour pouvoir s'inscrire à d'autres formations comme l'APS ou le SSIAP. Comprendre ces règles métier avant de concevoir l'outil était indispensable pour ne pas construire quelque chose qui ne corresponde pas à la réalité du terrain.</p>
+                            <p class="text-neutral-900">Avant de commencer à construire quoi que ce soit, j'ai pris le temps de comprendre le fonctionnement réel du centre et de ses formations. J'ai découvert que chaque type de formation obéit à des règles très différentes. Par exemple, seul l'APS nécessite une autorisation préalable délivrée by le CNAPS, l'organisme national qui régule les métiers de la sécurité privée. Le SSIAP délivre une simple attestation et non une carte professionnelle. Et certaines formations, comme le SST, sont obligatoires pour pouvoir s'inscrire à d'autres formations comme l'APS ou le SSIAP. Comprendre ces règles métier avant de concevoir l'outil était indispensable pour ne pas construire quelque chose qui ne corresponde pas à la réalité du terrain.</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">2. Organisation et architecture de l'application</h5>
@@ -629,12 +596,10 @@
                     </div>
                 </div>
 
-                <!-- SECTION SÉMANTIQUE : COMMENT ÇA FONCTIONNE -->
                 <div class="bg-neutral-100 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <i class="fa-solid fa-code text-emerald-600"></i> Comment ça fonctionne ? (Logique Technique)
                     </h4>
-                    <!-- Explications en français à l'extérieur -->
                     <div class="text-neutral-900 mb-4 bg-white p-4 rounded-xl border border-neutral-200 font-medium">
                         Étape 1 : Le serveur lance une tâche planifiée automatique quotidiennement. 
                         <span class="text-emerald-600 font-bold mx-2">➔</span> 
@@ -642,15 +607,14 @@
                         <span class="text-emerald-600 font-bold mx-2">➔</span> 
                         Étape 3 : Le système génère un email personnalisé via Symfony Mailer et l'envoie de manière asynchrone.
                     </div>
-                    <!-- Code block contrasté -->
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
-<span class="text-emerald-400">// Command/Scheduler task for daily checks inside Symfony Command</span>
+// Command/Scheduler task for daily checks inside Symfony Command
 public function execute(InputInterface $input, OutputInterface $output): int {
-    <span class="text-emerald-400">// Querying database via repository pattern</span>
+    // Querying database via repository pattern
     $stagiaires = $this->stagiaireRepository->findExpiringInMonths(3);
     
     foreach ($stagiaires as $stagiaire) {
-        <span class="text-emerald-400">// Dispatching asynchronous email messages</span>
+        // Dispatching asynchronous email messages
         $this->mailer->sendRappel($stagiaire);
         $this->logRappel($stagiaire);
     }
@@ -659,7 +623,6 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                     </code></pre>
                 </div>
 
-                <!-- Difficultés & Bilan Personnel -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
@@ -669,7 +632,7 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                         <p class="text-neutral-900 text-base leading-relaxed">
                             La principale difficulté a été de travailler seule sans interlocuteur technique. Lorsque je bloquais sur un problème de logique ou de fonctionnement, je m'appuyais sur deux ressources principales : mes propres recherches et l'intelligence artificielle comme assistant de travail. Concrètement, quand je n'arrivais pas à identifier la source d'un problème, je formulais ma question précisément à l'IA pour explorer des pistes de solution, que j'analysais et adaptais ensuite par moi-même avant de les appliquer. Cette façon de travailler m'a appris à poser des questions techniques claires et structurées, une compétence essentielle dans le monde du développement.
                             <br><br>
-                            J'ai également eu du mal à clarifier certaines règles métier au départ, notamment la distinction entre la période pendant laquelle un stagiaire suit sa formation et la durée de validité du titre qu'il obtient à l'issue de celle-ci. Ces deux notions, que j'avais d'abord confondues, m'ont obligée à revoir une partie de mon travail en cours de route. C'est en échangeant à la fois avec mon superviseur pour comprendre le métier, et avec l'IA pour clarifier la logique technique, que j'ai pu trouver la bonne organisation.
+                            J'ai également eu du mal à clarifier certaines règles métier au départ, notamment la distinction entre la période pendant laquelle un stagiaire suit sa formation et la durée de validité du titre qu'il obtient à l'issue de celle-ci. Ce deux notions, que j'avais d'abord confondues, m'ont obligée à revoir une partie de mon travail en cours de route. C'est en échangeant à la fois avec mon superviseur pour comprendre le métier, et avec l'IA pour clarifier la logique technique, que j'ai pu trouver la bonne organisation.
                         </p>
                     </div>
 
@@ -707,7 +670,6 @@ public function execute(InputInterface $input, OutputInterface $output): int {
     </div>
 
 
-    <!-- ==================== CASE STUDY : NOOR APP (Projet Inédit - En cours) ==================== -->
     <div id="page-noor" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -720,7 +682,6 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                 </button>
             </div>
 
-            <!-- Header Projet -->
             <div class="bg-gradient-to-br from-pink-50 via-pink-100/40 to-white rounded-3xl border-2 border-pink-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-200/50 text-pink-800 px-3 py-1 rounded-full border border-pink-300 mb-6 inline-block">Projet Personnel Inédit · En ligne</span>
@@ -729,7 +690,6 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                     Application web progressive (PWA) croisant suivi biologique et pratique cultuelle personnalisée.
                 </p>
                 
-                <!-- COMPÉTENCES COMPACTES ET COLORÉES -->
                 <div class="flex flex-wrap gap-2 text-xs pt-4 border-t border-pink-200/40">
                     <span class="px-3 py-1 bg-pink-100 text-pink-800 font-bold rounded-lg border border-pink-200">Développer</span>
                     <span class="px-3 py-1 bg-pink-100 text-pink-800 font-bold rounded-lg border border-pink-200">Concevoir</span>
@@ -740,7 +700,6 @@ public function execute(InputInterface $input, OutputInterface $output): int {
             </div>
 
             <div class="space-y-8">
-                <!-- Contexte & Problématique -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
@@ -771,7 +730,6 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                     </div>
                 </div>
 
-                <!-- Noor : Comment ça fonctionne -->
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 shadow-sm">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">03</span>
@@ -788,51 +746,41 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                     </p>
                 </div>
 
-                <!-- GALERIE D'IMAGES ORDONNÉES NOOR -->
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Interface de l'application Noor (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- 1. Arborescence -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/noor-arborescence.png" class="w-full h-full object-cover" alt="Arborescence" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Arborescence';">
                         </div>
-                        <!-- 2. Maquette -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/noor-maquette.png" class="w-full h-full object-cover" alt="Maquette" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Maquette';">
                         </div>
-                        <!-- 3. DB -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/noor-db.png" class="w-full h-full object-cover" alt="Structure relationnelle" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Structure+relationnelle';">
                         </div>
-                        <!-- 4. Dashboard -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 3)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/noor-dashboard.png" class="w-full h-full object-cover" alt="Dashboard" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Dashboard';">
                         </div>
-                        <!-- 5. Login -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 4)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/noor-login.png" class="w-full h-full object-cover" alt="Login" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Login';">
                         </div>
-                        <!-- 6. Cycle -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 5)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/noor-cycle.png" class="w-full h-full object-cover" alt="Cycle" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Cycle';">
                         </div>
-                        <!-- 7. Spiritualité -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 6)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/noor-spiritualite.png" class="w-full h-full object-cover" alt="Spiritualité" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Spiritualite';">
                         </div>
-                        <!-- 8. Mobile Home -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 7)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/noor-mobile-home.png" class="w-full h-full object-cover" alt="Mobile Accueil" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Mobile+Home';">
                         </div>
-                        <!-- 9. Mobile Menu -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('noor', 8)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/noor-mobile-menu.png" class="w-full h-full object-cover" alt="Mobile Menu" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Mobile+Menu';">
@@ -840,7 +788,6 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                     </div>
                 </div>
 
-                <!-- Processus de création (Grille côte à côte) -->
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">04</span>
@@ -867,12 +814,10 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                     </div>
                 </div>
 
-                <!-- SECTION SÉMANTIQUE : COMMENT ÇA FONCTIONNE -->
                 <div class="bg-neutral-100 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <i class="fa-solid fa-code text-pink-600"></i> Comment ça fonctionne ? (Logique Technique)
                     </h4>
-                    <!-- Explications en français à l'extérieur -->
                     <div class="text-neutral-900 mb-4 bg-white p-4 rounded-xl border border-neutral-200 font-medium">
                         Étape 1 : L'utilisatrice saisit une nouvelle entrée de menstruation.
                         <span class="text-pink-600 font-bold mx-2">➔</span> 
@@ -880,16 +825,15 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                         <span class="text-pink-600 font-bold mx-2">➔</span> 
                         Étape 3 : Les compteurs de prière et de jours de jeûne à rattraper se recalcule instantanément de manière transparente.
                     </div>
-                    <!-- Code block contrasté -->
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
-<span class="text-emerald-400">// Pinia Store handling reactive global state across pages in Noor App</span>
+// Pinia Store handling reactive global state across pages in Noor App
 export const useNoorStore = defineStore('noor', {
   state: () => ({ activeCyclePhase: 'folliculaire', fastingDaysToRepay: 0 }),
   actions: {
     updateCycle(newPhase: string, menstruationActive: boolean) {
       this.activeCyclePhase = newPhase;
       if (menstruationActive) {
-         this.fastingDaysToRepay++; <span class="text-emerald-400">// Auto-increment repayment counts</span>
+         this.fastingDaysToRepay++; // Auto-increment repayment counts
       }
     }
   }
@@ -897,7 +841,6 @@ export const useNoorStore = defineStore('noor', {
                     </code></pre>
                 </div>
 
-                <!-- Difficultés & Bilan Personnel -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
@@ -962,7 +905,6 @@ export const useNoorStore = defineStore('noor', {
     </div>
 
 
-    <!-- ==================== CASE STUDY : PLAN POITRINES — MAQUETTE (Stage BUT2) ==================== -->
     <div id="page-planpoitrines-maquette" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -975,14 +917,12 @@ export const useNoorStore = defineStore('noor', {
                 </button>
             </div>
 
-            <!-- Header Projet -->
             <div class="bg-gradient-to-br from-purple-50 via-purple-100/40 to-white rounded-3xl border-2 border-purple-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-purple-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-200/50 text-purple-800 px-3 py-1 rounded-full border border-purple-300 mb-6 inline-block">Conception UX/UI · Stage BUT2</span>
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-purple-950 leading-tight">Arborescence, wireframe et maquette — Plan Poitrines</h1>
                 <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description">Conception UX/UI complète de l'architecture d'information sur Figma.</p>
                 
-                <!-- COMPÉTENCES COMPACTES -->
                 <div class="flex flex-wrap gap-2 text-xs pt-4 border-t border-purple-200/40">
                     <span class="px-3 py-1 bg-purple-100 text-purple-800 font-bold rounded-lg border border-purple-200">Comprendre</span>
                     <span class="px-3 py-1 bg-purple-100 text-purple-800 font-bold rounded-lg border border-purple-200">Entreprendre</span>
@@ -1010,26 +950,21 @@ Avant d'entamer le développement du site vitrine, j'ai consacré une phase enti
                     </div>
                 </div>
 
-                <!-- IMAGES ORDONNÉES PLAN POITRINES MAQUETTE -->
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du processus de maquettage (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- 1. Arborescence -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/planpoitrines-arborescence.png" class="w-full h-full object-cover" alt="Arborescence" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Arborescence';">
                         </div>
-                        <!-- 2. Wireframe 1 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/planpoitrines-wireframe1.png" class="w-full h-full object-cover" alt="Wireframe Partie 1" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Wireframe+1';">
                         </div>
-                        <!-- 3. Wireframe 2 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/planpoitrines-wireframe2.png" class="w-full h-full object-cover" alt="Wireframe Partie 2" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Wireframe+2';">
                         </div>
-                        <!-- 4. Maquette -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-maquette', 3)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/planpoitrines-maquette.png" class="w-full h-full object-cover" alt="Maquette Figma" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Maquette';">
@@ -1079,7 +1014,6 @@ Avant d'entamer le développement du site vitrine, j'ai consacré une phase enti
     </div>
 
 
-    <!-- ==================== CASE STUDY : PLAN POITRINES — SITE VITRINE (Stage BUT2) ==================== -->
     <div id="page-planpoitrines-vitrine" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -1100,7 +1034,6 @@ Avant d'entamer le développement du site vitrine, j'ai consacré une phase enti
                     Développement web natif sans CMS d'un site vitrine léger, fluide et documenté.
                 </p>
                 
-                <!-- COMPÉTENCES -->
                 <div class="flex flex-wrap gap-2 text-xs pt-4 border-t border-purple-200/40">
                     <span class="px-3 py-1 bg-purple-100 text-purple-800 font-bold rounded-lg border border-purple-200">Développer</span>
                     <span class="px-3 py-1 bg-purple-100 text-purple-800 font-bold rounded-lg border border-purple-200">Entreprendre</span>
@@ -1128,21 +1061,17 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
                     </div>
                 </div>
 
-                <!-- IMAGES ORDONNÉES PLAN POITRINES VITRINE -->
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Aperçus du site (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Screen 1 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/planpoitrines-vitrine-screen1.png" class="w-full h-full object-cover" alt="Capture d'écran 1" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Site+Vitrine+1';">
                         </div>
-                        <!-- Screen 2 -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/planpoitrines-vitrine-screen2.png" class="w-full h-full object-cover" alt="Capture d'écran 2" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Site+Vitrine+2';">
                         </div>
-                        <!-- Vidéo -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('planpoitrines-vitrine', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir la vidéo</div>
                             <img src="assets/planpoitrines-vitrine-video-preview.png" class="w-full h-full object-cover" alt="Vidéo démonstration" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Vidéo+Démonstration';">
@@ -1182,7 +1111,6 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
     </div>
 
 
-    <!-- ==================== CASE STUDY : ASSOCIATION ACM (Ike Oluwa) (Stage/Projet Pro) ==================== -->
     <div id="page-acm-ikeoluwa" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -1195,7 +1123,6 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
                 </button>
             </div>
 
-            <!-- Cas Header -->
             <div class="bg-gradient-to-br from-blue-50 via-blue-100/40 to-white rounded-3xl border-2 border-blue-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-blue-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-200/50 text-blue-800 px-3 py-1 rounded-full border border-blue-300 mb-6 inline-block">Projet Pro · Solidarité</span>
@@ -1203,7 +1130,6 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
                 <p class="text-neutral-600 font-light text-base md:text-lg leading-relaxed mb-6 max-w-4xl project-description font-heading">
                     Refonte globale de la plateforme d'action sociale interculturelle de l'association ACM (Ike Oluwa).
                 </p>
-                <!-- COMPÉTENCES -->
                 <div class="flex flex-wrap gap-2 text-xs pt-4 border-t border-blue-200/40">
                     <span class="px-3 py-1 bg-blue-100 text-blue-700 font-bold border border-blue-200 rounded-lg">Développer</span>
                     <span class="px-3 py-1 bg-blue-100 text-blue-700 font-bold border border-blue-200 rounded-lg">Concevoir</span>
@@ -1232,21 +1158,17 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                     </div>
                 </div>
 
-                <!-- IMAGES ORDONNÉES ACM (Ike Oluwa) (Arborescence, Maquette, DB, Dashboard...) -->
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet ACM (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- 1. Arborescence -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/acm-arborescence.png" class="w-full h-full object-cover" alt="Arborescence" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Arborescence';">
                         </div>
-                        <!-- 2. Wireframe -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/acm-maquette.png" class="w-full h-full object-cover" alt="Wireframe Ike Oluwa" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Maquette';">
                         </div>
-                        <!-- 3. DB -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/acm-db.png" class="w-full h-full object-cover" alt="Base de données" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Base+de+données';">
@@ -1292,7 +1214,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
     </div>
 
 
-    <!-- ==================== CASE STUDY : WR506D (Projet Universitaire · S5 - Terminé) ==================== -->
     <div id="page-wr506d" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -1305,7 +1226,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 </button>
             </div>
 
-            <!-- Cas Header -->
             <div class="bg-gradient-to-br from-yellow-50 via-yellow-100/30 to-white rounded-3xl border-2 border-yellow-300/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-yellow-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full border border-yellow-200 mb-6 inline-block">Projet Universitaire · S5</span>
@@ -1313,7 +1233,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description font-heading">
                     Architecture back-end complète et interface de recherche développées en totale autonomie, dans le cadre des enseignements du semestre 5 du BUT MMI.
                 </p>
-                <!-- COMPÉTENCES -->
                 <div class="flex flex-wrap gap-2 text-xs pt-4 border-t border-yellow-200/40">
                     <span class="px-3 py-1 bg-yellow-100 text-yellow-700 font-bold border border-yellow-200 rounded-lg">Développer</span>
                     <span class="px-3 py-1 bg-yellow-100 text-yellow-700 font-bold border border-yellow-200 rounded-lg">Concevoir</span>
@@ -1336,25 +1255,21 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                             <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">02</span>
                             La mission
                         </h4>
-                        <p class="text-neutral-900 text-base font-light">L'exercice consistait à construire une API robuste, c'est-à-dire un service qui stocke, organise et expose des données structurées,  permettant de gérer un catalogue de films, d'acteurs, de réalisateurs et de catégories. Cette API devait ensuite être consommée par une interface front-end développée en parallèle dans un dépôt distinct, les deux projets communiquant entre eux. L'enjeu principal était de produire un code de qualité professionnelle : sécurisé, bien organisé, testé et conforme aux standards du secteur.</p>
+                        <p class="text-neutral-900 text-base font-light">L'exercice consistait à construire une API robuste, c'est-à-dire un service qui stocke, organise et expose des données structurées,  permettant de gérer un catalogue de films, d'acteurs, de réalisateurs et de catégories. Cette API devait ensuite être consommée by une interface front-end développée en parallèle dans un dépôt distinct, les deux projets communiquant entre eux. L'enjeu principal était de produire un code de qualité professionnelle : sécurisé, bien organisé, testé et conforme aux standards du secteur.</p>
                     </div>
                 </div>
 
-                <!-- IMAGES ORDONNÉES WR506D -->
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet WR506D (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- 1. DB -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr506d', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/wr506d-db.png" class="w-full h-full object-cover" alt="Modélisation DB" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr506d-db.png';">
                         </div>
-                        <!-- 2. Interface -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr506d', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/wr506d-interface.png" class="w-full h-full object-cover" alt="Interface de recherche" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr506d-interface.png';">
                         </div>
-                        <!-- 3. Tests Postman / API -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr506d', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/wr506d-postman.png" class="w-full h-full object-cover" alt="Collection Postman" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr506d-postman.png';">
@@ -1374,11 +1289,11 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">2. Construction de l'API</h5>
-                            <p class="text-neutral-900">J'ai développé l'API avec Symfony 7 et API Platform, deux outils professionnels largement utilisés en entreprise. J'ai mis en place deux façons d'interroger les données : une architecture REST classique, et GraphQL, une approche plus flexible qui permet à l'interface de demander exactement les informations dont elle a besoin, sans surplus. J'ai également intégré un système de pagination, des filtres de recherche par nom, date ou disponibilité en ligne, et des règles de validation pour garantir la cohérence des données saisies.</p>
+                            <p class="text-neutral-900">J'ai développé l'API avec Symfony 7 et API Platform, deux outils professionnels largement utilisés en entreprise. J'ai mis en place deux façons d'interroger les données : une architecture REST classique, et GraphQL, une approche plus flexible qui permet à l'interface de demander exactement les informations dont elle a besoin, sans surplus. J'ai également intégré un système de pagination, des filtres de recherche by nom, date ou disponibilité en ligne, et des règles de validation pour garantir la cohérence des données saisies.</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">3. Sécurisation des accès</h5>
-                            <p class="text-neutral-900">L'API est sécurisée par authentification JWT,  un système de jetons numériques qui vérifie l'identité de l'utilisateur à chaque requête. J'ai mis en place deux niveaux d'accès distincts : un rôle utilisateur standard et un rôle administrateur avec des droits étendus. J'ai également implémenté une double authentification (2FA) via Google Authenticator : après la connexion classique, l'utilisateur doit saisir un code temporaire généré par son téléphone. C'était ma première implémentation de ce mécanisme, et cela m'a permis de comprendre concrètement comment fonctionne la sécurité à deux facteurs dans une application web professionnelle. J'ai par ailleurs intégré la gestion des photos de films et d'acteurs via upload de fichiers.</p>
+                            <p class="text-neutral-900">L'API est sécurisée by authentification JWT,  un système de jetons numériques qui vérifie l'identité de l'utilisateur à chaque requête. J'ai mis en place deux niveaux d'accès distincts : un rôle utilisateur standard et un rôle administrateur avec des droits étendus. J'ai également implémenté une double authentification (2FA) via Google Authenticator : après la connexion classique, l'utilisateur doit saisir un code temporaire généré by son téléphone. C'était ma première implémentation de ce mécanisme, et cela m'a permis de comprendre concrètement comment fonctionne la sécurité à deux facteurs dans une application web professionnelle. J'ai par ailleurs intégré la gestion des photos de films et d'acteurs via upload de fichiers.</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">4. Alimentation et test de l'API & 5. Connexion front-end</h5>
@@ -1386,7 +1301,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs md:col-span-2">
                             <h5 class="step-title font-heading">6. Qualité du code et automatisation</h5>
-                            <p class="text-neutral-900">Les commits Git suivent la convention Conventional Commits,  une règle de nommage standardisée qui rend l'historique du projet lisible par n'importe quel développeur. J'ai également intégré des outils d'analyse automatique : PHPStan pour détecter les erreurs de logique, PHP_CodeSniffer pour vérifier la conformité au standard PSR-2, et PHPMD pour identifier les parties de code trop complexes. L'ensemble est automatisé via GitHub Actions : à chaque modification du code, ces vérifications se déclenchent automatiquement.</p>
+                            <p class="text-neutral-900">Les commits Git suivent la convention Conventional Commits,  une règle de nommage standardisée qui rend l'historique du projet lisible by n'importe quel développeur. J'ai également intégré des outils d'analyse automatique : PHPStan pour détecter les erreurs de logique, PHP_CodeSniffer pour vérifier la conformité au standard PSR-2, et PHPMD pour identifier les parties de code trop complexes. L'ensemble est automatisé via GitHub Actions : à chaque modification du code, ces vérifications se déclenchent automatiquement.</p>
                         </div>
                     </div>
                 </div>
@@ -1423,7 +1338,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
     </div>
 
 
-    <!-- ==================== CASE STUDY : WR602D (Projet Universitaire · S6 - Terminé) ==================== -->
     <div id="page-wr602d" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <div class="flex justify-between items-center mb-12">
@@ -1436,7 +1350,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 </button>
             </div>
 
-            <!-- Cas Header -->
             <div class="bg-gradient-to-br from-yellow-50 via-yellow-100/30 to-white rounded-3xl border-2 border-yellow-300/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-yellow-300/20 rounded-full blur-2xl"></div>
                 <span class="text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full border border-yellow-200 mb-6 inline-block">Projet Universitaire · S6</span>
@@ -1444,7 +1357,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 <p class="text-neutral-600 font-light text-base leading-relaxed mb-6 max-w-4xl project-description font-heading">
                     Développement et déploiement d'un micro-service PDF Gotenberg intégré à une application de gestion d'abonnements Stripe.
                 </p>
-                <!-- COMPÉTENCES -->
                 <div class="flex flex-wrap gap-2 text-xs pt-4 border-t border-yellow-200/40">
                     <span class="px-3 py-1 bg-yellow-100 text-yellow-700 font-bold border border-yellow-200 rounded-lg">Développer</span>
                     <span class="px-3 py-1 bg-yellow-100 text-yellow-700 font-bold border border-yellow-200 rounded-lg">Entreprendre</span>
@@ -1469,21 +1381,17 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                     </div>
                 </div>
 
-                <!-- IMAGES ORDONNÉES WR602D -->
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet WR602D (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- 1. DB -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr602d', 0)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/wr602d-db.png" class="w-full h-full object-cover" alt="Modélisation Base de données" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr602d-db.png';">
                         </div>
-                        <!-- 2. Dashboard Interface -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr602d', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/wr602d-dashboard.png" class="w-full h-full object-cover" alt="Interface Dashboard" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr602d-dashboard.png';">
                         </div>
-                        <!-- 3. Stripe Integration -->
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('wr602d', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/wr602d-stripe.png" class="w-full h-full object-cover" alt="Intégration Stripe" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=assets/wr602d-stripe.png';">
@@ -1511,7 +1419,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">4. Système d'abonnements avec Stripe & 5. Déploiement</h5>
-                            <p class="text-neutral-900">J'ai intégré Stripe — la référence du paiement en ligne,  pour gérer les niveaux d'abonnement. Les paiements sont simulés en environnement de test, sans argent réel. Selon l'abonnement souscrit, l'application adapte automatiquement les fonctionnalités accessibles à l'utilisateur : quota de PDFs journalier pour le niveau de base, accès illimité pour les niveaux supérieurs. J'ai aussi mis en place un déploiement automatique via GitHub Actions, couvrant à la fois Gotenberg et l'application Symfony.</p>
+                            <p class="text-neutral-900">J'ai intégré Stripe — la référence du paiement en ligne,  pour gérer les niveaux d'abonnement. Les paiements sont simulés en environnement de test, sans argent réel. Selon l'abonnement souscrit, l'application adapte automatiquement les fonctionnalités accessibles à l'utilisateur : quota de PDFs journalier pour le niveau de base, accès illimité pour les milieux supérieurs. J'ai aussi mis en place un déploiement automatique via GitHub Actions, couvrant à la fois Gotenberg et l'application Symfony.</p>
                         </div>
                     </div>
                 </div>
@@ -1547,24 +1455,18 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
         </div>
     </div>
 
-    <!-- ==================== SYSTEM INTERACTIF LIGHTBOX (Correction Plein Écran + Panneau Explicatif) ==================== -->
     <div id="lightbox" class="fixed inset-0 bg-neutral-950/95 z-[100] hidden flex-col lg:flex-row justify-center items-center p-4 lg:p-0">
-        <!-- Close button -->
         <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-neutral-300 transition-colors p-3 cursor-pointer text-4xl z-50 bg-neutral-900/50 rounded-full w-12 h-12 flex items-center justify-center">✕</button>
         
-        <!-- Left Side: Media Viewer (70%) -->
         <div class="relative w-full lg:w-[70%] h-full flex items-center justify-center bg-black/60 p-6">
-            <!-- Nav left -->
             <button onclick="prevLightboxImage()" class="absolute left-6 text-emerald-500 hover:text-emerald-400 bg-neutral-950/80 hover:bg-neutral-900 rounded-full p-4 cursor-pointer text-4xl z-50 border-2 border-emerald-500/50 shadow-lg transition-all w-16 h-16 flex items-center justify-center">‹</button>
             
             <img id="lightbox-img" src="" class="max-h-[75vh] max-w-full object-contain rounded-lg shadow-2xl transition-all duration-300" alt="Trace agrandie">
             <video id="lightbox-video" controls class="max-h-[75vh] max-w-full rounded-lg shadow-2xl hidden"></video>
             
-            <!-- Nav right -->
             <button onclick="nextLightboxImage()" class="absolute right-6 text-pink-500 hover:text-pink-400 bg-neutral-950/80 hover:bg-neutral-900 rounded-full p-4 cursor-pointer text-4xl z-50 border-2 border-pink-500/50 shadow-lg transition-all w-16 h-16 flex items-center justify-center">›</button>
         </div>
 
-        <!-- Right Side: Descriptive Panel (30%) -->
         <div class="w-full lg:w-[30%] h-auto lg:h-full bg-white text-neutral-900 p-8 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-neutral-200">
             <div class="space-y-6">
                 <span id="lightbox-indicator" class="text-neutral-400 text-xs tracking-wider uppercase font-bold block pt-8">Trace 1 sur 2</span>
@@ -1577,7 +1479,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="border-t border-neutral-100 py-16 mt-24">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-400 gap-6">
             <div>
@@ -1588,7 +1489,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
         </div>
     </footer>
 
-    <!-- JAVASCRIPT SYSTEM & ROUTING -->
     <script>
         // Curseur
         const cursor = document.getElementById('cursor');
@@ -1715,10 +1615,10 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
             document.getElementById('lightbox').classList.add('flex');
         }
 
+        // Configuration de la lightbox
         function closeLightbox() {
             document.getElementById('lightbox').classList.add('hidden');
             document.getElementById('lightbox').classList.remove('flex');
-            // Stop video playing if closed
             const videoElement = document.getElementById('lightbox-video');
             videoElement.pause();
             videoElement.src = "";
@@ -1732,7 +1632,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
             const imgElement = document.getElementById('lightbox-img');
             const videoElement = document.getElementById('lightbox-video');
 
-            // Support vidéo MP4 interactif pour Plan Poitrines Vitrine
             if (currentData.url.endsWith('.mp4')) {
                 imgElement.classList.add('hidden');
                 videoElement.classList.remove('hidden');
@@ -1754,7 +1653,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
         function prevLightboxImage() {
             const projectImages = lightboxData[currentLightboxProject];
             if (!projectImages) return;
-
             currentLightboxIndex = (currentLightboxIndex - 1 + projectImages.length) % projectImages.length;
             updateLightboxContent();
         }
@@ -1762,12 +1660,10 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
         function nextLightboxImage() {
             const projectImages = lightboxData[currentLightboxProject];
             if (!projectImages) return;
-
             currentLightboxIndex = (currentLightboxIndex + 1) % projectImages.length;
             updateLightboxContent();
         }
 
-        // Navigation clavier
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowLeft' && !document.getElementById('lightbox').classList.contains('hidden')) prevLightboxImage();
