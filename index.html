@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nimotalah ALLI — Portfolio</title>
+    <title>Nimotalah ALLI </title>
     <!-- Tailwind CSS (v4) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -39,7 +39,7 @@
         
         /* UNIFORMISATION STRICTE : Force la taille de texte à 16px et la couleur sombre sur toutes les pages de projets */
         .page p, .page li, .project-description, .project-body-text, td, th {
-            font-size: 1rem !important; /* 16px */
+            font-size: 0.875rem !important; /* 14px */
             color: #171717 !important;
             font-weight: 400 !important;
             line-height: 1.7 !important;
@@ -136,11 +136,11 @@
             </div>
             
             <h1 class="text-5xl md:text-8xl font-black tracking-tight max-w-5xl leading-[1.05] mb-8">
-                Je façonne des applications web <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-yellow-400 to-pink-500">robustes</span> et des expériences fluides.
+                Je développe des applications web <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-yellow-400 to-pink-500">performantes</span> et des expériences <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-yellow-400 to-pink-500">fluides</span>.
             </h1>
             
             <p class="text-lg md:text-xl text-neutral-500 font-light max-w-3xl leading-relaxed mb-12">
-                Étudiante en fin d'études de **BUT MMI (Parcours Développement Web et Dispositifs Interactifs)** à l'IUT de Troyes. J'allie l'ingénierie rigoureuse de l'architecture back-end à la finesse des détails front-end et de l'ergonomie.
+                Étudiante en fin d'études de BUT MMI (Parcours Développement Web et Dispositifs Interactifs) à l'IUT de Troyes. J'allie le développement back-end à la création d'interfaces intuitives et agréables à utiliser.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4">
@@ -181,21 +181,20 @@
 
                 <div class="md:col-span-7">
                     <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">PROFIL TECHNIQUE</p>
-                    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6">L'ingénierie alliée à la sensibilité UX.</h2>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6">Allier développement web et expérience utilisateur.</h2>
                     <div class="space-y-6 text-neutral-500 font-light leading-relaxed text-base md:text-lg">
                         <p>
-                            Actuellement en dernière année de **BUT Métiers du Multimédia et de l'Internet**, je me concentre sur la création d'architectures applicatives pérennes, de la conception à la mise en ligne.
-                        </p>
+                            Actuellement en dernière année de UT Métiers du Multimédia et de l'Internet, Je conçois et développe des applications web durables, en prenant en charge chaque étape du projet.
                         <p>
-                            Ma double expertise me permet d'intervenir à la fois sur l'architecture de bases de données et la logique serveur (<strong class="text-neutral-950 font-medium">Symfony 7, Node.js, PostgreSQL</strong>) et sur le développement d'interfaces fluides et ergonomiques en s'appuyant sur des composants modernes (<strong class="text-neutral-950 font-medium">Vue.js 3, React, Tailwind CSS</strong>).
+                            Ma formation me permet d'aborder aussi bien les bases de données que le développement back-end. (<strong class="text-neutral-950 font-medium">Symfony 7, PHP, MYSQL</strong>) et sur le développement d'interfaces fluides et ergonomiques en s'appuyant sur des composants modernes (<strong class="text-neutral-950 font-medium">Vue.js 3, Tailwind CSS</strong>).
                         </p>
                     </div>
 
                     <div class="mt-8 flex flex-wrap gap-2">
                         <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Symfony 7</span>
                         <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Vue.js 3</span>
-                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Node.js</span>
-                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">React</span>
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">PHP</span>
+                        <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">SQL</span>
                         <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">API REST & JWT</span>
                         <span class="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 font-medium border border-neutral-200/40">Docker</span>
                     </div>
@@ -207,7 +206,7 @@
         <section id="projets-pro" class="max-w-6xl mx-auto px-6 py-24 border-t border-neutral-100">
             <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
                 <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">RÉALISATIONS PROFESSIONNELLES & ACADÉMIQUES</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">RÉALISATIONS PROFESSIONNELLES </p>
                     <h2 class="text-3xl md:text-5xl font-black tracking-tight">Mes Projets</h2>
                 </div>
                 
@@ -228,7 +227,9 @@
                 <!-- CARTE 1 : RJ10 RAPPEL (Stage BUT3 - Terminé) -->
                 <div class="group cursor-pointer flex flex-col h-full project-card-item" data-competencies="develop,design,entreprendre,comprendre" onclick="showProject('rj10')">
                     <div class="relative overflow-hidden rounded-3xl bg-emerald-50/90 border-2 border-emerald-200/80 aspect-[16/10] mb-6 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/10 group-hover:-translate-y-1">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white flex items-center justify-center font-bold">Consulter l'étude de cas</div>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-gray-900 flex items-center justify-center font-bold">
+    Consulter l'étude de cas
+</div>
                         <div class="w-full h-full flex flex-col justify-between p-8">
                             <div class="flex justify-between items-start">
                                 <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-white/95 px-3 py-1 rounded-full border border-emerald-200/40">SYS. Rappel</span>
@@ -272,7 +273,7 @@
                                 </a>
                             </div>
                             <div class="space-y-2">
-                                <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-100 text-pink-800 px-2.5 py-1 rounded-full border border-pink-200/40">Projet Inédit · En cours</span>
+                                <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-100 text-pink-800 px-2.5 py-1 rounded-full border border-pink-200/40">Projet Inédit · Terminé</span>
                                 <h4 class="text-xl font-bold text-neutral-950 mt-1">Application de bien-être féminin</h4>
                             </div>
                         </div>
@@ -280,9 +281,9 @@
                     <div class="flex justify-between items-start px-2 mt-auto">
                         <div class="w-full">
                             <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-pink-600 transition-colors">Noor App</h3>
-                            <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Application PWA croisant suivi de santé gynécologique et pratique cultuelle.</p>
+                            <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Application PWA de suivi personnel autour du bien-être et des pratiques cultuelles.</p>
                             <div class="academic-label hidden mb-3 text-xs bg-pink-50 text-pink-800 p-2.5 rounded-lg border border-pink-200/40">
-                                <strong>Compétences BUT MMI :</strong> Développer · Concevoir · Entreprendre · Comprendre · Exprimer
+                                <strong>Compétences BUT MMI :</strong> Développer · Concevoir · Entreprendre · Comprendre 
                             </div>
                             <div class="flex gap-2">
                                 <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">Symfony 7</span>
@@ -314,7 +315,7 @@
                     </div>
                     <div class="flex justify-between items-start px-2 mt-auto">
                         <div class="w-full">
-                            <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-purple-600 transition-colors">Plan Poitrines — UX/UI</h3>
+                            <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-purple-600 transition-colors">Plan Poitrines - UX/UI</h3>
                             <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Phase de conception visuelle, parcours utilisateur et arborescence de l'interface.</p>
                             <div class="academic-label hidden mb-3 text-xs bg-purple-50 text-purple-800 p-2.5 rounded-lg border border-purple-200/40">
                                 <strong>Compétences BUT MMI :</strong> Comprendre · Entreprendre · Concevoir · Exprimer
@@ -349,10 +350,10 @@
                     </div>
                     <div class="flex justify-between items-start px-2 mt-auto">
                         <div class="w-full">
-                            <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-purple-600 transition-colors">Plan Poitrines — Vitrine</h3>
+                            <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-purple-600 transition-colors">Plan Poitrines - Vitrine</h3>
                             <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Création complète du site vitrine d'un collectif audiovisuel inclusif.</p>
                             <div class="academic-label hidden mb-3 text-xs bg-purple-50 text-purple-800 p-2.5 rounded-lg border border-purple-200/40">
-                                <strong>Compétences BUT MMI :</strong> Développer · Entreprendre · Comprendre · Exprimer
+                                <strong>Compétences BUT MMI :</strong> Développer · Entreprendre · Comprendre 
                             </div>
                             <div class="flex gap-2">
                                 <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">HTML5</span>
@@ -377,8 +378,8 @@
                                 </a>
                             </div>
                             <div class="space-y-2">
-                                <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full border border-blue-200/40">Projet Pro · En Cours</span>
-                                <h4 class="text-xl font-bold text-neutral-950 mt-1">Plateforme Ike Oluwa</h4>
+                                <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full border border-blue-200/40">Stage BUT3 · En Cours</span>
+                                <h4 class="text-xl font-bold text-neutral-950 mt-1">Plateforme d’accompagnement social et interculturel</h4>
                             </div>
                         </div>
                     </div>
@@ -387,7 +388,7 @@
                             <h3 class="text-2xl font-bold tracking-tight mb-2 group-hover:text-blue-600 transition-colors">Ike Oluwa — ACM</h3>
                             <p class="text-neutral-500 font-light text-sm max-w-sm mb-4 project-description">Développement d’une plateforme d’action sociale et d’intégration interculturelle pour l’association ACM.</p>
                             <div class="academic-label hidden mb-3 text-xs bg-blue-50 text-blue-800 p-2.5 rounded-lg border border-blue-200/40">
-                                <strong>Compétences BUT MMI :</strong> Développer · Concevoir · Entreprendre · Comprendre · Exprimer
+                                <strong>Compétences BUT MMI :</strong> Développer · Concevoir · Entreprendre · Comprendre 
                             </div>
                             <div class="flex gap-2">
                                 <span class="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 font-medium">PHP</span>
