@@ -80,15 +80,23 @@
 
         /* Système de pages fluides sans rechargement */
         .page {
-            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
             transform: translateY(15px);
-            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 0.5s;
         }
         .page.active {
-            display: block;
+            position: relative;
             opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
             transform: translateY(0);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 0s;
         }
 
         /* Curseur personnalisé ultra-minimaliste et intuitif */
@@ -1516,14 +1524,9 @@ Motivée by l'envie de répondre concrètement à ce besoin, j'ai conçu une pla
             const targetPage = document.getElementById('page-' + pageId);
             if (activePage) {
                 activePage.classList.remove('active');
-                setTimeout(() => { activePage.style.display = 'none'; }, 100);
             }
             if (targetPage) {
-                setTimeout(() => {
-                    targetPage.style.display = 'block';
-                    targetPage.offsetHeight;
-                    targetPage.classList.add('active');
-                }, 150);
+                targetPage.classList.add('active');
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
