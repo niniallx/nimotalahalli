@@ -488,14 +488,20 @@
     
     <div id="page-rj10" class="page bg-neutral-50/60 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
-            <div class="flex justify-between items-center mb-12">
+            <div class="flex flex-wrap gap-3 justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
                     <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
                 </button>
 
-                <button onclick="showProject('noor')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
-                    Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
-                </button>
+                <div class="flex flex-wrap gap-3">
+                    <!-- TODO: remplacer par l'URL du repo GitHub exact de RJ10 Rappel -->
+                    <a href="https://github.com/niniallx" target="_blank" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        <i class="fa-brands fa-github"></i> Voir le code source
+                    </a>
+                    <button onclick="showProject('noor')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="bg-gradient-to-br from-emerald-50 via-emerald-100/40 to-white rounded-3xl border-2 border-emerald-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
@@ -599,6 +605,10 @@
                             <h5 class="step-title font-heading">5. Gestion des situations complexes</h5>
                             <p class="text-neutral-900">Au fil du développement, j'ai rencontré des situations que je n'avais pas anticipées. Par exemple, un même stagiaire peut avoir suivi plusieurs formations différentes à des périodes distinctes, chacune avec sa propre validité. J'ai également dû intégrer la notion de prérequis entre formations (SST valide obligatoire pour SSIAP). Ces défis m'ont obligée à réajuster la modélisation à plusieurs reprises.</p>
                         </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs md:col-span-2">
+                            <h5 class="step-title font-heading">6. Mise en ligne de l'application</h5>
+                            <p class="text-neutral-900">Une fois l'application fonctionnelle, je l'ai déployée chez OVH, un hébergeur web français, pour qu'elle soit accessible en dehors de mon environnement de développement local et utilisable au quotidien par le centre de formation. Cette étape m'a demandé de configurer la base de données, les variables d'environnement et le nom de domaine dans un contexte de production, différent de l'environnement de test utilisé pendant le développement.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -678,14 +688,20 @@ public function execute(InputInterface $input, OutputInterface $output): int {
 
     <div id="page-noor" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
-            <div class="flex justify-between items-center mb-12">
+            <div class="flex flex-wrap gap-3 justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
                     <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
                 </button>
 
-                <button onclick="showProject('planpoitrines-maquette')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
-                    Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
-                </button>
+                <div class="flex flex-wrap gap-3">
+                    <!-- TODO: remplacer par l'URL du repo GitHub exact de Noor -->
+                    <a href="https://github.com/niniallx" target="_blank" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        <i class="fa-brands fa-github"></i> Voir le code source
+                    </a>
+                    <button onclick="showProject('planpoitrines-maquette')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="bg-gradient-to-br from-pink-50 via-pink-100/40 to-white rounded-3xl border-2 border-pink-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
@@ -717,6 +733,8 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                             <br><br>
                             Noor est une application web destinée aux femmes souhaitant concilier suivi de leur santé féminine et pratique spirituelle et culturelle au quotidien. L'idée est née d'un constat personnel : les applications existantes de suivi du cycle menstruel ignorent totalement la dimension culturelle et spirituelle, tandis que les applications de pratique religieuse ne tiennent aucun compte de la réalité physiologique féminine. En tant que femme concernée par ce besoin, j'ai choisi de concevoir moi-même l'outil qui manquait. 
                             Le projet est accessible sur <a href="https://noor-app-ruddy.vercel.app" target="_blank" class="text-pink-600 font-bold hover:underline">Noor App</a>, avec un compte de démonstration mis à disposition pour le jury afin de tester les fonctionnalités.
+                            <br><br>
+                            Ce projet reste à ce jour en évolution continue : les fonctionnalités principales (suivi du cycle, suivi spirituel, tableau de bord) sont pleinement fonctionnelles, mais certaines pages, comme l'espace Partenaires, ne sont pas encore totalement opérationnelles. Je continue par ailleurs d'envisager de nouvelles fonctionnalités à intégrer dans les prochaines versions de l'application.
                         </p>
                         <p class="text-sm text-gray-500 mt-2">
                         <strong>Compte de démonstration :</strong><br>
@@ -736,7 +754,7 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                     </div>
                 </div>
 
-                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 shadow-sm">
+                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-semibold">03</span>
                         Comment fonctionne Noor
@@ -816,6 +834,10 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">4. Développement de l'interface visuelle</h5>
                             <p class="text-neutral-900">J'ai développé l'interface avec Vue.js 3, un outil qui permet de créer des pages web interactives et fluides. J'ai défini une charte graphique complète : palette de couleurs douces (rose poudré, lavande, crème), typographies élégantes (Playfair Display pour les titres, DM Sans pour le corps de texte), composants visuels réutilisables. L'application s'adapte automatiquement à la langue choisie par l'utilisatrice (français ou anglais), avec sauvegarde de la préférence dans son profil.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs md:col-span-2">
+                            <h5 class="step-title font-heading">5. Technologies utilisées et mise en ligne</h5>
+                            <p class="text-neutral-900">Côté interface visuelle, j'ai utilisé Vue 3 avec TypeScript (une version du langage JavaScript qui vérifie le type des données pour limiter les erreurs), assemblés avec Vite (un outil qui prépare et optimise le site pour qu'il se charge rapidement), Pinia pour la gestion centralisée des données partagées entre les pages, et vue-i18n pour gérer le changement de langue français/anglais. Côté serveur, j'ai utilisé Symfony 7 avec Doctrine ORM (l'outil qui fait le lien entre le code et la base de données) et une authentification par JWT, un système de jetons numériques sécurisés. Pour la mise en ligne, le serveur est hébergé sur Railway et l'interface visuelle sur Vercel, deux plateformes d'hébergement qui communiquent entre elles via internet. L'envoi des emails de réinitialisation de mot de passe passe par Resend, un service spécialisé dans l'envoi fiable de courriers électroniques.</p>
                         </div>
                     </div>
                 </div>
@@ -913,14 +935,20 @@ export const useNoorStore = defineStore('noor', {
 
     <div id="page-planpoitrines-maquette" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
-            <div class="flex justify-between items-center mb-12">
+            <div class="flex flex-wrap gap-3 justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
                     <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
                 </button>
 
-                <button onclick="showProject('planpoitrines-vitrine')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
-                    Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
-                </button>
+                <div class="flex flex-wrap gap-3">
+                    <!-- TODO: remplacer par l'URL du repo GitHub exact de Plan Poitrines (maquette/Figma) -->
+                    <a href="https://github.com/niniallx" target="_blank" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        <i class="fa-brands fa-github"></i> Voir le code source
+                    </a>
+                    <button onclick="showProject('planpoitrines-vitrine')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="bg-gradient-to-br from-purple-50 via-purple-100/40 to-white rounded-3xl border-2 border-purple-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
@@ -978,7 +1006,7 @@ Avant d'entamer le développement du site vitrine, j'ai consacré une phase enti
                     </div>
                 </div>
 
-                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
                         Étapes du processus de création
@@ -1022,14 +1050,20 @@ Avant d'entamer le développement du site vitrine, j'ai consacré une phase enti
 
     <div id="page-planpoitrines-vitrine" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
-            <div class="flex justify-between items-center mb-12">
+            <div class="flex flex-wrap gap-3 justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
                     <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
                 </button>
 
-                <button onclick="showProject('acm-ikeoluwa')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
-                    Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
-                </button>
+                <div class="flex flex-wrap gap-3">
+                    <!-- TODO: remplacer par l'URL du repo GitHub exact du site vitrine Plan Poitrines -->
+                    <a href="https://github.com/niniallx" target="_blank" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        <i class="fa-brands fa-github"></i> Voir le code source
+                    </a>
+                    <button onclick="showProject('acm-ikeoluwa')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="bg-gradient-to-br from-purple-50 via-purple-100/40 to-white rounded-3xl border-2 border-purple-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
@@ -1090,7 +1124,7 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
                     </div>
                 </div>
 
-                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
                         Étapes du processus de création
@@ -1124,22 +1158,28 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
 
     <div id="page-acm-ikeoluwa" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
-            <div class="flex justify-between items-center mb-12">
+            <div class="flex flex-wrap gap-3 justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
                     <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
                 </button>
 
-                <button onclick="showProject('wr506d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
-                    Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
-                </button>
+                <div class="flex flex-wrap gap-3">
+                    <!-- TODO: remplacer par l'URL du repo GitHub exact de l'application ACM Ike Oluwa -->
+                    <a href="https://github.com/niniallx" target="_blank" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        <i class="fa-brands fa-github"></i> Voir le code source
+                    </a>
+                    <button onclick="showProject('wr506d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="bg-gradient-to-br from-blue-50 via-blue-100/40 to-white rounded-3xl border-2 border-blue-200/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-blue-300/20 rounded-full blur-2xl"></div>
-                <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-200/50 text-blue-800 px-3 py-1 rounded-full border border-blue-300 mb-6 inline-block">Projet Pro · Solidarité</span>
-                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-blue-950 leading-tight">Association ACM (Ike Oluwa)</h1>
+                <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-200/50 text-blue-800 px-3 py-1 rounded-full border border-blue-300 mb-6 inline-block">Stage BUT3 · En Cours</span>
+                <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-blue-950 leading-tight">Asso ACM — Plateforme communautaire de gestion associative pour des actions de solidarité et d'intégration culturelle</h1>
                 <p class="text-neutral-600 font-light text-base md:text-lg leading-relaxed mb-6 max-w-4xl project-description font-heading">
-                    Refonte globale de la plateforme d'action sociale interculturelle de l'association ACM (Ike Oluwa).
+                    Développement complet de la plateforme d'action sociale et d'intégration interculturelle de l'association ACM (Ike Oluwa).
                 </p>
                 <div class="flex flex-wrap gap-2 text-xs pt-4 border-t border-blue-200/40">
                     <span class="px-3 py-1 bg-blue-100 text-blue-700 font-bold border border-blue-200 rounded-lg">Développer</span>
@@ -1163,7 +1203,7 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
                             <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">02</span>
                             La mission
                         </h4>
-                        <p class="text-neutral-900 text-base font-light">Mon superviseur au sein de l'association m'a confié une mission claire dès le début du stage : structurer et centraliser la gestion des activités de l'association à travers une plateforme web complète. Jusqu'alors, la gestion des membres, des maraudes, des événements culturels et des actions de solidarité reposait sur plusieurs outils séparés — tableurs, messageries instantanées, échanges informels — ce qui limitait la coordination entre bénévoles, la traçabilité des actions menées et la capacité du bureau à mesurer concrètement l'impact social de l'association.
+                        <p class="text-neutral-900 text-base font-light">Mon superviseur au sein de l'association m'a confié une mission claire dès le début du stage : structurer et centraliser la gestion des activités de l'association à travers une plateforme web complète. Jusqu'alors, la gestion des membres, des maraudes, des événements culturels et des actions de solidarité reposait sur plusieurs outils séparés (tableurs, messageries instantanées, échanges informels), ce qui limitait la coordination entre bénévoles, la traçabilité des actions menées et la capacité du bureau à mesurer concrètement l'impact social de l'association.
 
 C'est ce constat qui est à l'origine du projet. L'association a pour mission le rassemblement culturel, l'union, la solidarité et l'entraide de ses membres, à travers l'organisation de maraudes, d'événements d'intégration culturelle et de dispositifs d'accompagnement comme le parrainage entre nouveaux arrivants et référents établis. Sans outil centralisé, ces actions restaient difficiles à organiser, à suivre dans la durée et à valoriser auprès de partenaires ou pour des demandes de subvention.
 
@@ -1189,7 +1229,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                     </div>
                 </div>
 
-                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">03</span>
                         Processus de création
@@ -1201,7 +1241,11 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200">
                             <h5 class="step-title font-heading">Construction de la partie invisible de l'application</h5>
-                            <p class="text-neutral-900">Mon stage étant encore en cours, je me suis concentrée sur la construction de la partie de l'application que l'utilisateur ne voit pas mais qui fait tout fonctionner en arrière-plan : la gestion des données et la logique de fonctionnement. J'ai mis en place une base de données relationnelle structurée pour organiser les membres, les maraudes, les événements, les parrainages et les ressources. J'ai également construit un système de connexion sécurisé avec trois niveaux d'accès différents selon le profil de l'utilisateur, ainsi qu'un système de notifications automatiques pour les rappels de maraude et les confirmations d'inscription aux événements. J'ai organisé les informations à gérer en plusieurs groupes reliés entre eux : les membres, les maraudes avec leurs fiches de suivi anonymisées, les événements culturels et leurs inscriptions, les parrainages entre bénévoles et bénéficiaires, le mur d'annonces communautaires, l'espace de ressources pratiques, ainsi que les notifications automatiques. Cette organisation permet à chaque type d'information de rester relié aux autres, par exemple un même membre pouvant être à la fois bénévole sur une maraude, organisateur d'un événement et parrain d'une personne accompagnée.</p>
+                            <p class="text-neutral-900">Mon stage étant encore en cours, je me suis concentrée sur la construction de la partie de l'application que l'utilisateur ne voit pas mais qui fait tout fonctionner en arrière-plan : la gestion des données et la logique de fonctionnement. J'ai mis en place une base de données relationnelle structurée pour organiser les membres, les maraudes, les événements, les parrainages et les ressources. J'ai également construit un système de connexion sécurisé avec trois niveaux d'accès différents selon le profil de l'utilisateur, ainsi qu'un système de notifications automatiques pour les rappels de maraude et les confirmations d'inscription aux événements.
+                            <br><br>
+                            J'ai organisé les informations en dix entités reliées entre elles : les utilisateurs (avec trois profils distincts), les maraudes et leurs fiches de suivi anonymisées, les événements et leurs inscriptions, les parrainages et leur messagerie interne, les annonces communautaires, les ressources documentaires, et les notifications. Cette organisation permet à chaque type d'information de rester relié aux autres, par exemple un même membre pouvant être à la fois bénévole sur une maraude, organisateur d'un événement et parrain d'une personne accompagnée.
+                            <br><br>
+                            À l'heure actuelle, j'organise la structure des futures pages de l'interface visuelle en esquissant quelques wireframes, avant de démarrer le développement du frontend dans la suite du stage.</p>
                         </div>
                     </div>
                 </div>
@@ -1242,14 +1286,20 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
 
     <div id="page-wr506d" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
-            <div class="flex justify-between items-center mb-12">
+            <div class="flex flex-wrap gap-3 justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
                     <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
                 </button>
 
-                <button onclick="showProject('wr602d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
-                    Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
-                </button>
+                <div class="flex flex-wrap gap-3">
+                    <!-- TODO: remplacer par l'URL du repo GitHub exact de WR506D -->
+                    <a href="https://github.com/niniallx" target="_blank" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        <i class="fa-brands fa-github"></i> Voir le code source
+                    </a>
+                    <button onclick="showProject('wr602d')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        Projet suivant <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="bg-gradient-to-br from-yellow-50 via-yellow-100/30 to-white rounded-3xl border-2 border-yellow-300/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
@@ -1306,7 +1356,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                     </div>
                 </div>
 
-                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
                         Étapes du processus de création
@@ -1369,14 +1419,20 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
 
     <div id="page-wr602d" class="page bg-neutral-50/70 min-h-screen relative z-10 animate-fade-in">
         <div class="max-w-6xl mx-auto px-6 py-12">
-            <div class="flex justify-between items-center mb-12">
+            <div class="flex flex-wrap gap-3 justify-between items-center mb-12">
                 <button onclick="showPage('home')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
                     <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
                 </button>
 
-                <button onclick="showProject('rj10')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
-                    Retour au début <i class="fa-solid fa-rotate-right ml-1"></i>
-                </button>
+                <div class="flex flex-wrap gap-3">
+                    <!-- TODO: remplacer par l'URL du repo GitHub exact de WR602D -->
+                    <a href="https://github.com/niniallx" target="_blank" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border border-neutral-200 bg-white shadow-3xs text-xs font-semibold text-neutral-800 hover:border-neutral-900 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        <i class="fa-brands fa-github"></i> Voir le code source
+                    </a>
+                    <button onclick="showProject('rj10')" class="group inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-neutral-950 bg-neutral-950 shadow-3xs text-xs font-semibold text-white hover:bg-neutral-800 transition-all transform hover:-translate-y-0.5 cursor-pointer font-heading">
+                        Retour au début <i class="fa-solid fa-rotate-right ml-1"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="bg-gradient-to-br from-yellow-50 via-yellow-100/30 to-white rounded-3xl border-2 border-yellow-300/80 p-8 md:p-12 shadow-md relative overflow-hidden mb-8">
@@ -1436,7 +1492,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                     </div>
                 </div>
 
-                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 shadow-sm space-y-6">
+                <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
                         <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
                         Étapes du processus de création
