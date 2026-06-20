@@ -1176,7 +1176,7 @@ Motivée by l'envie de répondre concrètement à ce besoin, j'ai conçu une pla
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 1)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
-                            <img src="assets/acm-maquette.png" class="w-full h-full object-cover" alt="Wireframe Ike Oluwa" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Maquette';">
+                            <img src="assets/acm-wireframe.png" class="w-full h-full object-cover" alt="Wireframe Ike Oluwa" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Maquette';">
                         </div>
                         <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('acm-ikeoluwa', 2)">
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
@@ -1572,58 +1572,199 @@ Motivée by l'envie de répondre concrètement à ce besoin, j'ai conçu une pla
         // Base de données Lightbox enrichie, ordonnée, corrigée et complète
         const lightboxData = {
             'rj10': [
-                { url: 'assets/rj10-arborescence.png', title: 'Trace 01 : Arborescence de navigation', desc: 'Arborescence des pages et parcours utilisateur planifiés pour RJ10 Formation.' },
-                { url: 'assets/rj10-maquette.png', title: 'Trace 02 : Esquisse Wireframe', desc: 'Esquisse réalisés à la main pour explorer l’organisation des pages du projet.' },
-                { url: 'assets/rj10-db.png', title: 'Trace 03 : Structure relationnelle MySQL / Doctrine', desc: 'Modélisation relationnelle de la base de données pour la gestion intègre des expirations.' },
-                { url: 'assets/rj10-dashboard.png', title: 'Trace 04 : Dashboard / Maquette Vue.js 3', desc: 'Tableau de bord administrateur avec synthèses visuelles de l’application.' },
-                { url: 'assets/rj10-stagiaires.png', title: 'Trace 05 : Interface Stagiaires', desc: 'Vue de table réactive développée en Vue.js 3.' },
-                { url: 'assets/rj10-formations.png', title: 'Trace 06 : Catalogue des Formations', desc: 'Interface de gestion des formations actives et de leurs durées.' },
-                { url: 'assets/rj10-template-email.png', title: 'Trace 07 : Template d’Email personnalisé', desc: 'Gabarit d’email utilisé pour l’envoi de notifications.' },
-                { url: 'assets/rj10-rappel.png', title: 'Trace 08 : Page Rappel d’échéances', desc: 'Rappels enregistrés en historique et journalisés pour action de suivi.' }
-            ],
+    { 
+        url: 'assets/rj10-arborescence.png', 
+        title: 'Trace 01 : Arborescence de navigation', 
+        desc: 'Avant tout développement, j\'ai défini l\'organisation générale de l\'application : une page de connexion menant à un tableau de bord central, depuis lequel l\'administrateur accède à cinq espaces distincts (stagiaires, formations, inscriptions, rappels, paramètres). Cette réflexion en amont garantit une navigation simple pour un utilisateur non technique.' 
+    },
+    { 
+        url: 'assets/rj10-wireframe.png', 
+        title: 'Trace 02 : Esquisse Wireframe', 
+        desc: 'Esquisses réalisées à la main pour explorer rapidement plusieurs organisations possibles des premières pages, sans me limiter au design définitif. Cette étape m\'a permis de valider l\'emplacement des informations essentielles avant de passer au développement réel.' 
+    },
+    { 
+        url: 'assets/rj10-db.png', 
+        title: 'Trace 03 : Structure relationnelle MySQL / Doctrine', 
+        desc: 'Modélisation des données organisées en quatre groupes reliés entre eux : les stagiaires, les formations, les inscriptions et les rappels. Cette structure garantit qu\'aucune information n\'est dupliquée et que chaque titre obtenu reste relié à son stagiaire, sa formation et sa date d\'expiration calculée automatiquement.' 
+    },
+    { 
+        url: 'assets/rj10-dashboard.png', 
+        title: 'Trace 04 : Dashboard / Maquette Vue.js 3', 
+        desc: 'Vue d\'ensemble pensée pour qu\'un administrateur identifie en un coup d\'œil les titres approchant de leur expiration, sans avoir à chercher dans chaque fiche stagiaire individuellement. C\'est la page la plus consultée au quotidien par mon superviseur.' 
+    },
+    { 
+        url: 'assets/rj10-stagiaires.png', 
+        title: 'Trace 05 : Interface Stagiaires', 
+        desc: 'Liste interactive développée en Vue.js 3 permettant de visualiser le parcours complet de chaque stagiaire, y compris lorsqu\'il a suivi plusieurs formations à des périodes différentes (par exemple SST puis APS quelques mois après).' 
+    },
+    { 
+        url: 'assets/rj10-formations.png', 
+        title: 'Trace 06 : Catalogue des Formations', 
+        desc: 'Interface de gestion des formations proposées par le centre, avec leurs règles spécifiques : durée de validité du titre obtenu, nécessité ou non d\'un numéro d\'autorisation préalable, et formations prérequises (le SST est par exemple obligatoire avant de s\'inscrire en APS ou en SSIAP).' 
+    },
+    { 
+        url: 'assets/rj10-template-email.png', 
+        title: 'Trace 07 : Template d\'Email personnalisé', 
+        desc: 'Gabarit d\'email envoyé automatiquement au stagiaire avant l\'expiration de son titre. Le message est adapté selon le type de formation : ton plus urgent pour un renouvellement obligatoire (APS, SSIAP, SST), ton plus informatif pour un renouvellement recommandé.' 
+    },
+    { 
+        url: 'assets/rj10-rappel.png', 
+        title: 'Trace 08 : Page Rappel d\'échéances', 
+        desc: 'Historique de tous les rappels envoyés, automatiques comme manuels, avec la possibilité pour l\'administrateur de suivre si le stagiaire a répondu suite à la relance. C\'est cet historique qui permet de mesurer concrètement l\'efficacité du système mis en place.' 
+    }
+],
             'noor': [
-                { url: 'assets/noor-arborescence.png', title: 'Trace 01 : Arborescence de l’application', desc: 'Organisation logique de l’expérience multimodale de Noor.' },
-                /* Correction de l'extension du fichier attendu par le script JavaScript de .jpg à .png */
-                { url: 'assets/noor-wireframe.png', title: 'Trace 02 : Esquisse Wireframe de l’application', desc: 'Exploration sous forme de wireframes de plusieurs pages de l’application, comprenant 4 écrans et une version mobile.' },
-                { url: 'assets/noor-db.png', title: 'Trace 03 : Structure de données relationnelle', desc: 'Schéma relationnel connectant l’utilisatrice aux modules biologiques et spirituels.' },
-                { url: 'assets/noor-dashboard.png', title: 'Trace 04 : Tableau de Bord (Dashboard)', desc: 'Interface centrale regroupant des informations dynamiques et des minuteurs synchronisés.' },
-                { url: 'assets/noor-login.png', title: 'Trace 05 : Écran de Connexion (Login)', desc: 'Vérification et sécurité cryptographique par certificat JWT.' },
-                { url: 'assets/noor-cycle.png', title: 'Trace 06 : Suivi du Cycle biologique', desc: 'Calendrier et saisie des phases menstruelles et des symptômes.' },
-                { url: 'assets/noor-spiritualite.png', title: 'Trace 07 : Suivi Pratique Spirituelle', desc: 'Module de spiritualité avec synchronisation des horaires de prière réels et du cycle menstruel.' },
-                { url: 'assets/noor-mobile-home.png', title: 'Trace 08 : Version Mobile (Screen Réel) — Dashboard', desc: 'Screen d’accueil de la PWA installé en natif sur l’écran du téléphone.' },
-                { url: 'assets/noor-mobile-menu.png', title: 'Trace 09 : Version Mobile (Screen Réel) — Menu', desc: 'Tiroir tactile optimisé pour la navigation mobile.' }
-            ],
+    { 
+        url: 'assets/noor-arborescence.png', 
+        title: 'Trace 01 : Arborescence de l\'application', 
+        desc: 'Organisation complète back-end et front-end de l\'application, structurée autour de deux dimensions complémentaires : le suivi du cycle menstruel et l\'accompagnement spirituel. Cette double entrée a guidé toute l\'architecture de navigation, pour que ces deux univers se croisent naturellement sans jamais se confondre.' 
+    },
+    { 
+        url: 'assets/noor-wireframe.png', 
+        title: 'Trace 02 : Esquisse Wireframe de l\'application', 
+        desc: 'Esquisses explorant l\'organisation des pages Accueil, Cycle, Symptômes et Spiritualité, réalisées avant tout développement pour valider rapidement le placement des informations essentielles sur chaque écran.' 
+    },
+    { 
+        url: 'assets/noor-db.png', 
+        title: 'Trace 03 : Structure de données relationnelle', 
+        desc: 'Modélisation reliant chaque utilisatrice à ses propres données de cycle et à ses pratiques spirituelles. C\'est cette organisation qui permet à l\'application de croiser automatiquement les deux univers : par exemple, suspendre certaines pratiques pendant le cycle et calculer le rattrapage de jeûne en conséquence.' 
+    },
+    { 
+        url: 'assets/noor-dashboard.png', 
+        title: 'Trace 04 : Tableau de Bord (Dashboard)', 
+        desc: 'Écran central regroupant en un seul coup d\'œil la phase du cycle en cours, un suivi du bien-être, les prochains horaires de prière et de jeûne, l\'affirmation spirituelle du jour (dikhr), ainsi que les événements à venir. Cette vue d\'ensemble permet à l\'utilisatrice de retrouver instantanément où elle en est dans sa journée, sans naviguer entre plusieurs pages.' 
+    },
+    { 
+        url: 'assets/noor-login.png', 
+        title: 'Trace 05 : Écran de Connexion (Login)', 
+        desc: 'Écran de connexion sécurisé par authentification JWT, garantissant que les données personnelles et sensibles de chaque utilisatrice restent strictement privées et accessibles uniquement après vérification de son identité.' 
+    },
+    { 
+        url: 'assets/noor-cycle.png', 
+        title: 'Trace 06 : Suivi du Cycle biologique', 
+        desc: 'Calendrier permettant de saisir les phases du cycle menstruel et les symptômes ressentis. Ces données alimentent directement les calculs affichés ailleurs dans l\'application, notamment le suivi des pratiques spirituelles à ajuster en conséquence.' 
+    },
+    { 
+        url: 'assets/noor-spiritualite.png', 
+        title: 'Trace 07 : Suivi Pratique Spirituelle', 
+        desc: 'Module synchronisant les horaires de prière réels, calculés selon la position géographique de l\'utilisatrice, avec les informations du cycle menstruel. C\'est ce module qui calcule automatiquement le nombre de jours de jeûne à rattraper.' 
+    },
+    { 
+        url: 'assets/noor-mobile-home.png', 
+        title: 'Trace 08 : Version Mobile (Screen Réel) — Dashboard', 
+        desc: 'Capture réelle de l\'écran d\'accueil tel qu\'il apparaît une fois l\'application installée directement sur l\'écran d\'accueil du téléphone, sans passer par un store d\'applications, grâce à la technologie PWA (application web progressive).' 
+    },
+    { 
+        url: 'assets/noor-mobile-menu.png', 
+        title: 'Trace 09 : Version Mobile (Screen Réel) — Menu', 
+        desc: 'Menu de navigation tactile pensé spécifiquement pour un usage au pouce sur smartphone, avec des zones cliquables suffisamment grandes pour une utilisation rapide et confortable au quotidien.' 
+    }
+]
             'planpoitrines-maquette': [
-                { url: 'assets/planpoitrines-arborescence.png', title: "Trace 01 : Arborescence de navigation", desc: 'Sitemap du site vitrine.' },
-                { url: 'assets/planpoitrines-wireframe1.png', title: 'Trace 02 : Wireframe basse-fidélité (Partie 1)', desc: 'Première esquisse d’arborescence et hiérarchie de l’information.' },
-                { url: 'assets/planpoitrines-wireframe2.png', title: 'Trace 03 : Wireframe basse-fidélité (Partie 2)', desc: 'Esquisses du second écran.' },
-                { url: 'assets/planpoitrines-maquette.png', title: 'Trace 04 : Maquette Figma finale', desc: 'Design finalisé avec la charte graphique de transition de l’association.' }
-            ],
+    { 
+        url: 'assets/planpoitrines-arborescence.png', 
+        title: 'Trace 01 : Arborescence de navigation', 
+        desc: 'Organisation du site en quatre pages définie après échange avec les deux co-présidentes : accueil présentant l\'association et ses valeurs, productions mettant en avant les projets audiovisuels, contact avec formulaire et réseaux sociaux, et adhésion pour faciliter l\'inscription de nouveaux membres. Cette structure a été validée rapidement, ce qui m\'a permis de démarrer le développement sans attendre.' 
+    },
+    { 
+        url: 'assets/planpoitrines-wireframe1.png', 
+        title: 'Trace 02 : Wireframe basse-fidélité (Partie 1)', 
+        desc: 'Première esquisse de la hiérarchie de l\'information sur la page d\'accueil, pensée pour refléter dès le premier regard les valeurs féministes, queer et inclusives portées par l\'association, tout en restant lisible pour des publics variés.' 
+    },
+    { 
+        url: 'assets/planpoitrines-wireframe2.png', 
+        title: 'Trace 03 : Wireframe basse-fidélité (Partie 2)', 
+        desc: 'Exploration de l\'organisation de la page productions, destinée à mettre en avant les projets audiovisuels portés par les jeunes cinéastes accompagnées par le collectif.' 
+    },
+    { 
+        url: 'assets/planpoitrines-maquette.png', 
+        title: 'Trace 04 : Maquette Figma finale', 
+        desc: 'Design finalisé construit autour d\'une palette de couleurs vives (violet, rose, orange, jaune) et d\'une typographie moderne, en cohérence avec la nouvelle identité visuelle de l\'association alors en cours de finalisation. Le design a volontairement été pensé modulable pour pouvoir évoluer une fois la charte graphique définitivement arrêtée.' 
+    }
+]
             'planpoitrines-vitrine': [
-                { url: 'assets/planpoitrines-vitrine-screen1.png', title: 'Trace 01 : Capture d\'écran - Catalogue productions', desc: 'Page de mise en valeur des films documentaires du collectif.' },
-                { url: 'assets/planpoitrines-vitrine-screen2.png', title: 'Trace 02 : Capture d\'écran - Page de contact', desc: 'Intégration d\'un formulaire de contact.' },
-                { url: 'assets/planpoitrines-vitrine-video.mp4', title: 'Trace 03 : Vidéo de démonstration', desc: 'Capture vidéo de l’intégration du site vitrine.' }
-            ],
+    { 
+        url: 'assets/planpoitrines-vitrine-screen1.png', 
+        title: 'Trace 01 : Capture d\'écran - Catalogue productions', 
+        desc: 'Page de mise en valeur des films documentaires portés par les jeunes cinéastes du collectif, intégrée en HTML et CSS afin de produire un code clair et directement réutilisable par l\'équipe après mon départ, sans dépendance à un outil de gestion de contenu complexe.' 
+    },
+    { 
+        url: 'assets/planpoitrines-vitrine-screen2.png', 
+        title: 'Trace 02 : Capture d\'écran - Page de contact', 
+        desc: 'Page intégrant un formulaire de contact ainsi que les liens vers les réseaux sociaux de l\'association, pensée pour faciliter la prise de contact aussi bien par des partenaires que par des personnes découvrant le collectif.' 
+    },
+    { 
+        url: 'assets/planpoitrines-vitrine-video.mp4', 
+        title: 'Trace 03 : Vidéo de démonstration', 
+        desc: 'Démonstration du site intégré, illustrant son adaptation automatique à la taille de l\'écran, qu\'il soit consulté depuis un téléphone ou un ordinateur, ainsi que la mise en ligne provisoire réalisée sur un serveur personnel pour permettre à l\'équipe de recueillir des retours en conditions réelles.' 
+    }
+]
             'acm-ikeoluwa': [
-                { url: 'assets/acm-arborescence.png', title: 'Trace 01 : Arborescence stratégique', desc: 'Plan structurel de l’outil de gestion communautaire.' },
-                { url: 'assets/acm-maquette.png', title: 'Trace 02 : Wireframe Ike Oluwa', desc: 'Design de l’interface validé avec les bénévoles.' },
-                { url: 'assets/acm-db.png', title: 'Trace 03 : Structure relationnelle de la base de données', desc: 'Structure MySQL connectant adhérents, fiches de suivi et dons.' },
-                { url: 'assets/acm-dashboard.png', title: 'Trace 04 : Écran d\'administration et Dashboard', desc: 'Module de suivi des activités de solidarité interculturelle.' }
-            ],
+    { 
+        url: 'assets/acm-arborescence.png', 
+        title: 'Trace 01 : Arborescence stratégique', 
+        desc: 'Organisation de l\'application autour de trois profils d\'accès distincts : bénévole, bénéficiaire et bureau associatif. Cette structure répond à un besoin précis identifié dès le début du stage : centraliser la gestion des maraudes, des événements culturels et du parrainage, jusqu\'alors répartie entre plusieurs outils séparés (tableurs, messageries).' 
+    },
+    { 
+        url: 'assets/acm-wireframe.png', 
+        title: 'Trace 02 : Esquisse Wireframe', 
+        desc: 'Esquisses réalisées à la main pour explorer l\'organisation de quelques pages clés, notamment la gestion des maraudes et le suivi des membres, avant de me concentrer sur la construction de la partie back-end de l\'application.' 
+    },
+    { 
+        url: 'assets/acm-db.png', 
+        title: 'Trace 03 : Structure relationnelle de la base de données', 
+        desc: 'Modélisation reliant les membres, les maraudes, les événements culturels, les parrainages et les ressources. Cette organisation garantit qu\'un même membre peut être à la fois bénévole sur une maraude, organisateur d\'un événement et parrain d\'une personne accompagnée, tout en respectant la confidentialité des informations sensibles recueillies sur le terrain.' 
+    },
+    { 
+        url: 'assets/acm-dashboard.png', 
+        title: 'Trace 04 : Écran d\'administration et Dashboard', 
+        desc: 'Module de suivi des activités de solidarité interculturelle, pensé pour donner au bureau de l\'association une vue d\'ensemble claire de ses actions et faciliter la valorisation de son impact social, notamment dans le cadre de dossiers de subvention.' 
+    }
+]
             'wr506d': [
-                { url: 'assets/wr506d-db.png', title: 'Trace 01 : Modélisation conceptuelle de la base', desc: 'Architecture relationnelle du catalogue cinématographique.' },
-                { url: 'assets/wr506d-interface.png', title: 'Trace 02 : Capture de l\'interface de recherche de films', desc: 'Application découplée consommant l’API GraphQL.' },
-                { url: 'assets/wr506d-postman.png', title: 'Trace 03 : Tests des routes API REST et GraphQL via Postman', desc: 'Collection Postman validant la sécurité et l’upload de fichiers.' },
-                /* Ajout de l'objet correspondant au Dashboard côté Auteur dans le tableau lightboxData */
-                { url: 'assets/wr506d-dashboard-auteur.png', title: 'Trace 04 : Dashboard côté Auteur', desc: 'Espace d’administration et de suivi analytique dédié aux auteurs.' }
-            ],
+    { 
+        url: 'assets/wr506d-db.png', 
+        title: 'Trace 01 : Modélisation conceptuelle de la base', 
+        desc: 'Architecture relationnelle du catalogue cinématographique, organisée pour relier les films à leurs auteurs, genres et métadonnées, tout en garantissant l\'intégrité des données lors des opérations de création, modification et suppression effectuées par les utilisateurs autorisés.' 
+    },
+    { 
+        url: 'assets/wr506d-interface.png', 
+        title: 'Trace 02 : Capture de l\'interface de recherche de films', 
+        desc: 'Page d\'accueil volontairement simple, pensée comme une application découplée consommant l\'API GraphQL développée en parallèle, permettant de rechercher et consulter les films du catalogue.' 
+    },
+    { 
+        url: 'assets/wr506d-postman.png', 
+        title: 'Trace 03 : Tests des routes API REST et GraphQL via Postman', 
+        desc: 'Collection Postman utilisée pour valider le bon fonctionnement de l\'API, ici une requête GET All Movies retournant avec succès les 170 films actuellement à l\'affiche dans le catalogue, confirmant la fiabilité de l\'architecture mise en place.' 
+    },
+    { 
+        url: 'assets/wr506d-dashboard-auteur.png', 
+        title: 'Trace 04 : Dashboard côté Auteur', 
+        desc: 'Espace d\'administration réservé aux auteurs, leur permettant d\'ajouter un nouveau film, de modifier les informations d\'un film existant ou de le supprimer, avec une sécurisation des accès garantissant que seul l\'auteur concerné peut gérer son propre contenu.' 
+    }
+]
             'wr602d': [
-                { url: 'assets/wr602d-db.png', title: 'Trace 01 : Base de données du micro-service', desc: 'Structure des plans et quotas d’abonnements Stripe.' },
-                { url: 'assets/wr602d-dashboard.png', title: 'Trace 02 : Interface utilisateur Symfony (Twig)', desc: 'Dashboard utilisateur d’appel du micro-service Gotenberg.' },
-                { url: 'assets/wr602d-stripe.png', title: 'Trace 03 : Console de test Stripe (Webhooks & abonnements)', desc: 'Suivi de la simulation de paiement de test Stripe.' },
-                /* Ajout de l'objet correspondant à la Vidéo Démo Stripe dans le tableau lightboxData pour lecture fluide plein écran */
-                { url: 'assets/wr602d-stripe-demo.mp4', title: 'Trace 04 : Vidéo Démo Stripe', desc: 'Démonstration vidéo du processus fluide d’intégration des abonnements Stripe.' }
-            ]
+    { 
+        url: 'assets/wr602d-db.png', 
+        title: 'Trace 01 : Base de données du micro-service', 
+        desc: 'Structure relationnelle reliant les entités du back-end : utilisateurs, plans d\'abonnement et quotas de génération de PDF, organisée pour que chaque abonnement Stripe corresponde à un quota précis d\'utilisation du micro-service.' 
+    },
+    { 
+        url: 'assets/wr602d-dashboard.png', 
+        title: 'Trace 02 : Interface utilisateur Symfony (Twig)', 
+        desc: 'Page développée en Twig permettant à l\'utilisateur de générer un PDF en appelant le micro-service Gotenberg, illustrant la communication entre l\'application Symfony principale et le service externe dédié à la génération de documents.' 
+    },
+    { 
+        url: 'assets/wr602d-stripe.png', 
+        title: 'Trace 03 : Console de test Stripe (Webhooks & abonnements)', 
+        desc: 'Simulation d\'un paiement test via Stripe, confirmant que la relation entre le choix d\'un plan d\'abonnement et la création effective de cet abonnement fonctionne correctement de bout en bout.' 
+    },
+    { 
+        url: 'assets/wr602d-stripe-demo.mp4', 
+        title: 'Trace 04 : Vidéo Démo Stripe', 
+        desc: 'Démonstration vidéo du parcours complet d\'achat : un clic sur un plan d\'abonnement redirige bien l\'utilisateur vers une page de paiement sécurisée Stripe, validant l\'intégration fonctionnelle du système de paiement.' 
+    }
+]
         };
 
         let currentLightboxProject = '';
