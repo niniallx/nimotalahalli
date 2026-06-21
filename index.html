@@ -575,6 +575,10 @@
                             <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
                             <img src="assets/rj10-rappel.png" class="w-full h-full object-cover" alt="Suivi des rappels" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Rappels';">
                         </div>
+                        <div class="group relative bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-[16/10] cursor-zoom-in" onclick="openLightbox('rj10', 8)">
+                            <div class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 text-white font-medium text-sm">Agrandir</div>
+                            <img src="assets/rj10-inscriptionForm.png" class="w-full h-full object-cover" alt="Formulaire d'inscription" onerror="this.src='https://placehold.co/600x400/f5f5f5/a3a3a3?text=Formulaire+Inscription';">
+                        </div>
                     </div>
                 </div>
 
@@ -617,26 +621,63 @@
                         <i class="fa-solid fa-code text-emerald-600"></i> Comment ça fonctionne ? (Logique Technique)
                     </h4>
                     <div class="text-neutral-900 mb-4 bg-white p-4 rounded-xl border border-neutral-200 font-medium">
-                        Étape 1 : Le serveur lance une tâche planifiée automatique quotidiennement. 
+                        Étape 1 : Dès qu'un titre est obtenu, sa date d'expiration est calculée automatiquement. 
                         <span class="text-emerald-600 font-bold mx-2">➔</span> 
-                        Étape 2 : Le programme recherche en base de données les stagiaires dont la certification expire dans exactement 3 mois. 
+                        Étape 2 : La date à laquelle le rappel doit partir est déduite de cette expiration. 
                         <span class="text-emerald-600 font-bold mx-2">➔</span> 
-                        Étape 3 : Le système génère un email personnalisé via Symfony Mailer et l'envoie de manière asynchrone.
+                        Étape 3 : Le nombre de jours restants est recalculé en continu pour alimenter les alertes du tableau de bord.
                     </div>
+
+                    <p class="text-sm text-neutral-600 font-medium">Étape 1 — Calcul automatique de la date d'expiration</p>
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
-// Command/Scheduler task for daily checks inside Symfony Command
-public function execute(InputInterface $input, OutputInterface $output): int {
-    // Querying database via repository pattern
-    $stagiaires = $this->stagiaireRepository->findExpiringInMonths(3);
-    
-    foreach ($stagiaires as $stagiaire) {
-        // Dispatching asynchronous email messages
-        $this->mailer->sendRappel($stagiaire);
-        $this->logRappel($stagiaire);
+// Setter qui calcule automatiquement la date d'expiration
+public function setDateObtentionCartePro(?\DateTimeInterface $dateObtentionCartePro): static
+{
+    $this->dateObtentionCartePro = $dateObtentionCartePro;
+    // Calcul automatique de la date d'expiration si formation définie
+    if ($dateObtentionCartePro && $this->formation) {
+        $dateExpiration = clone $dateObtentionCartePro;
+        $duree = $this->formation->getDureeEnMois();  // Ex: 60 mois pour APS
+        $dateExpiration->modify("+{$duree} months");
+        $this->dateExpirationCartePro = $dateExpiration;
     }
-    return Command::SUCCESS;
+    return $this;
 }
                     </code></pre>
+                    <p class="text-sm text-neutral-600">Dès que l'administrateur enregistre la date d'obtention d'un titre, l'application calcule elle-même sa date d'expiration, en ajoutant la durée de validité propre à chaque formation (60 mois pour l'APS, 36 pour le SSIAP, 24 pour le SST), sans aucun calcul manuel.</p>
+
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 2 — Calcul de la date à laquelle envoyer le rappel</p>
+                    <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
+// Calcul de la date de rappel (X mois avant expiration)
+public function getDateRappel(): ?\DateTimeInterface
+{
+    $dateExp = $this->getDateExpiration();
+    if (!$dateExp) {
+        return null;
+    }
+    $delai = $this->formation ? $this->formation->getDelaiRappelEnMois() : 3;
+    $dateRappel = clone $dateExp;
+    $dateRappel->modify("-{$delai} months");
+    return $dateRappel;
+}
+                    </code></pre>
+                    <p class="text-sm text-neutral-600">À partir de la date d'expiration, l'application déduit automatiquement la date à laquelle le rappel doit être envoyé, généralement 3 mois avant l'échéance.</p>
+
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 3 — Jours restants avant expiration</p>
+                    <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
+// Nombre de jours restants avant expiration
+public function getJoursRestantsAvantExpiration(): ?int
+{
+    $dateExp = $this->getDateExpiration();
+    if (!$dateExp) {
+        return null;
+    }
+    $aujourdhui = new \DateTime();
+    $diff = $aujourdhui->diff($dateExp);
+    return $diff->invert ? -$diff->days : $diff->days;
+}
+                    </code></pre>
+                    <p class="text-sm text-neutral-600">Cette méthode calcule en temps réel le nombre de jours restants avant expiration, qu'elle soit encore à venir ou déjà dépassée. C'est cette valeur qui colore en rouge, orange ou vert les alertes du tableau de bord selon l'urgence.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
@@ -849,24 +890,62 @@ public function execute(InputInterface $input, OutputInterface $output): int {
                     <div class="text-neutral-900 mb-4 bg-white p-4 rounded-xl border border-neutral-200 font-medium">
                         Étape 1 : L'utilisatrice saisit une nouvelle entrée de menstruation.
                         <span class="text-pink-600 font-bold mx-2">➔</span> 
-                        Étape 2 : Le système met à jour dynamiquement l'état réactif global avec Pinia.
+                        Étape 2 : Le système met à jour dynamiquement l'état réactif global, partagé entre toutes les pages de l'application.
                         <span class="text-pink-600 font-bold mx-2">➔</span> 
-                        Étape 3 : Les compteurs de prière et de jours de jeûne à rattraper se recalcule instantanément de manière transparente.
+                        Étape 3 : Les compteurs de jeûne et de rattrapage se recalculent instantanément, sans aucune action supplémentaire de l'utilisatrice.
                     </div>
+
+                    <p class="text-sm text-neutral-600 font-medium">Étape 1 — L'utilisatrice clique sur un jour du calendrier</p>
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
-// Pinia Store handling reactive global state across pages in Noor App
-export const useNoorStore = defineStore('noor', {
-  state: () => ({ activeCyclePhase: 'folliculaire', fastingDaysToRepay: 0 }),
-  actions: {
-    updateCycle(newPhase: string, menstruationActive: boolean) {
-      this.activeCyclePhase = newPhase;
-      if (menstruationActive) {
-         this.fastingDaysToRepay++; // Auto-increment repayment counts
-      }
+// CycleView.vue - L'utilisatrice clique sur un jour du calendrier
+async function toggleMenstruation(date: string) {
+  if (!date || isSaving.value) return
+  const isMenstruation = isDateInMenstruation(date)
+  if (!isMenstruation) {
+    // Ajout d'un nouveau jour de menstruation
+    const newCycle = await createCycle({ date_debut: date })
+    cycles.value.unshift(newCycle)  // → Déclenche Étape 2
+  }
+}
+                    </code></pre>
+                    <p class="text-sm text-neutral-600">Ce clic envoie la nouvelle date au système central de l'application, qui va la rendre disponible partout ailleurs.</p>
+
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 2 — Mise à jour de l'état partagé entre toutes les pages</p>
+                    <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
+// useCycle.ts - État global partagé entre toutes les pages
+const cycles = ref&lt;CycleEntry[]&gt;([])  // État réactif global
+
+function isDateInMenstruation(dateStr: string): boolean {
+  for (const cycle of cycles.value) {
+    const start = new Date(cycle.date_debut)
+    const end = cycle.date_fin
+      ? new Date(cycle.date_fin)
+      : new Date(start.getTime() + 5 * 24 * 60 * 60 * 1000)
+    if (new Date(dateStr) >= start && new Date(dateStr) <= end) {
+      return true
     }
   }
-});
+  return false
+}
                     </code></pre>
+                    <p class="text-sm text-neutral-600">Cette fonction vérifie automatiquement si une date donnée tombe pendant une période de règles, en se basant sur l'historique complet de l'utilisatrice.</p>
+
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 3 — Recalcul automatique des compteurs de jeûne</p>
+                    <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
+// FastingView.vue - Compteurs recalculés instantanément
+const interruptedDays = computed(() =>
+  ramadanDays.value.filter(d => d.status === 'interrupted').length
+)
+
+const makeupNeeded = computed(() =>
+  interruptedDays.value + missedDays.value
+)
+
+const makeupRemaining = computed(() =>
+  Math.max(0, makeupNeeded.value - makeupDone.value)
+)
+                    </code></pre>
+                    <p class="text-sm text-neutral-600">Dès qu'un jour de règles est ajouté ou retiré, ces trois compteurs (jours interrompus, jours à rattraper, jours restants) se recalculent automatiquement, sans qu'il soit nécessaire de recharger la page.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
@@ -1687,6 +1766,11 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                     url: 'assets/rj10-rappel.png', 
                     title: 'Trace 08 : Page Rappel d\'échéances', 
                     desc: 'Historique de tous les rappels envoyés, automatiques comme manuels, avec la possibilité pour l\'administrateur de suivre si le stagiaire a répondu suite à la relance. C\'est cet historique qui permet de mesurer concrètement l\'efficacité du système mis en place.' 
+                },
+                { 
+                    url: 'assets/rj10-inscriptionForm.png', 
+                    title: 'Trace 09 : Formulaire d\'inscription', 
+                    desc: 'Formulaire utilisé pour enregistrer une nouvelle inscription : numéro PRE si la formation l\'exige, dates de la période de formation, statut de l\'examen, puis numéro et date d\'obtention du titre une fois l\'examen réussi. La date d\'expiration s\'affiche automatiquement, calculée à partir de la durée de validité propre à chaque formation.' 
                 }
             ],
 
