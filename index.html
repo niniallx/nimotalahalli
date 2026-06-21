@@ -78,17 +78,22 @@
             animation: drift 24s ease-in-out infinite alternate-reverse;
         }
 
-        /* Système de pages fluides sans rechargement */
+        /* Système de pages fluides avec fondu croisé (les deux pages se chevauchent) */
         .page {
-            display: none;
             opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+            pointer-events: none;
         }
         .page.active {
-            display: block;
             opacity: 1;
-            transform: translateY(0);
+            visibility: visible;
+            position: relative;
+            pointer-events: auto;
         }
 
         /* Curseur personnalisé ultra-minimaliste et intuitif */
@@ -98,7 +103,7 @@
         }
     </style>
 </head>
-<body class="text-neutral-900 antialiased selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden">
+<body class="text-neutral-900 antialiased selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden" style="position: relative;">
 
     <div id="cursor" class="fixed w-2.5 h-2.5 bg-emerald-500 rounded-full pointer-events-none z-50 hidden md:block"></div>
 
@@ -621,63 +626,125 @@
                         <i class="fa-solid fa-code text-emerald-600"></i> Comment ça fonctionne ? (Logique Technique)
                     </h4>
                     <div class="text-neutral-900 mb-4 bg-white p-4 rounded-xl border border-neutral-200 font-medium">
-                        Étape 1 : Dès qu'un titre est obtenu, sa date d'expiration est calculée automatiquement. 
+                        Étape 1 : Une tâche programmée se déclenche automatiquement chaque jour. 
                         <span class="text-emerald-600 font-bold mx-2">➔</span> 
-                        Étape 2 : La date à laquelle le rappel doit partir est déduite de cette expiration. 
+                        Étape 2 : Elle recherche en base de données les inscriptions dont le titre expire dans le délai configuré. 
                         <span class="text-emerald-600 font-bold mx-2">➔</span> 
-                        Étape 3 : Le nombre de jours restants est recalculé en continu pour alimenter les alertes du tableau de bord.
+                        Étape 3 : Chaque rappel est envoyé en arrière-plan, sans bloquer le reste de l'application.
                     </div>
 
-                    <p class="text-sm text-neutral-600 font-medium">Étape 1 — Calcul automatique de la date d'expiration</p>
+                    <p class="text-sm text-neutral-600 font-medium">Étape 1 — Tâche planifiée automatique (commande Symfony)</p>
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
-// Setter qui calcule automatiquement la date d'expiration
-public function setDateObtentionCartePro(?\DateTimeInterface $dateObtentionCartePro): static
+// src/Command/SendCertificationRemindersCommand.php
+#[AsCommand(
+    name: 'app:send-certification-reminders',
+    description: 'Envoie automatiquement les rappels de renouvellement de certification'
+)]
+class SendCertificationRemindersCommand extends Command
 {
-    $this->dateObtentionCartePro = $dateObtentionCartePro;
-    // Calcul automatique de la date d'expiration si formation définie
-    if ($dateObtentionCartePro && $this->formation) {
-        $dateExpiration = clone $dateObtentionCartePro;
-        $duree = $this->formation->getDureeEnMois();  // Ex: 60 mois pour APS
-        $dateExpiration->modify("+{$duree} months");
-        $this->dateExpirationCartePro = $dateExpiration;
+    public function __construct(
+        private InscriptionRepository $inscriptionRepository,
+        private MessageBusInterface $messageBus,
+    ) {
+        parent::__construct();
     }
-    return $this;
-}
-                    </code></pre>
-                    <p class="text-sm text-neutral-600">Dès que l'administrateur enregistre la date d'obtention d'un titre, l'application calcule elle-même sa date d'expiration, en ajoutant la durée de validité propre à chaque formation (60 mois pour l'APS, 36 pour le SSIAP, 24 pour le SST), sans aucun calcul manuel.</p>
 
-                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 2 — Calcul de la date à laquelle envoyer le rappel</p>
-                    <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
-// Calcul de la date de rappel (X mois avant expiration)
-public function getDateRappel(): ?\DateTimeInterface
-{
-    $dateExp = $this->getDateExpiration();
-    if (!$dateExp) {
-        return null;
-    }
-    $delai = $this->formation ? $this->formation->getDelaiRappelEnMois() : 3;
-    $dateRappel = clone $dateExp;
-    $dateRappel->modify("-{$delai} months");
-    return $dateRappel;
-}
-                    </code></pre>
-                    <p class="text-sm text-neutral-600">À partir de la date d'expiration, l'application déduit automatiquement la date à laquelle le rappel doit être envoyé, généralement 3 mois avant l'échéance.</p>
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        // Récupérer le délai configuré (par défaut 3 mois)
+        $defaultDelay = $config['defaultDelay'] ?? 3;
 
-                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 3 — Jours restants avant expiration</p>
-                    <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
-// Nombre de jours restants avant expiration
-public function getJoursRestantsAvantExpiration(): ?int
-{
-    $dateExp = $this->getDateExpiration();
-    if (!$dateExp) {
-        return null;
+        // Trouver les inscriptions expirant dans X mois
+        $inscriptions = $this->inscriptionRepository->findExpiringInMonths($defaultDelay);
+
+        foreach ($inscriptions as $inscription) {
+            // Envoyer le message dans la file d'attente asynchrone
+            $this->messageBus->dispatch(new SendEmailMessage($notificationLog->getId()));
+        }
+
+        return Command::SUCCESS;
     }
-    $aujourdhui = new \DateTime();
-    $diff = $aujourdhui->diff($dateExp);
-    return $diff->invert ? -$diff->days : $diff->days;
 }
                     </code></pre>
-                    <p class="text-sm text-neutral-600">Cette méthode calcule en temps réel le nombre de jours restants avant expiration, qu'elle soit encore à venir ou déjà dépassée. C'est cette valeur qui colore en rouge, orange ou vert les alertes du tableau de bord selon l'urgence.</p>
+                    <p class="text-sm text-neutral-600">Cette commande est programmée pour se lancer automatiquement chaque jour. Elle ne fait pas le travail d'envoi elle-même : elle repère qui doit recevoir un rappel, puis confie chaque envoi à un système d'arrière-plan dédié.</p>
+
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 2 — Recherche en base de données (Repository)</p>
+                    <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
+// src/Repository/InscriptionRepository.php
+public function findExpiringInMonths(int $months): array
+{
+    $targetDate = new \DateTime("+{$months} months");
+    $startDate = (clone $targetDate)->modify('-3 days');
+    $endDate = (clone $targetDate)->modify('+3 days');
+
+    return $this->createQueryBuilder('i')
+        ->leftJoin('i.stagiaire', 's')
+        ->leftJoin('i.formation', 'f')
+        ->addSelect('s', 'f')
+        ->where('i.statut = :statut')
+        ->andWhere('i.dateExpirationTitre IS NOT NULL')
+        ->andWhere('i.dateExpirationTitre BETWEEN :startDate AND :endDate')
+        ->setParameter('statut', 'titre_obtenu')
+        ->setParameter('startDate', $startDate)
+        ->setParameter('endDate', $endDate)
+        ->getQuery()
+        ->getResult();
+}
+                    </code></pre>
+                    <p class="text-sm text-neutral-600">Cette requête interroge la base de données pour ne récupérer que les inscriptions dont le titre arrive à expiration dans la bonne fenêtre de dates, en ramenant directement les informations du stagiaire et de sa formation pour éviter des requêtes supplémentaires.</p>
+
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 3 — Envoi en arrière-plan, sans ralentir l'application</p>
+                    <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
+// src/Message/SendEmailMessage.php
+class SendEmailMessage
+{
+    public function __construct(
+        private int $notificationLogId
+    ) {}
+
+    public function getNotificationLogId(): int
+    {
+        return $this->notificationLogId;
+    }
+}
+
+// src/MessageHandler/SendEmailMessageHandler.php
+#[AsMessageHandler]
+class SendEmailMessageHandler
+{
+    public function __construct(
+        private MailerInterface $mailer,
+    ) {}
+
+    public function __invoke(SendEmailMessage $message): void
+    {
+        $notificationLog = $this->notificationLogRepository->find($message->getNotificationLogId());
+        $stagiaire = $notificationLog->getStagiaire();
+
+        // Créer l'email personnalisé
+        $email = (new Email())
+            ->from($config['senderEmail'] ?? 'noreply@formapro.fr')
+            ->to($stagiaire->getEmail())
+            ->subject($subject)
+            ->html(nl2br(htmlspecialchars($body)));
+
+        // Envoi via Symfony Mailer
+        $this->mailer->send($email);
+
+        // Mise à jour du statut
+        $notificationLog->setStatus('sent');
+        $notificationLog->setSentAt(new \DateTimeImmutable());
+    }
+}
+                    </code></pre>
+                    <p class="text-sm text-neutral-600">Plutôt que d'envoyer les emails un par un de façon immédiate, chaque rappel est placé dans une file d'attente traitée en arrière-plan par Symfony Messenger. Cela évite de ralentir l'application si plusieurs dizaines de rappels doivent partir en même temps, et garde une trace du statut de chaque envoi (envoyé, en attente, erreur).</p>
+
+                    <div class="bg-white p-4 rounded-xl border border-neutral-200 mt-2">
+                        <p class="text-sm font-semibold text-neutral-700 mb-1">Flux complet :</p>
+                        <p class="text-sm text-neutral-600">1. La tâche planifiée (cron) déclenche <code class="text-emerald-700">app:send-certification-reminders</code> chaque jour
+                        <br>2. Elle appelle <code class="text-emerald-700">findExpiringInMonths(3)</code> pour interroger la base de données
+                        <br>3. Chaque rappel est confié à <code class="text-emerald-700">SendEmailMessageHandler</code>, qui l'envoie de façon asynchrone</p>
+                    </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
@@ -1687,17 +1754,29 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
         function showPage(pageId) {
             const activePage = document.querySelector('.page.active');
             const targetPage = document.getElementById('page-' + pageId);
+            if (!targetPage || targetPage === activePage) return;
+
+            // La nouvelle page démarre superposée, invisible, prête à apparaître
+            targetPage.style.position = 'absolute';
+            targetPage.classList.add('active');
+            // Forcer le navigateur à prendre en compte l'état initial avant la transition
+            targetPage.offsetHeight;
+
             if (activePage) {
+                // Les deux pages sont maintenant superposées : l'une s'efface,
+                // l'autre apparaît, en même temps (vrai fondu croisé)
                 activePage.classList.remove('active');
-                setTimeout(() => { activePage.style.display = 'none'; }, 100);
-            }
-            if (targetPage) {
                 setTimeout(() => {
-                    targetPage.style.display = 'block';
-                    targetPage.offsetHeight;
-                    targetPage.classList.add('active');
-                }, 150);
+                    activePage.style.position = '';
+                }, 600);
             }
+
+            // Une fois le fondu terminé, la nouvelle page reprend sa place
+            // normale dans la mise en page (plus besoin d'être en superposition)
+            setTimeout(() => {
+                targetPage.style.position = '';
+            }, 600);
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         function showProject(projectId) { showPage(projectId); }
@@ -1770,7 +1849,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 { 
                     url: 'assets/rj10-inscriptionForm.png', 
                     title: 'Trace 09 : Formulaire d\'inscription', 
-                    desc: 'Formulaire utilisé pour enregistrer une nouvelle inscription : numéro PRE si la formation l\'exige, dates de la période de formation, statut de l\'examen, puis numéro et date d\'obtention du titre une fois l\'examen réussi. La date d\'expiration s\'affiche automatiquement, calculée à partir de la durée de validité propre à chaque formation.' 
+                    desc: 'Code source des trois méthodes qui calculent automatiquement les échéances d\'un titre professionnel : le calcul de la date d\'expiration à partir de la date d\'obtention et de la durée propre à chaque formation, le calcul en temps réel du nombre de jours restants avant expiration, et la récupération de cette durée de validité (60 mois pour l\'APS, 36 pour le SSIAP, 24 pour le SST). À droite, le résultat concret dans le formulaire d\'inscription : une fois le numéro de carte et la date d\'obtention saisis, la date d\'expiration et le compteur de jours restants s\'affichent automatiquement, sans aucun calcul manuel de la part de l\'administrateur.' 
                 }
             ],
 
@@ -1798,7 +1877,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 { 
                     url: 'assets/noor-login.png', 
                     title: 'Trace 05 : Écran de Connexion (Login)', 
-                    desc: 'Écran de connexion sécurisé par authentification JWT, garantissant que les données personnelles et sensibles de chaque utilisatrice restent strictement privées et accessibles uniquement après vérification de son identité.' 
+                    desc: 'Configuration de sécurité Symfony qui surveille l\'adresse de connexion, vérifie l\'email et le mot de passe envoyés, puis délivre un jeton numérique (JWT) en cas de succès. Ce jeton fait office de badge temporaire prouvant l\'identité de l\'utilisatrice pour toutes ses requêtes suivantes, sans que le serveur ait besoin de garder une session en mémoire. À droite, l\'écran de connexion réel tel qu\'il apparaît côté utilisatrice.' 
                 },
                 { 
                     url: 'assets/noor-cycle.png', 
