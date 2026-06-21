@@ -1274,11 +1274,17 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
-                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">04 — Difficultés rencontrées</h4>
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">04</span>
+                            Difficultés rencontrées
+                        </h4>
                         <p class="project-body-text">Le manque de retours réguliers de l'équipe a constitué la principale difficulté. Travaillant à distance, il m'était difficile d'obtenir des validations rapides, ce qui a ralenti certaines étapes, notamment la page d'adhésion interactive, restée en cours de finalisation à la fin du stage. Cette page nécessitait des décisions de l'association sur le processus d'inscription, des décisions qui tardaient à être prises collectivement. Par ailleurs, l'identité graphique étant encore en évolution pendant mon stage, j'ai dû composer avec des éléments provisoires et anticiper des ajustements futurs, ce qui a complexifié les choix de design.</p>
                     </div>
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
-                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4">05 — Synthèse et réflexion</h4>
+                        <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            Synthèse et réflexion
+                        </h4>
                         <p class="project-body-text">Cette mission m'a appris que le développement d'un outil numérique dans un environnement associatif ne se limite pas aux compétences techniques. J'ai compris concrètement l'importance d'un cadrage initial solide : définir dès le départ les délais de validation, les interlocuteurs décisionnaires et les livrables attendus aurait évité une partie des blocages. J'ai également pris conscience que l'autonomie en télétravail demande une communication proactive, il ne suffit pas d'attendre des retours, il faut les solliciter activement avec des points réguliers. Techniquement, j'ai consolidé mes compétences en intégration web et en réflexion sur l'organisation et le parcours utilisateur au sein du site. Si je devais recommencer, j'établirais dès le début un planning partagé avec des étapes clés clairement définies, et je prévoirais des réunions synchrones plus fréquentes avec les co-présidentes pour avancer plus efficacement malgré la distance.</p>
                     </div>
                 </div>
@@ -1700,6 +1706,10 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
         </div>
     </div>
 
+    <button id="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut de la page" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-30 w-12 h-12 rounded-full bg-neutral-950 text-white shadow-lg shadow-neutral-950/20 flex items-center justify-center opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:bg-emerald-500 hover:-translate-y-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+    </button>
+
     <footer class="border-t border-neutral-100 py-16 mt-24">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-400 gap-6">
             <div>
@@ -1741,6 +1751,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
             // On remonte en haut de la page tout de suite, avant la transition,
             // pour que la nouvelle page apparaisse toujours au bon endroit
             window.scrollTo({ top: 0, behavior: 'instant' });
+            if (typeof updateBackToTopVisibility === 'function') updateBackToTopVisibility();
 
             if (activePage) {
                 activePage.classList.remove('active');
@@ -1754,6 +1765,21 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
             }, 150);
         }
         function showProject(projectId) { showPage(projectId); }
+
+        // Bouton "retour en haut" — flotte au-dessus de toutes les pages
+        const backToTopBtn = document.getElementById('back-to-top');
+        function updateBackToTopVisibility() {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            }
+        }
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.addEventListener('scroll', updateBackToTopVisibility);
+        updateBackToTopVisibility();
 
         // Portfolio Toggle (Universitaire par défaut)
         function togglePortfolioView(viewMode) {
