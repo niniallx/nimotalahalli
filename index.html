@@ -90,17 +90,9 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Curseur personnalisé ultra-minimaliste et intuitif */
-        #cursor {
-            transition: width .15s, height .15s, background-color .15s, transform .05s ease-out;
-            transform: translate(-50%, -50%);
-        }
     </style>
 </head>
 <body class="text-neutral-900 antialiased selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden">
-
-    <div id="cursor" class="fixed w-2.5 h-2.5 bg-emerald-500 rounded-full pointer-events-none z-50 hidden md:block"></div>
 
     <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-emerald-200/35 to-yellow-200/25 rounded-full blur-3xl pointer-events-none animate-drift-slow z-0"></div>
     <div class="absolute top-[120vh] right-10 w-[600px] h-[600px] bg-gradient-to-br from-pink-200/25 via-purple-100/20 to-transparent rounded-full blur-3xl pointer-events-none animate-drift-reverse z-0"></div>
@@ -524,19 +516,29 @@
                             <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">01</span>
                             Introduction et contexte
                         </h4>
-                        <p class="project-body-text">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de neuf semaines, du 23 mars au 22 mai 2026, au sein de RJ10 Formation, un centre de formation aux métiers de la sécurité situé à La Chapelle-Saint-Luc, dans l'Aube. Ce centre propose des formations professionnelles telles que l'APS (Agent de Prévention et Sécurité), le SSIAP (Sécurité Incendie) et le SST (Sauveteur Secouriste du Travail). J'ai travaillé en totale autonomie sur ce projet, sans équipe technique autour de moi, ce qui m'a demandé une organisation rigoureuse et une grande capacité à prendre des décisions seule.</p>
+                        <p class="project-body-text">Dans le cadre de ma troisième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai effectué un stage de neuf semaines, du 23 mars au 22 mai 2026, au sein de RJ10 Formation, un centre de formation aux métiers de la sécurité situé à La Chapelle-Saint-Luc, dans l'Aube.
+                        <br><br>
+                        Ce centre propose trois formations professionnelles : l'APS (Agent de Prévention et Sécurité), le SSIAP (Sécurité Incendie) et le SST (Sauveteur Secouriste du Travail). J'ai travaillé en totale autonomie sur ce projet, sans équipe technique autour de moi, ce qui m'a demandé une organisation rigoureuse et une vraie capacité à prendre des décisions seule.</p>
                     </div>
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-xs">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
                             <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">02</span>
                             La mission
                         </h4>
-                        <p class="project-body-text">Mon superviseur, José Pereira, m'a fait part d'un besoin précis dès le début du stage. Le centre utilisait déjà Digiforma, un logiciel professionnel complet qui permet aux organismes de formation de gérer leurs documents administratifs, leur relation client, leurs sessions de formation et leur suivi qualité. Malgré sa richesse, cet outil présentait un angle mort : il ne permettait pas de relancer automatiquement les anciens stagiaires lorsque leur titre professionnel approchait de sa date d'expiration.
+                        <p class="project-body-text">Mon superviseur, José Pereira, m'a fait part d'un besoin précis dès le début du stage. Le centre utilisait déjà Digiforma, un logiciel professionnel complet qui permet aux organismes de formation de gérer leurs documents administratifs, leur relation client, leurs sessions de formation et leur suivi qualité. Mais cet outil avait un point faible : il ne permettait pas de relancer automatiquement les anciens stagiaires lorsque leur titre professionnel approchait de sa date d'expiration.
                         <br><br>
                         C'est ce manque précis qui est à l'origine du projet. Concrètement, lorsqu'un stagiaire obtient son titre professionnel, celui-ci a une durée de validité limitée : 5 ans pour une carte professionnelle APS, 3 ans pour un SSIAP, 2 ans pour un SST. Sans système de suivi, le centre perdait le contact avec ses anciens stagiaires qui, faute de rappel, oubliaient de renouveler leur titre ou allaient se former ailleurs.
                         <br><br>
-                        Motivée par l'envie de répondre concrètement à ce besoin, j'ai analysé les limites de l'outil existant et proposé une solution complémentaire adaptée : une application web de gestion de rappels automatiques, pensée spécifiquement pour ce centre. Ma mission était donc de concevoir et développer cet outil de A à Z, permettant de gérer les stagiaires, de suivre leurs formations et d'envoyer automatiquement des emails de rappel avant l'expiration de leur titre. L'objectif était simple : fidéliser les anciens stagiaires et les inciter à renouveler leur certification au sein du même centre plutôt qu'ailleurs.</p>
+                        J'ai donc analysé les limites de l'outil existant et proposé une solution complémentaire adaptée : une application web de gestion de rappels automatiques, pensée spécifiquement pour ce centre. Ma mission était de concevoir et développer cet outil de A à Z, permettant de gérer les stagiaires, de suivre leurs formations et d'envoyer automatiquement des emails de rappel avant l'expiration de leur titre. L'objectif était simple : fidéliser les anciens stagiaires et les inciter à renouveler leur certification au sein du même centre plutôt qu'ailleurs.</p>
                     </div>
+                </div>
+
+                <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        La problématique
+                    </h4>
+                    <p class="project-body-text">Comment concevoir et développer une application web complémentaire à Digiforma permettant d'automatiser le suivi des échéances de certification et les relances des anciens stagiaires, afin de renforcer leur fidélisation auprès de RJ10 Formation ?</p>
                 </div>
 
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-4">
@@ -583,7 +585,7 @@
 
                 <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-4">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
-                        <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">04</span>
                         Étapes du processus de création
                     </h4>
                     
@@ -598,7 +600,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">3. Construction de la partie invisible de l'application</h5>
-                            <p class="text-neutral-900">J'ai ensuite construit la partie de l'application que l'utilisateur ne voit pas mais qui fait tout fonctionner en arrière-plan : la gestion des données, les calculs automatiques et l'envoi des emails. Pour cela j'ai utilisé Symfony 7, un outil professionnel reconnu dans le milieu du développement web. Concrètement, j'ai mis en place un système de connexion sécurisé, une base de données pour stocker toutes les informations, ainsi qu'un programme automatique (Cron) qui se déclenche pour détecter les titres expirants.</p>
+                            <p class="text-neutral-900">J'ai ensuite construit la partie de l'application que l'utilisateur ne voit pas mais qui fait tout fonctionner en arrière-plan : la gestion des données, les calculs automatiques et l'envoi des emails. Pour cela, j'ai utilisé Symfony 7, un outil professionnel reconnu dans le développement web. J'ai mis en place un système de connexion sécurisé, une base de données pour stocker toutes les informations, ainsi qu'un Cron (une tâche programmée qui se déclenche automatiquement à intervalle régulier) qui se lance chaque jour pour repérer les titres bientôt expirés.</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-2xs">
                             <h5 class="step-title font-heading">4. Construction de l'interface visuelle</h5>
@@ -627,7 +629,7 @@
                         Étape 3 : Chaque rappel est envoyé en arrière-plan, sans bloquer le reste de l'application.
                     </div>
 
-                    <p class="text-sm text-neutral-600 font-medium">Étape 1 — Tâche planifiée automatique (commande Symfony)</p>
+                    <p class="text-sm text-neutral-600 font-medium">Étape 1 : Tâche planifiée automatique (commande Symfony)</p>
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
 // src/Command/SendCertificationRemindersCommand.php
 #[AsCommand(
@@ -662,7 +664,7 @@ class SendCertificationRemindersCommand extends Command
                     </code></pre>
                     <p class="text-sm text-neutral-600">Cette commande est programmée pour se lancer automatiquement chaque jour. Elle ne fait pas le travail d'envoi elle-même : elle repère qui doit recevoir un rappel, puis confie chaque envoi à un système d'arrière-plan dédié.</p>
 
-                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 2 — Recherche en base de données (Repository)</p>
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 2 : Recherche en base de données (Repository)</p>
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
 // src/Repository/InscriptionRepository.php
 public function findExpiringInMonths(int $months): array
@@ -687,7 +689,7 @@ public function findExpiringInMonths(int $months): array
                     </code></pre>
                     <p class="text-sm text-neutral-600">Cette requête interroge la base de données pour ne récupérer que les inscriptions dont le titre arrive à expiration dans la bonne fenêtre de dates, en ramenant directement les informations du stagiaire et de sa formation pour éviter des requêtes supplémentaires.</p>
 
-                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 3 — Envoi en arrière-plan, sans ralentir l'application</p>
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 3 : Envoi en arrière-plan, sans ralentir l'application</p>
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
 // src/Message/SendEmailMessage.php
 class SendEmailMessage
@@ -744,19 +746,19 @@ class SendEmailMessageHandler
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">04</span>
+                            <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">05</span>
                             Difficultés rencontrées
                         </h4>
                         <p class="text-neutral-900 text-base leading-relaxed">
-                            Travailler seule sans interlocuteur technique a constitué le principal obstacle de ce stage. Lorsque je bloquais sur un problème de logique ou de fonctionnement, je m'appuyais sur deux ressources principales : mes propres recherches et l'intelligence artificielle comme assistant de travail. Concrètement, quand je n'arrivais pas à identifier la source d'un problème, je formulais ma question précisément à l'IA pour explorer des pistes de solution, que j'analysais et adaptais ensuite par moi-même avant de les appliquer. Cette façon de travailler m'a appris à poser des questions techniques claires et structurées, une compétence essentielle dans le monde du développement.
+                            Travailler seule, sans interlocuteur technique, a constitué le principal obstacle de ce stage. Quand je bloquais sur un problème de logique ou de fonctionnement, je m'appuyais sur deux ressources : mes propres recherches, et l'intelligence artificielle comme assistante de travail. Concrètement, je formulais ma question précisément à l'IA pour explorer des pistes de solution, que j'analysais et adaptais ensuite par moi-même avant de les appliquer. Cette façon de travailler m'a appris à poser des questions techniques claires et structurées, une compétence essentielle dans le développement.
                             <br><br>
-                            La distinction entre la période pendant laquelle un stagiaire suit sa formation et la durée de validité du titre qu'il obtient à l'issue de celle-ci a également été source de confusion au départ. Ces deux notions, que j'avais d'abord confondues, m'ont obligée à revoir une partie de mon travail en cours de route. C'est en échangeant à la fois avec mon superviseur pour comprendre le métier, et avec l'IA pour clarifier la logique technique, que j'ai pu trouver la bonne organisation.
+                            La distinction entre la période pendant laquelle un stagiaire suit sa formation, et la durée de validité du titre qu'il obtient à l'issue de celle-ci, a aussi été source de confusion au départ. J'avais d'abord mélangé ces deux notions, ce qui m'a obligée à revoir une partie de mon travail en cours de route. C'est en échangeant à la fois avec mon superviseur pour comprendre le métier, et avec l'IA pour clarifier la logique technique, que j'ai trouvé la bonne organisation.
                         </p>
                     </div>
 
                     <div class="bg-neutral-100/90 border-2 border-neutral-300 p-8 rounded-3xl shadow-sm space-y-6">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            <span class="w-8 h-8 rounded-lg bg-emerald-200 text-emerald-800 flex items-center justify-center text-xs font-semibold">06</span>
                             Bilan personnel
                         </h4>
                         
@@ -764,7 +766,7 @@ class SendEmailMessageHandler
                             <div>
                                 <h5 class="bilan-title font-heading">1. Ce que ce projet m'a apporté</h5>
                                 <p class="font-light leading-relaxed text-neutral-700">
-                                    Ce stage m'a appris que construire une application ne se résume pas à des compétences techniques. Comprendre le métier du client, bien réfléchir à l'organisation des données avant de commencer et anticiper les situations particulières sont des étapes tout aussi importantes que le développement lui-même. C'est cette vision globale du projet que je retiens avant tout.
+                                    Ce stage répond concrètement à la problématique de départ : Formation Alerte complète Digiforma là où il s'arrêtait, en automatisant le suivi des échéances et les relances des anciens stagiaires. Ce projet m'a surtout appris que construire une application ne se résume pas à des compétences techniques. Comprendre le métier du client, bien réfléchir à l'organisation des données avant de commencer et anticiper les situations particulières sont des étapes tout aussi importantes que le développement lui-même. C'est cette vision globale du projet que je retiens avant tout.
                                 </p>
                             </div>
                             <div>
@@ -779,6 +781,31 @@ class SendEmailMessageHandler
                                     Si je devais recommencer, j'accorderais encore plus de temps à la phase d'analyse au départ, en posant toutes les questions nécessaires sur le fonctionnement du métier avant d'écrire la moindre ligne de code. Cela m'aurait évité plusieurs allers-retours en cours de développement et m'aurait permis d'avancer de façon plus linéaire et plus sereine.
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-emerald-50 via-emerald-100/40 to-white rounded-3xl border-2 border-emerald-200/80 p-8 md:p-12 shadow-md relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-300/20 rounded-full blur-2xl"></div>
+                    <span class="text-[10px] font-bold tracking-widest uppercase bg-emerald-200/50 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300 mb-6 inline-block">Compétences BUT MMI</span>
+                    <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-6 text-emerald-950">Compétences mobilisées sur ce projet</h3>
+
+                    <div class="bg-white/70 rounded-2xl border border-emerald-200/60 overflow-hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+                            <div class="px-5 py-3 bg-emerald-100/60 border-b border-emerald-200/60 font-heading font-bold text-emerald-900 text-sm hidden md:block">Compétence BUT MMI</div>
+                            <div class="px-5 py-3 bg-emerald-100/60 border-b border-emerald-200/60 font-heading font-bold text-emerald-900 text-sm hidden md:block">Justificatif sur ce projet</div>
+
+                            <div class="px-5 py-4 border-b border-emerald-200/40 md:border-r font-semibold text-neutral-800 text-sm">Développer une application Web interactive</div>
+                            <div class="px-5 py-4 border-b border-emerald-200/40 text-neutral-600 text-sm leading-relaxed">Construction complète de l'application avec Symfony 7 côté serveur et Vue.js 3 côté interface, incluant un système de rappels automatisés par email déclenché par une tâche planifiée quotidienne.</div>
+
+                            <div class="px-5 py-4 border-b border-emerald-200/40 md:border-r font-semibold text-neutral-800 text-sm">Co-concevoir une réponse stratégique</div>
+                            <div class="px-5 py-4 border-b border-emerald-200/40 text-neutral-600 text-sm leading-relaxed">Identification d'un angle mort dans l'outil existant (Digiforma) et conception d'une solution complémentaire adaptée, pensée en amont via une arborescence et une organisation des données réfléchies avant tout développement.</div>
+
+                            <div class="px-5 py-4 border-b border-emerald-200/40 md:border-r font-semibold text-neutral-800 text-sm">Entreprendre un projet au sein d'un écosystème numérique</div>
+                            <div class="px-5 py-4 border-b border-emerald-200/40 text-neutral-600 text-sm leading-relaxed">Conduite du projet de A à Z en totale autonomie sur neuf semaines, sans équipe technique, de l'analyse du besoin jusqu'au déploiement chez un hébergeur en environnement de production.</div>
+
+                            <div class="px-5 py-4 md:border-r font-semibold text-neutral-800 text-sm">Comprendre la stratégie de communication et l'expérience utilisateur</div>
+                            <div class="px-5 py-4 text-neutral-600 text-sm leading-relaxed">Appropriation des règles métier propres à chaque certification (APS, SSIAP, SST) et conception d'un tableau de bord pensé pour un usage quotidien par un administrateur non technique.</div>
                         </div>
                     </div>
                 </div>
@@ -955,7 +982,7 @@ class SendEmailMessageHandler
                         Étape 3 : Les compteurs de jeûne et de rattrapage se recalculent instantanément, sans aucune action supplémentaire de l'utilisatrice.
                     </div>
 
-                    <p class="text-sm text-neutral-600 font-medium">Étape 1 — L'utilisatrice clique sur un jour du calendrier</p>
+                    <p class="text-sm text-neutral-600 font-medium">Étape 1 : L'utilisatrice clique sur un jour du calendrier</p>
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
 // CycleView.vue - L'utilisatrice clique sur un jour du calendrier
 async function toggleMenstruation(date: string) {
@@ -970,7 +997,7 @@ async function toggleMenstruation(date: string) {
                     </code></pre>
                     <p class="text-sm text-neutral-600">Ce clic envoie la nouvelle date au système central de l'application, qui va la rendre disponible partout ailleurs.</p>
 
-                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 2 — Mise à jour de l'état partagé entre toutes les pages</p>
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 2 : Mise à jour de l'état partagé entre toutes les pages</p>
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
 // useCycle.ts - État global partagé entre toutes les pages
 const cycles = ref&lt;CycleEntry[]&gt;([])  // État réactif global
@@ -990,7 +1017,7 @@ function isDateInMenstruation(dateStr: string): boolean {
                     </code></pre>
                     <p class="text-sm text-neutral-600">Cette fonction vérifie automatiquement si une date donnée tombe pendant une période de règles, en se basant sur l'historique complet de l'utilisatrice.</p>
 
-                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 3 — Recalcul automatique des compteurs de jeûne</p>
+                    <p class="text-sm text-neutral-600 font-medium pt-2">Étape 3 : Recalcul automatique des compteurs de jeûne</p>
                     <pre class="bg-neutral-950 p-6 rounded-2xl overflow-x-auto text-sm shadow-inner"><code class="text-slate-100 font-mono">
 // FastingView.vue - Compteurs recalculés instantanément
 const interruptedDays = computed(() =>
@@ -1048,7 +1075,7 @@ const makeupRemaining = computed(() =>
                             <div>
                                 <h5 class="bilan-title font-heading">1. Quels bénéfices pour la suite ?</h5>
                                 <p class="font-light leading-relaxed text-neutral-700">
-                                    Noor est le projet qui m'a le plus appris sur ma capacité à concevoir et mener un projet complet de manière autonome. Partir d'un besoin réel identifié dans ma propre expérience et au sein de ma communauté, le transformer en fonctionnalités concrètes, développer les deux parties de l'application, connecter des services externes, soigner l'interface et mettre en ligne une application accessible à toutes : chaque étape a mobilisé des compétences différentes et complémentaires. Ce projet démontre directement ma capacité à être autonome sur un poste de développeur web junior dès la sortie du BUT.
+                                    Noor répond à la problématique de départ en croisant, dans une seule application, le suivi physiologique du cycle et l'accompagnement spirituel, deux dimensions que les applications existantes traitaient jusque-là séparément. C'est aussi le projet qui m'a le plus appris sur ma capacité à concevoir et mener un projet complet de manière autonome. Partir d'un besoin réel identifié dans ma propre expérience et au sein de ma communauté, le transformer en fonctionnalités concrètes, développer les deux parties de l'application, connecter des services externes, soigner l'interface et mettre en ligne une application accessible à toutes : chaque étape a mobilisé des compétences différentes et complémentaires. Ce projet démontre directement ma capacité à être autonome sur un poste de développeur web junior dès la sortie du BUT.
                                 </p>
                             </div>
                             <div>
@@ -1063,6 +1090,34 @@ const makeupRemaining = computed(() =>
                                     Si je devais recommencer, j'aurais défini un périmètre plus restreint dès le départ pour éviter de disperser mon énergie sur trop de fonctionnalités simultanément. J'aurais également anticipé les contraintes de mise en ligne dès la phase de conception, car plusieurs problèmes rencontrés lors du déploiement auraient pu être évités avec une meilleure organisation initiale. Enfin, j'aurais intégré des vérifications automatiques du code dès le début du développement plutôt qu'en fin de projet.
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-50 via-pink-100/40 to-white rounded-3xl border-2 border-pink-200/80 p-8 md:p-12 shadow-md relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-300/20 rounded-full blur-2xl"></div>
+                    <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-200/50 text-pink-800 px-3 py-1 rounded-full border border-pink-300 mb-6 inline-block">Compétences BUT MMI</span>
+                    <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-6 text-pink-950">Compétences mobilisées sur ce projet</h3>
+
+                    <div class="bg-white/70 rounded-2xl border border-pink-200/60 overflow-hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+                            <div class="px-5 py-3 bg-pink-100/60 border-b border-pink-200/60 font-heading font-bold text-pink-900 text-sm hidden md:block">Compétence BUT MMI</div>
+                            <div class="px-5 py-3 bg-pink-100/60 border-b border-pink-200/60 font-heading font-bold text-pink-900 text-sm hidden md:block">Justificatif sur ce projet</div>
+
+                            <div class="px-5 py-4 border-b border-pink-200/40 md:border-r font-semibold text-neutral-800 text-sm">Développer une application Web interactive</div>
+                            <div class="px-5 py-4 border-b border-pink-200/40 text-neutral-600 text-sm leading-relaxed">Développement complet d'une PWA avec Symfony 7 en back-end et Vue 3 / TypeScript en front-end, incluant authentification JWT, mise à jour réactive en temps réel et intégration de deux services externes (horaires de prière, versets).</div>
+
+                            <div class="px-5 py-4 border-b border-pink-200/40 md:border-r font-semibold text-neutral-800 text-sm">Co-concevoir une réponse stratégique</div>
+                            <div class="px-5 py-4 border-b border-pink-200/40 text-neutral-600 text-sm leading-relaxed">Conception d'une application croisant deux besoins jusque-là traités séparément par le marché (suivi du cycle et pratique spirituelle), à partir d'une analyse des applications existantes et de leurs limites.</div>
+
+                            <div class="px-5 py-4 border-b border-pink-200/40 md:border-r font-semibold text-neutral-800 text-sm">Entreprendre un projet au sein d'un écosystème numérique</div>
+                            <div class="px-5 py-4 border-b border-pink-200/40 text-neutral-600 text-sm leading-relaxed">Projet personnel mené en totale autonomie de l'idée à la mise en ligne publique, hébergement compris (Railway et Vercel), sans encadrement pédagogique direct.</div>
+
+                            <div class="px-5 py-4 border-b border-pink-200/40 md:border-r font-semibold text-neutral-800 text-sm">Comprendre la stratégie de communication et l'expérience utilisateur</div>
+                            <div class="px-5 py-4 border-b border-pink-200/40 text-neutral-600 text-sm leading-relaxed">Identification d'un besoin réel observé dans une communauté spécifique, traduit en parcours utilisatrice cohérent entre suivi biologique et pratiques culturelles.</div>
+
+                            <div class="px-5 py-4 md:border-r font-semibold text-neutral-800 text-sm">Exprimer une identité visuelle et éditoriale transmédia</div>
+                            <div class="px-5 py-4 text-neutral-600 text-sm leading-relaxed">Définition d'une identité visuelle cohérente (palette douce, typographies, composants réutilisables), visible sur les captures d'interface ci-dessus, et gestion bilingue français/anglais avec prise en charge de l'arabe en écriture droite-à-gauche.</div>
                         </div>
                     </div>
                 </div>
@@ -1108,7 +1163,8 @@ const makeupRemaining = computed(() =>
                             Introduction et contexte
                         </h4>
                         <p class="text-neutral-900 text-base font-light">Dans le cadre de ma deuxième année de BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT de Troyes, j'ai réalisé un stage de huit semaines, du 1er avril au 1er juin 2025, au sein de l'association Plan Poitrines (anciennement Black Sheep). Ce collectif accompagne de jeunes cinéastes, majoritairement des femmes, et porte des valeurs féministes, queer et inclusives à travers ses projets audiovisuels. J'ai intégré l'association à un moment charnière : elle était en plein changement de nom et engageait une refonte complète de son identité visuelle.
-Avant d'entamer le développement du site vitrine, j'ai consacré une phase entière à la conception : dans un contexte associatif où l'identité visuelle restait encore à construire, et où les décisions se prenaient collectivement avec les deux co-présidentes, poser des bases claires et validées avant d'écrire la moindre ligne de code était une nécessité, pas une étape facultative.</p>
+                        <br><br>
+                        Avant d'entamer le développement du site vitrine, j'ai consacré une phase entière à la conception : dans un contexte associatif où l'identité visuelle restait encore à construire, et où les décisions se prenaient collectivement avec les deux co-présidentes, poser des bases claires et validées avant d'écrire la moindre ligne de code était une nécessité, pas une étape facultative.</p>
                     </div>
                     <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
@@ -1117,6 +1173,14 @@ Avant d'entamer le développement du site vitrine, j'ai consacré une phase enti
                         </h4>
                         <p class="text-neutral-900 text-base font-light">Ma mission était de concevoir l'organisation et le design du site vitrine avant son développement, en passant par trois étapes successives : l'arborescence, le wireframe, puis la maquette. Chacune de ces étapes avait un objectif précis : structurer le contenu, anticiper le parcours de l'utilisateur, et permettre à l'équipe de visualiser le futur site avant sa réalisation technique. L'enjeu était aussi de créer un outil de communication commun avec les co-présidentes, pour valider les choix ensemble et éviter des allers-retours coûteux en temps une fois le développement lancé.</p>
                     </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        La problématique
+                    </h4>
+                    <p class="project-body-text">Comment structurer et concevoir l'identité visuelle d'un site avant son développement, dans un contexte où la charte graphique de l'association est encore en construction ?</p>
                 </div>
 
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
@@ -1143,7 +1207,7 @@ Avant d'entamer le développement du site vitrine, j'ai consacré une phase enti
 
                 <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
-                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">04</span>
                         Étapes du processus de création
                     </h4>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1165,17 +1229,42 @@ Avant d'entamer le développement du site vitrine, j'ai consacré une phase enti
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">04</span>
+                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">05</span>
                             Difficultés rencontrées
                         </h4>
-                        <p class="project-body-text">Travailler sur l'identité visuelle alors que la charte graphique de l'association n'était pas encore finalisée a constitué la principale difficulté. J'ai dû faire des choix provisoires, en m'appuyant sur les éléments existants et les orientations données par les co-présidentes, tout en sachant que certains ajustements seraient nécessaires plus tard. Cela demande une certaine flexibilité dans la façon de construire le design : ne pas tout figer, prévoir des marges d'adaptation. Par ailleurs, obtenir des retours précis de l'équipe à distance n'était pas toujours simple, les co-présidentes validaient dans les grandes lignes, mais les détails graphiques nécessitaient parfois plusieurs échanges avant d'aboutir à une décision.</p>
+                        <p class="project-body-text">Travailler sur l'identité visuelle alors que la charte graphique de l'association n'était pas encore finalisée a constitué la principale difficulté. J'ai dû faire des choix provisoires, en m'appuyant sur les éléments existants et les orientations données par les co-présidentes, tout en sachant que certains ajustements seraient nécessaires plus tard. Cela demande une certaine flexibilité dans la façon de construire le design : ne pas tout figer, prévoir des marges d'adaptation. Par ailleurs, obtenir des retours précis de l'équipe à distance n'était pas toujours simple : les co-présidentes validaient dans les grandes lignes, mais les détails graphiques nécessitaient parfois plusieurs échanges avant d'aboutir à une décision.</p>
                     </div>
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">06</span>
                             Synthèse et réflexion
                         </h4>
-                        <p class="project-body-text">Cette phase de conception m'a appris que bien préparer un projet numérique, c'est avant tout bien le penser avant de le réaliser. L'arborescence, le wireframe et la maquette ne sont pas des étapes facultatives : ce sont des outils qui permettent d'aligner tout le monde sur une vision commune et d'éviter des erreurs coûteuses à corriger tard dans le projet. J'ai aussi compris la valeur d'un outil collaboratif comme Figma dans un contexte de télétravail : il remplace avantageusement de longues descriptions verbales et rend les échanges bien plus efficaces. Sur le plan personnel, cette expérience m'a appris à être patiente face aux décisions collectives et à travailler avec l'incertitude, quand tout n'est pas fixé d'avance, il faut savoir avancer avec ce qu'on a, tout en gardant la capacité d'ajuster.</p>
+                        <p class="project-body-text">Cette phase de conception répond à la problématique de départ : structurer une identité visuelle avant son développement, même quand la charte graphique de l'association n'est pas encore figée, c'est possible en avançant par étapes progressives et validables. L'arborescence, le wireframe et la maquette ne sont pas des étapes facultatives : ce sont des outils qui permettent d'aligner tout le monde sur une vision commune, sans attendre que tout soit définitivement arrêté, et d'éviter des erreurs coûteuses à corriger tard dans le projet. J'ai aussi compris la valeur d'un outil collaboratif comme Figma dans un contexte de télétravail : il remplace avantageusement de longues descriptions verbales et rend les échanges bien plus efficaces. Sur le plan personnel, cette expérience m'a appris à être patiente face aux décisions collectives et à travailler avec l'incertitude : quand tout n'est pas fixé d'avance, il faut savoir avancer avec ce qu'on a, tout en gardant la capacité d'ajuster.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 via-purple-100/40 to-white rounded-3xl border-2 border-purple-200/80 p-8 md:p-12 shadow-md relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-purple-300/20 rounded-full blur-2xl"></div>
+                    <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-200/50 text-purple-800 px-3 py-1 rounded-full border border-purple-300 mb-6 inline-block">Compétences BUT MMI</span>
+                    <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-6 text-purple-950">Compétences mobilisées sur ce projet</h3>
+
+                    <div class="bg-white/70 rounded-2xl border border-purple-200/60 overflow-hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+                            <div class="px-5 py-3 bg-purple-100/60 border-b border-purple-200/60 font-heading font-bold text-purple-900 text-sm hidden md:block">Compétence BUT MMI</div>
+                            <div class="px-5 py-3 bg-purple-100/60 border-b border-purple-200/60 font-heading font-bold text-purple-900 text-sm hidden md:block">Justificatif sur ce projet</div>
+
+                            <div class="px-5 py-4 border-b border-purple-200/40 md:border-r font-semibold text-neutral-800 text-sm">Comprendre la stratégie de communication et l'expérience utilisateur</div>
+                            <div class="px-5 py-4 border-b border-purple-200/40 text-neutral-600 text-sm leading-relaxed">Analyse du parcours de différents profils d'utilisateurs (membre, partenaire, nouveau visiteur) pour construire une arborescence et un wireframe adaptés à leurs attentes respectives.</div>
+
+                            <div class="px-5 py-4 border-b border-purple-200/40 md:border-r font-semibold text-neutral-800 text-sm">Entreprendre un projet au sein d'un écosystème numérique</div>
+                            <div class="px-5 py-4 border-b border-purple-200/40 text-neutral-600 text-sm leading-relaxed">Conduite de la phase de conception en autonomie dans un contexte associatif où l'identité visuelle restait à construire, avec des décisions prises collectivement avec les co-présidentes.</div>
+
+                            <div class="px-5 py-4 border-b border-purple-200/40 md:border-r font-semibold text-neutral-800 text-sm">Co-concevoir une réponse stratégique</div>
+                            <div class="px-5 py-4 border-b border-purple-200/40 text-neutral-600 text-sm leading-relaxed">Structuration en trois étapes successives (arborescence, wireframe, maquette) pour transformer un besoin associatif en outil de communication validable par l'équipe avant développement.</div>
+
+                            <div class="px-5 py-4 md:border-r font-semibold text-neutral-800 text-sm">Exprimer une identité visuelle et éditoriale transmédia</div>
+                            <div class="px-5 py-4 text-neutral-600 text-sm leading-relaxed">Traduction des valeurs féministes, queer et inclusives de l'association en choix graphiques concrets sur Figma : palette vive, typographie moderne, mise en page aérée.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1221,8 +1310,8 @@ Avant d'entamer le développement du site vitrine, j'ai consacré une phase enti
                             Introduction et contexte
                         </h4>
                         <p class="text-neutral-900 text-base font-light">Une fois la phase de conception, d'arborescence et de maquettage Figma validée collectivement avec les co-présidentes de l'association Plan Poitrines, l'étape suivante consistait à donner vie à ce travail de design. Ce projet d'intégration s'est inscrit dans la continuité directe de mon stage de deuxième année de BUT MMI au sein de ce collectif audiovisuel inclusif.
-
-Le site vitrine final devait matérialiser fidèlement l'identité graphique vive et engagée (violet, rose, orange, jaune) définie sur Figma, tout en répondant aux contraintes techniques de l'association. Mon défi pour ce projet était d'assurer une transition de la maquette statique vers un code d'intégration propre, performant, responsive et facilement administrable par l'équipe.</p>
+                        <br><br>
+                        Le site vitrine final devait matérialiser fidèlement l'identité graphique vive et engagée (violet, rose, orange, jaune) définie sur Figma, tout en répondant aux contraintes techniques de l'association. Mon défi pour ce projet était d'assurer une transition de la maquette statique vers un code d'intégration propre, performant, responsive et facilement administrable par l'équipe.</p>
                     </div>
                     <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
@@ -1231,6 +1320,14 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
                         </h4>
                         <p class="text-neutral-900 text-base font-light">L'objectif était de créer un site vitrine fonctionnel pour améliorer la visibilité de l'association et structurer sa communication en ligne. Le site devait refléter la nouvelle identité de Plan Poitrines, engagée, créative et inclusive, tout en étant accessible et lisible pour des publics variés : membres, partenaires, et personnes découvrant l'association. Les co-présidentes souhaitaient un outil simple à prendre en main par l'équipe après mon départ, sans dépendance à des technologies complexes.</p>
                     </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        La problématique
+                    </h4>
+                    <p class="project-body-text">Comment développer un site vitrine sur mesure qui valorise les engagements et les actions de Plan Poitrines, tout en proposant une expérience claire, accessible et cohérente avec son identité visuelle auprès de ses différents publics ?</p>
                 </div>
 
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
@@ -1257,7 +1354,7 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
 
                 <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
-                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">04</span>
                         Étapes du processus de création
                     </h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1275,17 +1372,42 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">04</span>
+                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">05</span>
                             Difficultés rencontrées
                         </h4>
                         <p class="project-body-text">Le manque de retours réguliers de l'équipe a constitué la principale difficulté. Travaillant à distance, il m'était difficile d'obtenir des validations rapides, ce qui a ralenti certaines étapes, notamment la page d'adhésion interactive, restée en cours de finalisation à la fin du stage. Cette page nécessitait des décisions de l'association sur le processus d'inscription, des décisions qui tardaient à être prises collectivement. Par ailleurs, l'identité graphique étant encore en évolution pendant mon stage, j'ai dû composer avec des éléments provisoires et anticiper des ajustements futurs, ce qui a complexifié les choix de design.</p>
                     </div>
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs font-semibold">06</span>
                             Synthèse et réflexion
                         </h4>
-                        <p class="project-body-text">Cette mission m'a appris que le développement d'un outil numérique dans un environnement associatif ne se limite pas aux compétences techniques. J'ai compris concrètement l'importance d'un cadrage initial solide : définir dès le départ les délais de validation, les interlocuteurs décisionnaires et les livrables attendus aurait évité une partie des blocages. J'ai également pris conscience que l'autonomie en télétravail demande une communication proactive, il ne suffit pas d'attendre des retours, il faut les solliciter activement avec des points réguliers. Techniquement, j'ai consolidé mes compétences en intégration web et en réflexion sur l'organisation et le parcours utilisateur au sein du site. Si je devais recommencer, j'établirais dès le début un planning partagé avec des étapes clés clairement définies, et je prévoirais des réunions synchrones plus fréquentes avec les co-présidentes pour avancer plus efficacement malgré la distance.</p>
+                        <p class="project-body-text">Ce site répond à la problématique de départ en transformant l'identité visuelle et les valeurs de Plan Poitrines en une expérience de navigation claire pour ses différents publics : membres, partenaires et nouveaux visiteurs trouvent chacun un accès direct aux informations qui les concernent. Cette mission m'a aussi appris que le développement d'un outil numérique dans un environnement associatif ne se limite pas aux compétences techniques. J'ai compris concrètement l'importance d'un cadrage initial solide : définir dès le départ les délais de validation, les interlocuteurs décisionnaires et les livrables attendus aurait évité une partie des blocages. J'ai également pris conscience que l'autonomie en télétravail demande une communication proactive : il ne suffit pas d'attendre des retours, il faut les solliciter activement avec des points réguliers. Techniquement, j'ai consolidé mes compétences en intégration web et en réflexion sur l'organisation et le parcours utilisateur au sein du site. Si je devais recommencer, j'établirais dès le début un planning partagé avec des étapes clés clairement définies, et je prévoirais des réunions synchrones plus fréquentes avec les co-présidentes pour avancer plus efficacement malgré la distance.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 via-purple-100/40 to-white rounded-3xl border-2 border-purple-200/80 p-8 md:p-12 shadow-md relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-purple-300/20 rounded-full blur-2xl"></div>
+                    <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-200/50 text-purple-800 px-3 py-1 rounded-full border border-purple-300 mb-6 inline-block">Compétences BUT MMI</span>
+                    <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-6 text-purple-950">Compétences mobilisées sur ce projet</h3>
+
+                    <div class="bg-white/70 rounded-2xl border border-purple-200/60 overflow-hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+                            <div class="px-5 py-3 bg-purple-100/60 border-b border-purple-200/60 font-heading font-bold text-purple-900 text-sm hidden md:block">Compétence BUT MMI</div>
+                            <div class="px-5 py-3 bg-purple-100/60 border-b border-purple-200/60 font-heading font-bold text-purple-900 text-sm hidden md:block">Justificatif sur ce projet</div>
+
+                            <div class="px-5 py-4 border-b border-purple-200/40 md:border-r font-semibold text-neutral-800 text-sm">Développer une application Web interactive</div>
+                            <div class="px-5 py-4 border-b border-purple-200/40 text-neutral-600 text-sm leading-relaxed">Intégration en HTML et CSS natifs, sans CMS, d'un site responsive structuré en quatre pages, pensé pour rester administrable par une équipe sans profil technique.</div>
+
+                            <div class="px-5 py-4 border-b border-purple-200/40 md:border-r font-semibold text-neutral-800 text-sm">Entreprendre un projet au sein d'un écosystème numérique</div>
+                            <div class="px-5 py-4 border-b border-purple-200/40 text-neutral-600 text-sm leading-relaxed">Passage de la maquette validée à un site fonctionnel et déployé sur un serveur personnel, en autonomie et à distance, dans la continuité du stage de conception.</div>
+
+                            <div class="px-5 py-4 border-b border-purple-200/40 md:border-r font-semibold text-neutral-800 text-sm">Comprendre la stratégie de communication et l'expérience utilisateur</div>
+                            <div class="px-5 py-4 border-b border-purple-200/40 text-neutral-600 text-sm leading-relaxed">Recueil des besoins auprès des co-présidentes et structuration des contenus prioritaires en quatre pages (accueil, productions, contact, adhésion) reflétant les attentes de publics variés.</div>
+
+                            <div class="px-5 py-4 md:border-r font-semibold text-neutral-800 text-sm">Exprimer une identité visuelle et éditoriale transmédia</div>
+                            <div class="px-5 py-4 text-neutral-600 text-sm leading-relaxed">Mise en code fidèle de l'identité graphique vive et engagée définie sur Figma (violet, rose, orange, jaune), tout en garantissant la cohérence visuelle sur tous les formats d'écran.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1340,11 +1462,19 @@ Le site vitrine final devait matérialiser fidèlement l'identité graphique viv
                             La mission
                         </h4>
                         <p class="text-neutral-900 text-base font-light">Mon superviseur au sein de l'association m'a confié une mission claire dès le début du stage : structurer et centraliser la gestion des activités de l'association à travers une plateforme web complète. Jusqu'alors, la gestion des membres, des maraudes, des événements culturels et des actions de solidarité reposait sur plusieurs outils séparés (tableurs, messageries instantanées, échanges informels), ce qui limitait la coordination entre bénévoles, la traçabilité des actions menées et la capacité du bureau à mesurer concrètement l'impact social de l'association.
-
-C'est ce constat qui est à l'origine du projet. L'association a pour mission le rassemblement culturel, l'union, la solidarité et l'entraide de ses membres, à travers l'organisation de maraudes, d'événements d'intégration culturelle et de dispositifs d'accompagnement comme le parrainage entre nouveaux arrivants et référents établis. Sans outil centralisé, ces actions restaient difficiles à organiser, à suivre dans la durée et à valoriser auprès de partenaires ou pour des demandes de subvention.
-
-Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une plateforme web pensée pour structurer l'ensemble de ces activités en un seul espace, avec des accès différenciés selon le profil de l'utilisateur : bénévole, bénéficiaire ou membre du bureau. Ma mission s'est concentrée sur la construction de la partie invisible de l'application, celle qui gère les données et la logique de fonctionnement, permettant de gérer les membres, organiser les maraudes avec localisation des tournées, gérer les inscriptions aux événements culturels, mettre en relation des bénévoles avec des personnes à accompagner, et envoyer des notifications automatiques. L'objectif était de donner à l'association un outil simple, fiable et durable pour faciliter la coordination de ses actions et renforcer son impact auprès des personnes qu'elle accompagne.</p>
+                        <br><br>
+                        C'est ce constat qui est à l'origine du projet. L'association a pour mission le rassemblement culturel, l'union, la solidarité et l'entraide de ses membres, à travers l'organisation de maraudes, d'événements d'intégration culturelle et de dispositifs d'accompagnement comme le parrainage entre nouveaux arrivants et référents établis. Sans outil centralisé, ces actions restaient difficiles à organiser, à suivre dans la durée et à valoriser auprès de partenaires ou pour des demandes de subvention.
+                        <br><br>
+                        J'ai donc conçu une plateforme web pensée pour structurer l'ensemble de ces activités en un seul espace, avec des accès différenciés selon le profil de l'utilisateur : bénévole, bénéficiaire ou membre du bureau. Ma mission s'est concentrée sur la construction de la partie invisible de l'application, celle qui gère les données et la logique de fonctionnement, permettant de gérer les membres, organiser les maraudes avec localisation des tournées, gérer les inscriptions aux événements culturels, mettre en relation des bénévoles avec des personnes à accompagner, et envoyer des notifications automatiques. L'objectif était de donner à l'association un outil simple, fiable et durable pour faciliter la coordination de ses actions et renforcer son impact auprès des personnes qu'elle accompagne.</p>
                     </div>
+                </div>
+
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        La problématique
+                    </h4>
+                    <p class="project-body-text">Comment centraliser la gestion des membres, des maraudes et des événements d'une association, jusque-là répartie entre plusieurs outils séparés, en respectant la confidentialité des informations sensibles recueillies sur le terrain ?</p>
                 </div>
 
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
@@ -1367,8 +1497,8 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
 
                 <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
-                        <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">03</span>
-                        Processus de création
+                        <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">04</span>
+                        Étapes du processus de création
                     </h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="bg-white p-6 rounded-xl border border-neutral-200">
@@ -1389,20 +1519,20 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">04</span>
+                            <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">05</span>
                             Difficultés
                         </h4>
                         <p class="project-body-text">Modéliser une organisation des données suffisamment flexible pour s'adapter à la diversité des situations rencontrées sur le terrain, tout en respectant la confidentialité des informations concernant les personnes accompagnées lors des maraudes, a constitué la principale difficulté. J'ai résolu ce problème en réfléchissant à des niveaux d'accès différenciés, garantissant que seules les personnes habilitées puissent consulter certaines informations sensibles.</p>
                     </div>
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center text-xs font-semibold">06</span>
                             Bilan personnel (à date)
                         </h4>
                         <div class="space-y-4">
                             <div>
                                 <h5 class="bilan-title">1. Ce que ce projet m'apporte déjà</h5>
-                                <p class="project-body-text">Ce projet m'a permis de me confronter à un contexte associatif porteur de sens, où la technique est mise au service de la solidarité et de l'intégration culturelle. Il m'a sensibilisée aux besoins spécifiques du secteur associatif et a renforcé ma capacité à concevoir une architecture de données robuste et évolutive, capable de s'adapter à des besoins humains complexes, notamment sur les questions de confidentialité.</p>
+                                <p class="project-body-text">À ce stade, le projet répond déjà en partie à la problématique de départ : la base de données conçue centralise effectivement membres, maraudes, événements et parrainages en un seul espace, avec des niveaux d'accès qui protègent les informations sensibles recueillies sur le terrain. Ce projet m'a aussi permis de me confronter à un contexte associatif porteur de sens, où la technique est mise au service de la solidarité et de l'intégration culturelle. Il m'a sensibilisée aux besoins spécifiques du secteur associatif et a renforcé ma capacité à concevoir une architecture de données robuste et évolutive, capable de s'adapter à des besoins humains complexes.</p>
                             </div>
                             <div>
                                 <h5 class="bilan-title">2. Ce qu'il reste à valider</h5>
@@ -1412,6 +1542,31 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                                 <h5 class="bilan-title">3. Ce que je ferais différemment</h5>
                                 <p class="project-body-text">Avec le recul déjà acquis sur ce projet, j'accorderais davantage de temps en amont à documenter les niveaux d'accès et les règles de confidentialité, pour que cette logique soit immédiatement lisible lors du développement de l'interface visuelle à venir.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 via-blue-100/40 to-white rounded-3xl border-2 border-blue-200/80 p-8 md:p-12 shadow-md relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-blue-300/20 rounded-full blur-2xl"></div>
+                    <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-200/50 text-blue-800 px-3 py-1 rounded-full border border-blue-300 mb-6 inline-block">Compétences BUT MMI</span>
+                    <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-6 text-blue-950">Compétences mobilisées sur ce projet</h3>
+
+                    <div class="bg-white/70 rounded-2xl border border-blue-200/60 overflow-hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+                            <div class="px-5 py-3 bg-blue-100/60 border-b border-blue-200/60 font-heading font-bold text-blue-900 text-sm hidden md:block">Compétence BUT MMI</div>
+                            <div class="px-5 py-3 bg-blue-100/60 border-b border-blue-200/60 font-heading font-bold text-blue-900 text-sm hidden md:block">Justificatif sur ce projet</div>
+
+                            <div class="px-5 py-4 border-b border-blue-200/40 md:border-r font-semibold text-neutral-800 text-sm">Développer une application Web interactive</div>
+                            <div class="px-5 py-4 border-b border-blue-200/40 text-neutral-600 text-sm leading-relaxed">Construction de la partie back-end avec une base de données relationnelle de dix entités reliées entre elles, un système de connexion sécurisé et trois niveaux d'accès différenciés.</div>
+
+                            <div class="px-5 py-4 border-b border-blue-200/40 md:border-r font-semibold text-neutral-800 text-sm">Co-concevoir une réponse stratégique</div>
+                            <div class="px-5 py-4 border-b border-blue-200/40 text-neutral-600 text-sm leading-relaxed">Modélisation d'une architecture de données capable de centraliser des activités jusque-là dispersées entre plusieurs outils, tout en respectant la confidentialité des informations sensibles recueillies sur le terrain.</div>
+
+                            <div class="px-5 py-4 border-b border-blue-200/40 md:border-r font-semibold text-neutral-800 text-sm">Entreprendre un projet au sein d'un écosystème numérique</div>
+                            <div class="px-5 py-4 border-b border-blue-200/40 text-neutral-600 text-sm leading-relaxed">Conduite du projet dans un contexte associatif réel, avec une mission clarifiée auprès du superviseur et un périmètre adapté à mi-parcours du stage.</div>
+
+                            <div class="px-5 py-4 md:border-r font-semibold text-neutral-800 text-sm">Comprendre la stratégie de communication et l'expérience utilisateur</div>
+                            <div class="px-5 py-4 text-neutral-600 text-sm leading-relaxed">Analyse du fonctionnement réel de l'association (profils bénévole/bénéficiaire/bureau, déroulement d'une maraude) pour structurer une organisation des données fidèle au terrain.</div>
                         </div>
                     </div>
                 </div>
@@ -1469,6 +1624,14 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                     </div>
                 </div>
 
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        La problématique
+                    </h4>
+                    <p class="project-body-text">Comment concevoir une architecture back-end sécurisée, documentée et maintenable, capable d'exposer un catalogue de films via des API REST et GraphQL, tout en assurant une communication fiable avec une interface front-end indépendante ?</p>
+                </div>
+
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet WR506D (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1493,7 +1656,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
 
                 <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
-                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">04</span>
                         Étapes du processus de création
                     </h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1523,19 +1686,19 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">04</span>
+                            <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">05</span>
                             Difficultés rencontrées
                         </h4>
                         <p class="project-body-text">Faire coexister REST et GraphQL sur la même base de code sans créer de conflits de configuration a constitué la principale difficulté. L'implémentation de la double authentification a également représenté un vrai défi technique : comprendre le fonctionnement des codes temporaires à usage unique, les intégrer dans le flux de connexion existant et gérer les cas particuliers demandait une compréhension fine du mécanisme. Enfin, connecter deux dépôts indépendants m'a obligée à définir clairement le format des données échangées entre le back-end et le front-end, ce qui m'a sensibilisée aux enjeux de conception d'une API réellement consommable.</p>
                     </div>
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl space-y-4">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">06</span>
                             Bilan personnel
                         </h4>
                         <div>
                             <h5 class="bilan-title">Ce que ce projet m'a apporté</h5>
-                            <p class="project-body-text">Ce projet m'a donné une vision claire de ce que signifie construire une API de niveau professionnel. Au-delà des fonctionnalités, j'ai compris que la qualité du code, lisible, versionné proprement, testé et documenté, est aussi importante que le fait qu'il fonctionne. C'est cette rigueur que je retiens avant tout.</p>
+                            <p class="project-body-text">Ce projet répond à la problématique de départ : l'API construite expose bien le catalogue de films via REST et GraphQL simultanément, avec une sécurisation par JWT et 2FA, et communique de façon fiable avec un front-end développé séparément grâce à un contrat d'interface clairement défini. Au-delà des fonctionnalités, j'ai compris que la qualité du code, lisible, versionné proprement, testé et documenté, est aussi importante que le fait qu'il fonctionne. C'est cette rigueur que je retiens avant tout.</p>
                         </div>
                         <div>
                             <h5 class="bilan-title">Les compétences développées</h5>
@@ -1544,6 +1707,28 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                         <div>
                             <h5 class="bilan-title">Ce que je ferais différemment</h5>
                             <p class="project-body-text">Si je devais recommencer, j'écrirais les tests unitaires en parallèle du développement plutôt qu'en fin de projet. Développer et tester simultanément aurait rendu chaque étape plus solide et m'aurait évité de revenir en arrière pour corriger des erreurs détectées tardivement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 via-yellow-100/30 to-white rounded-3xl border-2 border-yellow-300/80 p-8 md:p-12 shadow-md relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-yellow-300/20 rounded-full blur-2xl"></div>
+                    <span class="text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full border border-yellow-200 mb-6 inline-block">Compétences BUT MMI</span>
+                    <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-6 text-yellow-950">Compétences mobilisées sur ce projet</h3>
+
+                    <div class="bg-white/70 rounded-2xl border border-yellow-200/60 overflow-hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+                            <div class="px-5 py-3 bg-yellow-100/60 border-b border-yellow-200/60 font-heading font-bold text-yellow-900 text-sm hidden md:block">Compétence BUT MMI</div>
+                            <div class="px-5 py-3 bg-yellow-100/60 border-b border-yellow-200/60 font-heading font-bold text-yellow-900 text-sm hidden md:block">Justificatif sur ce projet</div>
+
+                            <div class="px-5 py-4 border-b border-yellow-200/40 md:border-r font-semibold text-neutral-800 text-sm">Développer une application Web interactive</div>
+                            <div class="px-5 py-4 border-b border-yellow-200/40 text-neutral-600 text-sm leading-relaxed">Construction d'une API Symfony 7 / API Platform exposant ses données en REST et en GraphQL, sécurisée par JWT et double authentification, alimentée par un jeu de données réaliste de 150 films.</div>
+
+                            <div class="px-5 py-4 border-b border-yellow-200/40 md:border-r font-semibold text-neutral-800 text-sm">Co-concevoir une réponse stratégique</div>
+                            <div class="px-5 py-4 border-b border-yellow-200/40 text-neutral-600 text-sm leading-relaxed">Modélisation des données en amont (films, acteurs, réalisateurs, catégories) pour garantir une architecture cohérente, capable de répondre à deux modes d'interrogation distincts.</div>
+
+                            <div class="px-5 py-4 md:border-r font-semibold text-neutral-800 text-sm">Comprendre la stratégie de communication et l'expérience utilisateur</div>
+                            <div class="px-5 py-4 text-neutral-600 text-sm leading-relaxed">Définition d'un contrat d'interface clair entre l'API et un front-end développé séparément, documenté et testé avec Postman pour rester exploitable par un tiers.</div>
                         </div>
                     </div>
                 </div>
@@ -1600,6 +1785,14 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                     </div>
                 </div>
 
+                <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm">
+                    <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        La problématique
+                    </h4>
+                    <p class="project-body-text">Comment concevoir une application basée sur une architecture en micro-services permettant de générer des PDF à la demande et de gérer des accès différenciés selon les abonnements des utilisateurs ?</p>
+                </div>
+
                 <div class="bg-neutral-100 border-2 border-neutral-200 rounded-2xl p-8 shadow-sm space-y-4">
                     <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest block text-center">Traces du projet WR602D (Cliquer pour zoomer)</span>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1628,7 +1821,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
 
                 <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl shadow-sm space-y-6">
                     <h4 class="font-heading text-lg font-bold text-neutral-900 flex items-center gap-2">
-                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">03</span>
+                        <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">04</span>
                         Étapes du processus de création
                     </h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1654,19 +1847,19 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">04</span>
+                            <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">05</span>
                             Difficultés rencontrées
                         </h4>
                         <p class="project-body-text">Faire communiquer deux projets distincts de façon fiable a constitué la principale difficulté. Configurer la communication HTTP pour qu'elle appelle correctement le micro-service, gérer les erreurs de communication entre les deux, et s'assurer que tout fonctionne aussi bien en local qu'en déploiement a demandé beaucoup de rigueur. L'intégration de Stripe a également représenté un apprentissage important : comprendre le fonctionnement des notifications automatiques de paiement, des événements de transaction et de la gestion des états d'abonnement côté serveur était une première pour moi.</p>
                     </div>
                     <div class="bg-neutral-100 border-2 border-neutral-200 p-8 rounded-3xl space-y-4">
                         <h4 class="font-heading text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                            <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">05</span>
+                            <span class="w-8 h-8 rounded-lg bg-yellow-100 text-yellow-800 flex items-center justify-center text-xs font-semibold">06</span>
                             Bilan personnel
                         </h4>
                         <div>
                             <h5 class="bilan-title">Ce que ce projet m'a apporté</h5>
-                            <p class="project-body-text">Ce projet m'a ouvert à une façon de penser l'architecture logicielle que je n'avais pas encore expérimentée. Découper une application en services indépendants, c'est accepter une complexité de coordination en échange d'une meilleure maintenabilité et évolutivité. C'est une logique que je retrouve directement dans les projets professionnels et qui donne du sens à beaucoup de choix techniques que je rencontre en entreprise.</p>
+                            <p class="project-body-text">Ce projet répond à la problématique de départ : l'architecture mise en place génère bien des PDF à la demande via un service totalement indépendant, tout en gérant des accès différenciés selon le niveau d'abonnement de chaque utilisateur. Au-delà du résultat, il m'a ouverte à une façon de penser l'architecture logicielle que je n'avais pas encore expérimentée. Découper une application en services indépendants, c'est accepter une complexité de coordination en échange d'une meilleure maintenabilité et évolutivité. C'est une logique que je retrouve directement dans les projets professionnels et qui donne du sens à beaucoup de choix techniques que je rencontre en entreprise.</p>
                         </div>
                         <div>
                             <h5 class="bilan-title">Les compétences développées</h5>
@@ -1675,6 +1868,25 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                         <div>
                             <h5 class="bilan-title">Ce que je ferais différemment</h5>
                             <p class="project-body-text">Si je devais recommencer, je définirais plus tôt le contrat d'interface entre le micro-service et l'application principale, c'est-à-dire le format exact des requêtes et des réponses échangées. Clarifier ce point dès le départ aurait évité plusieurs ajustements en cours de route.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 via-yellow-100/30 to-white rounded-3xl border-2 border-yellow-300/80 p-8 md:p-12 shadow-md relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-yellow-300/20 rounded-full blur-2xl"></div>
+                    <span class="text-[10px] font-bold tracking-widest uppercase bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full border border-yellow-200 mb-6 inline-block">Compétences BUT MMI</span>
+                    <h3 class="text-2xl md:text-3xl font-black tracking-tight mb-6 text-yellow-950">Compétences mobilisées sur ce projet</h3>
+
+                    <div class="bg-white/70 rounded-2xl border border-yellow-200/60 overflow-hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+                            <div class="px-5 py-3 bg-yellow-100/60 border-b border-yellow-200/60 font-heading font-bold text-yellow-900 text-sm hidden md:block">Compétence BUT MMI</div>
+                            <div class="px-5 py-3 bg-yellow-100/60 border-b border-yellow-200/60 font-heading font-bold text-yellow-900 text-sm hidden md:block">Justificatif sur ce projet</div>
+
+                            <div class="px-5 py-4 border-b border-yellow-200/40 md:border-r font-semibold text-neutral-800 text-sm">Développer une application Web interactive</div>
+                            <div class="px-5 py-4 border-b border-yellow-200/40 text-neutral-600 text-sm leading-relaxed">Développement d'un micro-service indépendant de génération de PDF avec Gotenberg, appelé via HTTP par une application Symfony principale gérant comptes et abonnements Stripe.</div>
+
+                            <div class="px-5 py-4 md:border-r font-semibold text-neutral-800 text-sm">Entreprendre un projet au sein d'un écosystème numérique</div>
+                            <div class="px-5 py-4 text-neutral-600 text-sm leading-relaxed">Mise en place d'une architecture en micro-services et d'un déploiement automatisé via GitHub Actions couvrant les deux services, en autonomie complète sur le semestre.</div>
                         </div>
                     </div>
                 </div>
@@ -1721,27 +1933,6 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
     </footer>
 
     <script>
-        // Curseur
-        const cursor = document.getElementById('cursor');
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        // Hovers
-        document.querySelectorAll('a, button, [onclick], .group').forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
-                cursor.style.backgroundColor = '#10b981';
-                cursor.style.opacity = '0.6';
-            });
-            element.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursor.style.backgroundColor = '#10b981';
-                cursor.style.opacity = '1';
-            });
-        });
-
         // Navigation (Router)
         function showPage(pageId) {
             const activePage = document.querySelector('.page.active');
@@ -1951,7 +2142,7 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
                 { 
                     url: 'assets/acm-wireframe.png', 
                     title: 'Trace 02 : Esquisse Wireframe', 
-                    desc: 'Esquisses réalisées à la main pour explorer l\'organisation de quelques pages clés, notamment la gestion des maraudes et le suivi des membres, avant de me concentrer sur la construction de la partie front-end de l\'application.' 
+                    desc: 'Esquisses réalisées à la main pour explorer l\'organisation de quelques pages clés, notamment la gestion des maraudes et le suivi des membres, avant de me concentrer sur la construction de la partie back-end de l\'application.' 
                 },
                 { 
                     url: 'assets/acm-db.png', 
