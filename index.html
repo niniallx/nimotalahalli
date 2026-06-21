@@ -78,22 +78,17 @@
             animation: drift 24s ease-in-out infinite alternate-reverse;
         }
 
-        /* Système de pages fluides avec fondu croisé (les deux pages se chevauchent) */
+        /* Système de pages fluides sans rechargement */
         .page {
+            display: none;
             opacity: 0;
-            visibility: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
-            pointer-events: none;
+            transform: translateY(15px);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .page.active {
+            display: block;
             opacity: 1;
-            visibility: visible;
-            position: relative;
-            pointer-events: auto;
+            transform: translateY(0);
         }
 
         /* Curseur personnalisé ultra-minimaliste et intuitif */
@@ -103,7 +98,7 @@
         }
     </style>
 </head>
-<body class="text-neutral-900 antialiased selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden" style="position: relative;">
+<body class="text-neutral-900 antialiased selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden">
 
     <div id="cursor" class="fixed w-2.5 h-2.5 bg-emerald-500 rounded-full pointer-events-none z-50 hidden md:block"></div>
 
@@ -226,7 +221,7 @@
                         <div class="w-full h-full flex flex-col justify-between p-8">
                             <div class="flex justify-between items-start">
                                 <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-white/95 px-3 py-1 rounded-full border border-emerald-200/40">SYS. Rappel</span>
-                                <a href="https://github.com/niniallx" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs">
+                                <a href="https://github.com/niniallx/reminder-app" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs">
                                     <i class="fa-brands fa-github text-lg"></i>
                                 </a>
                             </div>
@@ -262,7 +257,7 @@
                         <div class="w-full h-full flex flex-col justify-between p-8">
                             <div class="flex justify-between items-start">
                                 <span class="text-xs font-bold uppercase tracking-wider text-pink-800 bg-white/95 px-3 py-1 rounded-full border border-pink-200/40">Spiritualité & Santé</span>
-                                <a href="https://github.com/niniallx" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs">
+                                <a href="https://github.com/niniallx/noor-app" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs">
                                     <i class="fa-brands fa-github text-lg"></i>
                                 </a>
                             </div>
@@ -364,7 +359,7 @@
                         <div class="w-full h-full flex flex-col justify-between p-8">
                             <div class="flex justify-between items-start">
                                 <span class="text-xs font-bold uppercase tracking-wider text-blue-800 bg-white/95 px-3 py-1 rounded-full border border-blue-200/40">Asso ACM</span>
-                                <a href="https://github.com/niniallx" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs">
+                                <a href="https://github.com/niniallx/acm-asso" target="_blank" onclick="event.stopPropagation();" class="p-2 rounded-full bg-white/80 border border-neutral-200 hover:bg-neutral-950 hover:text-white transition-all shadow-2xs">
                                     <i class="fa-brands fa-github text-lg"></i>
                                 </a>
                             </div>
@@ -412,7 +407,7 @@
                             <span class="text-xs font-bold px-3 py-1 bg-neutral-200 text-neutral-700 rounded-full">WR506D — S5</span>
                             <div class="flex items-center gap-3">
                                 <span class="text-xs font-bold text-neutral-500 tracking-wider">Université · Terminé</span>
-                                <a href="https://github.com/niniallx" target="_blank" onclick="event.stopPropagation();" class="text-neutral-500 hover:text-black transition-colors">
+                                <a href="https://github.com/niniallx/wr506d-symfony" target="_blank" onclick="event.stopPropagation();" class="text-neutral-500 hover:text-black transition-colors">
                                     <i class="fa-brands fa-github text-base"></i>
                                 </a>
                             </div>
@@ -435,7 +430,7 @@
                             <span class="text-xs font-bold px-3 py-1 bg-neutral-200 text-neutral-700 rounded-full">WR602D — S6</span>
                             <div class="flex items-center gap-3">
                                 <span class="text-xs font-bold text-neutral-500 tracking-wider">Université · Terminé</span>
-                                <a href="https://github.com/niniallx" target="_blank" onclick="event.stopPropagation();" class="text-neutral-500 hover:text-black transition-colors">
+                                <a href="https://github.com/niniallx/wr602d" target="_blank" onclick="event.stopPropagation();" class="text-neutral-500 hover:text-black transition-colors">
                                     <i class="fa-brands fa-github text-base"></i>
                                 </a>
                             </div>
@@ -1756,28 +1751,20 @@ Motivée par l'envie de répondre concrètement à ce besoin, j'ai conçu une pl
             const targetPage = document.getElementById('page-' + pageId);
             if (!targetPage || targetPage === activePage) return;
 
-            // La nouvelle page démarre superposée, invisible, prête à apparaître
-            targetPage.style.position = 'absolute';
-            targetPage.classList.add('active');
-            // Forcer le navigateur à prendre en compte l'état initial avant la transition
-            targetPage.offsetHeight;
+            // On remonte en haut de la page tout de suite, avant la transition,
+            // pour que la nouvelle page apparaisse toujours au bon endroit
+            window.scrollTo({ top: 0, behavior: 'instant' });
 
             if (activePage) {
-                // Les deux pages sont maintenant superposées : l'une s'efface,
-                // l'autre apparaît, en même temps (vrai fondu croisé)
                 activePage.classList.remove('active');
-                setTimeout(() => {
-                    activePage.style.position = '';
-                }, 600);
+                setTimeout(() => { activePage.style.display = 'none'; }, 100);
             }
 
-            // Une fois le fondu terminé, la nouvelle page reprend sa place
-            // normale dans la mise en page (plus besoin d'être en superposition)
             setTimeout(() => {
-                targetPage.style.position = '';
-            }, 600);
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+                targetPage.style.display = 'block';
+                targetPage.offsetHeight;
+                targetPage.classList.add('active');
+            }, 150);
         }
         function showProject(projectId) { showPage(projectId); }
 
